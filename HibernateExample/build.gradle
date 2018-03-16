@@ -1,0 +1,18 @@
+group 'HibernateExample'
+version '1.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.hibernate.dialect/sqlite-dialect
+   // compile group: 'org.hibernate.dialect', name: 'sqlite-dialect', version: '0.1.0'
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.16.1'
+    compile 'org.hibernate:hibernate-core:5.2.10.Final'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
