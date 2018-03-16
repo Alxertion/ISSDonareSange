@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ISSDonareSange.iml" filepath="$PROJECT_DIR$/ISSDonareSange.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Repository_ISS.iml" filepath="$PROJECT_DIR$/.idea/modules/Repository_ISS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Repository_ISS_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Repository_ISS_main.iml" group="Repository_ISS" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Repository_ISS_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Repository_ISS_test.iml" group="Repository_ISS" />
+    </modules>
+  </component>
+</project>
