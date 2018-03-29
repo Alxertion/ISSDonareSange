@@ -2,8 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_classmate_1_3_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__mysql_mysql_connector_java_5_1_37.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_core_5_2_10_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_javassist_javassist_3_20_0_GA.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_jandex_2_0_3_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_logging_jboss_logging_3_3_0_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_1_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_aop_5_0_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_beans_5_0_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_context_5_0_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_core_5_0_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_expression_5_0_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_jcl_5_0_4_RELEASE.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -21,18 +42,7 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -222,7 +232,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4566970423730" />
+        <entry key="$PROJECT_DIR$" value="4566971443033" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="1710363809" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -331,6 +342,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
@@ -506,7 +518,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1522323465045</updated>
-      <workItem from="1522323466951" duration="816000" />
+      <workItem from="1522323466951" duration="1088000" />
     </task>
     <task id="LOCAL-00001" summary="Base Project">
       <created>1522323596276</created>
@@ -522,11 +534,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522323748538</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Base Project">
+      <created>1522324365759</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1522324365759</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="816000" />
+    <option name="totallyTimeSpent" value="1088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -541,6 +560,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -597,16 +617,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="138">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="46">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
