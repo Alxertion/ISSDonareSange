@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ISSDonareSange.iml" filepath="$PROJECT_DIR$/ISSDonareSange.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Repository_ISS.iml" filepath="$PROJECT_DIR$/.idea/modules/Repository_ISS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Repository_ISS_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Repository_ISS_main.iml" group="Repository_ISS" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Repository_ISS_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Repository_ISS_test.iml" group="Repository_ISS" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" group="ISSDonareSange" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" group="ISSDonareSange" />
     </modules>
   </component>
 </project>

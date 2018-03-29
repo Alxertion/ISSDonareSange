@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="Repository_ISS_main" target="1.8" />
-      <module name="Repository_ISS_test" target="1.8" />
+      <module name="ISSDonareSange_main" target="1.8" />
+      <module name="ISSDonareSange_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
