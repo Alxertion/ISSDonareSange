@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" />
+    <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="Donator - Added Images">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/imagesDonator/back_button_touched.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/imagesDonator/forward_button_touched.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/imagesDonator/forward_button_untouched.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ConditiiDonareController.java" afterPath="$PROJECT_DIR$/src/main/java/ControllersDonator/ConditiiDonareController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/ControllersDonator/Controller.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/MainWindowDonatorController.java" afterPath="$PROJECT_DIR$/src/main/java/ControllersDonator/MainWindowDonatorController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/FXMLEnum.java" afterPath="$PROJECT_DIR$/src/main/java/View/FXMLEnum.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Loader.java" afterPath="$PROJECT_DIR$/src/main/java/View/Loader.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/StageManager.java" afterPath="$PROJECT_DIR$/src/main/java/View/StageManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ConditiiDonare.fxml" afterPath="$PROJECT_DIR$/src/main/resources/FXMLDonator/ConditiiDonare.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ForgotPassword.fxml" afterPath="$PROJECT_DIR$/src/main/resources/FXMLCont/ForgotPassword.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/FormularDonator.fxml" afterPath="$PROJECT_DIR$/src/main/resources/FXMLDonator/FormularDonator.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Login.fxml" afterPath="$PROJECT_DIR$/src/main/resources/FXMLCont/Login.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/MainWindowDonator.fxml" afterPath="$PROJECT_DIR$/src/main/resources/FXMLDonator/MainWindowDonator.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Register.fxml" afterPath="$PROJECT_DIR$/src/main/resources/FXMLCont/Register.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/back_button_untouched.png" afterPath="$PROJECT_DIR$/src/main/resources/imagesDonator/back_button_untouched.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/circle_vreau_sa_donez_touched.png" afterPath="$PROJECT_DIR$/src/main/resources/imagesDonator/circle_vreau_sa_donez_touched.png" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/circle_vreau_sa_donez_untouched.png" afterPath="$PROJECT_DIR$/src/main/resources/imagesDonator/circle_vreau_sa_donez_untouched.png" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -103,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
@@ -113,15 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindowDonatorController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ControllersDonator/MainWindowDonatorController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1554">
-              <caret line="74" column="5" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="74" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="back_button_touched.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/imagesDonator/back_button_touched.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -663,6 +642,14 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="FXMLDonator" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="imagesDonator" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -862,7 +849,7 @@
       <workItem from="1522323466951" duration="3919000" />
       <workItem from="1522330149437" duration="414000" />
       <workItem from="1522502465236" duration="9724000" />
-      <workItem from="1522518411923" duration="1397000" />
+      <workItem from="1522518411923" duration="1635000" />
     </task>
     <task id="LOCAL-00001" summary="Base Project">
       <created>1522323596276</created>
@@ -941,15 +928,21 @@
       <option name="project" value="LOCAL" />
       <updated>1522518587166</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Donator - changes">
+      <created>1522519824051</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1522519824051</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15488000" />
+    <option name="totallyTimeSpent" value="15726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -972,7 +965,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885417" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -999,7 +992,8 @@
     <MESSAGE value="Resursele" />
     <MESSAGE value="FXML - ce am facut cand ne-am intalnit" />
     <MESSAGE value="Donator - partial work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Donator - partial work" />
+    <MESSAGE value="Donator - changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Donator - changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1273,11 +1267,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/images/circle_vreau_sa_donez_touched.psd" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/imagesDonator/back_button_touched.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/imagesDonator/circle_vreau_sa_donez_touched.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1432,6 +1421,11 @@
           <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/imagesDonator/back_button_touched.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
