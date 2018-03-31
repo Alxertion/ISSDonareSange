@@ -5,7 +5,7 @@ public enum FXMLEnum {
     MainWindowDonator {
         @Override
         public String getFxmlFile() {
-            return "/FXML/MainWindowDonator.fxml";
+            return "/FXMLDonator/MainWindowDonator.fxml";
         }
 
         @Override
@@ -17,7 +17,7 @@ public enum FXMLEnum {
     ConditiiDonare{
         @Override
         public String getFxmlFile() {
-            return "/FXML/ConditiiDonare.fxml";
+            return "/FXMLDonator/ConditiiDonare.fxml";
         }
 
         @Override
