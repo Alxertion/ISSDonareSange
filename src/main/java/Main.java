@@ -37,8 +37,9 @@ public class Main extends Application {
 
         stageManager = factory.getBean(StageManager.class, primaryStage, service);
 
-        displayInitialScene();
+        //displayInitialScene();
         // here the initial scene will be set to login
+        displayInitialSceneTransfusionsStaff();
 
     }
 
@@ -49,6 +50,17 @@ public class Main extends Application {
             loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowDonator.getFxmlFile()));
             Parent rootNode = loaderFXML.load();
             stageManager.switchScene(FXMLEnum.MainWindowDonator, rootNode, loaderFXML.getController(), loader);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    private void displayInitialSceneTransfusionsStaff(){
+        try{
+            FXMLLoader loaderFXML = new FXMLLoader();
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainViewPersonalTransfuzii.getFxmlFile()));
+            Parent rootNode = loaderFXML.load();
+            stageManager.switchScene(FXMLEnum.MainViewPersonalTransfuzii, rootNode, loaderFXML.getController(), loader);
         }catch (IOException e){
             e.printStackTrace();
         }

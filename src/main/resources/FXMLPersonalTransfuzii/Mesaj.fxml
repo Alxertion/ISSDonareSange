@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="233.0" prefWidth="324.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPersonalTransfuzii.PersonalTransfuziiController">
+   <children>
+      <Button layoutX="162.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="Notificare donatori" />
+      <Button layoutX="18.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="144.0" text="Notificare donator" />
+      <TextArea layoutX="14.0" layoutY="40.0" prefHeight="140.0" prefWidth="295.0" promptText="Introduceti mesajul..." />
+      <RadioButton layoutX="197.0" layoutY="14.0" mnemonicParsing="false" text="Mesaj electronic" />
+      <RadioButton layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Mesaj telefonic" />
+   </children>
+</AnchorPane>
