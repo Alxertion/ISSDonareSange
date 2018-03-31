@@ -1,4 +1,4 @@
-package Controllers;
+package ControllersDonator;
 
 import Service.Service;
 import View.FXMLEnum;
@@ -10,23 +10,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 
-public class ConditiiDonareController implements Controller {
+public class MainWindowDonatorController implements Controller {
 
     private StageManager stageManager;
     private Service service;
     private Loader loader;
 
-    @FXML
-    private Button forwardButton;
 
     @FXML
-    private TextArea conditiiDonareTextArea;
+    private Button vreaSaDonezButton;
 
     @FXML
     private Button backButton;
@@ -38,19 +35,21 @@ public class ConditiiDonareController implements Controller {
         this.loader = loader;
 
         setImagesForButtons();
+
+
     }
 
     private void setImagesForButtons() {
         setImageToBack();
-        setImageToForward();
+        setImageToVreauSaDonez();
     }
 
-    private void setImageToForward() {
-        forwardButton.graphicProperty().bind(Bindings.when(forwardButton.hoverProperty())
-                .then(new ImageView(loader.forward_button_touched()))
-                .otherwise(new ImageView(loader.forward_button_untouched())));
+    private void setImageToVreauSaDonez() {
+        vreaSaDonezButton.graphicProperty().bind(Bindings.when(vreaSaDonezButton.hoverProperty())
+                .then(new ImageView(loader.vreau_sa_donez_touched()))
+                .otherwise(new ImageView(loader.vreau_sa_donez_untouched())));
 
-        forwardButton.setShape(new Circle());
+        vreaSaDonezButton.setShape(new Circle());
     }
 
     private void setImageToBack() {
@@ -63,17 +62,15 @@ public class ConditiiDonareController implements Controller {
     }
 
     @FXML
-    private void backButtonPressed(ActionEvent event) {
+    private void vreauSaDonezButtonPressed(ActionEvent event) {
 
         try {
             FXMLLoader loaderFXML = new FXMLLoader();
-            loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowDonator.getFxmlFile()));
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.ConditiiDonare.getFxmlFile()));
             Parent rootNode = loaderFXML.load();
-            stageManager.switchScene(FXMLEnum.MainWindowDonator, rootNode, loaderFXML.getController(), loader);
+            stageManager.switchScene(FXMLEnum.ConditiiDonare, rootNode, loaderFXML.getController(), loader);
         }catch (IOException e){
             e.printStackTrace();
         }
     }
-
-
 }

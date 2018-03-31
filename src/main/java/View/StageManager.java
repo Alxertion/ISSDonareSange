@@ -1,6 +1,6 @@
 package View;
 
-import Controllers.Controller;
+import ControllersDonator.Controller;
 import Service.Service;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
