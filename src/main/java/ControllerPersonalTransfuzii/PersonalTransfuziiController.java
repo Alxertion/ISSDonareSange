@@ -44,7 +44,7 @@ public class PersonalTransfuziiController implements Controller {
     public void checkConditions(ActionEvent actionEvent){
         try {
             FXMLLoader loaderFXML = new FXMLLoader();
-            loaderFXML.setLocation(getClass().getResource(FXMLEnum.FormularDonator.getFxmlFile()));
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.FormularDonator2.getFxmlFile()));
             Parent rootNode = loaderFXML.load();
             tabPanePersonal.getSelectionModel().getSelectedItem().setContent(rootNode);
         }catch (IOException e){
