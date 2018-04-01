@@ -27,6 +27,7 @@ public enum FXMLEnum {
     },
     FormularDonator{
         @Override
+<<<<<<< Updated upstream
         public String getFxmlFile(){return "/FXMLPersonalTransfuzii/FormularDonator.fxml";}
 
         @Override
@@ -45,6 +46,16 @@ public enum FXMLEnum {
 
         @Override
         public String getTitle(){return "TrimitereMesaj";}
+=======
+        public String getFxmlFile() {
+            return "/FXMLDonator/FormularDonator.fxml";
+        }
+
+        @Override
+        public String getTitle() {
+            return "FormularDonator";
+        }
+>>>>>>> Stashed changes
     };
 
 

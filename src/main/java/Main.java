@@ -32,6 +32,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
 
+        primaryStage.setResizable(false);
         Service service = factory.getBean(Service.class);
         loader = factory.getBean(Loader.class);
 
@@ -40,7 +41,7 @@ public class Main extends Application {
         //displayInitialScene();
         // here the initial scene will be set to login
         displayInitialSceneTransfusionsStaff();
-
+        System.out.println("TestCommit");
     }
 
     private void displayInitialScene() {
