@@ -32,6 +32,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
 
+        primaryStage.setResizable(false);
         Service service = factory.getBean(Service.class);
         loader = factory.getBean(Loader.class);
 

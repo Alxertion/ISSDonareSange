@@ -75,5 +75,18 @@ public class ConditiiDonareController implements Controller {
         }
     }
 
+    @FXML
+    private void forwardButtonPressed(ActionEvent event) {
+
+        try {
+            FXMLLoader loaderFXML = new FXMLLoader();
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.FormularDonator.getFxmlFile()));
+            Parent rootNode = loaderFXML.load();
+            stageManager.switchScene(FXMLEnum.FormularDonator, rootNode, loaderFXML.getController(), loader);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 
 }
