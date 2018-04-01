@@ -41,7 +41,7 @@ public class Main extends Application {
         displayInitialScene();
         // here the initial scene will be set to login
         //displayInitialSceneTransfusionsStaff();
-        System.out.println("TestCommit");
+        System.out.println("Last");
     }
 
     private void displayInitialScene() {
