@@ -25,9 +25,8 @@ public enum FXMLEnum {
             return "ConditiiDonare";
         }
     },
-    FormularDonator{
+    FormularDonator2{
         @Override
-<<<<<<< Updated upstream
         public String getFxmlFile(){return "/FXMLPersonalTransfuzii/FormularDonator.fxml";}
 
         @Override
@@ -40,13 +39,19 @@ public enum FXMLEnum {
         @Override
         public String getTitle(){return "PersonalTransfuzii";}
     },
-    TrimiteMesaj{
+    TrimiteMesaj {
         @Override
-        public String getFxmlFile(){return "/FXMLPersonalTransfuzii/Mesaj.fxml";}
+        public String getFxmlFile() {
+            return "/FXMLPersonalTransfuzii/Mesaj.fxml";
+        }
 
         @Override
-        public String getTitle(){return "TrimitereMesaj";}
-=======
+        public String getTitle() {
+            return "TrimitereMesaj";
+        }
+    },
+    FormularDonator{
+        @Override
         public String getFxmlFile() {
             return "/FXMLDonator/FormularDonator.fxml";
         }
@@ -55,7 +60,6 @@ public enum FXMLEnum {
         public String getTitle() {
             return "FormularDonator";
         }
->>>>>>> Stashed changes
     };
 
 

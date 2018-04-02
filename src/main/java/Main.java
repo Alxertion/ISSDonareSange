@@ -38,10 +38,10 @@ public class Main extends Application {
 
         stageManager = factory.getBean(StageManager.class, primaryStage, service);
 
-        //displayInitialScene();
+        displayInitialScene();
         // here the initial scene will be set to login
-        displayInitialSceneTransfusionsStaff();
-
+        //displayInitialSceneTransfusionsStaff();
+        System.out.println("Last");
     }
 
     private void displayInitialScene() {
