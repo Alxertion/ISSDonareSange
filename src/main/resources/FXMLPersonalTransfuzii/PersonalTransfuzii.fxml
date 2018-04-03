@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.InnerShadow?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="799.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPersonalTransfuzii.PersonalTransfuziiController">
+  <tabs>
+      <Tab text="ManagementDonatori">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ListView layoutX="20.0" layoutY="27.0" prefHeight="363.0" prefWidth="235.0" />
+                  <TextArea editable="false" layoutX="285.0" layoutY="27.0" prefHeight="148.0" prefWidth="305.0" />
+                  <Button layoutX="486.0" layoutY="183.0" mnemonicParsing="false" text="Trimitere analiza" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+    <Tab text="NotificareDonatori">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="593.0">
+               <children>
+                  <ListView layoutX="14.0" layoutY="47.0" prefHeight="347.0" prefWidth="211.0" />
+                  <Label layoutX="242.0" layoutY="19.0" text="Grupa de sange:" />
+                  <Slider blockIncrement="20.0" layoutX="336.0" layoutY="65.0" max="200.0" prefHeight="14.0" prefWidth="211.0" showTickLabels="true" />
+                  <Text layoutX="242.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distanta(KM):" />
+                  <ListView layoutX="286.0" layoutY="104.0" prefHeight="250.0" prefWidth="225.0" />
+                  <TextField disable="true" layoutX="336.0" layoutY="15.0" prefHeight="25.0" prefWidth="85.0" />
+                  <Text layoutX="433.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rh:" />
+                  <TextField disable="true" layoutX="456.0" layoutY="15.0" prefHeight="25.0" prefWidth="85.0" />
+                  <Button layoutX="288.0" layoutY="369.0" mnemonicParsing="false" onAction="#notifyButtonPressed" prefHeight="25.0" prefWidth="225.0" text="Notifica" />
+                  <Text layoutX="61.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cereri de sange" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="InregistrareCerere">
+      <content>
+          <AnchorPane prefHeight="429.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+              <children>
+                  <TextArea fx:id="conditiiDonareTextArea" editable="false" prefHeight="258.0" prefWidth="679.0" stylesheets="@../CSS/ConditiiDonareSange.css" text="Pentru a deveni donator de sânge trebuie să îndepliniți următoarele condiţii: &#10;&#10;• vârsta cuprinsă în intervalul 18-60 ani  &#10;• greutate peste 50Kg  &#10;• puls regulat, 60 -100 bătăi/minut. &#10;• tensiune arterială sistolică între 100 şi 180 mmHg  &#10;• să nu fi suferit în ultimele 6 luni intervenţii chirurgicale  &#10;• femeile să nu fie: însărcinate, în perioada de lăuzie, în perioada menstruală  &#10;• să nu fi consumat grăsimi sau băuturi alcoolice cu cel puţin 48 de ore înaintea donării  &#10;• să nu fii sub tratament pentru diferite afecțiuni: hipertensiune, boli de inima, &#10;  boli renale, boli psihice, boli hepatice, boli endocrine ">
+                      <font>
+                          <Font size="15.0" />
+                      </font>
+                      <effect>
+                          <InnerShadow />
+                      </effect>
+                  </TextArea>
+                  <CheckBox layoutX="106.0" layoutY="275.0" mnemonicParsing="false" onAction="#checkConditions" prefHeight="40.0" prefWidth="40.0" />
+                  <Label layoutX="130.0" layoutY="275.0" prefHeight="74.0" prefWidth="364.0" text="Declar pe proprie răspundere că am citit și că îndeplinesc condițiile de mai sus" wrapText="true">
+                      <font>
+                          <Font size="20.0" />
+                      </font>
+                  </Label>
+              </children>
+          </AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="TraseuPunga">
+         <content>
+            <AnchorPane prefHeight="400.0" prefWidth="679.0">
+               <children>
+                  <TableView layoutX="14.0" layoutY="20.0" prefHeight="372.0" prefWidth="308.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Cod" />
+                      <TableColumn prefWidth="75.0" text="Tip" />
+                        <TableColumn prefWidth="75.0" text="Locatie" />
+                        <TableColumn prefWidth="75.0" text="Valid" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="CereriPachet">
+         <content>
+            <AnchorPane prefHeight="445.0" prefWidth="835.0">
+               <children>
+                  <TableView layoutX="14.0" layoutY="27.0" prefHeight="372.0" prefWidth="485.0">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="Cod" />
+                        <TableColumn prefWidth="75.0" text="Tip" />
+                        <TableColumn prefWidth="129.0" text="GrupaSanguina" />
+                        <TableColumn prefWidth="53.0" text="Rh" />
+                        <TableColumn prefWidth="74.0" text="Urgenta" />
+                        <TableColumn prefWidth="74.0" text="Pacient" />
+                     </columns>
+                  </TableView>
+                  <Button layoutX="730.0" layoutY="333.0" mnemonicParsing="false" text="Add" />
+                  <TextField layoutX="626.0" layoutY="91.0" prefHeight="31.0" prefWidth="152.0" />
+                  <ComboBox layoutX="627.0" layoutY="132.0" prefWidth="150.0" />
+                  <ComboBox layoutX="627.0" layoutY="173.0" prefWidth="150.0" />
+                  <ComboBox layoutX="627.0" layoutY="213.0" prefWidth="150.0" />
+                  <ComboBox layoutX="627.0" layoutY="251.0" prefWidth="150.0" />
+                  <Label layoutX="588.0" layoutY="96.0" text="cod" />
+                  <Label layoutX="598.0" layoutY="137.0" text="tip" />
+                  <Label layoutX="517.0" layoutY="178.0" text="grupa sanguina" />
+                  <Label layoutX="600.0" layoutY="218.0" text="rh" />
+                  <Label layoutX="569.0" layoutY="256.0" text="urgenta" />
+                  <TextField layoutX="626.0" layoutY="295.0" prefHeight="31.0" prefWidth="152.0" />
+                  <Label layoutX="538.0" layoutY="300.0" text="cod pacient" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
