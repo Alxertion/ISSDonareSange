@@ -1,4 +1,4 @@
-package ControllerPersonalTransfuzii;
+package ControllersPersonalTransfuzii;
 
 import ControllersDonator.Controller;
 import Service.Service;
@@ -47,6 +47,7 @@ public class PersonalTransfuziiController implements Controller {
             loaderFXML.setLocation(getClass().getResource(FXMLEnum.FormularDonator2.getFxmlFile()));
             Parent rootNode = loaderFXML.load();
             tabPanePersonal.getSelectionModel().getSelectedItem().setContent(rootNode);
+
         }catch (IOException e){
             e.printStackTrace();
         }

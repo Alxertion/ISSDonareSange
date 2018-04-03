@@ -40,7 +40,7 @@ public class Main extends Application {
 
         displayInitialScene();
         // here the initial scene will be set to login
-        //displayInitialSceneTransfusionsStaff();
+       // displayInitialSceneTransfusionsStaff();
         System.out.println("Last");
     }
 
