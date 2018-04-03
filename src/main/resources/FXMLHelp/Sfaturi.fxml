@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Inainte de donare:&#10;&#10;- Odihniti-va bine in noaptea de dinaintea donarii.&#10;- Mancati ceva usor inainte de donare.&#10;- Consumati mai multe lichide pentru a inlocui volumul pe care il veti dona.&#10;- Evitati insa ceaiul, cafeaua sau alte bauturi ce contin cofeina.&#10;- Consumati alimente bogate in fier – carne rosie, peste, ficat, fasole, cereale &#10;   imbogatite cu fier, stafide sau prune.&#10;- Evitati mancarurile grase ca hamburgerii, cartofii prajiti ori inghetata inainte de donare.&#10;- Testele pentru infectii facute asupra sangelui donat, pot fi afectate de grasimi – lipide – &#10;  ce apar in sange la cateva ore dupa ce au fost consumate mancarurile grase.&#10;&#10;In timpul donarii:&#10;&#10;- Purtati haine cu maneci care se pot ridica usor mai sus de cot.&#10;- Relaxati-va!&#10;&#10;Dupa donare:&#10;&#10;- Imediat dupa donare puteti servi un sandwich si un suc daca simtiti nevoia.&#10;- Rehidratati-va consumand lichide.&#10;- Daca va simtiti ametiti, intindeti-va, preferabil cu picioarele mai sus, pana cand senzatia trece. &#10;  In cazurile rare cand mai au loc usoare sangerari dupa indepartarea bandajului, apasati locul &#10;  respectiv si tineti bratul ridicat timp de 3-5 minute.&#10;- Daca apar sangerari sau vanatai sub piele, aplucati comprese reci pe locul respectiv in primele 24 de ore.&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Separator prefHeight="52.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Separator layoutY="195.0" prefHeight="73.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <Separator layoutY="272.0" prefHeight="85.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    </children>
+</AnchorPane>

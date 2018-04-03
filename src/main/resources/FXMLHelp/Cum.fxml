@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Traseul donatorului este urmatorul:&#10;&#10;Pasul 1:&#10;Deplasarea la cel mai apropiat centru de transfuzii.&#10;&#10;Pasul 2:&#10;Identificarea donatorului/potentialului donator: prezentarea actului de identitate.&#10;&#10;Actele de identitate nu trebuie sa fie expirate!&#10;Se completeaza chestionarul  de catre donator si se semneaza.&#10;IMPORTANT!&#10;Donatorul completeaza chestionarul cu maxima sinceritate cerinta absolut necesara&#10;pentru a evita fereastra imuologica a eventualelor boli cu transmitere prin sange .&#10;Se introduc datele in baza de date si se elibereaza faoia de lucru si carnetul donatorului. &#10;Se repartizeaza automat donatorul la cabinetul de consultatii.&#10;&#10;Toate informatiile despre donatori sunt confidentiale.&#10; &#10;Pasul 3:&#10;Dirijarea donatorului/ potentialului donator in cabinetul de consultatii:&#10;Evaluarea chestionarului de autoexcludere de catre asistentul medical &#10;Masurarea greutatii si a temperaturii si inregistrarea in baza de date &#10;Convorbire medicala predonare - discuţie confidentiala, care asigură ca donarea nu prezinta nici un risc,&#10;atat pentru donator cat si pentru primitor examenul clinic propriu-zis&#10;Control biologic predonare (determinare Hb, glicemie, determinare grup sanguin, Rh)&#10;E.K.G la nevoie&#10;Validarea consultatiei medicale&#10;&#10;Pasul 4:&#10;Indrumarea donatorului selectionat (considerat apt pentru donarea de sange) catre compartimentul recoltare&#10;Identificarea donatorului (Atentie documentele de identificare sunt obligatorii)&#10;Etichetarea eprubetelor pilot si a pungii de sange .&#10;Pregatirea pungii donatorului&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Separator prefHeight="53.0" prefWidth="612.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    </children>
+</AnchorPane>

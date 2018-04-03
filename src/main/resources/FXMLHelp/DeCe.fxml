@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TextArea fx:id="UiDonatorTextField1" editable="false" prefHeight="266.0" prefWidth="600.0" text="De ce sa donez sange?&#10;&#10;Fara donatori, multi bolnavi nu ar mai fi in viata astazi ! Deocamdata nu s-a descoperit &#10;un inlocuitor al sangelui asa ca donarea este singura solutie pentru a putea face fata &#10;nevoilor de sange si elemente ale sangelui necesare terapeuticii transfuzionale. &#10;Medicii si chirurgii se bazeaza pe donarea de sange pentru a efectua, in fiecare zi, o serie&#10;de interventii care salveaza viata oamenilor, sau o prelungesc.Sângele donat poate trata&#10;în fiecare an un milion de pacienti.Volumul de sânge este de aproximativ 5-6 litri pentru &#10;un adult, dar variaza în functie de sex, greutatete si şi inaltime. Sangele este mentinut in&#10;permanenta miscare intr-o retea de vase sanguine-artere, vene-care impanzesc tot &#10;organismul pentru a putea transporta oxigenul si substantele vitale nutritive in tesuturi si &#10;pentru a indeparta acele substante nocive care, acumulandu-se, ar putea deveni otravitoare." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </TextArea>
+        <Separator prefHeight="58.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    </children>
+</AnchorPane>

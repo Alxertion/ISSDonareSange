@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="HelpMenuItem_DeCe" mnemonicParsing="false" onAction="#HelpMenuItem_DeCe_Program" text="De ce sa donez sange?" />
+                        <MenuItem fx:id="HelpMenuItem_Cum" mnemonicParsing="false" onAction="#HelpMenuItem_Cum_Program" text="Cum sa donez sange?" />
+                        <MenuItem fx:id="HelpMenuItem_Unde" mnemonicParsing="false" onAction="#HelpMenuItem_Unde_Program" text="Unde donez sange?" />
+                        <MenuItem fx:id="HelpMenuItem_Cine" mnemonicParsing="false" onAction="#HelpMenuItem_Cine_Program" text="Cine poate dona?" />
+                        <MenuItem fx:id="HelpMenuItem_Conditii" mnemonicParsing="false" onAction="#HelpMenuItem_Conditii_Program" text="Conditii de admisibilitate" />
+                        <MenuItem fx:id="HelpMenuItem_Sfaturi" mnemonicParsing="false" onAction="#HelpMenuItem_Sfaturi_Program" text="Sfaturi utile" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</AnchorPane>
