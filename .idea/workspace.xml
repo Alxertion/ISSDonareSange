@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="Resursele">
+    <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/FXMLHelp/Cine.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/FXMLHelp/Conditii.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/FXMLHelp/Cum.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/FXMLHelp/DeCe.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/FXMLHelp/HelpDonator.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/FXMLHelp/Sfaturi.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -438,6 +444,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Alex\Facultate\Semestrul 4\ISS\GitKrakenISS\ISSDonareSange\src\main\resources\FXMLHelp" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Alex\Facultate\Semestrul 4\ISS\GitKrakenISS\ISSDonareSange\src\main\resources\FXMLMedic" />
       <recent name="D:\Alex\Facultate\Semestrul 4\ISS\GitKrakenISS\ISSDonareSange\ISS-Resurse\ScenariiDeUtilizare" />
@@ -681,7 +690,7 @@
       <workItem from="1522323466951" duration="3919000" />
       <workItem from="1522519308331" duration="1414000" />
       <workItem from="1522756812329" duration="94000" />
-      <workItem from="1522756986099" duration="632000" />
+      <workItem from="1522756986099" duration="1309000" />
     </task>
     <task id="LOCAL-00001" summary="Base Project">
       <created>1522323596276</created>
@@ -753,11 +762,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522757160062</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Resursele">
+      <created>1522757630321</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1522757630321</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6160000" />
+    <option name="totallyTimeSpent" value="6837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -990,6 +1006,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXMLHelp/Cine.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXMLHelp/HelpDonator.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXMLHelp/Sfaturi.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXMLHelp/DeCe.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXMLHelp/Conditii.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/FXMLHelp/Cum.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

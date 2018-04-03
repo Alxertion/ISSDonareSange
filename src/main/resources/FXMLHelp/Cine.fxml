@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Pentru a deveni donator de sange trebuie sa indepliniti următoarele condiţii:&#10;&#10;&#10;- vârsta cuprinsă în intervalul 18-60 ani &#10;- greutate peste 50Kg &#10;- puls regulat, 60 -100 bătăi/minut.&#10;- tensiune arterială sistolică între 100 şi 180 mmHg &#10;- să nu fi suferit în ultimele 6 luni intervenţii chirurgicale &#10;- femeile să nu fie: însărcinate, în perioada de lăuzie, în perioada menstruală &#10;- să nu fi consumat grăsimi sau băuturi alcoolice cu cel puţin 48 de ore înaintea donării &#10;- să nu fii sub tratament pentru diferite afectiuni: hipertensiune,boli de inima,boli renale,&#10;  boli psihice,boli hepatice,boli endocrine&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <Separator prefHeight="52.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    </children>
+</AnchorPane>
