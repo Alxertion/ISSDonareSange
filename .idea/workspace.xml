@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Diagrams/CommunicationDiagram_Medic_1.mdj" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Diagrams/CommunicationDiagram_Medic_2.mdj" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Diagrams/SequenceDiagram_Personal_1.mdj" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Diagrams/SequenceDiagram_Personal_2.mdj" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -545,6 +549,12 @@
               <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="ISS-Resurse" type="462c0819:PsiDirectoryNode" />
+              <item name="Diagrams" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISS-Resurse" type="462c0819:PsiDirectoryNode" />
               <item name="ScenariiDeUtilizare" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -635,16 +645,16 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\MPP\ISS\ISSDonareSange\src\main\resources\FXMLPersonalTransfuzii" />
-      <recent name="G:\Faculta\Projects\ISSDonareSange\src\main\resources\FXMLCont" />
-      <recent name="G:\Faculta\Projects\ISSDonareSange\src\main\resources\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\MPP\ISS\ISSDonareSange\src\main\resources\FXMLPersonalTransfuzii" />
       <recent name="G:\Faculta\Projects\ISSDonareSange\src\main\resources\images" />
       <recent name="D:\Alex\Facultate\Semestrul 4\ISS\GitKrakenISS\ISSDonareSange\ISS-Resurse\ScenariiDeUtilizare" />
       <recent name="D:\Alex\Facultate\Semestrul 4\ISS\GitKrakenISS\ISSDonareSange\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MPP\ISS\ISSDonareSange\src\main\resources\FXMLPersonalTransfuzii" />
+      <recent name="G:\Faculta\Projects\ISSDonareSange\src\main\resources\FXMLCont" />
+      <recent name="G:\Faculta\Projects\ISSDonareSange\src\main\resources\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -825,7 +835,7 @@
       <workItem from="1522618332216" duration="1643000" />
       <workItem from="1522693062958" duration="120000" />
       <workItem from="1524137229113" duration="790000" />
-      <workItem from="1524146967902" duration="1538000" />
+      <workItem from="1524146967902" duration="1621000" />
     </task>
     <task id="LOCAL-00001" summary="Base Project">
       <created>1522323596276</created>
@@ -932,15 +942,21 @@
       <option name="project" value="LOCAL" />
       <updated>1524137980378</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="PauL::: Bo$$u">
+      <created>1524151133216</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1524151133216</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24249000" />
+    <option name="totallyTimeSpent" value="24332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711306" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
@@ -962,7 +978,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25134265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25134265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1584318" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
@@ -995,7 +1011,8 @@
     <MESSAGE value="Donator - Added Images" />
     <MESSAGE value="Paul::: Login &amp; Personal Transfuzie" />
     <MESSAGE value="Paul::: GridPane for Login &amp; Personal Transfuzie" />
-    <option name="LAST_COMMIT_MESSAGE" value="Paul::: GridPane for Login &amp; Personal Transfuzie" />
+    <MESSAGE value="PauL::: Bo$$u" />
+    <option name="LAST_COMMIT_MESSAGE" value="PauL::: Bo$$u" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
