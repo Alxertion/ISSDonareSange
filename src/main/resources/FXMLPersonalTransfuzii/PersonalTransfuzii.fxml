@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.effect.InnerShadow?>
 
-<TabPane fx:id="tabPanePersonal"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="799.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllersPersonalTransfuzii.PersonalTransfuziiController">
+<TabPane fx:id="tabPanePersonal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="799.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllersPersonalTransfuzii.PersonalTransfuziiController">
   <tabs>
       <Tab text="ManagementDonatori">
         <content>
@@ -106,7 +107,7 @@
          <content>
             <AnchorPane prefHeight="445.0" prefWidth="835.0">
                <children>
-                  <TableView layoutX="14.0" layoutY="27.0" prefHeight="372.0" prefWidth="485.0">
+                  <TableView layoutX="14.0" layoutY="27.0" prefHeight="372.0" prefWidth="481.0">
                      <columns>
                         <TableColumn prefWidth="75.0" text="Cod" />
                         <TableColumn prefWidth="75.0" text="Tip" />
@@ -116,19 +117,63 @@
                         <TableColumn prefWidth="74.0" text="Pacient" />
                      </columns>
                   </TableView>
-                  <Button layoutX="730.0" layoutY="333.0" mnemonicParsing="false" text="Add" />
-                  <TextField layoutX="626.0" layoutY="91.0" prefHeight="31.0" prefWidth="152.0" />
-                  <ComboBox layoutX="627.0" layoutY="132.0" prefWidth="150.0" />
-                  <ComboBox layoutX="627.0" layoutY="173.0" prefWidth="150.0" />
-                  <ComboBox layoutX="627.0" layoutY="213.0" prefWidth="150.0" />
-                  <ComboBox layoutX="627.0" layoutY="251.0" prefWidth="150.0" />
-                  <Label layoutX="588.0" layoutY="96.0" text="cod" />
-                  <Label layoutX="598.0" layoutY="137.0" text="tip" />
-                  <Label layoutX="517.0" layoutY="178.0" text="grupa sanguina" />
-                  <Label layoutX="600.0" layoutY="218.0" text="rh" />
-                  <Label layoutX="569.0" layoutY="256.0" text="urgenta" />
-                  <TextField layoutX="626.0" layoutY="295.0" prefHeight="31.0" prefWidth="152.0" />
-                  <Label layoutX="538.0" layoutY="300.0" text="cod pacient" />
+                  <GridPane layoutX="495.0" layoutY="81.0" prefHeight="286.0" prefWidth="292.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="108.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="166.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField prefHeight="31.0" prefWidth="247.0" GridPane.columnIndex="1" />
+                        <Label text="cod">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox prefHeight="31.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="tip" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox prefHeight="31.0" prefWidth="199.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="grupa sanguina" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox prefHeight="31.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="rh" GridPane.rowIndex="3">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox prefHeight="31.0" prefWidth="183.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="urgenta" GridPane.rowIndex="4">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="cod pacient" GridPane.rowIndex="5">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <TextField prefHeight="31.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" text="Add" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                     </children>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </GridPane>
                </children>
             </AnchorPane>
          </content>
