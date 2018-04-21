@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="500.0" maxWidth="680.0" minHeight="500.0" minWidth="680.0" prefHeight="500.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientPersonalTransfuzii.gui.ControllersDonator.ConditiiDonareController">
+   <children>
+      <TextArea fx:id="conditiiDonareTextArea" editable="false" prefHeight="327.0" prefWidth="679.0" stylesheets="@../../../../ISSClientMainResources/src/main/resources/CSS/ConditiiDonareSange.css" text="Pentru a deveni donator de sânge trebuie să îndepliniți următoarele condiţii: &#10;&#10;• vârsta cuprinsă în intervalul 18-60 ani  &#10;• greutate peste 50Kg  &#10;• puls regulat, 60 -100 bătăi/minut. &#10;• tensiune arterială sistolică între 100 şi 180 mmHg  &#10;• să nu fi suferit în ultimele 6 luni intervenţii chirurgicale  &#10;• femeile să nu fie: însărcinate, în perioada de lăuzie, în perioada menstruală  &#10;• să nu fi consumat grăsimi sau băuturi alcoolice cu cel puţin 48 de ore înaintea donării  &#10;• să nu fii sub tratament pentru diferite afecțiuni: hipertensiune, boli de inima, &#10;  boli renale, boli psihice, boli hepatice, boli endocrine&#10;• să nu aibă sau să fi avut următoarele boli: hepatită (de orice tip), TBC, sifilis, malarie, epilepsie si&#10;alte boli neurologice, boli psihice, bruceloză, ulcer, diabet zaharat, boli de inimă, boli de piele &#10;(psoriazis, vitiligo), miopie forte peste (-) 6 dioptrii, cancer&#10;">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TextArea>
+      <Button fx:id="backButton" layoutY="350.0" mnemonicParsing="false" onAction="#backButtonPressed" />
+      <CheckBox layoutX="170.0" layoutY="327.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" />
+      <Label layoutX="195.0" layoutY="325.0" prefHeight="74.0" prefWidth="364.0" text="Declar pe proprie răspundere că am citit și că îndeplinesc condițiile de mai sus" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="forwardButton" layoutX="595.0" layoutY="350.0" mnemonicParsing="false" onAction="#forwardButtonPressed" />
+   </children>
+</AnchorPane>

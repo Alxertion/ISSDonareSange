@@ -2,8 +2,28 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="ISSClientAdministrator_main" target="1.8" />
+      <module name="ISSClientAdministrator_test" target="1.8" />
+      <module name="ISSClientDonator_main" target="1.8" />
+      <module name="ISSClientDonator_test" target="1.8" />
+      <module name="ISSClientMainResources_main" target="1.8" />
+      <module name="ISSClientMainResources_test" target="1.8" />
+      <module name="ISSClientMedic_main" target="1.8" />
+      <module name="ISSClientMedic_test" target="1.8" />
+      <module name="ISSClientPersonalTransfuzii_main" target="1.8" />
+      <module name="ISSClientPersonalTransfuzii_test" target="1.8" />
       <module name="ISSDonareSange_main" target="1.8" />
       <module name="ISSDonareSange_test" target="1.8" />
+      <module name="ISSModelAdministrare_main" target="1.8" />
+      <module name="ISSModelAdministrare_test" target="1.8" />
+      <module name="ISSModelDonator_main" target="1.8" />
+      <module name="ISSModelDonator_test" target="1.8" />
+      <module name="ISSPersistenta_main" target="1.8" />
+      <module name="ISSPersistenta_test" target="1.8" />
+      <module name="ISSServer_main" target="1.8" />
+      <module name="ISSServer_test" target="1.8" />
+      <module name="ISSServices_main" target="1.8" />
+      <module name="ISSServices_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
