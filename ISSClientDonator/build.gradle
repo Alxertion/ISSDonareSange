@@ -1,0 +1,20 @@
+group 'ISSDonareSange'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+mainClassName='clientDonator.StartClient'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project (':ISSModelDonator')
+    compile project (':ISSServices')
+    compile project (':ISSClientMainResources')
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

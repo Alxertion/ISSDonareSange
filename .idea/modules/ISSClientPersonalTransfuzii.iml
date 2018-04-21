@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":ISSClientPersonalTransfuzii" external.linked.project.path="$MODULE_DIR$/../../ISSClientPersonalTransfuzii" external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="ISSDonareSange" external.system.module.version="1.0" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../ISSClientPersonalTransfuzii">
+      <excludeFolder url="file://$MODULE_DIR$/../../ISSClientPersonalTransfuzii/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ISSClientPersonalTransfuzii/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../ISSClientPersonalTransfuzii/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

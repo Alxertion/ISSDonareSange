@@ -1,2 +1,12 @@
 rootProject.name = 'ISSDonareSange'
+include 'ISSModelDonator'
+include 'ISSModelAdministrare'
+include 'ISSPersistenta'
+include 'ISSServer'
+include 'ISSClientAdministrator'
+include 'ISSClientDonator'
+include 'ISSClientPersonalTransfuzii'
+include 'ISSClientMedic'
+include 'ISSServices'
+include 'ISSClientMainResources'
 
