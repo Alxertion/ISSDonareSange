@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="615.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
     <Tab text="Medici">
       <content>
@@ -97,11 +97,11 @@
                      </columns>
                   </TableView>
                   <Label layoutX="300.0" layoutY="40.0" text="Creare cont personal transfuzii" />
-                  <Button fx:id="adaugareContPersonalButton" layoutX="483.0" layoutY="232.0" mnemonicParsing="false" text="Adăugare cont" />
+                  <Button fx:id="adaugareContPersonalButton" layoutX="457.0" layoutY="234.0" mnemonicParsing="false" text="Adăugare cont" />
                   <Label layoutX="26.0" layoutY="266.0" text="Ștergere cont selectat tabel" />
                   <Label layoutX="26.0" layoutY="283.0" text="Această acțiune nu poate fi inversată. Să vă asigurați că într-adevăr asta e ceea ce doriți." />
                   <Button fx:id="stergereContPersonalButton" layoutX="23.0" layoutY="310.0" mnemonicParsing="false" text="Ștergere" />
-                  <Button fx:id="logOut2AdministratorButton" layoutX="516.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Log out" />
+                  <Button fx:id="logOut2AdministratorButton" layoutX="513.0" layoutY="310.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Log out" />
                </children></AnchorPane>
       </content>
     </Tab>
