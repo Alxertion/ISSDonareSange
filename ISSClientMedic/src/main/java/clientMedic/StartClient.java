@@ -40,8 +40,8 @@ public class StartClient extends Application {
         loader = factory.getBean(Loader.class);
 
         stageManager = factory.getBean(StageManager.class, primaryStage, service);
-
         displayInitialScene();
+        System.out.println("merge");
 
     }
 
