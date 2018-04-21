@@ -1,5 +1,6 @@
-package JavaResources;
+package gui;
 
+import JavaResources.Controller;
 import JavaResources.Service.Service;
 import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
@@ -10,63 +11,26 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 
-
-public class FormularDonator implements Controller {
-
-    @FXML
-    private TextField numeTextField;
-
-    @FXML
-    private TextField prenumeTextField;
-
-    @FXML
-    private DatePicker dataNasteriiDatePicker;
-
-    @FXML
-    private TextField cnpTextField;
-
-    @FXML
-    private TextField domiciliuCITextField;
-
-    @FXML
-    private ComboBox localitateCIComboBox;
-
-    @FXML
-    private TextField resedintaTextField;
-
-    @FXML
-    private ComboBox localitateResedintaTextField;
-
-    @FXML
-    private TextField emailTextField;
-
-    @FXML
-    private TextField telefonTextField;
-
-    @FXML
-    private TextField numePacientTextField;
-
-    @FXML
-    private TextField prenumePacientTextField;
-
-    @FXML
-    private Button backButton;
-
-    @FXML
-    private Button forwardButton;
+public class ConditiiDonareController implements Controller {
 
     private StageManager stageManager;
     private Service service;
     private Loader loader;
 
+    @FXML
+    private Button forwardButton;
+
+    @FXML
+    private TextArea conditiiDonareTextArea;
+
+    @FXML
+    private Button backButton;
 
     @Override
     public void initialize(StageManager stageManager, Service service, Loader loader) {
@@ -104,11 +68,26 @@ public class FormularDonator implements Controller {
 
         try {
             FXMLLoader loaderFXML = new FXMLLoader();
-            loaderFXML.setLocation(getClass().getResource(FXMLEnum.ConditiiDonare.getFxmlFile()));
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowDonator.getFxmlFile()));
             Parent rootNode = loaderFXML.load();
-            stageManager.switchScene(FXMLEnum.ConditiiDonare, rootNode, loaderFXML.getController(), loader);
+            stageManager.switchScene(FXMLEnum.MainWindowDonator, rootNode, loaderFXML.getController(), loader);
         }catch (IOException e){
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void forwardButtonPressed(ActionEvent event) {
+
+        try {
+            FXMLLoader loaderFXML = new FXMLLoader();
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.FormularDonator.getFxmlFile()));
+            Parent rootNode = loaderFXML.load();
+            stageManager.switchScene(FXMLEnum.FormularDonator, rootNode, loaderFXML.getController(), loader);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+
 }

@@ -16,6 +16,8 @@ dependencies {
     compile project (':ISSModelAdministrare')
     compile project (':ISSModelDonator')
     compile project (':ISSServices')
+    compile project (':ISSClientMainResources')
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
 }

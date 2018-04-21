@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="225.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PersonalTransfuziiController">
+<AnchorPane prefHeight="225.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientPersonalTransfuzii.gui.PersonalTransfuziiController">
    <children>
       <GridPane layoutX="32.0" layoutY="154.0" prefHeight="53.0" prefWidth="267.0">
          <columnConstraints>

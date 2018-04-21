@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.effect.InnerShadow?>
 
-<TabPane fx:id="tabPanePersonal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="799.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PersonalTransfuziiController">
+<TabPane fx:id="tabPanePersonal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="799.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaResources.PersonalTransfuziiController">
   <tabs>
       <Tab text="ManagementDonatori">
         <content>
@@ -69,7 +69,7 @@
       <content>
           <AnchorPane prefHeight="429.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
               <children>
-                  <TextArea fx:id="conditiiDonareTextArea" editable="false" prefHeight="258.0" prefWidth="799.0" stylesheets="@../../../../ISSClientMainResources/src/main/resources/CSS/ConditiiDonareSange.css" text="Pentru a deveni donator de sânge trebuie să îndepliniți următoarele condiţii: &#10;&#10;• vârsta cuprinsă în intervalul 18-60 ani  &#10;• greutate peste 50Kg  &#10;• puls regulat, 60 -100 bătăi/minut. &#10;• tensiune arterială sistolică între 100 şi 180 mmHg  &#10;• să nu fi suferit în ultimele 6 luni intervenţii chirurgicale  &#10;• femeile să nu fie: însărcinate, în perioada de lăuzie, în perioada menstruală  &#10;• să nu fi consumat grăsimi sau băuturi alcoolice cu cel puţin 48 de ore înaintea donării  &#10;• să nu fii sub tratament pentru diferite afecțiuni: hipertensiune, boli de inima, &#10;  boli renale, boli psihice, boli hepatice, boli endocrine ">
+                  <TextArea fx:id="conditiiDonareTextArea" editable="false" prefHeight="258.0" prefWidth="799.0" stylesheets="@../../../../../ISSClientMainResources/src/main/resources/CSS/ConditiiDonareSange.css" text="Pentru a deveni donator de sânge trebuie să îndepliniți următoarele condiţii: &#10;&#10;• vârsta cuprinsă în intervalul 18-60 ani  &#10;• greutate peste 50Kg  &#10;• puls regulat, 60 -100 bătăi/minut. &#10;• tensiune arterială sistolică între 100 şi 180 mmHg  &#10;• să nu fi suferit în ultimele 6 luni intervenţii chirurgicale  &#10;• femeile să nu fie: însărcinate, în perioada de lăuzie, în perioada menstruală  &#10;• să nu fi consumat grăsimi sau băuturi alcoolice cu cel puţin 48 de ore înaintea donării  &#10;• să nu fii sub tratament pentru diferite afecțiuni: hipertensiune, boli de inima, &#10;  boli renale, boli psihice, boli hepatice, boli endocrine ">
                       <font>
                           <Font size="15.0" />
                       </font>
