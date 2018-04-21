@@ -48,9 +48,9 @@ public class StartClient extends Application {
     private void displayInitialScene(){
         try{
             FXMLLoader loaderFXML = new FXMLLoader();
-            loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowAdministrator.getFxmlFile()));
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.LoginWindow.getFxmlFile()));
             Parent rootNode = loaderFXML.load();
-            stageManager.switchScene(FXMLEnum.MainWindowAdministrator, rootNode, loaderFXML.getController(), loader);
+            stageManager.switchScene(FXMLEnum.LoginWindow, rootNode, loaderFXML.getController(), loader);
         }catch (IOException e){
             e.printStackTrace();
         }
