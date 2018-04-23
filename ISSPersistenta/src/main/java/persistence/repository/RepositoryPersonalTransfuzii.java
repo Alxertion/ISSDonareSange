@@ -50,7 +50,7 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
     /**
      * @return
      */
-    public Iterable<PreparatSanguin> getAll() {
+    public Iterable<PersonalTransfuzii> getAll() {
         // TODO implement here
         return null;
     }

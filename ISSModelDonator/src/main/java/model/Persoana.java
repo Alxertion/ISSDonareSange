@@ -38,28 +38,27 @@ public class Persoana {
         // TODO implement here
     }
 
-    /**
-     * @return
-     */
     public String getNume() {
-        // TODO implement here
-        return "";
+        return nume;
     }
 
-    /**
-     * @return
-     */
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
+
     public String getPrenume() {
-        // TODO implement here
-        return "";
+        return prenume;
     }
 
-    /**
-     * @return
-     */
+    public void setPrenume(String prenume) {
+        this.prenume = prenume;
+    }
+
     public Cont getCont() {
-        // TODO implement here
-        return null;
+        return cont;
     }
 
+    public void setCont(Cont cont) {
+        this.cont = cont;
+    }
 }

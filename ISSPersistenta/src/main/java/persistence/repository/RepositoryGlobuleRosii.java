@@ -50,7 +50,7 @@ public class RepositoryGlobuleRosii implements IRepositoryGlobuleRosii {
     /**
      * @return
      */
-    public Iterable<PreparatSanguin> getAll() {
+    public Iterable<GlobuleRosii> getAll() {
         // TODO implement here
         return null;
     }

@@ -52,7 +52,7 @@ public class RepositoryDonatori implements IRepositoryDonatori {
     /**
      * @return
      */
-    public Iterable<PreparatSanguin> getAll() {
+    public Iterable<Donator> getAll() {
         // TODO implement here
         return null;
     }

@@ -32,6 +32,6 @@ public interface CRUDRepository<ID, E> {
     /**
      * @return
      */
-    public Iterable<PreparatSanguin> getAll();
+    public Iterable<E> getAll();
 
 }

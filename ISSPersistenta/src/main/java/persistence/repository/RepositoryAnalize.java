@@ -50,7 +50,7 @@ public class RepositoryAnalize implements IRepositoryAnalize {
     /**
      * @return
      */
-    public Iterable<PreparatSanguin> getAll() {
+    public Iterable<Analiza> getAll() {
         // TODO implement here
         return null;
     }

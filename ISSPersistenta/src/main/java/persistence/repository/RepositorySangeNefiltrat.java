@@ -52,7 +52,7 @@ public class RepositorySangeNefiltrat implements IRepositorySangeNefiltrat {
     /**
      * @return
      */
-    public Iterable<PreparatSanguin> getAll() {
+    public Iterable<SangeNefiltrat> getAll() {
         // TODO implement here
         return null;
     }

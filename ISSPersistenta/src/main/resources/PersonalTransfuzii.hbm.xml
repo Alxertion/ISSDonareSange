@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "model.PersonalTransfuzii" table = "personaltransfuzii">
+
+        <meta attribute = "class-description">
+            This class contains the personal transfuzii detail and one to one ralation with cont.
+        </meta>
+
+        <id name = "idPersonalTransfuzii" type = "int" column = "idPersonalTransfuzii">
+            <generator class="native"/>
+        </id>
+
+        <property name = "nume" column = "nume" type = "string"/>
+        <property name = "prenume" column = "prenume" type = "string"/>
+        <many-to-one name = "cont" column = "username" unique="true"
+                     class="model.Cont" not-null="true"/>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,21 +1,31 @@
 package model;
 
-/**
- * 
- */
-public enum Boala {
-    HEPATITA,
-    TBC,
-    SIFILIS,
-    MALARIE,
-    EPILEPSIE,
-    BOLI_PSIHICE,
-    BRUCELOZA,
-    ULCER,
-    DIABET_ZAHARAT,
-    BOLI_DE_INIMA,
-    PSORIAZIS,
-    VITILIGO,
-    MIOPIE_FORTE,
-    CANCER
+public class Boala {
+
+    private int idBoala;
+    private String nume;
+
+    public Boala(){
+
+    }
+
+    public Boala(String nume){
+        this.nume = nume;
+    }
+
+    public int getIdBoala() {
+        return idBoala;
+    }
+
+    public void setIdBoala(int idBoala) {
+        this.idBoala = idBoala;
+    }
+
+    public String getNume() {
+        return nume;
+    }
+
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
 }

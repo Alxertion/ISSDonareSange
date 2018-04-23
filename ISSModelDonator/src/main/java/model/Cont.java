@@ -14,37 +14,38 @@ public class Cont implements Serializable {
     public Cont() {
     }
 
-    /**
-     * 
-     */
     private String username;
 
     /**
      * 
      */
-    private String parola;
-
+    private String password;
 
 
     /**
      * @param username
      */
-    public Cont(String username,String parola) {
+    public Cont(String username,String password) {
         this.username=username;
-        this.parola=parola;
+        this.password=password;
     }
 
     /**
      * @return
      */
     public String getUsername() {
-        // TODO implement here
         return username;
     }
 
-    public String getParola(){
-        return parola;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

@@ -50,7 +50,7 @@ public class RepositoryPlasma implements IRepositoryPlasma {
     /**
      * @return
      */
-    public Iterable<PreparatSanguin> getAll() {
+    public Iterable<Plasma> getAll() {
         // TODO implement here
         return null;
     }

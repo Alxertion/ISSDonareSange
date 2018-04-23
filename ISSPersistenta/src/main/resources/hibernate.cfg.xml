@@ -9,7 +9,7 @@
         <property name="format_sql">true</property>
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/test</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/issdonaresange</property>
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
@@ -24,9 +24,12 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-        <!--<mapping resource="hello/Message.hbm.xml"/>-->
+        <mapping resource="Donator.hbm.xml"/>
+        <mapping resource="Cont.hbm.xml"/>
+        <mapping resource="Analiza.hbm.xml"/>
+        <mapping resource="Boala.hbm.xml"/>
+        <mapping resource="PersonalTransfuzii.hbm.xml"/>
 
-        <!--<mapping resource="event/hbm/Event.hbm.xml"/>-->
-        <!--<mapping class="event.annotations.EventAnnot"/>-->
+
     </session-factory>
 </hibernate-configuration>

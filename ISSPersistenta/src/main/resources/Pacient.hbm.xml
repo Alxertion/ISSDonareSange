@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <meta attribute = "class-description">
+        This class contains the pacient detail, one to many relation with spital and one to many relation with cerere.
+    </meta>
+
+    <class name="model.Pacient" table="pacient">
+        <id name="idPacient" column="idPacient" type="int">
+        </id>
+
+        <property name = "cnp" column = "cnp" type = "string"/>
+        <property name = "nume" column = "nume" type = "string"/>
+        <property name = "prenume" column = "prenume" type = "string"/>
+
+        <bag name = "cereri" cascade="all" >
+            <key column = "idPacient"/>
+            <one-to-many class="model.Cerere"/>
+        </bag>
+
+    </class>
+</hibernate-mapping>

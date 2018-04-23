@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <meta attribute = "class-description">
+        This class contains the analiza detail and many to many relation with boli.
+    </meta>
+
+
+    <class name="model.Analiza" table="Analiza">
+        <id name="idAnaliza" column="idAnaliza" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="grupa" column="grupa" type="string"/>
+        <property name="RH" column="rh" type="boolean"/>
+
+        <bag name = "boli" cascade="all" table="BoliAnaliza">
+            <key column = "idAnaliza"/>
+            <many-to-many column = "idBoala" class="model.Boala"/>
+        </bag>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "model.Spital" table = "spital">
+
+        <meta attribute = "class-description">
+            This class contains the spital detail, one to many ralation with medic and one to many relation with pacienti.
+        </meta>
+
+        <id name = "idSpital" type = "int" column = "idSpital">
+            <generator class="native"/>
+        </id>
+
+        <property name = "nume" column = "nume" type = "string"/>
+        <property name = "longitudine" column = "longitudine" type = "double"/>
+        <property name = "latitudine" column = "latitudine" type = "double"/>
+
+        <bag name = "medici" cascade="all" >
+            <key column = "idSpital"/>
+            <one-to-many class="model.Medic"/>
+        </bag>
+
+        <bag name = "pacienti" cascade="all" >
+            <key column = "idSpital"/>
+            <one-to-many class="model.Pacient"/>
+        </bag>
+
+    </class>
+
+</hibernate-mapping>

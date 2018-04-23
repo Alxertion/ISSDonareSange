@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <meta attribute = "class-description">
+        This class contains the cerere detail.
+    </meta>
+
+    <class name="model.Cerere" table="cerere">
+        <id name="idCerere" column="idCerere" type="string">
+        </id>
+
+        <property name="prioritate" column="prioritate" type="int"/>
+        <property name="grupa" column="grupa" type="string"/>
+        <property name="RH" column="rh" type="boolean"/>
+        <property name="cantitateCeruta" column="cantitateCeruta" type="double"/>
+        <property name="cantitateActuala" column="cantitateActuala" type="double"/>
+        <property name="dataEfectuare" column="dataEfectuare" type="calendar_date"/>
+
+
+    </class>
+</hibernate-mapping>

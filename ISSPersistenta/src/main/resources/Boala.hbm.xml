@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <meta attribute = "class-description">
+        This class contains the boala detail.
+    </meta>
+
+
+    <class name="model.Boala" table="boala">
+        <id name="idBoala" column="idBoala" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="nume" column="nume" type="string"/>
+
+
+    </class>
+</hibernate-mapping>

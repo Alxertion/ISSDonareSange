@@ -7,6 +7,38 @@ import java.util.*;
  */
 public class Cerere {
 
+    private int idCerere;
+    /**
+     *
+     */
+    private Prioritate prioritate;
+
+    /**
+     *
+     */
+    private String grupa;
+
+    /**
+     *
+     */
+    private String RH;
+
+    /**
+     *
+     */
+    private Double cantitateCeruta;
+
+    /**
+     *
+     */
+    private Double cantitateActuala;
+
+    /**
+     *
+     */
+    private Date dataEfectuare;
+
+
     /**
      * Default constructor
      */
@@ -14,59 +46,13 @@ public class Cerere {
     }
 
     /**
-     * 
-     */
-    private Medic medic;
-
-    /**
-     * 
-     */
-    private Prioritate prioritate;
-
-    /**
-     * 
-     */
-    private String grupa;
-
-    /**
-     * 
-     */
-    private String RH;
-
-    /**
-     * 
-     */
-    private Double cantitateCeruta;
-
-    /**
-     * 
-     */
-    private Double cantitateActuala;
-
-    /**
-     * 
-     */
-    private Date dataEfectuare;
-
-    /**
-     * 
-     */
-    private Pacient pacient;
-
-
-
-
-
-    /**
-     * @param medic 
      * @param prioritate 
      * @param grupa 
      * @param RH 
      * @param cantitateCeruta 
-     * @param dataEfectuare 
-     * @param pacient
+     * @param dataEfectuare
      */
-    public void Cerere(Medic medic, Prioritate prioritate, String grupa, String RH, Double cantitateCeruta, Date dataEfectuare, Pacient pacient) {
+    public void Cerere(Prioritate prioritate, String grupa, String RH, Double cantitateCeruta, Date dataEfectuare) {
         // TODO implement here
     }
 
@@ -78,75 +64,59 @@ public class Cerere {
         return null;
     }
 
-    /**
-     * @return
-     */
     public Prioritate getPrioritate() {
-        // TODO implement here
-        return null;
+        return prioritate;
     }
 
-    /**
-     * @return
-     */
+    public void setPrioritate(Prioritate prioritate) {
+        this.prioritate = prioritate;
+    }
+
     public String getGrupa() {
-        // TODO implement here
-        return "";
+        return grupa;
     }
 
-    /**
-     * @return
-     */
+    public void setGrupa(String grupa) {
+        this.grupa = grupa;
+    }
+
     public String getRH() {
-        // TODO implement here
-        return "";
+        return RH;
     }
 
-    /**
-     * @return
-     */
+    public void setRH(String RH) {
+        this.RH = RH;
+    }
+
     public Double getCantitateCeruta() {
-        // TODO implement here
-        return null;
+        return cantitateCeruta;
     }
 
-    /**
-     * @return
-     */
+    public void setCantitateCeruta(Double cantitateCeruta) {
+        this.cantitateCeruta = cantitateCeruta;
+    }
+
     public Double getCantitateActuala() {
-        // TODO implement here
-        return null;
+        return cantitateActuala;
     }
 
-    /**
-     * @return
-     */
+    public void setCantitateActuala(Double cantitateActuala) {
+        this.cantitateActuala = cantitateActuala;
+    }
+
     public Date getDataEfectuare() {
-        // TODO implement here
-        return null;
+        return dataEfectuare;
     }
 
-    /**
-     * @param newCantitateActuala
-     */
-    public void setCantitateActuala(Double newCantitateActuala) {
-        // TODO implement here
+    public void setDataEfectuare(Date dataEfectuare) {
+        this.dataEfectuare = dataEfectuare;
     }
 
-    /**
-     * @return
-     */
-    public Medic getMedic() {
-        // TODO implement here
-        return null;
+    public int getIdCerere() {
+        return idCerere;
     }
 
-    /**
-     * @return
-     */
-    public Pacient getPacient() {
-        // TODO implement here
-        return null;
+    public void setIdCerere(int idCerere) {
+        this.idCerere = idCerere;
     }
-
 }

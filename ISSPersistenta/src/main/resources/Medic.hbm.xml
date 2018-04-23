@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <meta attribute = "class-description">
+        This class contains the medic detail, one to one relation with cont, many to many relation with pacient and one to many relation with cerere.
+    </meta>
+
+    <class name="model.Medic" table="medic">
+        <id name="idMedic" column="idMedic" type="int">
+        </id>
+
+        <property name = "nume" column = "nume" type = "string"/>
+        <property name = "prenume" column = "prenume" type = "string"/>
+
+        <many-to-one name = "cont" column = "username" unique="true"
+                     class="model.Cont" not-null="true"/>
+
+        <bag name = "cereri" cascade="all" >
+            <key column = "idMedic"/>
+            <one-to-many class="model.Cerere"/>
+        </bag>
+
+
+
+    </class>
+</hibernate-mapping>

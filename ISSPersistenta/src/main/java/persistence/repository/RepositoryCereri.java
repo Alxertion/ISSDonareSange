@@ -50,7 +50,7 @@ public class RepositoryCereri implements IRepositoryCereri {
     /**
      * @return
      */
-    public Iterable<PreparatSanguin> getAll() {
+    public Iterable<Cerere> getAll() {
         // TODO implement here
         return null;
     }

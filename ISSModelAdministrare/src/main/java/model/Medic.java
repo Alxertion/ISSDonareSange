@@ -7,6 +7,9 @@ import java.util.*;
  */
 public class Medic extends Persoana {
 
+    private int idMedic;
+    private List<Cerere> cereri;
+
     /**
      * Default constructor
      */
@@ -14,11 +17,8 @@ public class Medic extends Persoana {
     }
 
     /**
-     * 
+     *
      */
-    private Spital spital;
-
-
 
 
     /**
@@ -29,19 +29,19 @@ public class Medic extends Persoana {
         // TODO implement here
     }
 
-    /**
-     * @return
-     */
-    public Spital getSpital() {
-        // TODO implement here
-        return null;
+    public int getIdMedic() {
+        return idMedic;
     }
 
-    /**
-     * @param spital
-     */
-    public void setSpital(Spital spital) {
-        // TODO implement here
+    public void setIdMedic(int idMedic) {
+        this.idMedic = idMedic;
     }
 
+    public List<Cerere> getCereri() {
+        return cereri;
+    }
+
+    public void setCereri(List<Cerere> cereri) {
+        this.cereri = cereri;
+    }
 }

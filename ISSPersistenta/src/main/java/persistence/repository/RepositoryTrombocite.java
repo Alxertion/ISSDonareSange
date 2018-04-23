@@ -48,7 +48,7 @@ public class RepositoryTrombocite implements IRepositoryTrombocite {
     /**
      *
      */
-    public Iterable<PreparatSanguin> getAll() {
+    public Iterable<Trombocite> getAll() {
         // TODO implement here
         return null;
     }
