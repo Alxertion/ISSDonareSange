@@ -29,8 +29,9 @@ public class Cont implements Serializable {
     /**
      * @param username
      */
-    public Cont(String username) {
+    public Cont(String username,String parola) {
         this.username=username;
+        this.parola=parola;
     }
 
     /**
@@ -38,7 +39,12 @@ public class Cont implements Serializable {
      */
     public String getUsername() {
         // TODO implement here
-        return "";
+        return username;
     }
+
+    public String getParola(){
+        return parola;
+    }
+
 
 }

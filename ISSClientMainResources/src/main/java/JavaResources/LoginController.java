@@ -27,9 +27,9 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
     private Controller ctrl;
 
     @FXML
-    TextField  userField;
+    private TextField  usernameField;
     @FXML
-    PasswordField passField;
+    private PasswordField passField;
 
     public LoginController() throws RemoteException {
     }
@@ -55,8 +55,19 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
                 stageManager.switchScene(FXMLEnum.MainWindowDonator, rootNode, ctrl, loader);
+            }else if(stageManager.getTitle().equals("LoginAdministrator")){
+                loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowAdministrator.getFxmlFile()));
+                Parent rootNode = loaderFXML.load();
+                ctrl = loaderFXML.getController();
+                stageManager.switchScene(FXMLEnum.MainWindowAdministrator, rootNode, ctrl, loader);
             }
-            service.login(new Cont("bleg"),(IObserver) ctrl);
+            else if(stageManager.getTitle().equals("LoginMedic")){
+                loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowMedic.getFxmlFile()));
+                Parent rootNode = loaderFXML.load();
+                ctrl = loaderFXML.getController();
+                stageManager.switchScene(FXMLEnum.MainWindowMedic, rootNode, ctrl, loader);
+            }
+            service.login(new Cont(usernameField.getText(),passField.getText()),(IObserver) ctrl);
         }catch (IOException e){
             e.printStackTrace();
 

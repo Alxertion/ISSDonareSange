@@ -71,4 +71,8 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
               this.service=service;
     }
 
+    @Override
+    public void notifyClient() throws RemoteException {
+        System.out.println("Am fost notificat -> Personal");
+    }
 }
