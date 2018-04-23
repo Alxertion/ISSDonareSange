@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="repositoryAnalize" class="persistence.repository.RepositoryAnalize"/>
+    <bean id="repositoryCereri" class="persistence.repository.RepositoryCereri"/>
+    <bean id="repositoryDonatori" class="persistence.repository.RepositoryDonatori"/>
+    <bean id="repositoryGlobuleRosii" class="persistence.repository.RepositoryGlobuleRosii"/>
+    <bean id="repositoryMedici" class="persistence.repository.RepositoryMedici"/>
+    <bean id="repositoryPersonalTransfuzii" class="persistence.repository.RepositoryPersonalTransfuzii"/>
+    <bean id="repositoryPlasma" class="persistence.repository.RepositoryPlasma"/>
+    <bean id="repositorySangeNefiltrat" class="persistence.repository.RepositorySangeNefiltrat"/>
+    <bean id="repositoryTrombocite" class="persistence.repository.RepositoryTrombocite"/>
+
+    <bean id="services" class="server.ServerImpl">
+        <constructor-arg ref="repositoryAnalize"/>
+        <constructor-arg ref="repositoryCereri"/>
+        <constructor-arg ref="repositoryDonatori"/>
+        <constructor-arg ref="repositoryGlobuleRosii"/>
+        <constructor-arg ref="repositoryMedici"/>
+        <constructor-arg ref="repositoryPersonalTransfuzii"/>
+        <constructor-arg ref="repositoryPlasma"/>
+        <constructor-arg ref="repositorySangeNefiltrat"/>
+        <constructor-arg ref="repositoryTrombocite"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+
+        <property name="serviceName" value="ISS"/>
+        <property name="service" ref="services"/>
+        <property name="serviceInterface" value="services.IServices"/>
+        <property name="registryPort" value="1099"/>
+    </bean>
+
+</beans>

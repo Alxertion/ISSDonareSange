@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * 
  */
-public class Cont {
+public class Cont implements Serializable {
 
     /**
      * Default constructor
@@ -28,8 +29,8 @@ public class Cont {
     /**
      * @param username
      */
-    public void Cont(String username) {
-        // TODO implement here
+    public Cont(String username) {
+        this.username=username;
     }
 
     /**

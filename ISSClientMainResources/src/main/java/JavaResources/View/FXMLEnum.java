@@ -1,7 +1,7 @@
 package JavaResources.View;
 
 public enum FXMLEnum {
-    LoginWindow{
+    LoginWindowAdministrator{
       @Override
       public String getFxmlFile(){
           return "/FXMLCont/Login.fxml";
@@ -9,8 +9,41 @@ public enum FXMLEnum {
 
       @Override
         public String getTitle(){
-          return "Login";
+          return "LoginAdministrator";
       }
+    },
+    LoginWindowDonator{
+        @Override
+        public String getFxmlFile(){
+            return "/FXMLCont/Login.fxml";
+        }
+
+        @Override
+        public String getTitle(){
+            return "LoginDonator";
+        }
+    },
+    LoginWindowMedic{
+        @Override
+        public String getFxmlFile(){
+            return "/FXMLCont/Login.fxml";
+        }
+
+        @Override
+        public String getTitle(){
+            return "LoginMedic";
+        }
+    },
+    LoginWindowPersonalTransfuzii{
+        @Override
+        public String getFxmlFile(){
+            return "/FXMLCont/Login.fxml";
+        }
+
+        @Override
+        public String getTitle(){
+            return "LoginTransfuzii";
+        }
     },
     MainWindowAdministrator{
       @Override

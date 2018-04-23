@@ -5,20 +5,27 @@ import JavaResources.Service.Service;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import services.IServices;
 
 public class StageManager {
 
     private final Stage primaryStage;
-    private final Service service;
+    private final IServices service;
+    private String title;
 
 
-    public StageManager(Stage primaryStage, Service service) {
+    public StageManager(Stage primaryStage, IServices service) {
         this.primaryStage = primaryStage;
         this.service = service;
     }
 
+    public String getTitle(){
+        return title;
+    }
+
     public void switchScene(final FXMLEnum view, Parent rootNode, JavaResources.Controller controller, Loader loader) {
         controller.initialize(this, service, loader);
+        title=view.getTitle();
         Parent viewRootNodeHierarchy = rootNode;
         show(viewRootNodeHierarchy, view.getTitle());
     }

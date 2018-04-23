@@ -12,47 +12,49 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import services.IServices;
 
 import java.io.IOException;
 
-public class StartClient extends Application {
-
+public class StartClient extends Application{
     protected StageManager stageManager = null;
-    protected ApplicationContext factory = null;
+    protected ApplicationContext factoryWindow = null;
     protected Loader loader = null;
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Application.launch(args);
     }
 
     @Override
     public void init() throws Exception {
-        factory = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+        factoryWindow = new AnnotationConfigApplicationContext(SpringConfiguration.class);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        try {
+            primaryStage.setResizable(false);
+            loader = factoryWindow.getBean(Loader.class);
 
+            ApplicationContext factoryProxy = new ClassPathXmlApplicationContext("classpath:client-spring.xml");
+            IServices server=(IServices)factoryProxy.getBean("service");
+            System.out.println("Obtained a reference to remote server");
+            stageManager = factoryWindow.getBean(StageManager.class, primaryStage,server);
 
-        primaryStage.setResizable(false);
-        Service service = factory.getBean(Service.class);
-        loader = factory.getBean(Loader.class);
+            try{
+                FXMLLoader loaderFXML = new FXMLLoader();
+                loaderFXML.setLocation(getClass().getResource(FXMLEnum.LoginWindowAdministrator.getFxmlFile()));
+                Parent rootNode = loaderFXML.load();
+                stageManager.switchScene(FXMLEnum.LoginWindowAdministrator, rootNode, loaderFXML.getController(), loader);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
 
-        stageManager = factory.getBean(StageManager.class, primaryStage, service);
-
-        displayInitialScene();
-
-    }
-
-    private void displayInitialScene(){
-        try{
-            FXMLLoader loaderFXML = new FXMLLoader();
-            loaderFXML.setLocation(getClass().getResource(FXMLEnum.LoginWindow.getFxmlFile()));
-            Parent rootNode = loaderFXML.load();
-            stageManager.switchScene(FXMLEnum.LoginWindow, rootNode, loaderFXML.getController(), loader);
-        }catch (IOException e){
+        } catch (Exception e) {
+            System.err.println("ISS Initialization  exception:"+e);
             e.printStackTrace();
         }
     }
 }
+

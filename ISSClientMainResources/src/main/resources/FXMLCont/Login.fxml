@@ -31,11 +31,11 @@
                            <children>
                               <Label text="username" />
                               <Label text="password" GridPane.rowIndex="1" />
+                              <PasswordField fx:id="passField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField GridPane.columnIndex="1" />
-                              <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
-                        <Button layoutX="391.0" layoutY="228.0" mnemonicParsing="false" text="Log in" />
+                        <Button layoutX="391.0" layoutY="228.0" mnemonicParsing="false" onAction="#login" text="Log in" />
                      </children>
                   </AnchorPane>
             </content>

@@ -14,15 +14,24 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import services.IObserver;
+import services.IServices;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-public class PersonalTransfuziiController implements Controller {
+public class PersonalTransfuziiController extends UnicastRemoteObject implements  Controller, IObserver,Serializable {
     private StageManager stageManager;
-    private Service service;
+    private IServices service;
     private Loader loader;
     @FXML
     TabPane tabPanePersonal;
+
+    public PersonalTransfuziiController() throws RemoteException {
+
+    }
 
     @FXML
     public void notifyButtonPressed(ActionEvent actionEvent){
@@ -56,11 +65,10 @@ public class PersonalTransfuziiController implements Controller {
     }
 
     @Override
-    public void initialize(StageManager stageManager, Service service, Loader loader) {
-      this.stageManager=stageManager;
-      this.service=service;
-      this.loader=loader;
+    public void initialize(StageManager stageManager,IServices service, Loader loader) {
+              this.stageManager=stageManager;
+              this.loader=loader;
+              this.service=service;
     }
-
 
 }
