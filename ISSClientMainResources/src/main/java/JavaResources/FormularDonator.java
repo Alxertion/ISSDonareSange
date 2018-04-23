@@ -15,11 +15,15 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import services.IServices;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 
-public class FormularDonator implements Controller {
+public class FormularDonator extends UnicastRemoteObject implements Controller,Serializable {
 
     @FXML
     private TextField numeTextField;
@@ -64,12 +68,15 @@ public class FormularDonator implements Controller {
     private Button forwardButton;
 
     private StageManager stageManager;
-    private Service service;
+    private IServices service;
     private Loader loader;
+
+    public FormularDonator() throws RemoteException {
+    }
 
 
     @Override
-    public void initialize(StageManager stageManager, Service service, Loader loader) {
+    public void initialize(StageManager stageManager, IServices service, Loader loader) {
         this.stageManager = stageManager;
         this.service = service;
         this.loader = loader;
@@ -101,7 +108,6 @@ public class FormularDonator implements Controller {
 
     @FXML
     private void backButtonPressed(ActionEvent event) {
-
         try {
             FXMLLoader loaderFXML = new FXMLLoader();
             loaderFXML.setLocation(getClass().getResource(FXMLEnum.ConditiiDonare.getFxmlFile()));

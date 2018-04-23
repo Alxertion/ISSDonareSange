@@ -13,13 +13,18 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import services.IObserver;
+import services.IServices;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-public class MainWindowDonatorController implements Controller {
+public class MainWindowDonatorController extends UnicastRemoteObject implements Controller, IObserver,Serializable {
 
     private StageManager stageManager;
-    private Service service;
+    private IServices service;
     private Loader loader;
 
 
@@ -29,14 +34,16 @@ public class MainWindowDonatorController implements Controller {
     @FXML
     private Button backButton;
 
+    public MainWindowDonatorController() throws RemoteException {
+    }
+
     @Override
-    public void initialize(StageManager stageManager, Service service, Loader loader) {
+    public void initialize(StageManager stageManager, IServices service, Loader loader) {
         this.stageManager = stageManager;
         this.service = service;
         this.loader = loader;
 
         setImagesForButtons();
-
 
     }
 
@@ -73,5 +80,10 @@ public class MainWindowDonatorController implements Controller {
         }catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void notifyClient() throws RemoteException {
+        System.out.println("Am fost notificat -> Donator");
     }
 }

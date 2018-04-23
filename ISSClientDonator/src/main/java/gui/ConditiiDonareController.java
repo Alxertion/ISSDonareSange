@@ -14,13 +14,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import services.IServices;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-public class ConditiiDonareController implements Controller {
+public class ConditiiDonareController extends UnicastRemoteObject implements Controller,Serializable {
 
     private StageManager stageManager;
-    private Service service;
+    private IServices service;
     private Loader loader;
 
     @FXML
@@ -32,8 +36,11 @@ public class ConditiiDonareController implements Controller {
     @FXML
     private Button backButton;
 
+    public ConditiiDonareController() throws RemoteException {
+    }
+
     @Override
-    public void initialize(StageManager stageManager, Service service, Loader loader) {
+    public void initialize(StageManager stageManager, IServices service, Loader loader) {
         this.stageManager = stageManager;
         this.service = service;
         this.loader = loader;
