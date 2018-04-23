@@ -11,7 +11,6 @@ repositories {
 
 dependencies {
     compile project (':ISSModelAdministrare')
-    compile project (':ISSModelDonator')
 
     compile 'org.hibernate:hibernate-core:5.2.10.Final'
 
