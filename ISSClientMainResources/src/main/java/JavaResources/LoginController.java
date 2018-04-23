@@ -8,13 +8,14 @@ import JavaResources.View.StageManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import model.Cont;
 import services.IObserver;
 import services.IServices;
 import services.ServiceException;
 
-import java.awt.*;
 import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
@@ -27,7 +28,7 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
     private Controller ctrl;
 
     @FXML
-    private TextField  usernameField;
+    private TextField userField;
     @FXML
     private PasswordField passField;
 
@@ -49,31 +50,40 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
                 loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainViewPersonalTransfuzii.getFxmlFile()));
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
+                ctrl.initialize(stageManager,service,loader);
+                service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 stageManager.switchScene(FXMLEnum.MainViewPersonalTransfuzii, rootNode, ctrl, loader);
             }else if(stageManager.getTitle().equals("LoginDonator")){
                 loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowDonator.getFxmlFile()));
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
+                ctrl.initialize(stageManager,service,loader);
+                service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 stageManager.switchScene(FXMLEnum.MainWindowDonator, rootNode, ctrl, loader);
             }else if(stageManager.getTitle().equals("LoginAdministrator")){
                 loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowAdministrator.getFxmlFile()));
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
+                ctrl.initialize(stageManager,service,loader);
+                service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 stageManager.switchScene(FXMLEnum.MainWindowAdministrator, rootNode, ctrl, loader);
             }
             else if(stageManager.getTitle().equals("LoginMedic")){
                 loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowMedic.getFxmlFile()));
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
+                ctrl.initialize(stageManager,service,loader);
+                service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 stageManager.switchScene(FXMLEnum.MainWindowMedic, rootNode, ctrl, loader);
             }
-            service.login(new Cont(usernameField.getText(),passField.getText()),(IObserver) ctrl);
         }catch (IOException e){
             e.printStackTrace();
 
         }catch (ServiceException se){
-        //to do show messagebox;
-        System.out.println(se.getMessage());
+            Alert message = new Alert(Alert.AlertType.ERROR);
+            message.setTitle("Mesaj eroare");
+            message.setContentText(se.getMessage());
+            message.showAndWait();
         }
 
     }
