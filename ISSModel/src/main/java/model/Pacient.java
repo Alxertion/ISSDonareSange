@@ -10,6 +10,8 @@ public class Pacient {
 
     private List<Cerere> cereri;
 
+    private List<PreparatSanguin> preparateSanguine;
+
     private int idPacient;
     /**
      *
@@ -87,5 +89,13 @@ public class Pacient {
 
     public void setCereri(List<Cerere> cereri) {
         this.cereri = cereri;
+    }
+
+    public List<PreparatSanguin> getPreparateSanguine() {
+        return preparateSanguine;
+    }
+
+    public void setPreparateSanguine(List<PreparatSanguin> preparateSanguine) {
+        this.preparateSanguine = preparateSanguine;
     }
 }

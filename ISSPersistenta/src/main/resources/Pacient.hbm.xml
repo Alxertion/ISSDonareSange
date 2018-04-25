@@ -21,5 +21,10 @@
             <one-to-many class="model.Cerere"/>
         </bag>
 
+        <bag name = "preparateSanguine" cascade="all" >
+            <key column = "idPacient"/>
+            <one-to-many class="model.PreparatSanguin"/>
+        </bag>
+
     </class>
 </hibernate-mapping>

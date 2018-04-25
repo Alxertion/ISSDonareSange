@@ -5,7 +5,7 @@
 <hibernate-mapping>
 
     <meta attribute = "class-description">
-        This class contains the analiza detail and many to many relation with boli.
+        This class contains the analiza detail, many to many relation with boli, one to many relation with preparateSanguine, .
     </meta>
 
 
@@ -19,6 +19,11 @@
         <bag name = "boli" cascade="all" table="BoliAnaliza">
             <key column = "idAnaliza"/>
             <many-to-many column = "idBoala" class="model.Boala"/>
+        </bag>
+
+        <bag name = "preparateSanguine" cascade="all" >
+            <key column = "idAnaliza"/>
+            <one-to-many class="model.PreparatSanguin"/>
         </bag>
 
     </class>

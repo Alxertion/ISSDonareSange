@@ -29,6 +29,11 @@
         <mapping resource="Analiza.hbm.xml"/>
         <mapping resource="Boala.hbm.xml"/>
         <mapping resource="PersonalTransfuzii.hbm.xml"/>
+        <mapping resource="Cerere.hbm.xml"/>
+        <mapping resource="Medic.hbm.xml"/>
+        <mapping resource="Pacient.hbm.xml"/>
+        <mapping resource="PreparatSanguin.hbm.xml"/>
+        <mapping resource="Spital.hbm.xml"/>
 
 
     </session-factory>

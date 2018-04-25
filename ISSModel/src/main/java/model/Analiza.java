@@ -14,17 +14,18 @@ public class Analiza {
     private String grupa;
     private String RH;
     private List<Boala> boli;
+    private List<PreparatSanguin> preparateSanguine;
 
     public Analiza() {
     }
 
     /**
-     * @param grupa 
-     * @param RH 
-     * @param boli
+     * @param grupa
+     * @param RH
      */
-    public void Analiza(String grupa, String RH, List<Boala> boli) {
-        // TODO implement here
+    public Analiza(String grupa, String RH) {
+        this.grupa = grupa;
+        this.RH = RH;
     }
 
     /**
@@ -67,4 +68,16 @@ public class Analiza {
         this.boli = boli;
     }
 
+    public List<PreparatSanguin> getPreparateSanguine() {
+        return preparateSanguine;
+    }
+
+    public void setPreparateSanguine(List<PreparatSanguin> preparateSanguine) {
+        this.preparateSanguine = preparateSanguine;
+    }
+
+    public void setAllFields(Analiza analiza) {
+        this.grupa = analiza.getGrupa();
+        this.RH = analiza.getRH();
+    }
 }

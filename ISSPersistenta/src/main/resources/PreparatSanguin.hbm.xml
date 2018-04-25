@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <meta attribute = "class-description">
+        This class contains the preparat sanguin detail.
+    </meta>
+
+    <class name="model.PreparatSanguin" table="preparatsanguin">
+        <id name="idPreparatSanguin" column="idPreparatSanguin" type="int">
+        </id>
+
+        <property name = "tip" column = "tip" type = "string"/>
+        <property name = "dataPrelevare" column = "dataPrelevare" type = "calendar_date"/>
+        <property name = "dataExpirare" column = "dataExpirare" type = "calendar_date"/>
+        <property name = "cantitate" column = "cantitate" type = "double"/>
+        <property name = "stagiu" column = "stagiu" type = "string"/>
+
+
+    </class>
+</hibernate-mapping>

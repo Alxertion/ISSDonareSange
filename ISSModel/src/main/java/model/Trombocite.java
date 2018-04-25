@@ -5,20 +5,20 @@ import java.util.*;
 /**
  * 
  */
-public class Plasma extends PreparatSanguin {
+public class Trombocite extends PreparatSanguin {
 
     /**
      * Default constructor
      */
-    public Plasma() {
+    public Trombocite() {
     }
 
 
     /**
      * @param dataPrelevare 
-     * @param donator
+     * @param cantitate
      */
-    public void Plasma(Date dataPrelevare, Donator donator) {
+    public void Trombocite(Date dataPrelevare, Double cantitate) {
         // TODO implement here
     }
 

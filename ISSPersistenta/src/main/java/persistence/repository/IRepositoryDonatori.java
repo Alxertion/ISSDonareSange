@@ -7,6 +7,6 @@ import java.util.*;
 /**
  * 
  */
-public interface IRepositoryDonatori extends CRUDRepository<String, Donator> {
+public interface IRepositoryDonatori extends CRUDRepository<Integer, Donator> {
 
 }

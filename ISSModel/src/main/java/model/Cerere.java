@@ -46,15 +46,21 @@ public class Cerere {
     }
 
     /**
-     * @param prioritate 
-     * @param grupa 
-     * @param RH 
-     * @param cantitateCeruta 
+     * @param prioritate
+     * @param grupa
+     * @param RH
+     * @param cantitateCeruta
      * @param dataEfectuare
      */
-    public void Cerere(Prioritate prioritate, String grupa, String RH, Double cantitateCeruta, Date dataEfectuare) {
-        // TODO implement here
+    public Cerere(Prioritate prioritate, String grupa, String RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare) {
+        this.prioritate = prioritate;
+        this.grupa = grupa;
+        this.RH = RH;
+        this.cantitateCeruta = cantitateCeruta;
+        this.cantitateActuala = cantitateActuala;
+        this.dataEfectuare = dataEfectuare;
     }
+
 
     /**
      * @return
@@ -118,5 +124,14 @@ public class Cerere {
 
     public void setIdCerere(int idCerere) {
         this.idCerere = idCerere;
+    }
+
+    public void setAllFields(Cerere cerere) {
+        this.prioritate = cerere.getPrioritate();
+        this.grupa = cerere.getGrupa();
+        this.RH = cerere.getRH();
+        this.cantitateCeruta = cerere.getCantitateCeruta();
+        this.cantitateActuala = cerere.getCantitateActuala();
+        this.dataEfectuare = cerere.getDataEfectuare();
     }
 }

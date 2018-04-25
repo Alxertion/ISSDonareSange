@@ -7,8 +7,12 @@ public class Main {
 
     public static void main(String[] args){
 
-        IRepositoryConturi repoConturi = new RepositoryConturi();
-        repoConturi.adaugare(new Cont("root", "root"));
+        Seed seed = new Seed();
+
+        seed.seed();
+
+
+
         HibernateFactory.closeFactory();
     }
 }

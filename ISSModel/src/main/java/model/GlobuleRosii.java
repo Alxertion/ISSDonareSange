@@ -16,9 +16,9 @@ public class GlobuleRosii extends PreparatSanguin {
 
     /**
      * @param dataPrelevare 
-     * @param donator
+     * @param cantitate
      */
-    public void GlobuleRosii(Date dataPrelevare, Donator donator) {
+    public void GlobuleRosii(Date dataPrelevare, Double cantitate) {
         // TODO implement here
     }
 

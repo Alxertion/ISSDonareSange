@@ -18,9 +18,9 @@ public class SangeNefiltrat extends PreparatSanguin {
 
     /**
      * @param dataPrelevare 
-     * @param donator
+     * @param cantitate
      */
-    public void SangeNefiltrat(Date dataPrelevare, Donator donator) {
+    public void SangeNefiltrat(Date dataPrelevare, Double cantitate) {
         // TODO implement here
     }
 

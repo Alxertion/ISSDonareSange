@@ -81,6 +81,8 @@ public class Donator extends Persoana {
      */
     private List<Boala> boliAnterioare;
 
+    private List<PreparatSanguin> preparateSanguine;
+
 
 
     /**
@@ -88,7 +90,7 @@ public class Donator extends Persoana {
      * @param prenume
      */
     public void Donator(String nume, String prenume) {
-        // TODO implement here
+        super.Persoana(nume, prenume);
     }
 
 
@@ -211,4 +213,19 @@ public class Donator extends Persoana {
     public void setBoliAnterioare(List<Boala> boliAnterioare) {
         this.boliAnterioare = boliAnterioare;
     }
+
+    public List<PreparatSanguin> getPreparateSanguine() {
+        return preparateSanguine;
+    }
+
+    public void setPreparateSanguine(List<PreparatSanguin> preparateSanguine) {
+        this.preparateSanguine = preparateSanguine;
+    }
+
+    public void setAllFields(Donator donator) {
+        this.setNume(donator.getNume());
+        this.setPrenume(donator.getPrenume());
+    }
+
+
 }

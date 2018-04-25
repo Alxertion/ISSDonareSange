@@ -38,6 +38,11 @@
             <many-to-many column="idBoala" class="model.Boala"></many-to-many>
         </bag>
 
+        <bag name = "preparateSanguine" cascade="all" >
+            <key column = "idDonator"/>
+            <one-to-many class="model.PreparatSanguin"/>
+        </bag>
+
     </class>
 
 </hibernate-mapping>

@@ -47,4 +47,10 @@ public class Cont implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void setAllFields(Cont cont){
+        this.username = cont.getUsername();
+        this.password = cont.getPassword();
+    }
+
 }

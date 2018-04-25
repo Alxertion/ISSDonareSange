@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile project (':ISSModelAdministrare')
+    compile project (':ISSModel')
     compile project (':ISSPersistenta')
     compile project (':ISSServices')
 

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":ISSModelAdministrare" external.linked.project.path="$MODULE_DIR$/../../../ISSModelAdministrare" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ISSDonareSange" external.system.module.version="1.0" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":ISSModelAdministrare" external.linked.project.path="$MODULE_DIR$/../../../ISSModelAdministrare" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ISSDonareSange" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../ISSModelAdministrare">
       <excludeFolder url="file://$MODULE_DIR$/../../../ISSModelAdministrare/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../ISSModelAdministrare/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../ISSModelAdministrare/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
