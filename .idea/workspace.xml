@@ -2,77 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/PreparatSanguin.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__mysql_mysql_connector_java_5_1_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientAdministrator/ISSClientAdministrator_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientAdministrator/ISSClientAdministrator_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientAdministrator/ISSClientAdministrator_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientAdministrator/ISSClientAdministrator_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientDonator/ISSClientDonator_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientDonator/ISSClientDonator_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientDonator/ISSClientDonator_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientDonator/ISSClientDonator_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientMainResources/ISSClientMainResources_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientMainResources/ISSClientMainResources_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientMainResources/ISSClientMainResources_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientMainResources/ISSClientMainResources_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientMedic/ISSClientMedic_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientMedic/ISSClientMedic_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientMedic/ISSClientMedic_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientMedic/ISSClientMedic_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare_main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare_test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServices/ISSServices_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSServices/ISSServices_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServices/ISSServices_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSServices/ISSServices_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISS-Resurse/MySQL/ISSDonareSange.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/ISS-Resurse/MySQL/ISSDonareSange.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISS-Resurse/MySQL/sqlscript.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ISS-Resurse/MySQL/sqlscript.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSClientDonator/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientDonator/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSClientMedic/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientMedic/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Analiza.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Analiza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Boala.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Boala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/BoalaEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/BoalaEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Cerere.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Cerere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Cont.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Cont.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Donator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/GlobuleRosii.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/GlobuleRosii.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Medic.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Medic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Pacient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Pacient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Persoana.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Persoana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/PersonalTransfuzii.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/PersonalTransfuzii.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Plasma.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Plasma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/PreparatSanguin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/PreparatSanguin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Prioritate.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Prioritate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/SangeNefiltrat.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/SangeNefiltrat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Spital.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Spital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Stagiu.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Stagiu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/TipPreparatSanguin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/TipPreparatSanguin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSModelAdministrare/src/main/java/model/Trombocite.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Trombocite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryConturi.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryConturi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryDonatori.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryDonatori.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryAnalize.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryAnalize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryCereri.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryCereri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryConturi.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryConturi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Analiza.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Analiza.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Donator.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Donator.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Pacient.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Pacient.hbm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSServer/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ISSServer/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSServices/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ISSServices/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -189,26 +119,26 @@
       <file leaf-file-name="RepositoryAnalize.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryAnalize.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="125" column="23" lean-forward="true" selection-start-line="110" selection-start-column="8" selection-end-line="125" selection-end-column="23" />
+            <state relative-caret-position="527">
+              <caret line="147" column="32" lean-forward="true" selection-start-line="132" selection-start-column="7" selection-end-line="147" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepositoryCereri.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryCereri.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-139">
-              <caret line="128" column="21" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RepositoryDonatori.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RepositoryDonatori.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="146" column="32" selection-start-line="146" selection-start-column="32" selection-end-line="146" selection-end-column="32" />
+            <state relative-caret-position="102">
+              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HibernateFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/HibernateFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -225,13 +155,11 @@
       <file leaf-file-name="Donator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
+            <state relative-caret-position="2907">
               <caret line="226" column="44" selection-start-line="226" selection-start-column="44" selection-end-line="226" selection-end-column="44" />
               <folding>
                 <element signature="e#1187#1188#0" expanded="true" />
-                <element signature="e#1219#1220#0" expanded="true" />
-                <element signature="e#4122#4123#0" expanded="true" />
-                <element signature="e#4162#4163#0" expanded="true" />
+                <element signature="e#1232#1233#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -240,7 +168,7 @@
       <file leaf-file-name="Persoana.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Persoana.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
+            <state relative-caret-position="85">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
@@ -249,7 +177,7 @@
       <file leaf-file-name="Donator.hbm.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Donator.hbm.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
+            <state relative-caret-position="680">
               <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
             </state>
           </provider>
@@ -259,16 +187,16 @@
         <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Cont.hbm.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="23" lean-forward="true" selection-end-line="16" selection-end-column="20" />
+              <caret line="11" column="23" selection-end-line="16" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepositoryConturi.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RepositoryConturi.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryConturi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="136" column="32" lean-forward="true" selection-start-line="121" selection-start-column="8" selection-end-line="136" selection-end-column="32" />
+            <state relative-caret-position="408">
+              <caret line="114" column="20" lean-forward="true" selection-start-line="99" selection-start-column="8" selection-end-line="114" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2278,9 +2206,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2370,6 +2296,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2577,7 +2505,8 @@
       <workItem from="1524584841962" duration="1279000" />
       <workItem from="1524638117346" duration="1166000" />
       <workItem from="1524641040725" duration="4252000" />
-      <workItem from="1524679855889" duration="2790000" />
+      <workItem from="1524679855889" duration="3007000" />
+      <workItem from="1524734704297" duration="782000" />
     </task>
     <task id="LOCAL-00001" summary="Base Project">
       <created>1522323596276</created>
@@ -2677,11 +2606,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524515014533</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Persistence v0.1 + Hibernate v1.0">
+      <created>1524682794756</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1524682794757</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49898000" />
+    <option name="totallyTimeSpent" value="50897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -2697,9 +2633,8 @@
       <window_info id="Structure" order="9" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="12" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49804688" visible="true" weight="0.3994528" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49804688" weight="0.3994528" />
       <window_info anchor="bottom" id="TODO" order="14" />
-      <window_info anchor="bottom" id="Messages" order="16" weight="0.3269494" />
       <window_info anchor="right" id="Palette&#9;" order="15" />
       <window_info id="Image Layers" order="13" />
       <window_info anchor="bottom" id="Java Enterprise" order="21" />
@@ -2714,6 +2649,7 @@
       <window_info anchor="right" id="SciView" order="19" />
       <window_info anchor="right" id="Theme Preview" order="18" />
       <window_info id="Favorites" order="15" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="16" weight="0.3269494" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="20" sideWeight="0.49739584" visible="true" weight="0.32831737" />
@@ -2740,7 +2676,8 @@
     <MESSAGE value="Trebuie sa vad ce rectificari trebuie sa mai fac, deocamdata atat." />
     <MESSAGE value="Hibernate v0.1" />
     <MESSAGE value="SQL SCRIPT" />
-    <option name="LAST_COMMIT_MESSAGE" value="SQL SCRIPT" />
+    <MESSAGE value="Persistence v0.1 + Hibernate v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Persistence v0.1 + Hibernate v1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2828,7 +2765,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ISSModelDonator/src/main/java/model/BoalaEnum.java" />
     <entry file="file://$PROJECT_DIR$/ISSModelDonator/src/main/java/model/Analiza.java" />
     <entry file="file://$PROJECT_DIR$/ISSModelDonator/src/main/java/model/Persoana.java" />
     <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Spital.java">
@@ -3005,9 +2941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
           <caret line="93" column="57" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
-          <folding>
-            <element signature="e#1448#1449#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3084,10 +3017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
-          <folding>
-            <element signature="e#1216#1217#0" expanded="true" />
-            <element signature="e#1256#1257#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3095,23 +3024,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="134" column="54" selection-start-line="134" selection-start-column="54" selection-end-line="134" selection-end-column="54" />
-          <folding>
-            <element signature="e#1960#1961#0" expanded="true" />
-            <element signature="e#1991#1992#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryAnalize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="125" column="23" lean-forward="true" selection-start-line="110" selection-start-column="8" selection-end-line="125" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryCereri.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
+        <state relative-caret-position="2023">
           <caret line="128" column="21" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
         </state>
       </provider>
@@ -3125,7 +3043,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Donator.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
+        <state relative-caret-position="680">
           <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
         </state>
       </provider>
@@ -3133,26 +3051,24 @@
     <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Cont.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="23" lean-forward="true" selection-end-line="16" selection-end-column="20" />
+          <caret line="11" column="23" selection-end-line="16" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Persoana.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
+        <state relative-caret-position="85">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
+        <state relative-caret-position="2907">
           <caret line="226" column="44" selection-start-line="226" selection-start-column="44" selection-end-line="226" selection-end-column="44" />
           <folding>
             <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1219#1220#0" expanded="true" />
-            <element signature="e#4122#4123#0" expanded="true" />
-            <element signature="e#4162#4163#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3164,20 +3080,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryConturi.java">
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="136" column="32" lean-forward="true" selection-start-line="121" selection-start-column="8" selection-end-line="136" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java">
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/HibernateFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="146" column="32" selection-start-line="146" selection-start-column="32" selection-end-line="146" selection-end-column="32" />
+        <state relative-caret-position="204">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryAnalize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="147" column="32" lean-forward="true" selection-start-line="132" selection-start-column="7" selection-end-line="147" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryConturi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="114" column="20" lean-forward="true" selection-start-line="99" selection-start-column="8" selection-end-line="114" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

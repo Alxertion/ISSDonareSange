@@ -110,6 +110,7 @@ public class RepositoryConturi implements IRepositoryConturi {
             e.printStackTrace();
         } finally {
             session.close();
+            System.out.println("am inchis");
         }
 
         return cont;
