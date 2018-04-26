@@ -9,7 +9,7 @@
         <property name="format_sql">true</property>
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/issdonaresange</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/issdonaresange</property>
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
@@ -34,7 +34,6 @@
         <mapping resource="Pacient.hbm.xml"/>
         <mapping resource="PreparatSanguin.hbm.xml"/>
         <mapping resource="Spital.hbm.xml"/>
-
 
     </session-factory>
 </hibernate-configuration>
