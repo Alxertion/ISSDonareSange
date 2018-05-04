@@ -28,11 +28,6 @@ public class Medic extends Persoana {
         super.Persoana(nume, prenume);
     }
 
-
-    public void Medic(String nume, String prenume) {
-
-    }
-
     public int getIdMedic() {
         return idMedic;
     }

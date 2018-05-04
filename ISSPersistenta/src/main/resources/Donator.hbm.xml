@@ -31,7 +31,7 @@
 
         
         <many-to-one name = "cont" column = "username" unique="true"
-                     class="model.Cont" not-null="true"/>
+                     class="model.Cont"/>
 
         <bag name = "boliAnterioare" cascade="all" table="bolidonator">
             <key column="idDonator"></key>

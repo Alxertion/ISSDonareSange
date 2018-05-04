@@ -33,7 +33,8 @@ public class Persoana {
      * @param prenume
      */
     public void Persoana(String nume, String prenume) {
-        // TODO implement here
+        this.nume = nume;
+        this.prenume = prenume;
     }
 
     public String getNume() {

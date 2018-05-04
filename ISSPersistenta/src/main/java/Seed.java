@@ -1,12 +1,7 @@
 import model.Cont;
 import model.Medic;
 import model.Donator;
-import persistence.repository.IRepositoryConturi;
-import persistence.repository.IRepositoryDonatori;
-import persistence.repository.IRepositoryMedici;
-import persistence.repository.RepositoryConturi;
-import persistence.repository.RepositoryDonatori;
-import persistence.repository.RepositoryMedici;
+import persistence.repository.*;
 
 public class Seed {
 
@@ -23,15 +18,39 @@ public class Seed {
     public void seed(){
 
 //        adaugaConturi();
-        repoConturi.getAll();
+        adaugaMedici();
+        adaugareContMedici();
+        HibernateFactory.closeFactory();
+
+
+    }
+
+    private void adaugareContMedici() {
+
+        Medic medic = repoMedici.cautare(2);
+        Cont cont1 = repoConturi.cautare("roots");
+        medic.setCont(cont1);
+        repoMedici.modificare(medic);
+
+        Medic medic2 = repoMedici.cautare(1);
+        Cont cont2 = repoConturi.cautare("root");
+        medic2.setCont(cont2);
+        repoMedici.modificare(medic2);
 
 
     }
 
     private void adaugaMedici(){
 
-        repoMedici.adaugare(new Medic("Chise", "Bogdan"));
+        //creearea medici
+        Medic medic1 = new Medic("Chise", "Bogdan");
+        Medic medic2 = new Medic("Boros", "Otniel");
+        Medic medic3 = new Medic("Cezar", "Ouatu");
 
+        //adaugare medici
+        repoMedici.adaugare(medic1);
+        repoMedici.adaugare(medic2);
+        repoMedici.adaugare(medic3);
     }
 
     private void adaugaConturi() {

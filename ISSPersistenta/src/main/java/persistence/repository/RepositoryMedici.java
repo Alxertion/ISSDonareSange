@@ -132,6 +132,24 @@ public class RepositoryMedici implements IRepositoryMedici {
 
     }
 
+    public void adaugaContLaMedic(Medic medic, Cont cont){
+
+        Transaction tx = null;
+        Session session = null;
+
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+            medic.setCont(cont);
+            modificare(medic);
+            tx.commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
     /**
      * @return
      */
