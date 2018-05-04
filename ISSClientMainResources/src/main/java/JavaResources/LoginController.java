@@ -42,6 +42,11 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
         this.loader=loader;
     }
 
+    @Override
+    public void setUser(Cont user) {
+
+    }
+
     @FXML
     public void login(){
         try{
@@ -51,6 +56,7 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
                 ctrl.initialize(stageManager,service,loader);
+                ctrl.setUser(new Cont(userField.getText(),passField.getText()));
                 service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 stageManager.switchScene(FXMLEnum.MainViewPersonalTransfuzii, rootNode, ctrl, loader);
             }else if(stageManager.getTitle().equals("LoginDonator")){
@@ -58,6 +64,7 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
                 ctrl.initialize(stageManager,service,loader);
+                ctrl.setUser(new Cont(userField.getText(),passField.getText()));
                 service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 stageManager.switchScene(FXMLEnum.MainWindowDonator, rootNode, ctrl, loader);
             }else if(stageManager.getTitle().equals("LoginAdministrator")){
@@ -65,6 +72,7 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
                 ctrl.initialize(stageManager,service,loader);
+                ctrl.setUser(new Cont(userField.getText(),passField.getText()));
                 service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 stageManager.switchScene(FXMLEnum.MainWindowAdministrator, rootNode, ctrl, loader);
             }
@@ -73,6 +81,7 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
                 ctrl.initialize(stageManager,service,loader);
+                ctrl.setUser(new Cont(userField.getText(),passField.getText()));
                 service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 stageManager.switchScene(FXMLEnum.MainWindowMedic, rootNode, ctrl, loader);
             }

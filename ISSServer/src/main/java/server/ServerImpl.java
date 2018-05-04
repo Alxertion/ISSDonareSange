@@ -1,6 +1,9 @@
 package server;
 
 import model.Cont;
+import model.Medic;
+import model.PersonalTransfuzii;
+import model.Spital;
 import persistence.repository.*;
 import services.IObserver;
 import services.IServices;
@@ -14,15 +17,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ServerImpl implements IServices {
-    IRepositoryAnalize repositoryAnalize;
-    IRepositoryCereri repositoryCereri;
-    IRepositoryDonatori repositoryDonatori;
-    IRepositoryGlobuleRosii repositoryGlobuleRosii;
-    IRepositoryMedici repositoryMedici;
-    IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii;
-    IRepositoryPlasma repositoryPlasma;
-    IRepositorySangeNefiltrat repositorySangeNefiltrat;
-    IRepositoryTrombocite repositoryTrombocite;
+    private IRepositoryAnalize repositoryAnalize;
+    private IRepositoryCereri repositoryCereri;
+    private IRepositoryDonatori repositoryDonatori;
+    private IRepositoryGlobuleRosii repositoryGlobuleRosii;
+    private IRepositoryMedici repositoryMedici;
+    private IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii;
+    private IRepositoryPlasma repositoryPlasma;
+    private IRepositorySangeNefiltrat repositorySangeNefiltrat;
+    private IRepositoryTrombocite repositoryTrombocite;
 
     //For remoting
     private Map<String, IObserver> loggedClients;
@@ -68,6 +71,20 @@ public class ServerImpl implements IServices {
             throw new ServiceException("Autentificare esuata.");
     }
 
+    @Override
+    public synchronized void logout(Cont user) {
+        loggedClients.remove(user.getUsername());
+    }
+
+    @Override
+    public Iterable<Medic> getMedici() {
+        return repositoryMedici.getAll();
+    }
+
+    @Override
+    public Iterable<PersonalTransfuzii> getPersonalTransfuzii() {
+        return repositoryPersonalTransfuzii.getAll();
+    }
 
 
 }

@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import model.Cont;
 import services.IObserver;
 import services.IServices;
 
@@ -22,7 +23,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class MainWindowDonatorController extends UnicastRemoteObject implements Controller, IObserver,Serializable {
-
+    private Cont user;
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
@@ -45,6 +46,11 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
 
         setImagesForButtons();
 
+    }
+
+    @Override
+    public void setUser(Cont user) {
+        this.user=user;
     }
 
     private void setImagesForButtons() {
@@ -85,5 +91,19 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
     @Override
     public void notifyClient() throws RemoteException {
         System.out.println("Am fost notificat -> Donator");
+    }
+
+    @FXML
+    public void logOut(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loaderFXML = new FXMLLoader();
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.LoginWindowDonator.getFxmlFile()));
+            Parent rootNode = loaderFXML.load();
+            service.logout(this.user);
+            stageManager.switchScene(FXMLEnum.LoginWindowDonator, rootNode, loaderFXML.getController(), loader);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            System.exit(1);
+        }
     }
 }

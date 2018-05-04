@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import model.Cont;
 import services.IServices;
 
 import java.io.IOException;
@@ -22,7 +23,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class ConditiiDonareController extends UnicastRemoteObject implements Controller,Serializable {
-
+    private Cont user;
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
@@ -46,6 +47,11 @@ public class ConditiiDonareController extends UnicastRemoteObject implements Con
         this.loader = loader;
 
         setImagesForButtons();
+    }
+
+    @Override
+    public void setUser(Cont user) {
+        this.user=user;
     }
 
     private void setImagesForButtons() {
