@@ -21,14 +21,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" group="ISSDonareSange" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" group="ISSDonareSange" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel.iml" group="ISSModel" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel.iml" group="ISSModel" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare.iml" group="ISSModelAdministrare" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare_main.iml" group="ISSModelAdministrare" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare_test.iml" group="ISSModelAdministrare" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModelDonator/ISSModelDonator.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModelDonator/ISSModelDonator.iml" group="ISSModelDonator" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel_main.iml" group="ISSModel" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel_main.iml" group="ISSModel" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel_test.iml" group="ISSModel" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel_test.iml" group="ISSModel" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSPersistenta.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSPersistenta.iml" group="ISSPersistenta" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_main.iml" group="ISSPersistenta" />

@@ -32,8 +32,10 @@ public class Persoana {
      * @param nume 
      * @param prenume
      */
-    public void Persoana(String nume, String prenume) {
-        // TODO implement here
+    public Persoana(String nume, String prenume,Cont cont) {
+        this.nume=nume;
+        this.prenume=prenume;
+        this.cont=cont;
     }
 
     public String getNume() {

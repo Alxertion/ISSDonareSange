@@ -20,8 +20,8 @@ public class PersonalTransfuzii extends Persoana {
      * @param nume
      * @param prenume
      */
-    public void PersonalTransfuzii(String nume, String prenume) {
-        // TODO implement here
+    public PersonalTransfuzii(String nume, String prenume,Cont cont) {
+        super(nume,prenume,cont);
     }
 
 
