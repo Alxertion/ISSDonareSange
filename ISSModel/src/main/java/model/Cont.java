@@ -20,7 +20,6 @@ public class Cont implements Serializable {
      */
     private String password;
 
-
     /**
      * @param username
      */
