@@ -129,7 +129,7 @@ public class RepositoryAnalize implements IRepositoryAnalize {
     /**
      * @return
      */
-    public Iterable<Analiza> getAll() {
+    public List<Analiza> getAll() {
         Transaction tx = null;
         Session session = null;
         List<Analiza> listOfAllAnalize = null;

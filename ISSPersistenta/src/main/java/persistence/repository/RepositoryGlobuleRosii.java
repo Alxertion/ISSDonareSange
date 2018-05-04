@@ -1,7 +1,8 @@
 package persistence.repository;
 
 import model.GlobuleRosii;
-import model.PreparatSanguin;
+
+import java.util.List;
 
 /**
  * 
@@ -50,7 +51,7 @@ public class RepositoryGlobuleRosii implements IRepositoryGlobuleRosii {
     /**
      * @return
      */
-    public Iterable<GlobuleRosii> getAll() {
+    public List<GlobuleRosii> getAll() {
         // TODO implement here
         return null;
     }

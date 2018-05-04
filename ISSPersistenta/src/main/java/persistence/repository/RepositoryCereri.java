@@ -130,7 +130,7 @@ public class RepositoryCereri implements IRepositoryCereri {
     /**
      * @return
      */
-    public Iterable<Cerere> getAll() {
+    public List<Cerere> getAll() {
         Transaction tx = null;
         Session session = null;
         List<Cerere> listOfAllCereri = null;

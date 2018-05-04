@@ -1,7 +1,8 @@
 package persistence.repository;
 
-import model.PreparatSanguin;
 import model.SangeNefiltrat;
+
+import java.util.List;
 
 /**
  * 
@@ -52,7 +53,7 @@ public class RepositorySangeNefiltrat implements IRepositorySangeNefiltrat {
     /**
      * @return
      */
-    public Iterable<SangeNefiltrat> getAll() {
+    public List<SangeNefiltrat> getAll() {
         // TODO implement here
         return null;
     }

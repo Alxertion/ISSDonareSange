@@ -3,7 +3,8 @@ package persistence.repository;
 import model.Cerere;
 import model.Cont;
 import model.Medic;
-import model.PreparatSanguin;
+
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -134,7 +135,7 @@ public class RepositoryMedici implements IRepositoryMedici {
     /**
      * @return
      */
-    public Iterable<Medic> getAll() {
+    public List<Medic> getAll() {
 
         Transaction tx = null;
         Session session = null;

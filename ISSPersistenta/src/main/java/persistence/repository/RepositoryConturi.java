@@ -117,7 +117,7 @@ public class RepositoryConturi implements IRepositoryConturi {
 
 
     @Override
-    public Iterable<Cont> getAll() {
+    public List<Cont> getAll() {
 
         Transaction tx = null;
         Session session = null;
