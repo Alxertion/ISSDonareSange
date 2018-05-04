@@ -14,6 +14,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.Cont;
 import services.IObserver;
 import services.IServices;
 
@@ -26,6 +27,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
+    private Cont user;
     @FXML
     TabPane tabPanePersonal;
 
@@ -72,7 +74,26 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     }
 
     @Override
+    public void setUser(Cont user) {
+        this.user=user;
+    }
+
+    @Override
     public void notifyClient() throws RemoteException {
         System.out.println("Am fost notificat -> Personal");
+    }
+
+    @FXML
+    public void logOut(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loaderFXML = new FXMLLoader();
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.LoginWindowPersonalTransfuzii.getFxmlFile()));
+            Parent rootNode = loaderFXML.load();
+            service.logout(this.user);
+            stageManager.switchScene(FXMLEnum.LoginWindowPersonalTransfuzii, rootNode, loaderFXML.getController(), loader);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            System.exit(1);
+        }
     }
 }
