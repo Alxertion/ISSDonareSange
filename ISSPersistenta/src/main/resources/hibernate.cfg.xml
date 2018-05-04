@@ -34,6 +34,7 @@
         <mapping resource="Pacient.hbm.xml"/>
         <mapping resource="PreparatSanguin.hbm.xml"/>
         <mapping resource="Spital.hbm.xml"/>
+        <mapping resource="CentruTransfuzii.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

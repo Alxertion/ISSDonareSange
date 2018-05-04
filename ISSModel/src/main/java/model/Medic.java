@@ -20,13 +20,17 @@ public class Medic extends Persoana {
      *
      */
 
-
     /**
-     * @param nume 
+     * @param nume
      * @param prenume
      */
+    public Medic(String nume, String prenume) {
+        super.Persoana(nume, prenume);
+    }
+
+
     public void Medic(String nume, String prenume) {
-        // TODO implement here
+
     }
 
     public int getIdMedic() {

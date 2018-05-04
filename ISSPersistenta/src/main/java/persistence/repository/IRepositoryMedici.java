@@ -7,6 +7,6 @@ import java.util.*;
 /**
  * 
  */
-public interface IRepositoryMedici extends CRUDRepository<String, Medic> {
+public interface IRepositoryMedici extends CRUDRepository<Integer, Medic> {
 
 }

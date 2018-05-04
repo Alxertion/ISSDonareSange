@@ -1,13 +1,18 @@
 import model.Cont;
+import model.Medic;
 import persistence.repository.IRepositoryConturi;
+import persistence.repository.IRepositoryMedici;
 import persistence.repository.RepositoryConturi;
+import persistence.repository.RepositoryMedici;
 
 public class Seed {
 
     IRepositoryConturi repoConturi;
+    IRepositoryMedici repoMedici;
 
     public Seed(){
         repoConturi = new RepositoryConturi();
+        repoMedici = new RepositoryMedici();
     }
 
     public void seed(){
@@ -15,6 +20,12 @@ public class Seed {
 //        adaugaConturi();
         repoConturi.getAll();
 
+
+    }
+
+    private void adaugaMedici(){
+
+        repoMedici.adaugare(new Medic("Chise", "Bogdan"));
 
     }
 

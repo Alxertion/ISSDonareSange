@@ -64,8 +64,6 @@ public class RepositoryCereri implements IRepositoryCereri {
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            Cerere newCerere = cautare(cerere.getIdCerere());
-            newCerere.setAllFields(cerere);
             session.update(cerere);
             tx.commit();
 
