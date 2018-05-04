@@ -1,9 +1,6 @@
 package server;
 
-import model.Cont;
-import model.Medic;
-import model.PersonalTransfuzii;
-import model.Spital;
+import model.*;
 import persistence.repository.*;
 import services.IObserver;
 import services.IServices;
@@ -11,6 +8,7 @@ import services.ServiceException;
 
 import java.io.Serializable;
 import java.rmi.RemoteException;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
@@ -26,11 +24,12 @@ public class ServerImpl implements IServices {
     private IRepositoryPlasma repositoryPlasma;
     private IRepositorySangeNefiltrat repositorySangeNefiltrat;
     private IRepositoryTrombocite repositoryTrombocite;
+    private IRepositoryConturi repositoryConturi;
 
     //For remoting
     private Map<String, IObserver> loggedClients;
 
-    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite){
+    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi){
         this.repositoryAnalize=repositoryAnalize;
         this.repositoryCereri=repositoryCereri;
         this.repositoryDonatori=repositoryDonatori;
@@ -40,6 +39,7 @@ public class ServerImpl implements IServices {
         this.repositoryPlasma=repositoryPlasma;
         this.repositorySangeNefiltrat=repositorySangeNefiltrat;
         this.repositoryTrombocite=repositoryTrombocite;
+        this.repositoryConturi=repositoryConturi;
         loggedClients=new ConcurrentHashMap<>();
     }
 
@@ -60,13 +60,11 @@ public class ServerImpl implements IServices {
 
     @Override
     public synchronized void login(Cont user,IObserver client) throws ServiceException {
-        boolean loginOk=true;//userRepository.verifyUser(user);
-        if (loginOk){
+        Cont loginOk=repositoryConturi.cautare(user.getUsername());
+        if (loginOk!=null){
             if(loggedClients.get(user.getUsername())!=null)
                 throw new ServiceException("Acest user este deja logat.");
-            System.out.println(user.getUsername());
             loggedClients.put(user.getUsername(), client);
-            notifyMyClients();
         }else
             throw new ServiceException("Autentificare esuata.");
     }
@@ -77,13 +75,18 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public Iterable<Medic> getMedici() {
+    public List<Medic> getMedici() {
         return repositoryMedici.getAll();
     }
 
     @Override
-    public Iterable<PersonalTransfuzii> getPersonalTransfuzii() {
+    public List<PersonalTransfuzii> getPersonalTransfuzii() {
         return repositoryPersonalTransfuzii.getAll();
+    }
+
+    @Override
+    public List<Donator> getDonatori() {
+        return repositoryDonatori.getAll();
     }
 
 

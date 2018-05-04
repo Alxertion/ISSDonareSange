@@ -128,7 +128,7 @@ public class RepositoryDonatori implements IRepositoryDonatori {
     /**
      * @return
      */
-    public Iterable<Donator> getAll() {
+    public List<Donator> getAll() {
         Transaction tx = null;
         Session session = null;
         List<Donator> listOfAllDonatori = null;

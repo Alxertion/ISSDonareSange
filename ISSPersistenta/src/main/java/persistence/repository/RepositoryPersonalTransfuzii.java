@@ -1,7 +1,8 @@
 package persistence.repository;
 
 import model.PersonalTransfuzii;
-import model.PreparatSanguin;
+
+import java.util.List;
 
 /**
  * 
@@ -50,7 +51,7 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
     /**
      * @return
      */
-    public Iterable<PersonalTransfuzii> getAll() {
+    public List<PersonalTransfuzii> getAll() {
         // TODO implement here
         return null;
     }

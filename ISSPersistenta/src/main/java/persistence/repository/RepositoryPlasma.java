@@ -1,7 +1,8 @@
 package persistence.repository;
 
 import model.Plasma;
-import model.PreparatSanguin;
+
+import java.util.List;
 
 /**
  * 
@@ -50,7 +51,7 @@ public class RepositoryPlasma implements IRepositoryPlasma {
     /**
      * @return
      */
-    public Iterable<Plasma> getAll() {
+    public List<Plasma> getAll() {
         // TODO implement here
         return null;
     }

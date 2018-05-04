@@ -3,6 +3,8 @@ package persistence.repository;
 import model.PreparatSanguin;
 import model.Trombocite;
 
+import java.util.List;
+
 /**
  * 
  */
@@ -48,7 +50,7 @@ public class RepositoryTrombocite implements IRepositoryTrombocite {
     /**
      *
      */
-    public Iterable<Trombocite> getAll() {
+    public List<Trombocite> getAll() {
         // TODO implement here
         return null;
     }

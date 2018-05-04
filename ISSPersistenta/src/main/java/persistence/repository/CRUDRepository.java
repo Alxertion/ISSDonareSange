@@ -2,6 +2,8 @@ package persistence.repository;
 
 import model.PreparatSanguin;
 
+import java.util.List;
+
 /**
  * 
  */
@@ -32,6 +34,6 @@ public interface CRUDRepository<ID, E> {
     /**
      * @return
      */
-    public Iterable<E> getAll();
+    public List<E> getAll();
 
 }
