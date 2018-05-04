@@ -25,8 +25,8 @@ public class Medic extends Persoana {
      * @param nume 
      * @param prenume
      */
-    public void Medic(String nume, String prenume) {
-        // TODO implement here
+    public Medic(String nume, String prenume,Cont cont) {
+        super(nume,prenume,cont);
     }
 
     public int getIdMedic() {

@@ -1,7 +1,5 @@
 import model.Cont;
-import model.Donator;
 import persistence.repository.IRepositoryConturi;
-import persistence.repository.IRepositoryDonatori;
 import persistence.repository.RepositoryConturi;
 import persistence.repository.RepositoryDonatori;
 
@@ -19,6 +17,7 @@ public class Seed {
 
 //        adaugaConturi();
         repoConturi.getAll();
+        adaugaDonatori();
 
 
     }
@@ -33,7 +32,9 @@ public class Seed {
     }
 
     private void adaugaDonatori(){
-        repoDonatori.adaugare(new Donator("Boros","Otniel"));
-        repoDonatori.adaugare(new Donator("Chise","Bogdan"));
+        Cont cont=repoConturi.cautare("roots");
+        Donator donator1=new Donator("Boros","Otniel",cont);
+        repoDonatori.adaugare(donator1);
+       // repoDonatori.adaugare(new Donator("Chise","Bogdan"));
     }
 }

@@ -89,8 +89,8 @@ public class Donator extends Persoana {
      * @param nume 
      * @param prenume
      */
-    public Donator(String nume, String prenume) {
-        super.Persoana(nume, prenume);
+    public Donator(String nume, String prenume,Cont cont) {
+        super(nume, prenume,cont);
     }
 
 
