@@ -131,6 +131,7 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
             session.close();
         }
 
+
         return idAnaliza;
     }
 
