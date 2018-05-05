@@ -6,12 +6,10 @@ import java.util.*;
  */
 public class CentruTransfuzii {
 
-    private List<Pacient> pacienti;
-    /**
-     *
-     */
-
     private List<PersonalTransfuzii> personalTransfuzii;
+    private List<Donator> donatori;
+
+
     /**
      *
      */
@@ -86,11 +84,12 @@ public class CentruTransfuzii {
         this.latitudine = latitudine;
     }
 
-    public List<Pacient> getPacienti() {
-        return pacienti;
+    public List<Donator> getDonatori() {
+        return donatori;
     }
 
-    public void setPacienti(List<Pacient> pacienti) {
-        this.pacienti = pacienti;
+    public void setDonatori(List<Donator> donatori) {
+        this.donatori = donatori;
     }
+
 }

@@ -126,12 +126,4 @@ public class Cerere {
         this.idCerere = idCerere;
     }
 
-    public void setAllFields(Cerere cerere) {
-        this.prioritate = cerere.getPrioritate();
-        this.grupa = cerere.getGrupa();
-        this.RH = cerere.getRH();
-        this.cantitateCeruta = cerere.getCantitateCeruta();
-        this.cantitateActuala = cerere.getCantitateActuala();
-        this.dataEfectuare = cerere.getDataEfectuare();
-    }
 }
