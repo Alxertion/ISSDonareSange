@@ -70,7 +70,6 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
 
     @Override
     public PreparatSanguin stergere(Integer id) {
-
         Transaction tx = null;
         Session session = null;
         PreparatSanguin preparatSanguin = null;
