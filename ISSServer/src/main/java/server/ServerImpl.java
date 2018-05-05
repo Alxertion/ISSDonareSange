@@ -38,11 +38,12 @@ public class ServerImpl implements IServices {
     private IRepositorySangeNefiltrat repositorySangeNefiltrat;
     private IRepositoryTrombocite repositoryTrombocite;
     private IRepositoryConturi repositoryConturi;
+    private IRepositoryPreparateSanguine repositoryPreparateSanguine;
 
     //For remoting
     private Map<String, IObserver> loggedClients;
 
-    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi){
+    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi,IRepositoryPreparateSanguine repositoryPreparateSanguine){
         this.repositoryAnalize=repositoryAnalize;
         this.repositoryCereri=repositoryCereri;
         this.repositoryDonatori=repositoryDonatori;
@@ -53,6 +54,7 @@ public class ServerImpl implements IServices {
         this.repositorySangeNefiltrat=repositorySangeNefiltrat;
         this.repositoryTrombocite=repositoryTrombocite;
         this.repositoryConturi=repositoryConturi;
+        this.repositoryPreparateSanguine=repositoryPreparateSanguine;
         loggedClients=new ConcurrentHashMap<>();
     }
 
@@ -178,13 +180,18 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, TipPreparatSanguin tipPreparatSanguin) {
+    public Analiza cautaAnalizaDupaDonator(int idDonator) {
+        PreparatSanguin preparatSanguin=cautaPreparatDupaDonatorSiTip(idDonator,TipPreparatSanguin.SANGE_NEFILTRAT);
+        int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
+        return repositoryAnalize.cautare(idAnaliza);
+    }
+
+    private PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, TipPreparatSanguin tipPreparatSanguin) {
         Donator donator=repositoryDonatori.cautare(idDonator);
         PreparatSanguin preparatSanguin=donator.getPreparateSanguine().stream().filter(x->{
             return x.getTip().equals(tipPreparatSanguin);
         }).collect(Collectors.toList()).get(0);
         return preparatSanguin;
     }
-
 
 }
