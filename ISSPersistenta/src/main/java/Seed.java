@@ -24,14 +24,13 @@ public class Seed {
 
     public void seed(){
 
+        adaugaConturi();
+        adaugaMedici();
+        adaugaPersonalTransfuzii();
+        adaugaBoli();
+        adaugaAnaliza();
+        adaugaBoliLaAnaliza();
         adaugaDonatori();
-//        adaugaConturi();
-//        adaugaMedici();
-//        adaugaPersonalTransfuzii();
-//        adaugaBoli();
-//        adaugaAnaliza();
-//        adaugaBoliLaAnaliza();
-
 
     }
 

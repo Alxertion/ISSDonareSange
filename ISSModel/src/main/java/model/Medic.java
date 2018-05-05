@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * 
  */
-public class Medic extends Persoana {
+public class Medic extends Persoana implements Serializable{
 
     private int idMedic;
     private List<Cerere> cereri;

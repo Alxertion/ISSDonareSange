@@ -100,7 +100,7 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public synchronized void sendEmail(Cont user,String continut){
+    public synchronized void sendEmail(String emailDonator,String continut){
         class GMailAuthenticator extends javax.mail.Authenticator {
             String issEmail;
             String issPasword;
@@ -119,7 +119,7 @@ public class ServerImpl implements IServices {
         final String mail="issmailalexertion@gmail.com";
         final String mailPassword="alexertion";
         Properties props=new Properties();
-        props.put("mail.smtp.user", user);
+        props.put("mail.smtp.user", mail);
         props.put("mail.smtp.starttls.enable","true");
         props.put("mail.smtp.port", "465");
         props.put("mail.smtp.debug", "true");
@@ -134,7 +134,7 @@ public class ServerImpl implements IServices {
         try{
             MimeMessage message=new MimeMessage(sessionGmail);
             message.setFrom(new InternetAddress(mail));
-            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("oti_otnile97@yahoo.com"));
+            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("oti_otniel97@yahoo.com"));
             message.setSubject("Rezultate analiza - Centru de transfuzii");
 
 
