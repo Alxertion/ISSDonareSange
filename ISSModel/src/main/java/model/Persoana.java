@@ -1,9 +1,11 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * 
  */
-public class Persoana {
+public class Persoana implements Serializable{
 
     /**
      * Default constructor

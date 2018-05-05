@@ -5,9 +5,6 @@ import JavaResources.Service.Service;
 import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
 import JavaResources.View.StageManager;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.MimeBodyPart;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.MimeMultipart;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,18 +12,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Cont;
 import model.Donator;
 import org.hibernate.Session;
+import services.FrontException;
 import services.IObserver;
 import services.IServices;
-import sun.plugin2.message.Message;
-import sun.plugin2.message.transport.Transport;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -50,12 +48,13 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     @FXML
     TabPane tabPanePersonal;
     @FXML
-    ListView listaDonatori;
+    ListView<Donator> listaDonatori;
+    @FXML
+    TextArea analiza;
 
     public PersonalTransfuziiController() throws RemoteException {
 
     }
-
 
     @FXML
     public void notifyButtonPressed(ActionEvent actionEvent){
@@ -117,6 +116,24 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             System.err.println(e.getMessage());
             System.exit(1);
         }
+    }
+
+    @FXML
+    public void sendAnaliza(ActionEvent actionEvent){
+        try{
+            if(listaDonatori.getSelectionModel().getSelectedItem()==null)
+                throw new FrontException("Nu ati selectat un donator caruia sa-i transmiteti rezultatele analizelor.");
+            String email=listaDonatori.getSelectionModel().getSelectedItem().getEmail();
+            if(email==null)
+                throw new FrontException("Acest donator nu a comunicat nicio adresa de email");
+            service.sendEmail(email,analiza.getText());
+        }catch (FrontException fr){
+            Alert message = new Alert(Alert.AlertType.ERROR);
+            message.setTitle("Mesaj eroare");
+            message.setContentText(fr.getMessage());
+            message.showAndWait();
+        }
+
     }
 
     public void prepareWindow(){
