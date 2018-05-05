@@ -14,4 +14,5 @@ public interface IServices {
     List<PersonalTransfuzii> getPersonalTransfuzii();
     List<Donator> getDonatori();
     void sendEmail(String emailDonator,String continut);
+    PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, TipPreparatSanguin tipPreparatSanguin);
 }

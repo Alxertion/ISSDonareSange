@@ -25,6 +25,7 @@ import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 public class ServerImpl implements IServices {
     private IRepositoryAnalize repositoryAnalize;
@@ -175,4 +176,14 @@ public class ServerImpl implements IServices {
             throw new RuntimeException(msg);
         }
     }
+
+    @Override
+    public PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, TipPreparatSanguin tipPreparatSanguin) {
+        Donator donator=repositoryDonatori.cautare(idDonator);
+        PreparatSanguin preparatSanguin=donator.getPreparateSanguine().stream().filter(x->{
+            return x.getTip().equals(tipPreparatSanguin);
+        }).collect(Collectors.toList()).get(0);
+        return preparatSanguin;
+    }
+
 }

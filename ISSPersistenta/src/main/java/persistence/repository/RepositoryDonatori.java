@@ -3,6 +3,7 @@ package persistence.repository;
 import model.Cont;
 import model.Donator;
 import model.PreparatSanguin;
+import model.TipPreparatSanguin;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

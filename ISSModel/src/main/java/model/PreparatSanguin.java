@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  *
  */
-public class PreparatSanguin {
+public class PreparatSanguin implements Serializable {
 
     /**
      * Default constructor

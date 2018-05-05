@@ -146,4 +146,5 @@ public class RepositoryAnalize implements IRepositoryAnalize {
 
         return listOfAllAnalize;
     }
+
 }

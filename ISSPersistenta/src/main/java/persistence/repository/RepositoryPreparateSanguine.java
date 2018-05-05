@@ -2,10 +2,8 @@ package persistence.repository;
 
 import model.Cont;
 import model.PreparatSanguin;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import model.TipPreparatSanguin;
+import org.hibernate.*;
 
 import java.util.List;
 
@@ -114,6 +112,29 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
     }
 
     @Override
+    public int cautareAnalizaDupaPreparat(int idPreparatSanguin) {
+        Transaction tx = null;
+        Session session = null;
+        int idAnaliza=-1;
+
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+            SQLQuery sqlQuery;
+            sqlQuery = session.createSQLQuery("SELECT PS.idAnaliza FROM preparatsanguin PS WHERE PS.idPreparatSanguin=? ");
+            sqlQuery.setParameter(1,idPreparatSanguin);
+            idAnaliza=sqlQuery.executeUpdate();
+            tx.commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return idAnaliza;
+    }
+
+    @Override
     public List<PreparatSanguin> getAll() {
 
         Transaction tx = null;
@@ -133,4 +154,5 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
 
         return listOfAllPreparateSanguine;
     }
+
 }
