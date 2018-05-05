@@ -1,12 +1,13 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 /**
  * 
  */
-public class Donator extends Persoana {
+public class Donator extends Persoana implements Serializable{
 
     /**
      * Default constructor

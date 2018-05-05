@@ -23,6 +23,8 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+
 
         <mapping resource="Donator.hbm.xml"/>
         <mapping resource="Cont.hbm.xml"/>
