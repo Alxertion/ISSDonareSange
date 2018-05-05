@@ -8,6 +8,7 @@ import services.ServiceException;
 
 import java.io.Serializable;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -59,7 +60,7 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public synchronized void login(Cont user,IObserver client) throws ServiceException {
+    public synchronized void login(Cont user,IObserver client) throws ServiceException{
         Cont loginOk=repositoryConturi.cautare(user.getUsername());
         if (loginOk!=null){
             if(loggedClients.get(user.getUsername())!=null)
@@ -70,24 +71,23 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public synchronized void logout(Cont user) {
+    public synchronized void logout(Cont user){
         loggedClients.remove(user.getUsername());
     }
 
     @Override
-    public List<Medic> getMedici() {
+    public synchronized List<Medic> getMedici(){
         return repositoryMedici.getAll();
     }
 
     @Override
-    public List<PersonalTransfuzii> getPersonalTransfuzii() {
+    public synchronized List<PersonalTransfuzii> getPersonalTransfuzii() {
         return repositoryPersonalTransfuzii.getAll();
     }
 
     @Override
-    public List<Donator> getDonatori() {
-        return repositoryDonatori.getAll();
+    public synchronized List<Donator> getDonatori(){
+        List<Donator> donators=repositoryDonatori.getAll();
+        return donators;
     }
-
-
 }

@@ -81,7 +81,11 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
               this.stageManager=stageManager;
               this.loader=loader;
               this.service=service;
-              loadListDonatori();
+              try {
+                  loadListDonatori();
+              }catch (RemoteException re){
+                  re.printStackTrace();
+              }
     }
 
     @Override
@@ -95,7 +99,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     }
 
     @FXML
-    public void logOut(ActionEvent actionEvent) {
+    public void logOut(ActionEvent actionEvent) throws RemoteException {
         try {
             FXMLLoader loaderFXML = new FXMLLoader();
             loaderFXML.setLocation(getClass().getResource(FXMLEnum.LoginWindowPersonalTransfuzii.getFxmlFile()));
@@ -108,7 +112,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         }
     }
 
-    public void loadListDonatori(){
+    public void loadListDonatori() throws RemoteException{
         List<Donator> donatori=service.getDonatori();
         observableListDonatori= FXCollections.observableArrayList(donatori);
         listaDonatori.setItems(observableListDonatori);

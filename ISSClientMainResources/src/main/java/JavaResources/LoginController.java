@@ -88,7 +88,7 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
         }catch (IOException e){
             e.printStackTrace();
 
-        }catch (ServiceException se){
+        }catch (ServiceException se) {
             Alert message = new Alert(Alert.AlertType.ERROR);
             message.setTitle("Mesaj eroare");
             message.setContentText(se.getMessage());

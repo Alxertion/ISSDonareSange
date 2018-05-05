@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * 
  */
-public class PersonalTransfuzii extends Persoana {
+public class PersonalTransfuzii extends Persoana implements Serializable {
 
     private int idPersonalTransfuzii;
     private String nume;

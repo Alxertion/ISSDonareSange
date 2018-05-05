@@ -1,5 +1,7 @@
 import model.Cont;
+import model.Donator;
 import persistence.repository.IRepositoryConturi;
+import persistence.repository.IRepositoryDonatori;
 import persistence.repository.RepositoryConturi;
 import persistence.repository.RepositoryDonatori;
 
@@ -18,7 +20,6 @@ public class Seed {
 //        adaugaConturi();
         repoConturi.getAll();
         adaugaDonatori();
-
 
     }
 
