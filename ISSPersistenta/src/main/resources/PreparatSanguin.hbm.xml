@@ -13,8 +13,8 @@
         </id>
 
         <property name = "tip" column = "tip" type = "string"/>
-        <property name = "dataPrelevare" column = "dataPrelevare" type = "calendar_date"/>
-        <property name = "dataExpirare" column = "dataExpirare" type = "calendar_date"/>
+        <property name = "dataPrelevare" column = "dataPrelevare" type = "date"/>
+        <property name = "dataExpirare" column = "dataExpirare" type = "date"/>
         <property name = "cantitate" column = "cantitate" type = "double"/>
         <property name = "stagiu" column = "stagiu" type = "string"/>
 

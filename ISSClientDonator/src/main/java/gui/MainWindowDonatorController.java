@@ -10,10 +10,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import model.Analiza;
 import model.Cont;
+import model.Donator;
+import model.PreparatSanguin;
 import services.IObserver;
 import services.IServices;
 
@@ -21,13 +25,17 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 public class MainWindowDonatorController extends UnicastRemoteObject implements Controller, IObserver,Serializable {
     private Cont user;
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
+    private Donator donator;
 
+    @FXML
+    private Accordion analizeAccordion;
 
     @FXML
     private Button vreaSaDonezButton;
@@ -51,7 +59,9 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
     @Override
     public void prepareWindow() {
 
+
     }
+
 
     @Override
     public void setUser(Cont user) {
