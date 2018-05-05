@@ -18,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_main.iml" group="ISSClientPersonalTransfuzii" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_test.iml" group="ISSClientPersonalTransfuzii" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSDonareSange-ISSModel.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSDonareSange-ISSModel.iml" group="ISSModel" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" group="ISSDonareSange" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" group="ISSDonareSange" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel.iml" group="ISSModel" />
