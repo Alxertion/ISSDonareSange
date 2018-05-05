@@ -57,16 +57,12 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
     public void prepareWindow() {
 
         System.out.println(user.getUsername() );
-        setIdDonator();
+        setDonator();
 
     }
 
-    private void setIdDonator() {
-
+    private void setDonator() {
         donator = service.findDonatorByUsername(user.getUsername());
-        System.out.println(donator.getIdDonator());
-        System.out.println(donator.getCont().getUsername());
-
     }
 
     @Override

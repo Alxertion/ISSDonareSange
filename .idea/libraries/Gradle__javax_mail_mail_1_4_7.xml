@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="Gradle: javax.mail:mail:1.4.7">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/Could not resolve javax.mail:mail:1.4.7." />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.mail/mail/1.4.7/9add058589d5d85adeb625859bf2c5eeaaedf12d/mail-1.4.7.jar!/" />
     </CLASSES>
     <JAVADOC />

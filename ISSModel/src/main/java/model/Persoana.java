@@ -11,7 +11,6 @@ public class Persoana implements Serializable{
      * Default constructor
      */
     public Persoana() {
-        System.out.println("Cevllla");
     }
 
     /**
