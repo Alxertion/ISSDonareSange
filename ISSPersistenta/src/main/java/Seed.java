@@ -8,13 +8,13 @@ import java.util.List;
 
 public class Seed {
 
-    IRepositoryConturi repoConturi;
-    IRepositoryMedici repoMedici;
-    IRepositoryDonatori repoDonatori;
-    IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii;
-    IRepositoryBoli repositoryBoli;
-    IRepositoryAnalize repoAnalize;
-    IRepositoryPreparateSanguine repoPreparateSanguine;
+    private IRepositoryConturi repoConturi;
+    private IRepositoryMedici repoMedici;
+    private IRepositoryDonatori repoDonatori;
+    private IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii;
+    private IRepositoryBoli repositoryBoli;
+    private IRepositoryAnalize repoAnalize;
+    private IRepositoryPreparateSanguine repoPreparateSanguine;
 
     public Seed(){
         repoConturi = new RepositoryConturi();
