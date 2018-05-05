@@ -1,11 +1,9 @@
 package model;
 
-import java.io.Serializable;
-
 /**
  * 
  */
-public class Persoana implements Serializable{
+public class Persoana {
 
     /**
      * Default constructor
@@ -28,16 +26,22 @@ public class Persoana implements Serializable{
      */
     private Cont cont;
 
+    private String CNP;
+
+    private String email;
+
 
 
     /**
      * @param nume 
      * @param prenume
      */
-    public Persoana(String nume, String prenume,Cont cont) {
-        this.nume=nume;
-        this.prenume=prenume;
-        this.cont=cont;
+    public Persoana(String nume, String prenume, Cont cont, String CNP, String email) {
+        this.nume = nume;
+        this.prenume = prenume;
+        this.cont = cont;
+        this.email = email;
+        this.CNP = CNP;
     }
 
     public String getNume() {
@@ -62,6 +66,22 @@ public class Persoana implements Serializable{
 
     public void setCont(Cont cont) {
         this.cont = cont;
+    }
+
+    public String getCNP() {
+        return CNP;
+    }
+
+    public void setCNP(String CNP) {
+        this.CNP = CNP;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String toString(){

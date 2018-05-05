@@ -25,8 +25,8 @@ public class Medic extends Persoana {
      * @param nume 
      * @param prenume
      */
-    public Medic(String nume, String prenume,Cont cont) {
-        super(nume,prenume,cont);
+    public Medic(String nume, String prenume, Cont cont, String CNP, String email) {
+        super(nume, prenume, cont, CNP, email);
     }
 
     public int getIdMedic() {

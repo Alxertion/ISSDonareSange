@@ -1,7 +1,7 @@
 package persistence.repository;
 
-import model.Medic;
-import model.PersonalTransfuzii;
+import model.Analiza;
+import model.CentruTransfuzii;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,18 +9,11 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-/**
- * 
- */
-public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuzii {
-
-    /**
-     * Default constructor
-     */
+public class RepositoryCentruTransfuzii implements IRepositoryCentruTransfuzii {
 
     private SessionFactory factory = null;
 
-    public RepositoryPersonalTransfuzii() {
+    public RepositoryCentruTransfuzii(){
 
         try {
             factory = HibernateFactory.getInstance();
@@ -32,65 +25,15 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
 
     }
 
-
-    /**
-     * @param
-     */
-    public void adaugare(PersonalTransfuzii personalTransfuzii) {
-
-        Transaction tx = null;
-        Session session = null;
-        try{
-            session = factory.openSession();
-            tx = session.beginTransaction();
-            session.save(personalTransfuzii);
-            tx.commit();
-
-        }catch (HibernateException e){
-            if (tx!=null)
-                tx.rollback();
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-
-    }
-
-    /**
-     * @param
-     */
-    public void modificare(PersonalTransfuzii personalTransfuzii) {
-
-        Transaction tx = null;
-        Session session = null;
-        try{
-            session = factory.openSession();
-            tx = session.beginTransaction();
-
-            session.update(personalTransfuzii);
-            tx.commit();
-
-        }catch (HibernateException e){
-            if (tx!=null)
-                tx.rollback();
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-    }
-
     @Override
-    public PersonalTransfuzii stergere(Integer id) {
+    public void adaugare(CentruTransfuzii centruTransfuzii) {
 
         Transaction tx = null;
         Session session = null;
-        PersonalTransfuzii personalTransfuzii = null;
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-
-            personalTransfuzii = cautare(id);
-            session.delete(personalTransfuzii);
+            session.save(centruTransfuzii);
             tx.commit();
 
         }catch (HibernateException e){
@@ -100,22 +43,67 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
         } finally {
             session.close();
         }
-
-        return personalTransfuzii;
 
     }
 
     @Override
-    public PersonalTransfuzii cautare(Integer id) {
+    public void modificare(CentruTransfuzii centruTransfuzii) {
 
         Transaction tx = null;
         Session session = null;
-        PersonalTransfuzii personalTransfuzii = null;
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            session.update(centruTransfuzii);
+            tx.commit();
+
+        }catch (HibernateException e){
+            if (tx!=null)
+                tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+    }
+
+    @Override
+    public CentruTransfuzii stergere(Integer id) {
+
+        Transaction tx = null;
+        Session session = null;
+        CentruTransfuzii centruTransfuzii = null;
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            centruTransfuzii = cautare(id);
+            session.delete(centruTransfuzii);
+            tx.commit();
+
+        }catch (HibernateException e){
+            if (tx!=null)
+                tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return centruTransfuzii;
+
+    }
+
+    @Override
+    public CentruTransfuzii cautare(Integer id) {
+
+        Transaction tx = null;
+        Session session = null;
+        CentruTransfuzii centruTransfuzii = null;
 
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-            personalTransfuzii = (PersonalTransfuzii) session.get(PersonalTransfuzii.class, id);
+            centruTransfuzii = (CentruTransfuzii) session.get(CentruTransfuzii.class, id);
             tx.commit();
         }catch (HibernateException e){
             e.printStackTrace();
@@ -123,24 +111,21 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
             session.close();
         }
 
-        return personalTransfuzii;
-
+        return centruTransfuzii;
 
     }
 
-    /**
-     * @return
-     */
-    public List<PersonalTransfuzii> getAll() {
+    @Override
+    public List<CentruTransfuzii> getAll() {
 
         Transaction tx = null;
         Session session = null;
-        List<PersonalTransfuzii> listOfAllPersonalTransfuzii = null;
+        List<CentruTransfuzii> listOfAllCentreTransfuzii = null;
 
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-            listOfAllPersonalTransfuzii = session.createQuery("from PersonalTransfuzii ").list();
+            listOfAllCentreTransfuzii = session.createQuery("from CentruTransfuzii ").list();
             tx.commit();
         }catch (HibernateException e){
             e.printStackTrace();
@@ -148,8 +133,7 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
             session.close();
         }
 
-        return listOfAllPersonalTransfuzii;
+        return listOfAllCentreTransfuzii;
 
     }
-
 }

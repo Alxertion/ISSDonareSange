@@ -1,27 +1,20 @@
 package persistence.repository;
 
-import model.Medic;
-import model.PersonalTransfuzii;
+import model.Analiza;
+import model.Boala;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
-/**
- * 
- */
-public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuzii {
-
-    /**
-     * Default constructor
-     */
+public class RepositoryBoala implements IRepositoryBoli {
 
     private SessionFactory factory = null;
 
-    public RepositoryPersonalTransfuzii() {
-
+    public RepositoryBoala(){
         try {
             factory = HibernateFactory.getInstance();
         }
@@ -29,68 +22,17 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
             System.err.println("Failed to create sessionFactory object." + ex);
             throw new ExceptionInInitializerError(ex);
         }
-
-    }
-
-
-    /**
-     * @param
-     */
-    public void adaugare(PersonalTransfuzii personalTransfuzii) {
-
-        Transaction tx = null;
-        Session session = null;
-        try{
-            session = factory.openSession();
-            tx = session.beginTransaction();
-            session.save(personalTransfuzii);
-            tx.commit();
-
-        }catch (HibernateException e){
-            if (tx!=null)
-                tx.rollback();
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-
-    }
-
-    /**
-     * @param
-     */
-    public void modificare(PersonalTransfuzii personalTransfuzii) {
-
-        Transaction tx = null;
-        Session session = null;
-        try{
-            session = factory.openSession();
-            tx = session.beginTransaction();
-
-            session.update(personalTransfuzii);
-            tx.commit();
-
-        }catch (HibernateException e){
-            if (tx!=null)
-                tx.rollback();
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
     }
 
     @Override
-    public PersonalTransfuzii stergere(Integer id) {
+    public void adaugare(Boala boala) {
 
         Transaction tx = null;
         Session session = null;
-        PersonalTransfuzii personalTransfuzii = null;
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-
-            personalTransfuzii = cautare(id);
-            session.delete(personalTransfuzii);
+            session.save(boala);
             tx.commit();
 
         }catch (HibernateException e){
@@ -101,21 +43,90 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
             session.close();
         }
 
-        return personalTransfuzii;
+    }
+
+    public Boala cautareDupaNume(String numeBoala){
+
+        Transaction tx = null;
+        Session session = null;
+        Boala boala = null;
+
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            Query query =  session.createQuery("From Boala WHERE nume = :numeBoala");
+            query.setParameter("numeBoala", numeBoala);
+            boala = (Boala) query.list().get(0);
+
+            tx.commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return boala;
 
     }
 
     @Override
-    public PersonalTransfuzii cautare(Integer id) {
+    public void modificare(Boala boala) {
 
         Transaction tx = null;
         Session session = null;
-        PersonalTransfuzii personalTransfuzii = null;
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            session.update(boala);
+            tx.commit();
+
+        }catch (HibernateException e){
+            if (tx!=null)
+                tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+    }
+
+    @Override
+    public Boala stergere(Integer id) {
+
+        Transaction tx = null;
+        Session session = null;
+        Boala boala = null;
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            boala = cautare(id);
+            session.delete(boala);
+            tx.commit();
+
+        }catch (HibernateException e){
+            if (tx!=null)
+                tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return boala;
+    }
+
+    @Override
+    public Boala cautare(Integer id) {
+
+        Transaction tx = null;
+        Session session = null;
+        Boala boala = null;
 
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-            personalTransfuzii = (PersonalTransfuzii) session.get(PersonalTransfuzii.class, id);
+            boala = (Boala) session.get(Boala.class, id);
             tx.commit();
         }catch (HibernateException e){
             e.printStackTrace();
@@ -123,24 +134,19 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
             session.close();
         }
 
-        return personalTransfuzii;
-
-
+        return boala;
     }
 
-    /**
-     * @return
-     */
-    public List<PersonalTransfuzii> getAll() {
-
+    @Override
+    public List<Boala> getAll() {
         Transaction tx = null;
         Session session = null;
-        List<PersonalTransfuzii> listOfAllPersonalTransfuzii = null;
+        List<Boala> listOfAllBoli = null;
 
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-            listOfAllPersonalTransfuzii = session.createQuery("from PersonalTransfuzii ").list();
+            listOfAllBoli = session.createQuery("from Boala ").list();
             tx.commit();
         }catch (HibernateException e){
             e.printStackTrace();
@@ -148,8 +154,6 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
             session.close();
         }
 
-        return listOfAllPersonalTransfuzii;
-
+        return listOfAllBoli;
     }
-
 }

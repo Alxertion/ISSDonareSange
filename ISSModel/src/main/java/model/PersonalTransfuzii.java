@@ -21,8 +21,8 @@ public class PersonalTransfuzii extends Persoana implements Serializable {
      * @param nume
      * @param prenume
      */
-    public PersonalTransfuzii(String nume, String prenume,Cont cont) {
-        super(nume,prenume,cont);
+    public PersonalTransfuzii(String nume, String prenume, Cont cont, String CNP, String email) {
+        super(nume, prenume, cont, CNP, email);
     }
 
 

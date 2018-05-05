@@ -9,7 +9,7 @@
     </meta>
 
     <class name="model.Cerere" table="cerere">
-        <id name="idCerere" column="idCerere" type="string">
+        <id name="idCerere" column="idCerere" type="int">
         </id>
 
         <property name="prioritate" column="prioritate" type="int"/>

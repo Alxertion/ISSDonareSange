@@ -53,8 +53,6 @@ public class RepositoryConturi implements IRepositoryConturi {
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            Cont newCont = cautare(cont.getUsername());
-            newCont.setAllFields(cont);
             session.update(cont);
             tx.commit();
 

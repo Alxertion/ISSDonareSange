@@ -90,8 +90,8 @@ public class Donator extends Persoana implements Serializable{
      * @param nume 
      * @param prenume
      */
-    public Donator(String nume, String prenume,Cont cont) {
-        super(nume, prenume,cont);
+    public Donator(String nume, String prenume, Cont cont, String CNP, String email) {
+        super(nume, prenume, cont, CNP, email);
     }
 
 
