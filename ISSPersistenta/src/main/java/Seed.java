@@ -1,6 +1,9 @@
 import model.*;
 import persistence.repository.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class Seed {
@@ -11,6 +14,7 @@ public class Seed {
     IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii;
     IRepositoryBoli repositoryBoli;
     IRepositoryAnalize repoAnalize;
+    IRepositoryPreparateSanguine repoPreparateSanguine;
 
     public Seed(){
         repoConturi = new RepositoryConturi();
@@ -19,18 +23,43 @@ public class Seed {
         repositoryPersonalTransfuzii = new RepositoryPersonalTransfuzii();
         repositoryBoli = new RepositoryBoala();
         repoAnalize = new RepositoryAnalize();
+        repoPreparateSanguine = new RepositoryPreparateSanguine();
 
     }
 
     public void seed(){
 
-        adaugaConturi();
-        adaugaMedici();
-        adaugaPersonalTransfuzii();
-        adaugaBoli();
-        adaugaAnaliza();
-        adaugaBoliLaAnaliza();
-        adaugaDonatori();
+//        adaugaConturi();
+//        adaugaMedici();
+//        adaugaPersonalTransfuzii();
+//        adaugaBoli();
+//        adaugaAnaliza();
+//        adaugaBoliLaAnaliza();
+//        adaugaDonatori();
+        adaugaPreparateSanguine();
+
+    }
+
+    private void adaugaPreparateSanguine() {
+
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Date dataRecoltarii1 = sdf.parse("21/05/2018");
+            Date dataRecoltarii2 = sdf.parse("26/01/2018");
+
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
+
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii2, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii2, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii2, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii2, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
