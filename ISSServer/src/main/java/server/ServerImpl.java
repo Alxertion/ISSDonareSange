@@ -186,4 +186,5 @@ public class ServerImpl implements IServices {
         return preparatSanguin;
     }
 
+
 }

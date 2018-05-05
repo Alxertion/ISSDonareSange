@@ -120,10 +120,10 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-            SQLQuery sqlQuery;
-            sqlQuery = session.createSQLQuery("SELECT PS.idAnaliza FROM preparatsanguin PS WHERE PS.idPreparatSanguin=? ");
-            sqlQuery.setParameter(1,idPreparatSanguin);
-            idAnaliza=sqlQuery.executeUpdate();
+
+            Query query = session.createSQLQuery("SELECT PS.idAnaliza FROM preparatsanguin PS WHERE PS.idPreparatSanguin = ?");
+            idAnaliza = (int)query.setInteger(0, idPreparatSanguin).list().get(0);
+
             tx.commit();
         }catch (HibernateException e){
             e.printStackTrace();

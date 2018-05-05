@@ -29,15 +29,16 @@ public class Seed {
 
     public void seed(){
 
-        adaugaConturi();
-        adaugaMedici();
-        adaugaPersonalTransfuzii();
-        adaugaBoli();
-        adaugaAnaliza();
-        adaugaBoliLaAnaliza();
-        adaugaDonatori();
-        adaugaPreparateSanguine();
-
+//        adaugaConturi();
+//        adaugaMedici();
+//        adaugaPersonalTransfuzii();
+//        adaugaBoli();
+//        adaugaAnaliza();
+//        adaugaBoliLaAnaliza();
+//        adaugaDonatori();
+//        adaugaPreparateSanguine();
+        int idAnaliza=repoPreparateSanguine.cautareAnalizaDupaPreparat(1);
+        System.out.println(idAnaliza);
     }
 
     private void adaugaPreparateSanguine() {

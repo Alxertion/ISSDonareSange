@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/IMPORTANTE.txt" />
-      <change beforePath="$PROJECT_DIR$/ISS-Resurse/MySQL/finalsqlscript2.sql" afterPath="$PROJECT_DIR$/ISS-Resurse/MySQL/finalsqlscript.sql" />
-      <change beforePath="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java" afterPath="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java" />
-      <change beforePath="$PROJECT_DIR$/ISSModel/src/main/java/model/PreparatSanguin.java" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/PreparatSanguin.java" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/Main.java" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/Main.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java" />
-      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/PreparatSanguin.hbm.xml" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/resources/PreparatSanguin.hbm.xml" />
+      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java" />
+      <change beforePath="$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java" afterPath="$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -52,6 +49,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/ISSDonareSange$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1525547076452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -131,7 +131,7 @@
       <file leaf-file-name="ServerImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2928">
+            <state relative-caret-position="457">
               <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -152,13 +152,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RepositoryPreparateSanguine.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RepositoryPreparateSanguine.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="119" column="12" lean-forward="false" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+            <state relative-caret-position="109">
+              <caret line="121" column="44" lean-forward="false" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
               <folding>
-                <marker date="1525546411052" expanded="true" signature="3150:3222" ph="SELECT PS.id... preparatsanguin" />
+                <marker date="1525547609345" expanded="true" signature="3123:3197" ph="SELECT PS.id... preparatsanguin" />
               </folding>
             </state>
           </provider>
@@ -174,11 +174,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Seed.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Seed.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+            <state relative-caret-position="120">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2155,7 +2155,6 @@
         <option value="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" />
         <option value="$PROJECT_DIR$/ISSServer/build.gradle" />
         <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java" />
         <option value="$PROJECT_DIR$/ISSServices/src/main/java/services/FrontException.java" />
         <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java" />
         <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Persoana.java" />
@@ -2171,9 +2170,10 @@
         <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/TipPreparatSanguin.java" />
         <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryAnalize.java" />
         <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryAnalize.java" />
-        <option value="$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java" />
         <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryPreparateSanguine.java" />
+        <option value="$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java" />
       </list>
     </option>
   </component>
@@ -2332,7 +2332,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ISSDonareSange:ISSClientPersonalTransfuzii [run]">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="WIDTH" value="0" />
@@ -2508,11 +2508,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.ISSDonareSange:ISSServer [run]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.ISSDonareSange:ISSClientPersonalTransfuzii [run]" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.ISSDonareSange:ISSClientAdministrator [run]" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.ISSDonareSange [run]" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.ISSDonareSange:ISSServer [run]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.ISSDonareSange:ISSClientPersonalTransfuzii [run]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.ISSDonareSange:ISSClientAdministrator [run]" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.ISSDonareSange [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -2555,7 +2555,7 @@
       <workItem from="1525521255637" duration="469000" />
       <workItem from="1525535121514" duration="1784000" />
       <workItem from="1525541860464" duration="3869000" />
-      <workItem from="1525546431418" duration="12000" />
+      <workItem from="1525546431418" duration="1176000" />
     </task>
     <task id="LOCAL-00001" summary="Base Project">
       <created>1522323596276</created>
@@ -2746,11 +2746,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525541913937</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Merge branch 'master' into Otniel&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.5-rc-2/taskHistory/taskHistory.lock&#10;#&#9;.idea/workspace.xml">
+      <created>1525546455399</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1525546455399</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84856000" />
+    <option name="totallyTimeSpent" value="86020000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -2765,19 +2772,21 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.49804688" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35023773" sideWeight="0.49804688" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32646593" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="24" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32646593" sideWeight="0.49487555" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32646593" sideWeight="0.49487555" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32711306" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14494875" sideWeight="0.5082353" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28696924" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14494875" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22254759" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14494875" sideWeight="0.4917647" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
@@ -2787,7 +2796,6 @@
       <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831737" sideWeight="0.49739584" order="23" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3269494" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.4986979" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2816,7 +2824,8 @@
     <MESSAGE value="Merge cu Otniel" />
     <MESSAGE value="..." />
     <MESSAGE value="Merge branch 'master' into Otniel&#10;&#10;# Conflicts:&#10;#&#9;.idea/modules.xml&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' into Otniel&#10;&#10;# Conflicts:&#10;#&#9;.idea/modules.xml&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Merge branch 'master' into Otniel&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.5-rc-2/taskHistory/taskHistory.lock&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' into Otniel&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.5-rc-2/taskHistory/taskHistory.lock&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2881,6 +2890,78 @@
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>133</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>116</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>126</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>130</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>127</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>128</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>121</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>119</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>117</line>
+          <properties />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>123</line>
+          <properties />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>124</line>
+          <properties />
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
           <line>115</line>
@@ -2897,8 +2978,16 @@
           </properties>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java</url>
+          <line>114</line>
+          <properties class="persistence.repository.RepositoryPreparateSanguine" method="cautareAnalizaDupaPreparat">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="46" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="GradleRunConfiguration">
@@ -3035,6 +3124,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3279,16 +3369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2928">
-          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryPreparateSanguine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -3299,21 +3379,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java">
+    <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="119" column="12" lean-forward="false" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+        <state relative-caret-position="457">
+          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
-            <marker date="1525546411052" expanded="true" signature="3150:3222" ph="SELECT PS.id... preparatsanguin" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="120">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="121" column="44" lean-forward="false" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
+          <folding>
+            <marker date="1525547609345" expanded="true" signature="3123:3197" ph="SELECT PS.id... preparatsanguin" />
+          </folding>
         </state>
       </provider>
     </entry>
