@@ -2,6 +2,7 @@ package persistence.repository;
 
 import model.PreparatSanguin;
 import model.Trombocite;
+import org.hibernate.SessionFactory;
 
 import java.util.List;
 
@@ -13,7 +14,18 @@ public class RepositoryTrombocite implements IRepositoryTrombocite {
     /**
      * Default constructor
      */
+
+    private SessionFactory factory = null;
+
     public RepositoryTrombocite() {
+
+        try {
+            factory = HibernateFactory.getInstance();
+        }
+        catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
     }
 
 
