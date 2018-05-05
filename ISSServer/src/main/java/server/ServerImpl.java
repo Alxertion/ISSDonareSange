@@ -14,6 +14,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
 import java.util.List;
@@ -99,6 +102,15 @@ public class ServerImpl implements IServices {
         return donators;
     }
 
+    private void createResultAnaliza(String content){
+        try(PrintWriter pw=new PrintWriter(new FileWriter("analiza.txt",false))) {
+            pw.println(content);
+            pw.close();
+        }catch (IOException ioe){
+            System.err.println(ioe);
+        }
+    }
+
     @Override
     public synchronized void sendEmail(String emailDonator,String continut){
         class GMailAuthenticator extends javax.mail.Authenticator {
@@ -134,22 +146,24 @@ public class ServerImpl implements IServices {
         try{
             MimeMessage message=new MimeMessage(sessionGmail);
             message.setFrom(new InternetAddress(mail));
-            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("chise_b@yahoo.com"));
+            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("oti_otniel97@yahoo.com"));
             message.setSubject("Rezultate analiza - Centru de transfuzii");
 
 
             BodyPart messageBodyPart = new MimeBodyPart();
             messageBodyPart.setText("Buna ziua,\nAveti atasat acestui mail un fisier cu rezultatele" +
-                    "analizelor dumneavoastra.\n\nVa dorim o zi placuta!");
+                    " analizelor dumneavoastra.\n\nVa dorim o zi placuta!");
 
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart);
 
-            /*messageBodyPart = new MimeBodyPart();
+            MimeBodyPart attachementBodyPart = new MimeBodyPart();
             DataSource dataSource=new FileDataSource("analiza.txt");
-            messageBodyPart.setDataHandler(new DataHandler(dataSource));
-            multipart.addBodyPart(messageBodyPart);
-            */
+            createResultAnaliza("Hai ca e ok");
+            attachementBodyPart.setDataHandler(new DataHandler(dataSource));
+            attachementBodyPart.setFileName("analiza.txt");
+            multipart.addBodyPart(attachementBodyPart);
+
             message.setContent(multipart);
 
             Transport transport = sessionGmail.getTransport("smtps");

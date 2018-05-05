@@ -127,6 +127,10 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             if(email==null)
                 throw new FrontException("Acest donator nu a comunicat nicio adresa de email");
             service.sendEmail(email,analiza.getText());
+            Alert message = new Alert(Alert.AlertType.INFORMATION);
+            message.setTitle("Mesaj de informare");
+            message.setContentText("Emailul a fost transmis.");
+            message.showAndWait();
         }catch (FrontException fr){
             Alert message = new Alert(Alert.AlertType.ERROR);
             message.setTitle("Mesaj eroare");
