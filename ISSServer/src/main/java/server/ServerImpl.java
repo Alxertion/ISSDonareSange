@@ -134,20 +134,22 @@ public class ServerImpl implements IServices {
         try{
             MimeMessage message=new MimeMessage(sessionGmail);
             message.setFrom(new InternetAddress(mail));
-            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("oti_otniel97@yahoo.com"));
+            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("chise_b@yahoo.com"));
             message.setSubject("Rezultate analiza - Centru de transfuzii");
 
 
             BodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText("Buna ziua,\nAveti atasat acestui mail un fisier cu rezultatele" +
+                    "analizelor dumneavoastra.\n\nVa dorim o zi placuta!");
 
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart);
 
-            messageBodyPart = new MimeBodyPart();
+            /*messageBodyPart = new MimeBodyPart();
             DataSource dataSource=new FileDataSource("analiza.txt");
             messageBodyPart.setDataHandler(new DataHandler(dataSource));
             multipart.addBodyPart(messageBodyPart);
-
+            */
             message.setContent(multipart);
 
             Transport transport = sessionGmail.getTransport("smtps");
