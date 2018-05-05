@@ -63,4 +63,8 @@ public class Persoana implements Serializable{
     public void setCont(Cont cont) {
         this.cont = cont;
     }
+
+    public String toString(){
+        return nume+" "+prenume;
+    }
 }

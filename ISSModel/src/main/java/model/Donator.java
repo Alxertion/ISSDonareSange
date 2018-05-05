@@ -228,5 +228,9 @@ public class Donator extends Persoana implements Serializable{
         this.setPrenume(donator.getPrenume());
     }
 
+    public String toString(){
+        return super.toString();
+    }
+
 
 }

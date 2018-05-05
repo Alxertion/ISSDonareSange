@@ -13,4 +13,5 @@ public interface IServices {
     List<Medic> getMedici();
     List<PersonalTransfuzii> getPersonalTransfuzii();
     List<Donator> getDonatori();
+    void sendEmail(Cont user,String continut);
 }

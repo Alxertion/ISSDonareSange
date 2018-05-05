@@ -63,6 +63,11 @@ public class AdministratorController extends UnicastRemoteObject implements Cont
     }
 
     @Override
+    public void prepareWindow() {
+
+    }
+
+    @Override
     public void setUser(Cont user) {
         this.user=user;
     }

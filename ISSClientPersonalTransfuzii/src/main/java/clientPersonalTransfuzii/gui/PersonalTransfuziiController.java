@@ -5,6 +5,9 @@ import JavaResources.Service.Service;
 import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
 import JavaResources.View.StageManager;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.MimeBodyPart;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.MimeMultipart;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,16 +22,24 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Cont;
 import model.Donator;
+import org.hibernate.Session;
 import services.IObserver;
 import services.IServices;
+import sun.plugin2.message.Message;
+import sun.plugin2.message.transport.Transport;
 
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import java.io.IOException;
 import java.io.Serializable;
+import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Properties;
 
 public class PersonalTransfuziiController extends UnicastRemoteObject implements  Controller, IObserver,Serializable {
     private StageManager stageManager;
@@ -44,6 +55,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     public PersonalTransfuziiController() throws RemoteException {
 
     }
+
 
     @FXML
     public void notifyButtonPressed(ActionEvent actionEvent){
@@ -81,11 +93,6 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
               this.stageManager=stageManager;
               this.loader=loader;
               this.service=service;
-              try {
-                  loadListDonatori();
-              }catch (RemoteException re){
-                  re.printStackTrace();
-              }
     }
 
     @Override
@@ -112,7 +119,11 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         }
     }
 
-    public void loadListDonatori() throws RemoteException{
+    public void prepareWindow(){
+        loadListDonatori();
+    }
+
+    public void loadListDonatori(){
         List<Donator> donatori=service.getDonatori();
         observableListDonatori= FXCollections.observableArrayList(donatori);
         listaDonatori.setItems(observableListDonatori);

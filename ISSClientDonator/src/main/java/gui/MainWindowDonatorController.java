@@ -49,6 +49,11 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
     }
 
     @Override
+    public void prepareWindow() {
+
+    }
+
+    @Override
     public void setUser(Cont user) {
         this.user=user;
     }
