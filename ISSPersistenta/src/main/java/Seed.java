@@ -29,13 +29,13 @@ public class Seed {
 
     public void seed(){
 
-//        adaugaConturi();
-//        adaugaMedici();
-//        adaugaPersonalTransfuzii();
-//        adaugaBoli();
-//        adaugaAnaliza();
-//        adaugaBoliLaAnaliza();
-//        adaugaDonatori();
+        adaugaConturi();
+        adaugaMedici();
+        adaugaPersonalTransfuzii();
+        adaugaBoli();
+        adaugaAnaliza();
+        adaugaBoliLaAnaliza();
+        adaugaDonatori();
         adaugaPreparateSanguine();
 
     }
@@ -65,7 +65,7 @@ public class Seed {
 
     private void adaugaBoliLaAnaliza() {
 
-        Analiza analiza = repoAnalize.cautare(1);
+        Analiza analiza = repoAnalize.cautare(7);
         Boala boala = repositoryBoli.cautareDupaNume(BoalaEnum.MALARIE.name());
         analiza.getBoli().add(boala);
         repoAnalize.modificare(analiza);
