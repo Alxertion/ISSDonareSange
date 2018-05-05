@@ -89,8 +89,8 @@ public class Donator extends Persoana {
      * @param nume 
      * @param prenume
      */
-    public Donator(String nume, String prenume) {
-        super.Persoana(nume, prenume);
+    public Donator(String nume, String prenume, Cont cont, String CNP, String email) {
+        super(nume, prenume, cont, CNP, email);
     }
 
 
@@ -221,11 +221,4 @@ public class Donator extends Persoana {
     public void setPreparateSanguine(List<PreparatSanguin> preparateSanguine) {
         this.preparateSanguine = preparateSanguine;
     }
-
-    public void setAllFields(Donator donator) {
-        this.setNume(donator.getNume());
-        this.setPrenume(donator.getPrenume());
-    }
-
-
 }

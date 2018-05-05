@@ -16,6 +16,9 @@
 
         <property name = "nume" column = "nume" type = "string"/>
         <property name = "prenume" column = "prenume" type = "string"/>
+        <property name = "email" column = "email" type = "string"/>
+        <property name = "CNP" column = "cnp" type = "string"/>
+
         <many-to-one name = "cont" column = "username" unique="true"
                      class="model.Cont"/>
 

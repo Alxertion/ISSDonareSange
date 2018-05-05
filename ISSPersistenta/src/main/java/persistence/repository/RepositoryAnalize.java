@@ -1,6 +1,7 @@
 package persistence.repository;
 
 import model.Analiza;
+import model.Boala;
 import model.Cont;
 import model.PreparatSanguin;
 import org.hibernate.HibernateException;
@@ -63,8 +64,6 @@ public class RepositoryAnalize implements IRepositoryAnalize {
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            Analiza newAnaliza = cautare(analiza.getIdAnaliza());
-            newAnaliza.setAllFields(analiza);
             session.update(analiza);
             tx.commit();
 
@@ -147,5 +146,4 @@ public class RepositoryAnalize implements IRepositoryAnalize {
 
         return listOfAllAnalize;
     }
-
 }

@@ -12,7 +12,7 @@ public class Analiza {
      */
     private int idAnaliza;
     private String grupa;
-    private String RH;
+    private Boolean RH;
     private List<Boala> boli;
     private List<PreparatSanguin> preparateSanguine;
 
@@ -23,7 +23,7 @@ public class Analiza {
      * @param grupa
      * @param RH
      */
-    public Analiza(String grupa, String RH) {
+    public Analiza(String grupa, Boolean RH) {
         this.grupa = grupa;
         this.RH = RH;
     }
@@ -52,11 +52,11 @@ public class Analiza {
         this.grupa = grupa;
     }
 
-    public String getRH() {
+    public Boolean getRH() {
         return RH;
     }
 
-    public void setRH(String RH) {
+    public void setRH(Boolean RH) {
         this.RH = RH;
     }
 
@@ -74,10 +74,5 @@ public class Analiza {
 
     public void setPreparateSanguine(List<PreparatSanguin> preparateSanguine) {
         this.preparateSanguine = preparateSanguine;
-    }
-
-    public void setAllFields(Analiza analiza) {
-        this.grupa = analiza.getGrupa();
-        this.RH = analiza.getRH();
     }
 }

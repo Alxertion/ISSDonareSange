@@ -67,8 +67,6 @@ public class RepositoryDonatori implements IRepositoryDonatori {
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            Donator newDonator = cautare(donator.getIdDonator());
-            newDonator.setAllFields(donator);
             session.update(donator);
             tx.commit();
 
