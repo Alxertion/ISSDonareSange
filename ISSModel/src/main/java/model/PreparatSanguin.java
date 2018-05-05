@@ -31,12 +31,12 @@ public class PreparatSanguin {
     /**
      *
      */
-    private Stagiu stagiu;
+    private String stagiu;
 
     /**
      *
      */
-    private Integer idPreparatSanguin;
+    private int idPreparatSanguin;
 
     /**
      *
@@ -50,7 +50,7 @@ public class PreparatSanguin {
      * @param cantitate
      */
 
-    public PreparatSanguin(Date dataPrelevare, Date dataExpirare, Double cantitate, String tip, Stagiu stagiu) {
+    public PreparatSanguin(Date dataPrelevare, Date dataExpirare, Double cantitate, String tip, String stagiu) {
         this.dataPrelevare = dataPrelevare;
         this.dataExpirare = dataExpirare;
         this.cantitate = cantitate;
@@ -91,19 +91,19 @@ public class PreparatSanguin {
         this.cantitate = cantitate;
     }
 
-    public Stagiu getStagiu() {
+    public String getStagiu() {
         return stagiu;
     }
 
-    public void setStagiu(Stagiu stagiu) {
+    public void setStagiu(String stagiu) {
         this.stagiu = stagiu;
     }
 
-    public Integer getIdPreparatSanguin() {
+    public int getIdPreparatSanguin() {
         return idPreparatSanguin;
     }
 
-    public void setIdPreparatSanguin(Integer idPreparatSanguin) {
+    public void setIdPreparatSanguin(int idPreparatSanguin) {
         this.idPreparatSanguin = idPreparatSanguin;
     }
 
