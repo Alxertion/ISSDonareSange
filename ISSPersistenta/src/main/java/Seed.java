@@ -30,7 +30,7 @@ public class Seed {
         adaugaBoli();
         adaugaAnaliza();
         adaugaBoliLaAnaliza();
-
+        adaugaDonatori();
 
     }
 
