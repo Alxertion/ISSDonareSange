@@ -159,4 +159,9 @@ public class ServerImpl implements IServices {
             throw new RuntimeException(msg);
         }
     }
+
+    @Override
+    public Donator findDonatorByUsername(String username) {
+        return repositoryDonatori.findDonatorByUsername(username);
+    }
 }

@@ -57,6 +57,7 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
         try{
             FXMLLoader loaderFXML = new FXMLLoader();
             if(stageManager.getTitle().equals("LoginTransfuzii")) {
+
                 loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainViewPersonalTransfuzii.getFxmlFile()));
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
@@ -65,7 +66,9 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
                 service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 ctrl.prepareWindow();
                 stageManager.switchScene(FXMLEnum.MainViewPersonalTransfuzii, rootNode, ctrl, loader);
+
             }else if(stageManager.getTitle().equals("LoginDonator")){
+
                 loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowDonator.getFxmlFile()));
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
@@ -74,7 +77,9 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
                 service.login(new Cont(userField.getText(),passField.getText()),(IObserver) ctrl);
                 ctrl.prepareWindow();
                 stageManager.switchScene(FXMLEnum.MainWindowDonator, rootNode, ctrl, loader);
+
             }else if(stageManager.getTitle().equals("LoginAdministrator")){
+
                 loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowAdministrator.getFxmlFile()));
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();
@@ -85,6 +90,7 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
                 stageManager.switchScene(FXMLEnum.MainWindowAdministrator, rootNode, ctrl, loader);
             }
             else if(stageManager.getTitle().equals("LoginMedic")){
+
                 loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowMedic.getFxmlFile()));
                 Parent rootNode = loaderFXML.load();
                 ctrl = loaderFXML.getController();

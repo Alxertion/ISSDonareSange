@@ -10,10 +10,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 import model.Cont;
+import model.Donator;
 import services.IObserver;
 import services.IServices;
 
@@ -27,7 +29,10 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
+    private Donator donator;
 
+    @FXML
+    private Accordion analizeAccordion;
 
     @FXML
     private Button vreaSaDonezButton;
@@ -50,6 +55,17 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
 
     @Override
     public void prepareWindow() {
+
+        System.out.println(user.getUsername() );
+        setIdDonator();
+
+    }
+
+    private void setIdDonator() {
+
+        donator = service.findDonatorByUsername(user.getUsername());
+        System.out.println(donator.getIdDonator());
+        System.out.println(donator.getCont().getUsername());
 
     }
 
