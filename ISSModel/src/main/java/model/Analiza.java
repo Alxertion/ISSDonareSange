@@ -78,15 +78,7 @@ public class Analiza implements Serializable {
     }
 
     public String toString(){
-        String toFile="Grupa sanguina:"+grupa+".\n"+"RH:"+RH.toString()+".\n";
-        if(boli==null)
-            toFile=toFile+"Rezultatul analizelor: POZITIV -> APT PENTRU DONARE";
-        else{
-            toFile=toFile+"Rezultatul analizelor: NEGATIV.\nMotive:\n";
-            for(Boala boala:boli){
-                toFile=toFile + boala.getNume()+"\n";
-            }
-        }
-        return toFile;
+        String stringforRh=RH ? "+(Pozitiv)" : "(-)Negativ";
+       return "Grupa sanguina:"+grupa+".\n"+"RH:"+stringforRh+".\n";
     }
 }

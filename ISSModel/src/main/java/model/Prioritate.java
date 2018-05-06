@@ -1,9 +1,11 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * 
  */
-public enum Prioritate {
+public enum Prioritate implements Serializable{
     MICA,
     MEDIE,
     MARE

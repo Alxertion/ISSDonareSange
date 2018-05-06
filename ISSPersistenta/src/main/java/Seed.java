@@ -83,6 +83,7 @@ public class Seed {
         analiza.getBoli().add(boala);
         repoAnalize.modificare(analiza);
 
+
     }
 
     private void adaugaAnaliza() {

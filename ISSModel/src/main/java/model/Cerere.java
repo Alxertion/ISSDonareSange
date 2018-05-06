@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * 
  */
-public class Cerere {
+public class Cerere implements Serializable {
 
     private int idCerere;
     /**
