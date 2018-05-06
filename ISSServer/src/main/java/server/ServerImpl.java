@@ -103,7 +103,7 @@ public class ServerImpl implements IServices {
         return donators;
     }
 
-    private void createResultAnaliza(String content){
+    private synchronized void createResultAnaliza(String content){
         try(PrintWriter pw=new PrintWriter(new FileWriter("analiza.txt",false))) {
             pw.println(content);
             pw.close();
@@ -178,14 +178,14 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public Donator findDonatorByUsername(String username) {
+    public synchronized Donator findDonatorByUsername(String username) {
         return repositoryDonatori.findDonatorByUsername(username);
     }
 
 
 
    @Override
-    public Analiza cautaUltimaAnalizaDupaDonator(int idDonator) {
+    public synchronized Analiza cautaUltimaAnalizaDupaDonator(int idDonator) {
         PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(idDonator);
         if(preparatSanguin!=null){
             int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
@@ -196,7 +196,7 @@ public class ServerImpl implements IServices {
 
 
     @Override
-    public List<Analiza> cautaAnalizeleUnuiDonator(int idDonator) {
+    public synchronized List<Analiza> cautaAnalizeleUnuiDonator(int idDonator) {
         List<Analiza> listOfAllAnalize = new ArrayList<>();
         List<Integer> listOfallIds = new ArrayList<>();
 
