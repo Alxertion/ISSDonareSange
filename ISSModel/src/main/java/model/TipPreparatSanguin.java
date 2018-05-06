@@ -1,10 +1,13 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * 
  */
-public enum TipPreparatSanguin {
+public enum TipPreparatSanguin implements Serializable{
     TROMBOCITE,
     GLOBULE_ROSII,
-    PLASMA
+    PLASMA,
+    SANGE_NEFILTRAT
 }

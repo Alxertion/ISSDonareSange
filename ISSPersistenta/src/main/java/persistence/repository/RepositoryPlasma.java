@@ -1,7 +1,12 @@
 package persistence.repository;
 
 import model.Plasma;
-import model.PreparatSanguin;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import java.util.List;
 
 /**
  * 
@@ -11,15 +16,26 @@ public class RepositoryPlasma implements IRepositoryPlasma {
     /**
      * Default constructor
      */
+
+    private SessionFactory factory = null;
+
     public RepositoryPlasma() {
+
+        try {
+            factory = HibernateFactory.getInstance();
+        }
+        catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
     }
 
 
     /**
      * @param
      */
-    public void adaugare(Plasma element) {
-        // TODO implement here
+    public void adaugare(Plasma pl) {
+
     }
 
     /**
@@ -50,7 +66,7 @@ public class RepositoryPlasma implements IRepositoryPlasma {
     /**
      * @return
      */
-    public Iterable<Plasma> getAll() {
+    public List<Plasma> getAll() {
         // TODO implement here
         return null;
     }

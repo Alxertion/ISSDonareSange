@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * 
  */
-public class Cerere {
+public class Cerere implements Serializable {
 
     private int idCerere;
     /**
@@ -126,12 +127,4 @@ public class Cerere {
         this.idCerere = idCerere;
     }
 
-    public void setAllFields(Cerere cerere) {
-        this.prioritate = cerere.getPrioritate();
-        this.grupa = cerere.getGrupa();
-        this.RH = cerere.getRH();
-        this.cantitateCeruta = cerere.getCantitateCeruta();
-        this.cantitateActuala = cerere.getCantitateActuala();
-        this.dataEfectuare = cerere.getDataEfectuare();
-    }
 }

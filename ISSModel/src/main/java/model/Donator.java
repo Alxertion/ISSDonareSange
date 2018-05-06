@@ -1,12 +1,13 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 /**
  * 
  */
-public class Donator extends Persoana {
+public class Donator extends Persoana implements Serializable{
 
     /**
      * Default constructor
@@ -89,8 +90,8 @@ public class Donator extends Persoana {
      * @param nume 
      * @param prenume
      */
-    public void Donator(String nume, String prenume) {
-        super.Persoana(nume, prenume);
+    public Donator(String nume, String prenume, Cont cont, String CNP, String email) {
+        super(nume, prenume, cont, CNP, email);
     }
 
 
@@ -225,6 +226,10 @@ public class Donator extends Persoana {
     public void setAllFields(Donator donator) {
         this.setNume(donator.getNume());
         this.setPrenume(donator.getPrenume());
+    }
+
+    public String toString(){
+        return super.toString()+" "+super.getCNP();
     }
 
 

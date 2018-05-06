@@ -64,8 +64,6 @@ public class RepositoryCereri implements IRepositoryCereri {
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            Cerere newCerere = cautare(cerere.getIdCerere());
-            newCerere.setAllFields(cerere);
             session.update(cerere);
             tx.commit();
 
@@ -132,7 +130,7 @@ public class RepositoryCereri implements IRepositoryCereri {
     /**
      * @return
      */
-    public Iterable<Cerere> getAll() {
+    public List<Cerere> getAll() {
         Transaction tx = null;
         Session session = null;
         List<Cerere> listOfAllCereri = null;

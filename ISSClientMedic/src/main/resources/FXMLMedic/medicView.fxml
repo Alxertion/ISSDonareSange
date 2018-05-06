@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="gui.MedicController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MedicController">
   <tabs>
     <Tab text="Cereri Curente">
       <content>
@@ -35,6 +35,7 @@
                   <Label layoutX="14.0" layoutY="14.0" text="Cererile de sânge efectuate:" />
                   <Button layoutX="17.0" layoutY="295.0" mnemonicParsing="false" text="Anulare cerere selectată" />
                   <Label layoutX="17.0" layoutY="326.0" text="Atenție: anularea unei cereri e un proces definitiv!" textFill="#2c1ca7" />
+                  <Button layoutX="718.0" layoutY="298.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="60.0" text="Log out" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -89,6 +90,7 @@
                   <Label layoutX="420.0" layoutY="285.0" text="   La selectarea unui pacient, se vor completa câmpurile" textFill="#2c1ca7" />
                   <Label layoutX="420.0" layoutY="306.0" text="&quot;CNP pacient&quot; și &quot;Nume pacient&quot;; dacă acesta nu e încă" textFill="#2c1ca7" />
                   <Label layoutX="420.0" layoutY="327.0" text=" înregistrat, va fi înregistrat în urma cererii." textFill="#2c1ca7" />
+                  <Button layoutX="718.0" layoutY="298.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="60.0" text="Log out" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -119,6 +121,7 @@
                      </children>
                   </GridPane>
                   <Label layoutX="14.0" layoutY="160.0" text="Se recomandă schimbarea parolei cel puțin lunar." textFill="#2a1ca6" />
+                  <Button layoutX="718.0" layoutY="298.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="60.0" text="Log out" />
                </children>
             </AnchorPane>
         </content>

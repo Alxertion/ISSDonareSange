@@ -9,10 +9,11 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="500.0" maxWidth="680.0" minHeight="500.0" minWidth="680.0" prefHeight="500.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaResources.FormularDonator">
+<AnchorPane maxHeight="500.0" maxWidth="680.0" minHeight="500.0" minWidth="680.0" prefHeight="500.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaResources.FormularDonator">
    <children>
-      <GridPane layoutX="77.0" layoutY="14.0" prefHeight="414.0" prefWidth="527.0">
+      <GridPane layoutX="29.0" layoutY="19.0" prefHeight="414.0" prefWidth="590.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="175.0" />
@@ -32,34 +33,37 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label layoutX="310.0" layoutY="45.0" text="Prenume" GridPane.columnIndex="2" />
-            <DatePicker fx:id="dataNasteriiDatePicker" layoutX="110.0" layoutY="90.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label layoutX="310.0" layoutY="145.0" text="Localitate" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label layoutX="45.0" layoutY="145.0" text="Domiciliu" GridPane.rowIndex="2" />
+            <Label layoutX="310.0" layoutY="45.0" text="Prenume:" GridPane.columnIndex="2" />
+            <DatePicker fx:id="dataNasteriiDatePicker" layoutX="110.0" layoutY="90.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label layoutX="310.0" layoutY="145.0" text="Localitate:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label layoutX="45.0" layoutY="145.0" text="Domiciliu:" GridPane.rowIndex="2" />
             <TextField fx:id="domiciliuCITextField" layoutX="110.0" layoutY="140.0" maxHeight="25.0" maxWidth="170.0" minHeight="4.0" minWidth="170.0" prefHeight="4.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="numeTextField" layoutX="110.0" layoutY="40.0" maxWidth="170.0" minWidth="170.0" prefHeight="16.0" prefWidth="170.0" GridPane.columnIndex="1" />
-            <Label layoutX="330.0" layoutY="95.0" text="CNP" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label layoutX="65.0" layoutY="45.0" text="Nume" />
-            <TextField fx:id="prenumeTextField" layoutX="370.0" layoutY="40.0" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" GridPane.columnIndex="3" />
-            <Label layoutX="30.0" layoutY="95.0" text="Data nașterii" GridPane.rowIndex="1" />
-            <TextField fx:id="cnpTextField" layoutX="370.0" layoutY="90.0" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <ComboBox fx:id="localitateCIComboBox" layoutX="369.0" layoutY="140.0" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="numeTextField" layoutX="110.0" layoutY="40.0" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" />
+            <Label layoutX="330.0" layoutY="95.0" text="CNP:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label layoutX="65.0" layoutY="45.0" text="Nume:" />
+            <TextField fx:id="prenumeTextField" layoutX="370.0" layoutY="40.0" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="3" />
+            <Label layoutX="30.0" layoutY="95.0" text="Data nașterii:" GridPane.rowIndex="1" />
+            <TextField fx:id="cnpTextField" layoutX="370.0" layoutY="90.0" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <ComboBox fx:id="localitateCIComboBox" layoutX="369.0" layoutY="140.0" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Label maxWidth="184.0" minWidth="184.0" prefHeight="20.0" prefWidth="184.0" text="(adresa din cartea de identitate)" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="Reședința" GridPane.rowIndex="4" />
-            <TextField fx:id="resedintaTextField" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label text="Localitate" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <ComboBox fx:id="localitateResedintaTextField" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Label prefHeight="35.0" prefWidth="434.0" text="(dacă locuiești în altă parate decât adresa pe care o ai in cartea de identitate)" wrapText="true" GridPane.columnSpan="4" GridPane.rowIndex="5" />
-            <Label text="Date de contact" GridPane.rowIndex="6" />
-            <Label text="Email" GridPane.rowIndex="7" />
-            <TextField fx:id="emailTextField" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label text="Telefon" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <TextField fx:id="telefonTextField" maxWidth="170.0" minWidth="170.0" prefHeight="26.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <Label text="Peroana pentru care doresc să donze" GridPane.columnSpan="2" GridPane.rowIndex="8" />
-            <Label text="Nume" GridPane.rowIndex="9" />
-            <TextField fx:id="numePacientTextField" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Label text="Prenume" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <TextField fx:id="prenumePacientTextField" maxWidth="170.0" minWidth="170.0" prefHeight="26.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <Label text="Reședința:" GridPane.rowIndex="4" />
+            <TextField fx:id="resedintaTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Localitate:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <ComboBox fx:id="localitateResedintaTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label prefHeight="35.0" prefWidth="434.0" text="(dacă locuiești în altă parte decât adresa pe care o ai în cartea de identitate)" wrapText="true" GridPane.columnSpan="4" GridPane.rowIndex="5" />
+            <Label text="Date de contact" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Email:" GridPane.rowIndex="7" />
+            <TextField fx:id="emailTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Telefon:" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="telefonTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Label text="Persoana pentru care doresc să donzez:" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+            <Label text="Nume:" GridPane.rowIndex="9" />
+            <TextField fx:id="numePacientTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label text="Prenume:" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <TextField fx:id="prenumePacientTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
          </children>
       </GridPane>
       <Button fx:id="backButton" layoutX="69.0" layoutY="421.0" mnemonicParsing="false" onAction="#backButtonPressed" />

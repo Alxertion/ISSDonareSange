@@ -53,8 +53,6 @@ public class RepositoryConturi implements IRepositoryConturi {
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            Cont newCont = cautare(cont.getUsername());
-            newCont.setAllFields(cont);
             session.update(cont);
             tx.commit();
 
@@ -117,7 +115,7 @@ public class RepositoryConturi implements IRepositoryConturi {
 
 
     @Override
-    public Iterable<Cont> getAll() {
+    public List<Cont> getAll() {
 
         Transaction tx = null;
         Session session = null;

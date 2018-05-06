@@ -1,12 +1,15 @@
 package persistence.repository;
 
+import model.Boala;
 import model.Cont;
 import model.Donator;
 import model.PreparatSanguin;
+import model.TipPreparatSanguin;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -67,8 +70,6 @@ public class RepositoryDonatori implements IRepositoryDonatori {
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            Donator newDonator = cautare(donator.getIdDonator());
-            newDonator.setAllFields(donator);
             session.update(donator);
             tx.commit();
 
@@ -128,7 +129,7 @@ public class RepositoryDonatori implements IRepositoryDonatori {
     /**
      * @return
      */
-    public Iterable<Donator> getAll() {
+    public List<Donator> getAll() {
         Transaction tx = null;
         Session session = null;
         List<Donator> listOfAllDonatori = null;
@@ -147,4 +148,28 @@ public class RepositoryDonatori implements IRepositoryDonatori {
         return listOfAllDonatori;
     }
 
+    @Override
+    public Donator findDonatorByUsername(String username) {
+
+        Transaction tx = null;
+        Session session = null;
+        Donator donator = null;
+
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            Query query =  session.createQuery("From Donator WHERE cont.username = :numeuser");
+            query.setParameter("numeuser", username);
+            donator = (Donator) query.list().get(0);
+
+            tx.commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return donator;
+    }
 }
