@@ -180,21 +180,22 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public Donator findDonatorByUsername(String username) {
+    public synchronized Donator findDonatorByUsername(String username) {
         return repositoryDonatori.findDonatorByUsername(username);
     }
 
     @Override
-    public Analiza cautaAnalizaDupaDonator(int idDonator) {
+    public synchronized Analiza cautaAnalizaDupaDonator(int idDonator) {
         PreparatSanguin preparatSanguin=cautaPreparatDupaDonatorSiTip(idDonator,TipPreparatSanguin.SANGE_NEFILTRAT.name());
         if(preparatSanguin!=null){
             int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
-            return repositoryAnalize.cautare(idAnaliza);
+            Analiza analiza=repositoryAnalize.cautare(idAnaliza);
+            return analiza;
         }
         return null;
     }
 
-    private PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, String tipPreparatSanguin) {
+    private synchronized PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, String tipPreparatSanguin) {
         Donator donator=repositoryDonatori.cautare(idDonator);
         PreparatSanguin preparatSanguin = null;
         List<PreparatSanguin> listOfAllPreparateSanguine = donator.getPreparateSanguine();

@@ -8,6 +8,7 @@ import JavaResources.View.StageManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,11 +17,15 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.Analiza;
+import model.Boala;
 import model.Cont;
 import model.Donator;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import services.FrontException;
 import services.IObserver;
@@ -118,6 +123,32 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         }
     }
 
+    private void listOnClick(){
+        listaDonatori.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                try {
+                    Analiza analizaDonator = service.cautaAnalizaDupaDonator(listaDonatori.getSelectionModel().getSelectedItem().getIdDonator());
+                    String verdictFinal=analizaDonator.toString();
+                    if (analizaDonator == null)
+                        throw new FrontException("Analizele pentru acest donator nu sunt finalizate.");
+                    List<Boala> boli=analizaDonator.getBoli();
+                    if(boli.size()==0){
+                        verdictFinal=verdictFinal+"Rezultatul analizelor: POZITIV -> APT PENTRU DONARE";
+                    }else{
+                        verdictFinal=verdictFinal+"Rezultatul analizelor: NEGATIV.\nMotive:\n";
+                        for(Boala boala:boli){
+                            verdictFinal=verdictFinal + boala.getNume()+"\n";
+                        }
+                    }
+                    analiza.setPromptText(verdictFinal);
+                }catch (FrontException fe){
+                    analiza.setPromptText(fe.getMessage());
+                }
+            }
+        });
+    }
+
     @FXML
     public void sendAnaliza(ActionEvent actionEvent){
         try{
@@ -142,6 +173,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
 
     public void prepareWindow(){
         loadListDonatori();
+        listOnClick();
     }
 
     public void loadListDonatori(){
