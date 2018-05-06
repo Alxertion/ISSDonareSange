@@ -39,6 +39,13 @@ public class Seed {
         adaugaPreparateSanguine();
         addPreparatSanguinLaDonator();
         addPreparatLaAnaliza();
+//        check();
+    }
+
+    private void check(){
+
+
+
     }
 
     private void addPreparatLaAnaliza(){
@@ -51,6 +58,12 @@ public class Seed {
         Analiza analiza2=repoAnalize.cautare(8);
         analiza2.getPreparateSanguine().add(preparatSanguin2);
         repoAnalize.modificare(analiza2);
+
+        PreparatSanguin preparatSanguin3=repoPreparateSanguine.cautare(9);
+        Analiza analiza3=repoAnalize.cautare(9);
+        analiza3.getPreparateSanguine().add(preparatSanguin3);
+        repoAnalize.modificare(analiza3);
+
     }
 
     private void adaugaPreparateSanguine() {
@@ -59,6 +72,8 @@ public class Seed {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date dataRecoltarii1 = sdf.parse("21/05/2018");
             Date dataRecoltarii2 = sdf.parse("26/01/2018");
+            Date dataRecoltarii3 = sdf.parse("16/02/2015");
+            Date dataRecoltarii4 = sdf.parse("28/01/2007");
 
             repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
             repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
@@ -69,6 +84,16 @@ public class Seed {
             repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii2, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
             repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii2, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
             repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii2, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
+
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii3, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii3, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii3, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii3, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
+
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii4, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii4, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii4, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii2, dataRecoltarii4, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -192,6 +217,19 @@ public class Seed {
         donator2.getPreparateSanguine().add(preparatSanguinPlasma2);
 
         repoDonatori.modificare(donator2);
+
+
+        PreparatSanguin preparatSanguinSangeNefiltrat3 = repoPreparateSanguine.cautare(9);
+        PreparatSanguin preparatSanguinTrombocite3 = repoPreparateSanguine.cautare(10);
+        PreparatSanguin preparatSanguinGlobuleRosii3 = repoPreparateSanguine.cautare(11);
+        PreparatSanguin preparatSanguinPlasma3 = repoPreparateSanguine.cautare(12);
+
+        donator.getPreparateSanguine().add(preparatSanguinSangeNefiltrat3);
+        donator.getPreparateSanguine().add(preparatSanguinTrombocite3);
+        donator.getPreparateSanguine().add(preparatSanguinGlobuleRosii3);
+        donator.getPreparateSanguine().add(preparatSanguinPlasma3);
+
+        repoDonatori.modificare(donator);
 
     }
 }
