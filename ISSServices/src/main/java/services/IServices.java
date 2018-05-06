@@ -15,4 +15,5 @@ public interface IServices {
     List<Donator> getDonatori();
     void sendEmail(String emailDonatosr,String continut);
     Donator findDonatorByUsername(String username);
+    Analiza cautaAnalizaDupaDonator(int idDonator);
 }

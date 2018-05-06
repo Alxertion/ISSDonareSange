@@ -38,7 +38,7 @@ public class ServerImpl implements IServices {
     //For remoting
     private Map<String, IObserver> loggedClients;
 
-    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi){
+    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi,IRepositoryPreparateSanguine repositoryPreparateSanguine){
         this.repositoryAnalize=repositoryAnalize;
         this.repositoryCereri=repositoryCereri;
         this.repositoryDonatori=repositoryDonatori;
@@ -49,6 +49,7 @@ public class ServerImpl implements IServices {
         this.repositorySangeNefiltrat=repositorySangeNefiltrat;
         this.repositoryTrombocite=repositoryTrombocite;
         this.repositoryConturi=repositoryConturi;
+        this.repositoryPreparateSanguine=repositoryPreparateSanguine;
         loggedClients=new ConcurrentHashMap<>();
     }
 
@@ -99,6 +100,15 @@ public class ServerImpl implements IServices {
         return donators;
     }
 
+    private void createResultAnaliza(String content){
+        try(PrintWriter pw=new PrintWriter(new FileWriter("analiza.txt",false))) {
+            pw.println(content);
+            pw.close();
+        }catch (IOException ioe){
+            System.err.println(ioe);
+        }
+    }
+
     @Override
     public synchronized void sendEmail(String emailDonator,String continut){
         class GMailAuthenticator extends javax.mail.Authenticator {
@@ -139,14 +149,18 @@ public class ServerImpl implements IServices {
 
 
             BodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText("Buna ziua,\nAveti atasat acestui mail un fisier cu rezultatele" +
+                    " analizelor dumneavoastra.\n\nVa dorim o zi placuta!");
 
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart);
 
-            messageBodyPart = new MimeBodyPart();
+            MimeBodyPart attachementBodyPart = new MimeBodyPart();
             DataSource dataSource=new FileDataSource("analiza.txt");
-            messageBodyPart.setDataHandler(new DataHandler(dataSource));
-            multipart.addBodyPart(messageBodyPart);
+            createResultAnaliza("Hai ca e ok");
+            attachementBodyPart.setDataHandler(new DataHandler(dataSource));
+            attachementBodyPart.setFileName("analiza.txt");
+            multipart.addBodyPart(attachementBodyPart);
 
             message.setContent(multipart);
 
@@ -161,7 +175,18 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public Donator findDonatorByUsername(String username) {
-        return repositoryDonatori.findDonatorByUsername(username);
+    public Analiza cautaAnalizaDupaDonator(int idDonator) {
+        PreparatSanguin preparatSanguin=cautaPreparatDupaDonatorSiTip(idDonator,TipPreparatSanguin.SANGE_NEFILTRAT);
+        int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
+        return repositoryAnalize.cautare(idAnaliza);
     }
+
+    private PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, TipPreparatSanguin tipPreparatSanguin) {
+        Donator donator=repositoryDonatori.cautare(idDonator);
+        PreparatSanguin preparatSanguin=donator.getPreparateSanguine().stream().filter(x->{
+            return x.getTip().equals(tipPreparatSanguin);
+        }).collect(Collectors.toList()).get(0);
+        return preparatSanguin;
+    }
+
 }
