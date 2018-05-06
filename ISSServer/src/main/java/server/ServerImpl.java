@@ -182,16 +182,22 @@ public class ServerImpl implements IServices {
     @Override
     public Analiza cautaAnalizaDupaDonator(int idDonator) {
         PreparatSanguin preparatSanguin=cautaPreparatDupaDonatorSiTip(idDonator,TipPreparatSanguin.SANGE_NEFILTRAT);
+        if(preparatSanguin==null)
+            return null;
         int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
         return repositoryAnalize.cautare(idAnaliza);
     }
 
     private PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, TipPreparatSanguin tipPreparatSanguin) {
         Donator donator=repositoryDonatori.cautare(idDonator);
-        PreparatSanguin preparatSanguin=donator.getPreparateSanguine().stream().filter(x->{
-            return x.getTip().equals(tipPreparatSanguin);
-        }).collect(Collectors.toList()).get(0);
+        PreparatSanguin preparatSanguin = null;
+        List<PreparatSanguin> listOfAllPreparateSanguine = donator.getPreparateSanguine();
+
+        if(listOfAllPreparateSanguine.size() >0){
+            preparatSanguin=donator.getPreparateSanguine().stream().filter(x->{
+                return x.getTip().equals(tipPreparatSanguin);
+            }).collect(Collectors.toList()).get(0);
+        }
         return preparatSanguin;
     }
-
 }
