@@ -190,6 +190,7 @@ public class ServerImpl implements IServices {
         if(preparatSanguin!=null){
             int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
             Analiza analiza=repositoryAnalize.cautare(idAnaliza);
+
             return analiza;
         }
         return null;
