@@ -62,12 +62,18 @@ public class ServerImpl implements IServices {
     public synchronized void login(Cont user,IObserver client) throws ServiceException {
         boolean loginOk=true;//userRepository.verifyUser(user);
         if (loginOk){
-            if(loggedClients.get(user.getUsername())!=null)
+
+            if(loggedClients.get(user.getUsername())!=null){
+                System.out.println("test this out!");
                 throw new ServiceException("Acest user este deja logat.");
+            }
+
+
             System.out.println(user.getUsername());
             loggedClients.put(user.getUsername(), client);
             notifyMyClients();
         }else
+            // test this
             throw new ServiceException("Autentificare esuata.");
     }
 
