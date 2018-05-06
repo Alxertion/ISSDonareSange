@@ -11,19 +11,19 @@
    <children>
       <VBox layoutY="200.0" prefHeight="118.0" prefWidth="600.0">
          <children>
-            <Accordion prefHeight="78.0" prefWidth="500.0">
+            <Accordion fx:id="analizeAccordion" prefHeight="78.0" prefWidth="500.0">
               <panes>
-                <TitledPane animated="false" text="Analize : 20/10/2020">
+                <TitledPane animated="false">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" prefHeight="0.0" prefWidth="600.0" text="Analize: 15/07/2019">
+                <TitledPane animated="false" prefHeight="0.0" prefWidth="600.0">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="Analize: 01/03/2018">
+                <TitledPane animated="false">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>

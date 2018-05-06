@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * 
  */
-public class Trombocite extends PreparatSanguin {
+public class Trombocite extends PreparatSanguin implements Serializable{
 
     /**
      * Default constructor

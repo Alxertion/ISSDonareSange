@@ -16,6 +16,8 @@
 
         <property name = "nume" column = "nume" type = "string"/>
         <property name = "prenume" column = "prenume" type = "string"/>
+        <property name = "email" column = "email" type = "string"/>
+        <property name = "CNP" column = "cnp" type = "string"/>
         <property name="sex" column="sex" type="boolean"></property>
         <property name="dataNasterii" column="dataNasterii" type="calendar_date"></property>
         <property name="greutate" column="greutate" type="double"></property>
@@ -29,9 +31,10 @@
         <property name="consumBauturiAlcoolice48h" column="consumBauturiAlcoolice48h" type="byte"></property>
         <property name="subTratament" column="subTratament" type="byte"></property>
 
+
         
         <many-to-one name = "cont" column = "username" unique="true"
-                     class="model.Cont" not-null="true"/>
+                     class="model.Cont"/>
 
         <bag name = "boliAnterioare" cascade="all" table="bolidonator">
             <key column="idDonator"></key>

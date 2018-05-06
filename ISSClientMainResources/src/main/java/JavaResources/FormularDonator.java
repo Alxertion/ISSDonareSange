@@ -86,6 +86,11 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
     }
 
     @Override
+    public void prepareWindow() {
+
+    }
+
+    @Override
     public void setUser(Cont user) {
 
     }
