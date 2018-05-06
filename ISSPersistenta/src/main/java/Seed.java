@@ -29,15 +29,16 @@ public class Seed {
 
     public void seed() {
 
-        adaugaConturi();
-        adaugaMedici();
-        adaugaPersonalTransfuzii();
-        adaugaBoli();
-        adaugaAnaliza();
-        adaugaBoliLaAnaliza();
-        adaugaDonatori();
-        adaugaPreparateSanguine();
-        addPreparatSanguinLaDonator();
+//        adaugaConturi();
+//        adaugaMedici();
+//        adaugaPersonalTransfuzii();
+//        adaugaBoli();
+//        adaugaAnaliza();
+//        adaugaBoliLaAnaliza();
+//        adaugaDonatori();
+//        adaugaPreparateSanguine();
+//        addPreparatSanguinLaDonator();
+        addPreparatLaAnaliza();
     }
 
     private void addPreparatLaAnaliza(){
