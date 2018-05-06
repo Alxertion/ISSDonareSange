@@ -19,9 +19,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -186,9 +184,7 @@ public class ServerImpl implements IServices {
 
 
 
-    @Override
-    public synchronized Analiza cautaAnalizaDupaDonator(int idDonator) {
-        PreparatSanguin preparatSanguin=cautaPreparatDupaDonatorSiTip(idDonator,TipPreparatSanguin.SANGE_NEFILTRAT.name());
+   @Override
     public Analiza cautaUltimaAnalizaDupaDonator(int idDonator) {
         PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(idDonator);
         if(preparatSanguin!=null){
@@ -198,7 +194,7 @@ public class ServerImpl implements IServices {
         return null;
     }
 
-    private synchronized PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, String tipPreparatSanguin) {
+
     @Override
     public List<Analiza> cautaAnalizeleUnuiDonator(int idDonator) {
         List<Analiza> listOfAllAnalize = new ArrayList<>();
@@ -214,15 +210,15 @@ public class ServerImpl implements IServices {
         return listOfAllAnalize;
     }
 
-    public PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(int idDonator){
+    @Override
+    public synchronized PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(int idDonator){
         List<PreparatSanguin> listOfAllPreparateSanguine = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.SANGE_NEFILTRAT.name());
         return listOfAllPreparateSanguine.get(0);
 
     }
 
-    private List<PreparatSanguin> cautaPreparateDupaDonatorSiTip(int idDonator, String tipPreparatSanguin) {
+    private synchronized List<PreparatSanguin> cautaPreparateDupaDonatorSiTip(int idDonator, String tipPreparatSanguin) {
         Donator donator=repositoryDonatori.cautare(idDonator);
-        PreparatSanguin preparatSanguin = null;
         List<PreparatSanguin> listOfAllPreparateSanguine = donator.getPreparateSanguine();
 
         if(listOfAllPreparateSanguine.size() >0){
