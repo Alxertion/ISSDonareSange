@@ -14,6 +14,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="ISSModel_main" />
     <orderEntry type="module" module-name="ISSPersistenta_main" />
     <orderEntry type="module" module-name="ISSServices_main" />
     <orderEntry type="library" name="Gradle: javax.mail:mail:1.4.7" level="project" />
