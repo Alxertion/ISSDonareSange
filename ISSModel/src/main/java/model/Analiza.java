@@ -79,6 +79,6 @@ public class Analiza implements Serializable {
 
     public String toString(){
         String stringforRh=RH ? "+(Pozitiv)" : "(-)Negativ";
-       return "Grupa sanguina:"+grupa+".\n"+"RH:"+stringforRh+".\n";
+       return "Grupa sanguina:"+grupa+" RH:"+stringforRh+" ";
     }
 }

@@ -147,7 +147,7 @@ public class ServerImpl implements IServices {
         try{
             MimeMessage message=new MimeMessage(sessionGmail);
             message.setFrom(new InternetAddress(mail));
-            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("oti_otniel97@yahoo.com"));
+            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailDonator));
             message.setSubject("Rezultate analiza - Centru de transfuzii");
 
 
@@ -160,7 +160,7 @@ public class ServerImpl implements IServices {
 
             MimeBodyPart attachementBodyPart = new MimeBodyPart();
             DataSource dataSource=new FileDataSource("analiza.txt");
-            createResultAnaliza("Hai ca e ok");
+            createResultAnaliza(continut);
             attachementBodyPart.setDataHandler(new DataHandler(dataSource));
             attachementBodyPart.setFileName("analiza.txt");
             multipart.addBodyPart(attachementBodyPart);
@@ -189,7 +189,8 @@ public class ServerImpl implements IServices {
         PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(idDonator);
         if(preparatSanguin!=null){
             int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
-            return repositoryAnalize.cautare(idAnaliza);
+            Analiza analiza= repositoryAnalize.cautare(idAnaliza);
+            return analiza;
         }
         return null;
     }
@@ -215,6 +216,15 @@ public class ServerImpl implements IServices {
         List<PreparatSanguin> listOfAllPreparateSanguine = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.SANGE_NEFILTRAT.name());
         return listOfAllPreparateSanguine.get(0);
 
+    }
+
+    @Override
+    public void adaugaAnalizaLaDonator(int idDonator, Analiza analiza) {
+        PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(idDonator);
+        analiza.getPreparateSanguine().add(preparatSanguin);
+        List<Analiza> analize=cautaAnalizeleUnuiDonator(idDonator);
+        repositoryAnalize.adaugare(analiza);
+        //to do, don't touch it!
     }
 
     private synchronized List<PreparatSanguin> cautaPreparateDupaDonatorSiTip(int idDonator, String tipPreparatSanguin) {
