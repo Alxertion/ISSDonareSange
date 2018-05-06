@@ -1,10 +1,11 @@
 package model;
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * 
  */
-public class Spital {
+public class Spital implements Serializable {
 
     private List<Pacient> pacienti;
     /**

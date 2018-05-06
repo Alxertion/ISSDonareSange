@@ -1,7 +1,9 @@
 package persistence.repository;
 
 import model.GlobuleRosii;
-import model.PreparatSanguin;
+import org.hibernate.SessionFactory;
+
+import java.util.List;
 
 /**
  * 
@@ -11,8 +13,19 @@ public class RepositoryGlobuleRosii implements IRepositoryGlobuleRosii {
     /**
      * Default constructor
      */
+
+    private SessionFactory factory = null;
+
     public RepositoryGlobuleRosii() {
-    }
+
+        try {
+            factory = HibernateFactory.getInstance();
+        }
+        catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+}
 
 
     /**
@@ -50,7 +63,7 @@ public class RepositoryGlobuleRosii implements IRepositoryGlobuleRosii {
     /**
      * @return
      */
-    public Iterable<GlobuleRosii> getAll() {
+    public List<GlobuleRosii> getAll() {
         // TODO implement here
         return null;
     }

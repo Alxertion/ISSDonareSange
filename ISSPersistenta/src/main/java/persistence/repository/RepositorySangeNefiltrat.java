@@ -1,7 +1,9 @@
 package persistence.repository;
 
-import model.PreparatSanguin;
 import model.SangeNefiltrat;
+import org.hibernate.SessionFactory;
+
+import java.util.List;
 
 /**
  * 
@@ -11,7 +13,19 @@ public class RepositorySangeNefiltrat implements IRepositorySangeNefiltrat {
     /**
      * Default constructor
      */
+
+    private SessionFactory factory = null;
+
+
     public RepositorySangeNefiltrat() {
+
+        try {
+            factory = HibernateFactory.getInstance();
+        }
+        catch (Throwable ex) {
+            System.err.println("Failed to create sessionFactory object." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
     }
 
 
@@ -52,7 +66,7 @@ public class RepositorySangeNefiltrat implements IRepositorySangeNefiltrat {
     /**
      * @return
      */
-    public Iterable<SangeNefiltrat> getAll() {
+    public List<SangeNefiltrat> getAll() {
         // TODO implement here
         return null;
     }

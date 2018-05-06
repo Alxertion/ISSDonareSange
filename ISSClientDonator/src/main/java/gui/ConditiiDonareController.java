@@ -50,6 +50,11 @@ public class ConditiiDonareController extends UnicastRemoteObject implements Con
     }
 
     @Override
+    public void prepareWindow() {
+
+    }
+
+    @Override
     public void setUser(Cont user) {
         this.user=user;
     }
