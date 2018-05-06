@@ -15,7 +15,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ISSClientPersonalTransfuzii_main" />
-    <orderEntry type="module" module-name="ISSModel_main" />
     <orderEntry type="module" module-name="ISSServices_main" />
     <orderEntry type="module" module-name="ISSClientMainResources_main" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.0.4.RELEASE" level="project" />

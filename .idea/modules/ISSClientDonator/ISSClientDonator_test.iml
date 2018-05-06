@@ -15,7 +15,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ISSClientDonator_main" />
-    <orderEntry type="module" module-name="ISSModel_main" />
     <orderEntry type="module" module-name="ISSServices_main" />
     <orderEntry type="module" module-name="ISSClientMainResources_main" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
