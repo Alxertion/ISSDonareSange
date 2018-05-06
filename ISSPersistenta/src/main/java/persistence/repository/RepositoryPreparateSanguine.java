@@ -111,6 +111,8 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
         return preparatSanguin;
     }
 
+
+
     @Override
     public int cautareAnalizaDupaPreparat(int idPreparatSanguin) {
         Transaction tx = null;
@@ -135,7 +137,6 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
         } finally {
             session.close();
         }
-
 
         return idAnaliza;
     }

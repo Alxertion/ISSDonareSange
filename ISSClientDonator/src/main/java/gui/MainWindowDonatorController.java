@@ -65,13 +65,13 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
 
     private void setAccordionAnalize() {
 
-        Analiza ultimaAnalizaDonator = service.cautaAnalizaDupaDonator(donator.getIdDonator());
-        if(ultimaAnalizaDonator == null){
-            System.out.println("Nu exista o analiza in demers");
-        }
-        else{
-            System.out.println(ultimaAnalizaDonator);
-        }
+        List<Analiza> listOfAllAnalizeOfDonator = service.cautaAnalizeleUnuiDonator(1);
+//        if(ultimaAnalizaDonator == null){
+//            System.out.println("Nu exista o analiza in demers");
+//        }
+//        else{
+//            System.out.println(ultimaAnalizaDonator);
+//        }
 
 
 
