@@ -10,10 +10,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import model.Analiza;
 import model.Cont;
+import model.Donator;
 import services.IObserver;
 import services.IServices;
 
@@ -21,6 +24,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 public class MainWindowDonatorController extends UnicastRemoteObject implements Controller, IObserver,Serializable {
     private Cont user;
@@ -54,8 +58,22 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
     @Override
     public void prepareWindow() {
 
-        System.out.println(user.getUsername() );
         setDonator();
+        setAccordionAnalize();
+
+    }
+
+    private void setAccordionAnalize() {
+
+        Analiza ultimaAnalizaDonator = service.cautaAnalizaDupaDonator(donator.getIdDonator());
+        if(ultimaAnalizaDonator == null){
+            System.out.println("Nu exista o analiza in demers");
+        }
+        else{
+            System.out.println(ultimaAnalizaDonator);
+        }
+
+
 
     }
 

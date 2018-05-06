@@ -37,8 +37,25 @@ public class Seed {
 //        adaugaBoliLaAnaliza();
 //        adaugaDonatori();
 //        adaugaPreparateSanguine();
-        int idAnaliza=repoPreparateSanguine.cautareAnalizaDupaPreparat(1);
-        System.out.println(idAnaliza);
+        addPreparatSanguinLaDonator();
+    }
+
+    private void addPreparatSanguinLaDonator(){
+
+        Donator donator = repoDonatori.cautare(1);
+
+        PreparatSanguin preparatSanguinSangeNefiltrat = repoPreparateSanguine.cautare(1);
+        PreparatSanguin preparatSanguinTrombocite = repoPreparateSanguine.cautare(2);
+        PreparatSanguin preparatSanguinGlobuleRosii = repoPreparateSanguine.cautare(3);
+        PreparatSanguin preparatSanguinPlasma = repoPreparateSanguine.cautare(4);
+
+        donator.getPreparateSanguine().add(preparatSanguinSangeNefiltrat);
+        donator.getPreparateSanguine().add(preparatSanguinTrombocite);
+        donator.getPreparateSanguine().add(preparatSanguinGlobuleRosii);
+        donator.getPreparateSanguine().add(preparatSanguinPlasma);
+
+        repoDonatori.modificare(donator);
+
     }
 
     private void adaugaPreparateSanguine() {

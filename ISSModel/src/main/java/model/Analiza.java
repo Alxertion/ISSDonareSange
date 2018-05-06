@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * 
  */
-public class Analiza {
+public class Analiza implements Serializable {
 
     /**
      * Default constructor
@@ -74,5 +75,19 @@ public class Analiza {
 
     public void setPreparateSanguine(List<PreparatSanguin> preparateSanguine) {
         this.preparateSanguine = preparateSanguine;
+    }
+
+    @Override
+    public String toString(){
+        String toFile="Grupa sanguina:"+grupa+".\n"+"RH:"+RH.toString()+".\n";
+        if(boli==null)
+            toFile=toFile+"Rezultatul analizelor: POZITIV -> APT PENTRU DONARE";
+        else{
+            toFile=toFile+"Rezultatul analizelor: NEGATIV.\nMotive:\n";
+            for(Boala boala:boli){
+                toFile=toFile + boala.getNume()+"\n";
+            }
+        }
+        return toFile;
     }
 }

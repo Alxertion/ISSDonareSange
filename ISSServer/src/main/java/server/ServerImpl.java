@@ -14,6 +14,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
 import java.util.List;
@@ -22,6 +25,7 @@ import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 public class ServerImpl implements IServices {
     private IRepositoryAnalize repositoryAnalize;
@@ -34,6 +38,7 @@ public class ServerImpl implements IServices {
     private IRepositorySangeNefiltrat repositorySangeNefiltrat;
     private IRepositoryTrombocite repositoryTrombocite;
     private IRepositoryConturi repositoryConturi;
+    private IRepositoryPreparateSanguine repositoryPreparateSanguine;
 
     //For remoting
     private Map<String, IObserver> loggedClients;
@@ -175,17 +180,31 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public Analiza cautaAnalizaDupaDonator(int idDonator) {
-        PreparatSanguin preparatSanguin=cautaPreparatDupaDonatorSiTip(idDonator,TipPreparatSanguin.SANGE_NEFILTRAT);
-        int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
-        return repositoryAnalize.cautare(idAnaliza);
+    public Donator findDonatorByUsername(String username) {
+        return repositoryDonatori.findDonatorByUsername(username);
     }
 
-    private PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, TipPreparatSanguin tipPreparatSanguin) {
+    @Override
+    public Analiza cautaAnalizaDupaDonator(int idDonator) {
+        PreparatSanguin preparatSanguin=cautaPreparatDupaDonatorSiTip(idDonator,TipPreparatSanguin.SANGE_NEFILTRAT.name());
+        if(preparatSanguin!=null){
+            int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
+            return repositoryAnalize.cautare(idAnaliza);
+        }
+        return null;
+    }
+
+    private PreparatSanguin cautaPreparatDupaDonatorSiTip(int idDonator, String tipPreparatSanguin) {
         Donator donator=repositoryDonatori.cautare(idDonator);
-        PreparatSanguin preparatSanguin=donator.getPreparateSanguine().stream().filter(x->{
-            return x.getTip().equals(tipPreparatSanguin);
-        }).collect(Collectors.toList()).get(0);
+        PreparatSanguin preparatSanguin = null;
+        List<PreparatSanguin> listOfAllPreparateSanguine = donator.getPreparateSanguine();
+
+        if(listOfAllPreparateSanguine.size() >0){
+            preparatSanguin=listOfAllPreparateSanguine.stream().filter(x->{
+                return x.getTip().equals(tipPreparatSanguin);
+            }).collect(Collectors.toList()).get(0);
+        }
+
         return preparatSanguin;
     }
 
