@@ -27,35 +27,29 @@ public class Seed {
 
     }
 
-    public void seed(){
+    public void seed() {
 
-//        adaugaConturi();
-//        adaugaMedici();
-//        adaugaPersonalTransfuzii();
-//        adaugaBoli();
-//        adaugaAnaliza();
-//        adaugaBoliLaAnaliza();
-//        adaugaDonatori();
-//        adaugaPreparateSanguine();
+        adaugaConturi();
+        adaugaMedici();
+        adaugaPersonalTransfuzii();
+        adaugaBoli();
+        adaugaAnaliza();
+        adaugaBoliLaAnaliza();
+        adaugaDonatori();
+        adaugaPreparateSanguine();
         addPreparatSanguinLaDonator();
     }
 
-    private void addPreparatSanguinLaDonator(){
+    private void addPreparatLaAnaliza(){
+        Analiza analiza=repoAnalize.cautare(repoPreparateSanguine.cautareAnalizaDupaPreparat(1));
+        PreparatSanguin preparatSanguin=repoPreparateSanguine.cautare(1);
+        analiza.getPreparateSanguine().add(preparatSanguin);
+        repoAnalize.modificare(analiza);
 
-        Donator donator = repoDonatori.cautare(1);
-
-        PreparatSanguin preparatSanguinSangeNefiltrat = repoPreparateSanguine.cautare(1);
-        PreparatSanguin preparatSanguinTrombocite = repoPreparateSanguine.cautare(2);
-        PreparatSanguin preparatSanguinGlobuleRosii = repoPreparateSanguine.cautare(3);
-        PreparatSanguin preparatSanguinPlasma = repoPreparateSanguine.cautare(4);
-
-        donator.getPreparateSanguine().add(preparatSanguinSangeNefiltrat);
-        donator.getPreparateSanguine().add(preparatSanguinTrombocite);
-        donator.getPreparateSanguine().add(preparatSanguinGlobuleRosii);
-        donator.getPreparateSanguine().add(preparatSanguinPlasma);
-
-        repoDonatori.modificare(donator);
-
+        PreparatSanguin preparatSanguin2=repoPreparateSanguine.cautare(5);
+        Analiza analiza2=repoAnalize.cautare(8);
+        analiza2.getPreparateSanguine().add(preparatSanguin2);
+        repoAnalize.modificare(analiza2);
     }
 
     private void adaugaPreparateSanguine() {
@@ -164,5 +158,38 @@ public class Seed {
         Cont cont3 = repoConturi.cautare("chise_boby");
         repoDonatori.adaugare(new Donator("Boros","Otniel", cont2, "1770725055098", "chise_b@yahoo.com"));
         repoDonatori.adaugare(new Donator("Chise","Bogdan", cont3,"1270725055088", "chise_bogdan@yahoo.com"));
+
+    }
+
+    private void addPreparatSanguinLaDonator(){
+
+        Donator donator = repoDonatori.cautare(1);
+
+        PreparatSanguin preparatSanguinSangeNefiltrat = repoPreparateSanguine.cautare(1);
+        PreparatSanguin preparatSanguinTrombocite = repoPreparateSanguine.cautare(2);
+        PreparatSanguin preparatSanguinGlobuleRosii = repoPreparateSanguine.cautare(3);
+        PreparatSanguin preparatSanguinPlasma = repoPreparateSanguine.cautare(4);
+
+        donator.getPreparateSanguine().add(preparatSanguinSangeNefiltrat);
+        donator.getPreparateSanguine().add(preparatSanguinTrombocite);
+        donator.getPreparateSanguine().add(preparatSanguinGlobuleRosii);
+        donator.getPreparateSanguine().add(preparatSanguinPlasma);
+
+        repoDonatori.modificare(donator);
+
+        Donator donator2 = repoDonatori.cautare(2);
+
+        PreparatSanguin preparatSanguinSangeNefiltrat2 = repoPreparateSanguine.cautare(5);
+        PreparatSanguin preparatSanguinTrombocite2 = repoPreparateSanguine.cautare(6);
+        PreparatSanguin preparatSanguinGlobuleRosii2 = repoPreparateSanguine.cautare(7);
+        PreparatSanguin preparatSanguinPlasma2 = repoPreparateSanguine.cautare(8);
+
+        donator2.getPreparateSanguine().add(preparatSanguinSangeNefiltrat2);
+        donator2.getPreparateSanguine().add(preparatSanguinTrombocite2);
+        donator2.getPreparateSanguine().add(preparatSanguinGlobuleRosii2);
+        donator2.getPreparateSanguine().add(preparatSanguinPlasma2);
+
+        repoDonatori.modificare(donator2);
+
     }
 }

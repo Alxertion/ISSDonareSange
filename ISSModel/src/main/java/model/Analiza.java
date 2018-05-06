@@ -77,7 +77,6 @@ public class Analiza implements Serializable {
         this.preparateSanguine = preparateSanguine;
     }
 
-    @Override
     public String toString(){
         String toFile="Grupa sanguina:"+grupa+".\n"+"RH:"+RH.toString()+".\n";
         if(boli==null)
