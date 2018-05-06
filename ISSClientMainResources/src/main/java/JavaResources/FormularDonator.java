@@ -15,6 +15,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import model.Cont;
 import services.IServices;
 
 import java.io.IOException;
@@ -82,6 +83,16 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
         this.loader = loader;
 
         setImagesForButtons();
+    }
+
+    @Override
+    public void prepareWindow() {
+
+    }
+
+    @Override
+    public void setUser(Cont user) {
+
     }
 
     private void setImagesForButtons() {

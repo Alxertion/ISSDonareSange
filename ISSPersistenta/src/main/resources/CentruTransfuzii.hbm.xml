@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <meta attribute = "class-description">
+        This class contains the Centru Transfuzii detail one to many relation with personal transfuzii and many to many realtion with donator.
+    </meta>
+
+    <class name="model.CentruTransfuzii" table="centrutransfuzii">
+        <id name="idCentruTransfuzii" column="idCentruTransfuzii" type="int">
+        </id>
+
+        <property name="nume" column="nume" type="string"/>
+        <property name="latitudine" column="latitudine" type="double"/>
+        <property name="longitudine" column="longitudine" type="double"/>
+
+
+        <bag name = "personalTransfuzii" cascade="all" >
+            <key column = "idCentruTransfuzii"/>
+            <one-to-many class="model.PersonalTransfuzii"/>
+        </bag>
+
+        <bag name = "donatori" cascade="all" table="centrutransfuziidonator">
+            <key column="idCentruTransfuzii"></key>
+            <many-to-many column="idDonator" class="model.Donator"></many-to-many>
+        </bag>
+
+    </class>
+</hibernate-mapping>

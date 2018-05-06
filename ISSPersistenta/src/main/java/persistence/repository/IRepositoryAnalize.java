@@ -1,12 +1,10 @@
 package persistence.repository;
 
 import model.Analiza;
-
-import java.util.*;
+import model.Boala;
 
 /**
  * 
  */
 public interface IRepositoryAnalize extends CRUDRepository<Integer, Analiza> {
-
 }

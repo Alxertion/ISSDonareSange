@@ -10,9 +10,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import model.Analiza;
+import model.Cont;
+import model.Donator;
 import services.IObserver;
 import services.IServices;
 
@@ -20,13 +24,17 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 public class MainWindowDonatorController extends UnicastRemoteObject implements Controller, IObserver,Serializable {
-
+    private Cont user;
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
+    private Donator donator;
 
+    @FXML
+    private Accordion analizeAccordion;
 
     @FXML
     private Button vreaSaDonezButton;
@@ -45,6 +53,37 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
 
         setImagesForButtons();
 
+    }
+
+    @Override
+    public void prepareWindow() {
+
+        setDonator();
+        setAccordionAnalize();
+
+    }
+
+    private void setAccordionAnalize() {
+
+        List<Analiza> listOfAllAnalizeOfDonator = service.cautaAnalizeleUnuiDonator(1);
+//        if(ultimaAnalizaDonator == null){
+//            System.out.println("Nu exista o analiza in demers");
+//        }
+//        else{
+//            System.out.println(ultimaAnalizaDonator);
+//        }
+
+
+
+    }
+
+    private void setDonator() {
+        donator = service.findDonatorByUsername(user.getUsername());
+    }
+
+    @Override
+    public void setUser(Cont user) {
+        this.user=user;
     }
 
     private void setImagesForButtons() {
@@ -85,5 +124,19 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
     @Override
     public void notifyClient() throws RemoteException {
         System.out.println("Am fost notificat -> Donator");
+    }
+
+    @FXML
+    public void logOut(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loaderFXML = new FXMLLoader();
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.LoginWindowDonator.getFxmlFile()));
+            Parent rootNode = loaderFXML.load();
+            service.logout(this.user);
+            stageManager.switchScene(FXMLEnum.LoginWindowDonator, rootNode, loaderFXML.getController(), loader);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            System.exit(1);
+        }
     }
 }
