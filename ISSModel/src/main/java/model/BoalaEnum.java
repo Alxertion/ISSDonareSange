@@ -1,6 +1,8 @@
 package model;
 
-public enum BoalaEnum {
+import java.io.Serializable;
+
+public enum BoalaEnum implements Serializable{
     HEPATITA,
     TBC,
     SIFILIS,

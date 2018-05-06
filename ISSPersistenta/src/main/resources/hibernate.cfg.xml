@@ -13,6 +13,7 @@
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
+
         <property name = "hibernate.connection.username">
             root
         </property>
@@ -23,6 +24,8 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+
 
         <mapping resource="Donator.hbm.xml"/>
         <mapping resource="Cont.hbm.xml"/>
@@ -34,6 +37,7 @@
         <mapping resource="Pacient.hbm.xml"/>
         <mapping resource="PreparatSanguin.hbm.xml"/>
         <mapping resource="Spital.hbm.xml"/>
+        <mapping resource="CentruTransfuzii.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

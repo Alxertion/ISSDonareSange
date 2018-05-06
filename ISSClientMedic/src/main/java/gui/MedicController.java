@@ -35,6 +35,11 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
     }
 
     @Override
+    public void prepareWindow() {
+
+    }
+
+    @Override
     public void setUser(Cont user) {
         this.user=user;
     }

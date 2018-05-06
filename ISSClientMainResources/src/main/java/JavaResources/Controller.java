@@ -10,5 +10,6 @@ import services.ServiceException;
 
 public interface Controller{
     void initialize(StageManager stageManager,IServices services, Loader loader);
+    void prepareWindow();
     void setUser(Cont user);
 }

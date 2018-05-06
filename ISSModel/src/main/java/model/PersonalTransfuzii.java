@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * 
  */
-public class PersonalTransfuzii extends Persoana {
+public class PersonalTransfuzii extends Persoana implements Serializable {
 
     private int idPersonalTransfuzii;
     private String nume;
@@ -20,8 +21,8 @@ public class PersonalTransfuzii extends Persoana {
      * @param nume
      * @param prenume
      */
-    public void PersonalTransfuzii(String nume, String prenume) {
-        // TODO implement here
+    public PersonalTransfuzii(String nume, String prenume, Cont cont, String CNP, String email) {
+        super(nume, prenume, cont, CNP, email);
     }
 
 

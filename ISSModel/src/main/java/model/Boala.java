@@ -1,6 +1,8 @@
 package model;
 
-public class Boala {
+import java.io.Serializable;
+
+public class Boala implements Serializable{
 
     private int idBoala;
     private String nume;

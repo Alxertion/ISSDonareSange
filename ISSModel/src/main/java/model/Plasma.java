@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * 
  */
-public class Plasma extends PreparatSanguin {
+public class Plasma extends PreparatSanguin implements Serializable{
 
     /**
      * Default constructor
