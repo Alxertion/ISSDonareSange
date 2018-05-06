@@ -17,12 +17,12 @@ import services.IServices;
 
 import java.io.IOException;
 
-public class StartClient extends Application{
+public class StartClient extends Application {
     protected StageManager stageManager = null;
     protected ApplicationContext factoryWindow = null;
     protected Loader loader = null;
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         Application.launch(args);
     }
 
@@ -38,21 +38,21 @@ public class StartClient extends Application{
             loader = factoryWindow.getBean(Loader.class);
 
             ApplicationContext factoryProxy = new ClassPathXmlApplicationContext("classpath:client-spring.xml");
-            IServices server=(IServices)factoryProxy.getBean("service");
+            IServices server = (IServices) factoryProxy.getBean("service");
             System.out.println("Obtained a reference to remote server");
-            stageManager = factoryWindow.getBean(StageManager.class, primaryStage,server);
+            stageManager = factoryWindow.getBean(StageManager.class, primaryStage, server);
 
-            try{
+            try {
                 FXMLLoader loaderFXML = new FXMLLoader();
                 loaderFXML.setLocation(getClass().getResource(FXMLEnum.LoginWindowAdministrator.getFxmlFile()));
                 Parent rootNode = loaderFXML.load();
                 stageManager.switchScene(FXMLEnum.LoginWindowAdministrator, rootNode, loaderFXML.getController(), loader);
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
         } catch (Exception e) {
-            System.err.println("ISS Initialization  exception:"+e);
+            System.err.println("ISS Initialization  exception:" + e);
             e.printStackTrace();
         }
     }
