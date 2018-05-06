@@ -122,7 +122,12 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
             tx = session.beginTransaction();
 
             Query query = session.createSQLQuery("SELECT PS.idAnaliza FROM preparatsanguin PS WHERE PS.idPreparatSanguin = ?");
-            idAnaliza = (int)query.setInteger(0, idPreparatSanguin).list().get(0);
+            // nu este o eroare ci este doar obsolete (nu am gasit o alta metoda de a interoga baza de date)
+            List idAnalizaList = query.setInteger(0, idPreparatSanguin).list();
+
+            if(!idAnalizaList.contains(null)){
+                idAnaliza = (int)idAnalizaList.get(0);
+            }
 
             tx.commit();
         }catch (HibernateException e){
