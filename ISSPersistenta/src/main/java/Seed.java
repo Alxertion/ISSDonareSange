@@ -38,11 +38,12 @@ public class Seed {
         adaugaDonatori();
         adaugaPreparateSanguine();
         addPreparatSanguinLaDonator();
+        addPreparatLaAnaliza();
     }
 
     private void addPreparatLaAnaliza(){
-        Analiza analiza=repoAnalize.cautare(repoPreparateSanguine.cautareAnalizaDupaPreparat(1));
         PreparatSanguin preparatSanguin=repoPreparateSanguine.cautare(1);
+        Analiza analiza=repoAnalize.cautare(7);
         analiza.getPreparateSanguine().add(preparatSanguin);
         repoAnalize.modificare(analiza);
 
