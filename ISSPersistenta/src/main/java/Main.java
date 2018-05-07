@@ -11,8 +11,6 @@ public class Main {
 
         seed.seed();
 
-
-
         HibernateFactory.closeFactory();
 
     }
