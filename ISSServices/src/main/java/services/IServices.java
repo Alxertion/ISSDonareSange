@@ -20,4 +20,16 @@ public interface IServices {
     PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(int idDonator);
     void adaugaAnalizaLaDonator(int idDonator,Analiza analiza) throws ServiceException;
 
+    List<Spital> getSpitale();
+    List<CentruTransfuzii> getCentreTransfuzii();
+    void adaugaSpital(Spital spital);
+    void adaugaCentruTransfuzii(CentruTransfuzii centruTransfuzii);
+    void modificaSpital(Spital spital);
+    void modificaCentruTransfuzii(CentruTransfuzii centruTransfuzii);
+    void stergeSpital(int id);
+    void stergeCentruTransfuzii(int id);
+    void adaugaMedic(Medic medic);
+    void stergeMedic(int id);
+    void adaugaPersonalTransfuzii(PersonalTransfuzii personalTransfuzii);
+    void stergePersonalTransfuzii(int id);
 }
