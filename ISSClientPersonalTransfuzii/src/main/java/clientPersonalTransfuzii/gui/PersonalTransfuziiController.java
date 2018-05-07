@@ -27,6 +27,7 @@ import org.hibernate.Session;
 import services.FrontException;
 import services.IObserver;
 import services.IServices;
+import services.ServiceException;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -175,6 +176,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
 
     @FXML
     public void handleAdaugaAnaliza(ActionEvent event){
+        //not tested, don't touch it!
         try {
             String errors = "";
             if (comboGrupa.getSelectionModel().getSelectedItem()==null)
@@ -194,6 +196,11 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             Alert message = new Alert(Alert.AlertType.ERROR);
             message.setTitle("Mesaj eroare");
             message.setContentText(fe.getMessage());
+            message.showAndWait();
+        }catch (ServiceException se){
+            Alert message = new Alert(Alert.AlertType.ERROR);
+            message.setTitle("Mesaj eroare");
+            message.setContentText(se.getMessage());
             message.showAndWait();
         }
     }
