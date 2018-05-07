@@ -13,10 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
@@ -39,10 +36,7 @@ import java.io.Serializable;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 public class PersonalTransfuziiController extends UnicastRemoteObject implements  Controller, IObserver,Serializable {
     private StageManager stageManager;
@@ -50,12 +44,19 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     private Loader loader;
     private Cont user;
     private ObservableList<Donator> observableListDonatori;
+    private String[] rh={"+","-"};
+    private String[] grupe={"01","A2","B3","AB4"};
+    private List<Boala> boli;
     @FXML
     TabPane tabPanePersonal;
     @FXML
     ListView<Donator> listaDonatori;
     @FXML
     TextArea analiza;
+    @FXML
+    ComboBox comboGrupa,comboRh;
+    @FXML
+    MenuButton boliMenu;
 
     public PersonalTransfuziiController() throws RemoteException {
 
@@ -136,9 +137,9 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
                     if(boli.size()==0){
                         verdictFinal=verdictFinal+"Rezultatul analizelor: POZITIV -> APT PENTRU DONARE";
                     }else{
-                        verdictFinal=verdictFinal+"Rezultatul analizelor: NEGATIV.\nMotive:\n";
+                        verdictFinal=verdictFinal+"Rezultatul analizelor: NEGATIV. Motive:";
                         for(Boala boala:boli){
-                            verdictFinal=verdictFinal + boala.getNume()+"\n";
+                            verdictFinal=verdictFinal + boala.getNume()+" ";
                         }
                     }
                     analiza.setPromptText(verdictFinal);
@@ -157,7 +158,8 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             String email=listaDonatori.getSelectionModel().getSelectedItem().getEmail();
             if(email==null)
                 throw new FrontException("Acest donator nu a comunicat nicio adresa de email");
-            service.sendEmail(email,analiza.getText());
+            service.sendEmail(email,analiza.getPromptText());
+            analiza.setPromptText("Analize...");
             Alert message = new Alert(Alert.AlertType.INFORMATION);
             message.setTitle("Mesaj de informare");
             message.setContentText("Emailul a fost transmis.");
@@ -171,15 +173,50 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
 
     }
 
+    @FXML
+    public void handleAdaugaAnaliza(ActionEvent event){
+        try {
+            String errors = "";
+            if (comboGrupa.getSelectionModel().getSelectedItem()==null)
+                errors += "Nu ati selectat grupa.";
+            if (comboRh.getSelectionModel().getSelectedItem()==null)
+                errors += "Nu ati selectat RH-ul";
+            if(listaDonatori.getSelectionModel().getSelectedItem()==null)
+                errors+="Nu ati selectat carui donator sa i se atribuie analiza.";
+            if (!errors.equals(""))
+                throw new FrontException(errors);
+            boolean booleanRh=comboRh.getSelectionModel().getSelectedItem().toString().equals("-") ? false:true;
+            Analiza analiza=new Analiza(comboGrupa.getSelectionModel().getSelectedItem().toString(),booleanRh);
+            analiza.setBoli(boli);
+            service.adaugaAnalizaLaDonator(listaDonatori.getSelectionModel().getSelectedItem().getIdDonator(),analiza);
+            boli=new ArrayList<>();
+        }catch (FrontException fe){
+            Alert message = new Alert(Alert.AlertType.ERROR);
+            message.setTitle("Mesaj eroare");
+            message.setContentText(fe.getMessage());
+            message.showAndWait();
+        }
+    }
+
     public void prepareWindow(){
         loadListDonatori();
         listOnClick();
+        comboRh.setItems(FXCollections.observableArrayList(rh));
+        comboGrupa.setItems(FXCollections.observableArrayList(grupe));
+        boliMenu.getItems().stream().forEach(x->{
+            x.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    boli.add(new Boala(x.getText()));
+                }
+            });
+        });
     }
 
     public void loadListDonatori(){
         List<Donator> donatori=service.getDonatori();
         observableListDonatori= FXCollections.observableArrayList(donatori);
         listaDonatori.setItems(observableListDonatori);
-
+        boli=new ArrayList<>();
     }
 }
