@@ -177,6 +177,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     @FXML
     public void handleAdaugaAnaliza(ActionEvent event){
         //not tested, don't touch it!
+        //have fun
         try {
             String errors = "";
             if (comboGrupa.getSelectionModel().getSelectedItem()==null)
