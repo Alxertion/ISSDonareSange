@@ -9,48 +9,23 @@ import java.util.*;
 public class PersonalTransfuzii extends Persoana implements Serializable {
 
     private int idPersonalTransfuzii;
-    private String nume;
-    private String prenume;
-    private Cont cont;
+    private int idCentruTransfuzii;
 
     public PersonalTransfuzii() {
     }
-
 
     /**
      * @param nume
      * @param prenume
      */
-    public PersonalTransfuzii(String nume, String prenume, Cont cont, String CNP, String email) {
+    public PersonalTransfuzii(int idPersonalTransfuzii, String nume, String prenume, Cont cont, String CNP, String email, int idCentruTransfuzii) {
         super(nume, prenume, cont, CNP, email);
+        this.idCentruTransfuzii = idCentruTransfuzii;
+        this.idPersonalTransfuzii = idPersonalTransfuzii;
     }
 
-
-    @Override
-    public String getNume() {
-        return nume;
-    }
-
-    public void setNume(String nume) {
-        this.nume = nume;
-    }
-
-    @Override
-    public String getPrenume() {
-        return prenume;
-    }
-
-    public void setPrenume(String prenume) {
-        this.prenume = prenume;
-    }
-
-    @Override
-    public Cont getCont() {
-        return cont;
-    }
-
-    public void setCont(Cont cont) {
-        this.cont = cont;
+    public String getUsername() {
+        return getCont().getUsername();
     }
 
     public int getIdPersonalTransfuzii() {
@@ -61,4 +36,11 @@ public class PersonalTransfuzii extends Persoana implements Serializable {
         this.idPersonalTransfuzii = idPersonalTransfuzii;
     }
 
+    public int getIdCentruTransfuzii() {
+        return idCentruTransfuzii;
+    }
+
+    public void setIdCentruTransfuzii(int idCentruTransfuzii) {
+        this.idCentruTransfuzii = idCentruTransfuzii;
+    }
 }
