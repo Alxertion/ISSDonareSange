@@ -128,7 +128,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             @Override
             public void handle(MouseEvent event) {
                 try {
-                    Analiza analizaDonator = service.cautaAnalizaDupaDonator(listaDonatori.getSelectionModel().getSelectedItem().getIdDonator());
+                    Analiza analizaDonator = service.cautaUltimaAnalizaDupaDonator(listaDonatori.getSelectionModel().getSelectedItem().getIdDonator());
                     String verdictFinal=analizaDonator.toString();
                     if (analizaDonator == null)
                         throw new FrontException("Analizele pentru acest donator nu sunt finalizate.");
