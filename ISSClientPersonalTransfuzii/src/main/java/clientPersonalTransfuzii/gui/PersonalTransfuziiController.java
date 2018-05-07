@@ -195,6 +195,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             message.setTitle("Mesaj eroare");
             message.setContentText(fe.getMessage());
             message.showAndWait();
+
         }
     }
 
