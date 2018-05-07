@@ -18,6 +18,8 @@ public interface IServices {
     Analiza cautaUltimaAnalizaDupaDonator(int idDonator);
     List<Analiza> cautaAnalizeleUnuiDonator(int idDonator);
     PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(int idDonator);
+    void adaugaAnalizaLaDonator(int idDonator,Analiza analiza) throws ServiceException;
+
     List<Spital> getSpitale();
     List<CentruTransfuzii> getCentreTransfuzii();
     void adaugaSpital(Spital spital);
