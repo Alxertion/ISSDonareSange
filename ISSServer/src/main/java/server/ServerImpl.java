@@ -17,6 +17,7 @@ import javax.mail.internet.MimeMultipart;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
 import java.util.*;
@@ -147,7 +148,7 @@ public class ServerImpl implements IServices {
         try{
             MimeMessage message=new MimeMessage(sessionGmail);
             message.setFrom(new InternetAddress(mail));
-            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("oti_otniel97@yahoo.com"));
+            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailDonator));
             message.setSubject("Rezultate analiza - Centru de transfuzii");
 
 
@@ -160,7 +161,7 @@ public class ServerImpl implements IServices {
 
             MimeBodyPart attachementBodyPart = new MimeBodyPart();
             DataSource dataSource=new FileDataSource("analiza.txt");
-            createResultAnaliza("Hai ca e ok");
+            createResultAnaliza(continut);
             attachementBodyPart.setDataHandler(new DataHandler(dataSource));
             attachementBodyPart.setFileName("analiza.txt");
             multipart.addBodyPart(attachementBodyPart);
@@ -189,7 +190,8 @@ public class ServerImpl implements IServices {
         PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(idDonator);
         if(preparatSanguin!=null){
             int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
-            return repositoryAnalize.cautare(idAnaliza);
+            Analiza analiza= repositoryAnalize.cautare(idAnaliza);
+            return analiza;
         }
         return null;
     }
@@ -215,6 +217,42 @@ public class ServerImpl implements IServices {
         List<PreparatSanguin> listOfAllPreparateSanguine = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.SANGE_NEFILTRAT.name());
         return listOfAllPreparateSanguine.get(0);
 
+    }
+
+    private List<PreparatSanguin> cautaPreparateleSanguineCeleMaiRecenteAleUnuiDonator(int idDonator){
+        List<PreparatSanguin> listOfPreparate=new ArrayList<>();
+        listOfPreparate.add((PreparatSanguin) cautaPreparateDupaDonatorSiTip(idDonator,TipPreparatSanguin.GLOBULE_ROSII.name()).get(0));
+        listOfPreparate.add((PreparatSanguin) cautaPreparateDupaDonatorSiTip(idDonator,TipPreparatSanguin.TROMBOCITE.name()).get(0));
+        listOfPreparate.add((PreparatSanguin) cautaPreparateDupaDonatorSiTip(idDonator,TipPreparatSanguin.PLASMA.name()).get(0));
+        return listOfPreparate;
+    }
+
+    private void stergePreparateDonator(int idDonator){
+        List<PreparatSanguin> preparatSanguinList=cautaPreparateDupaDonatorSiTip(idDonator,TipPreparatSanguin.SANGE_NEFILTRAT.name());
+        if(preparatSanguinList.size()==3) {
+            repositoryPreparateSanguine.stergere(preparatSanguinList.get(2).getIdPreparatSanguin());
+            preparatSanguinList = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.GLOBULE_ROSII.name());
+            repositoryPreparateSanguine.stergere(preparatSanguinList.get(2).getIdPreparatSanguin());
+            preparatSanguinList = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.PLASMA.name());
+            repositoryPreparateSanguine.stergere(preparatSanguinList.get(2).getIdPreparatSanguin());
+            preparatSanguinList = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.TROMBOCITE.name());
+            repositoryPreparateSanguine.stergere(preparatSanguinList.get(2).getIdPreparatSanguin());
+            preparatSanguinList = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.SANGE_NEFILTRAT.name());
+            repositoryPreparateSanguine.stergere(preparatSanguinList.get(2).getIdPreparatSanguin());
+        }
+    }
+
+    @Override
+    public synchronized void adaugaAnalizaLaDonator(int idDonator, Analiza analiza) throws ServiceException{
+        PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(idDonator);
+        if(repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin())==-1)
+            throw new ServiceException("Nu exista sange apartinand acestui donator pentru a i se atribui analiza");
+        stergePreparateDonator(idDonator);
+        analiza.getPreparateSanguine().add(preparatSanguin);
+        for (PreparatSanguin preparatSanguin1:cautaPreparateleSanguineCeleMaiRecenteAleUnuiDonator(idDonator)){
+            analiza.getPreparateSanguine().add(preparatSanguin1);
+        }
+        repositoryAnalize.adaugare(analiza);
     }
 
     private synchronized List<PreparatSanguin> cautaPreparateDupaDonatorSiTip(int idDonator, String tipPreparatSanguin) {
