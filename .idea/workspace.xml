@@ -128,8 +128,8 @@
       <file leaf-file-name="ServerImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="251" column="67" lean-forward="false" selection-start-line="251" selection-start-column="67" selection-end-line="251" selection-end-column="67" />
+            <state relative-caret-position="416">
+              <caret line="254" column="28" lean-forward="false" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="28" />
               <folding>
                 <element signature="e#3822#3823#0" expanded="true" />
                 <element signature="e#3878#3879#0" expanded="true" />
@@ -2786,11 +2786,25 @@
       <option name="project" value="LOCAL" />
       <updated>1525707258009</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Adaugare analiza la donator">
+      <created>1525708375487</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1525708375487</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Adaugare analiza la donator">
+      <created>1525708421479</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1525708421479</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103129000" />
+    <option name="totallyTimeSpent" value="103226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -3335,8 +3349,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="251" column="67" lean-forward="false" selection-start-line="251" selection-start-column="67" selection-end-line="251" selection-end-column="67" />
+        <state relative-caret-position="416">
+          <caret line="254" column="28" lean-forward="false" selection-start-line="254" selection-start-column="28" selection-end-line="254" selection-end-column="28" />
           <folding>
             <element signature="e#3822#3823#0" expanded="true" />
             <element signature="e#3878#3879#0" expanded="true" />
