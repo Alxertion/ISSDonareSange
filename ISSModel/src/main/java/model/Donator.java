@@ -22,6 +22,12 @@ public class Donator extends Persoana implements Serializable{
      */
     private String sex;
 
+
+    /**
+     *
+     */
+    private String telefon;
+
     /**
      * 
      */
@@ -215,6 +221,7 @@ public class Donator extends Persoana implements Serializable{
         this.boliAnterioare = boliAnterioare;
     }
 
+
     public List<PreparatSanguin> getPreparateSanguine() {
         return preparateSanguine;
     }
@@ -232,5 +239,11 @@ public class Donator extends Persoana implements Serializable{
         return super.toString()+" "+super.getCNP();
     }
 
+    public String getTelefon() {
+        return telefon;
+    }
 
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
+    }
 }

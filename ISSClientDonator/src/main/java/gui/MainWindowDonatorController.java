@@ -10,11 +10,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Accordion;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 import model.Analiza;
+import model.Boala;
 import model.Cont;
 import model.Donator;
 import services.IObserver;
@@ -65,16 +65,28 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
 
     private void setAccordionAnalize() {
 
-        List<Analiza> listOfAllAnalizeOfDonator = service.cautaAnalizeleUnuiDonator(1);
-//        if(ultimaAnalizaDonator == null){
-//            System.out.println("Nu exista o analiza in demers");
-//        }
-//        else{
-//            System.out.println(ultimaAnalizaDonator);
-//        }
+        List<Analiza> listOfAllAnalizeOfDonator = service.cautaAnalizeleUnuiDonator(donator.getIdDonator());
+        if(listOfAllAnalizeOfDonator.size() == 0){
+            analizeAccordion.getPanes().remove(0,3);
+        }
+        else{
+            analizeAccordion.getPanes().remove(3-listOfAllAnalizeOfDonator.size()+1,3);
+            setTitluriSiContinutPanes(listOfAllAnalizeOfDonator);
+        }
 
+    }
 
+    private void setTitluriSiContinutPanes(List<Analiza> listOfAllAnalizeOfDonator) {
 
+        List<TitledPane> panes = analizeAccordion.getPanes();
+
+        for(int i=0; i<listOfAllAnalizeOfDonator.size(); i++){
+            Analiza analiza = listOfAllAnalizeOfDonator.get(i);
+            TitledPane actualPane =  panes.get(i);
+            actualPane.setText(analiza.toString());
+            actualPane.setContent(new Label(analiza.toString()));
+
+        }
     }
 
     private void setDonator() {
@@ -115,6 +127,8 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
             FXMLLoader loaderFXML = new FXMLLoader();
             loaderFXML.setLocation(getClass().getResource(FXMLEnum.ConditiiDonare.getFxmlFile()));
             Parent rootNode = loaderFXML.load();
+            Controller controller = loaderFXML.getController();
+            controller.setUser(user);;
             stageManager.switchScene(FXMLEnum.ConditiiDonare, rootNode, loaderFXML.getController(), loader);
         }catch (IOException e){
             e.printStackTrace();

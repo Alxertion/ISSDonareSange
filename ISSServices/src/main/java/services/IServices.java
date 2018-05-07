@@ -18,5 +18,8 @@ public interface IServices {
     Analiza cautaUltimaAnalizaDupaDonator(int idDonator);
     List<Analiza> cautaAnalizeleUnuiDonator(int idDonator);
     PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(int idDonator);
-
+    Pacient cautaPacientDupaCNP(String CNP);
+    void inregistreazaDonator(CentruTransfuzii centruTransfuzii, Donator donator, Pacient pacient);
+    void updateDonator(Donator donator, String numeDonator, String prenumeDonator, String telefon);
+    CentruTransfuzii cautaCelMaiApropiatCentruDeTransfuzii();
 }
