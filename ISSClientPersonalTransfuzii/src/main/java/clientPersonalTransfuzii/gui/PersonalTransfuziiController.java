@@ -47,7 +47,9 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     private ObservableList<Donator> observableListDonatori;
     private String[] rh={"+","-"};
     private String[] grupe={"01","A2","B3","AB4"};
+    private String[] toatebolile={"HEPATITA","DIABET_ZAHARAT","TBC","SIFILIS","MALARIE","EPILEPSIE","BOLI_PSIHICE","VITILIGO","BRUCELOZA","BOLI_DE_INIMA","ULCER","MIOPIE_FORTE","PSORIAZIS","CANCER"};
     private List<Boala> boli;
+    List<CheckMenuItem> allCheckMenuItems;
     @FXML
     TabPane tabPanePersonal;
     @FXML
@@ -58,9 +60,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     ComboBox comboGrupa,comboRh;
     @FXML
     MenuButton boliMenu;
-
     public PersonalTransfuziiController() throws RemoteException {
-
     }
 
     @FXML
@@ -131,9 +131,9 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             public void handle(MouseEvent event) {
                 try {
                     Analiza analizaDonator = service.cautaUltimaAnalizaDupaDonator(listaDonatori.getSelectionModel().getSelectedItem().getIdDonator());
-                    String verdictFinal=analizaDonator.toString();
                     if (analizaDonator == null)
                         throw new FrontException("Analizele pentru acest donator nu sunt finalizate.");
+                    String verdictFinal=analizaDonator.toString();
                     List<Boala> boli=analizaDonator.getBoli();
                     if(boli.size()==0){
                         verdictFinal=verdictFinal+"Rezultatul analizelor: POZITIV -> APT PENTRU DONARE";
@@ -191,6 +191,14 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             analiza.setBoli(boli);
             service.adaugaAnalizaLaDonator(listaDonatori.getSelectionModel().getSelectedItem().getIdDonator(),analiza);
             boli=new ArrayList<>();
+            comboGrupa.getSelectionModel().clearSelection();
+            comboRh.getSelectionModel().clearSelection();
+            allCheckMenuItems.stream().forEach(x->{x.setSelected(false);});
+
+            Alert message = new Alert(Alert.AlertType.INFORMATION);
+            message.setTitle("Mesaj informare");
+            message.setContentText("Analiza a fost adaugata cu succes.");
+            message.showAndWait();
         }catch (FrontException fe){
             Alert message = new Alert(Alert.AlertType.ERROR);
             message.setTitle("Mesaj eroare");
@@ -205,15 +213,22 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     }
 
     public void prepareWindow(){
+        allCheckMenuItems=new ArrayList<>();
         loadListDonatori();
         listOnClick();
         comboRh.setItems(FXCollections.observableArrayList(rh));
         comboGrupa.setItems(FXCollections.observableArrayList(grupe));
+        for(int i=0;i<toatebolile.length;i++){
+
+            allCheckMenuItems.add(new CheckMenuItem(toatebolile[i]));
+            boliMenu.getItems().add(allCheckMenuItems.get(i));
+        }
         boliMenu.getItems().stream().forEach(x->{
             x.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
                     boli.add(new Boala(x.getText()));
+                    boliMenu.arm();
                 }
             });
         });

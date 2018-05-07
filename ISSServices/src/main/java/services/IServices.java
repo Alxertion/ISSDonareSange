@@ -17,7 +17,7 @@ public interface IServices {
     Donator findDonatorByUsername(String username);
     Analiza cautaUltimaAnalizaDupaDonator(int idDonator);
     List<Analiza> cautaAnalizeleUnuiDonator(int idDonator);
-    PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(int idDonator);
+    PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonator(int idDonator);
     void adaugaAnalizaLaDonator(int idDonator,Analiza analiza) throws ServiceException;
 
 }
