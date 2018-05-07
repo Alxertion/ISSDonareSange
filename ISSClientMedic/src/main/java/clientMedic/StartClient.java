@@ -17,7 +17,7 @@ import services.IServices;
 
 import java.io.IOException;
 
-public class StartClient extends Application{
+public class StartClient extends Application {
     protected StageManager stageManager = null;
     protected ApplicationContext factoryWindow = null;
     protected Loader loader = null;
