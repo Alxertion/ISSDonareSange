@@ -252,6 +252,7 @@ public class ServerImpl implements IServices {
         for (PreparatSanguin preparatSanguin1:cautaPreparateleSanguineCeleMaiRecenteAleUnuiDonator(idDonator)){
             analiza.getPreparateSanguine().add(preparatSanguin1);
         }
+        System.out.println("");
         repositoryAnalize.adaugare(analiza);
     }
 
