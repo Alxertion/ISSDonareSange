@@ -37,23 +37,39 @@ public class ServerImpl implements IServices {
     private IRepositoryTrombocite repositoryTrombocite;
     private IRepositoryConturi repositoryConturi;
     private IRepositoryPreparateSanguine repositoryPreparateSanguine;
+    private IRepositoryCentruTransfuzii repositoryCentruTransfuzii;
+    private IRepositorySpitale repositorySpitale;
 
     //For remoting
     private Map<String, IObserver> loggedClients;
 
-    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi,IRepositoryPreparateSanguine repositoryPreparateSanguine){
-        this.repositoryAnalize=repositoryAnalize;
-        this.repositoryCereri=repositoryCereri;
-        this.repositoryDonatori=repositoryDonatori;
-        this.repositoryGlobuleRosii=repositoryGlobuleRosii;
-        this.repositoryMedici=repositoryMedici;
-        this.repositoryPersonalTransfuzii=repositoryPersonalTransfuzii;
-        this.repositoryPlasma=repositoryPlasma;
-        this.repositorySangeNefiltrat=repositorySangeNefiltrat;
-        this.repositoryTrombocite=repositoryTrombocite;
-        this.repositoryConturi=repositoryConturi;
-        this.repositoryPreparateSanguine=repositoryPreparateSanguine;
-        loggedClients=new ConcurrentHashMap<>();
+    public ServerImpl(IRepositoryAnalize repositoryAnalize,
+                      IRepositoryCereri repositoryCereri,
+                      IRepositoryDonatori repositoryDonatori,
+                      IRepositoryGlobuleRosii repositoryGlobuleRosii,
+                      IRepositoryMedici repositoryMedici,
+                      IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,
+                      IRepositoryPlasma repositoryPlasma,
+                      IRepositorySangeNefiltrat repositorySangeNefiltrat,
+                      IRepositoryTrombocite repositoryTrombocite,
+                      IRepositoryConturi repositoryConturi,
+                      IRepositoryPreparateSanguine repositoryPreparateSanguine,
+                      IRepositoryCentruTransfuzii repositoryCentruTransfuzii,
+                      IRepositorySpitale repositorySpitale) {
+        this.repositoryAnalize = repositoryAnalize;
+        this.repositoryCereri = repositoryCereri;
+        this.repositoryDonatori = repositoryDonatori;
+        this.repositoryGlobuleRosii = repositoryGlobuleRosii;
+        this.repositoryMedici = repositoryMedici;
+        this.repositoryPersonalTransfuzii = repositoryPersonalTransfuzii;
+        this.repositoryPlasma = repositoryPlasma;
+        this.repositorySangeNefiltrat = repositorySangeNefiltrat;
+        this.repositoryTrombocite = repositoryTrombocite;
+        this.repositoryConturi = repositoryConturi;
+        this.repositoryPreparateSanguine = repositoryPreparateSanguine;
+        this.repositoryCentruTransfuzii = repositoryCentruTransfuzii;
+        this.repositorySpitale = repositorySpitale;
+        loggedClients = new ConcurrentHashMap<>();
     }
 
     private void notifyMyClients(){
@@ -230,4 +246,63 @@ public class ServerImpl implements IServices {
         return listOfAllPreparateSanguine;
     }
 
+    @Override
+    public synchronized List<Spital> getSpitale() {
+        return repositorySpitale.getAll();
+    }
+
+    @Override
+    public synchronized List<CentruTransfuzii> getCentreTransfuzii() {
+        return repositoryCentruTransfuzii.getAll();
+    }
+
+    @Override
+    public synchronized void adaugaSpital(Spital spital) {
+        repositorySpitale.adaugare(spital);
+    }
+
+    @Override
+    public synchronized void adaugaCentruTransfuzii(CentruTransfuzii centruTransfuzii) {
+        repositoryCentruTransfuzii.adaugare(centruTransfuzii);
+    }
+
+    @Override
+    public synchronized void modificaSpital(Spital spital) {
+        repositorySpitale.modificare(spital);
+    }
+
+    @Override
+    public synchronized void modificaCentruTransfuzii(CentruTransfuzii centruTransfuzii) {
+        repositoryCentruTransfuzii.modificare(centruTransfuzii);
+    }
+
+    @Override
+    public synchronized void stergeSpital(int id) {
+        repositorySpitale.stergere(id);
+    }
+
+    @Override
+    public synchronized void stergeCentruTransfuzii(int id) {
+        repositoryCentruTransfuzii.stergere(id);
+    }
+
+    @Override
+    public synchronized void adaugaMedic(Medic medic) {
+        repositoryMedici.adaugare(medic);
+    }
+
+    @Override
+    public synchronized void stergeMedic(int id) {
+        repositoryMedici.stergere(id);
+    }
+
+    @Override
+    public synchronized void adaugaPersonalTransfuzii(PersonalTransfuzii personalTransfuzii) {
+        repositoryPersonalTransfuzii.adaugare(personalTransfuzii);
+    }
+
+    @Override
+    public synchronized void stergePersonalTransfuzii(int id) {
+        repositoryPersonalTransfuzii.stergere(id);
+    }
 }

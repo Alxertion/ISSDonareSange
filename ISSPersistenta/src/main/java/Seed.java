@@ -15,6 +15,8 @@ public class Seed {
     private IRepositoryBoli repositoryBoli;
     private IRepositoryAnalize repoAnalize;
     private IRepositoryPreparateSanguine repoPreparateSanguine;
+    private IRepositorySpitale repoSpitale;
+    private IRepositoryCentruTransfuzii repoCentreTransfuzii;
 
     public Seed(){
         repoConturi = new RepositoryConturi();
@@ -24,11 +26,15 @@ public class Seed {
         repositoryBoli = new RepositoryBoala();
         repoAnalize = new RepositoryAnalize();
         repoPreparateSanguine = new RepositoryPreparateSanguine();
-
+        repoSpitale = new RepositorySpitale();
+        repoCentreTransfuzii = new RepositoryCentruTransfuzii();
     }
 
     public void seed() {
-
+        /*
+        adaugaPersonalTransfuzii();
+        adaugaSpitale();
+        adaugaCentreTransfuzii();
         adaugaConturi();
         adaugaMedici();
         adaugaPersonalTransfuzii();
@@ -39,7 +45,21 @@ public class Seed {
         adaugaPreparateSanguine();
         addPreparatSanguinLaDonator();
         addPreparatLaAnaliza();
-//        check();
+        check();
+        */
+    }
+
+    private void adaugaCentreTransfuzii() {
+        repoCentreTransfuzii.adaugare(new CentruTransfuzii(1, "Centru Unu", 2.71, 3.22));
+        repoCentreTransfuzii.adaugare(new CentruTransfuzii(2, "Centru Doi", 19.71, 4.2123));
+        repoCentreTransfuzii.adaugare(new CentruTransfuzii(3, "Centru Trei", 17.71, 21.215));
+    }
+
+    private void adaugaSpitale() {
+        repoSpitale.adaugare(new Spital(1, "Spital Unu", 2.76531, 3.22));
+        repoSpitale.adaugare(new Spital(2, "Spital Doi", 19.711, 4.2123));
+        repoSpitale.adaugare(new Spital(3, "Spital Trei", 17.73121, 21.215));
+        repoSpitale.adaugare(new Spital(4, "Spital Patru", 14.2721, 21.215));
     }
 
     private void check(){
@@ -144,10 +164,10 @@ public class Seed {
     private void adaugaPersonalTransfuzii() {
 
         Cont cont1 = repoConturi.cautare("personal1");
-        Cont cont2 = repoConturi.cautare("personal2");
+        Cont cont2 = repoConturi.cautare("personal12");
 
-        repositoryPersonalTransfuzii.adaugare(new PersonalTransfuzii("Cezara", "Grigoreta", cont1, "1970725055038", "oti_otniel97@yahoo.com"));
-        repositoryPersonalTransfuzii.adaugare(new PersonalTransfuzii("Nicolae", "Ceausescu", cont2,"1970725055000", "oti_otniel97@yahoo.com"));
+        repositoryPersonalTransfuzii.adaugare(new PersonalTransfuzii(1, "Cezara", "Grigoreta", cont1, "1970725055038", "oti_otniel97@yahoo.com",1));
+        repositoryPersonalTransfuzii.adaugare(new PersonalTransfuzii(2, "Nicolae", "Ceausescu", cont2,"1970725055000", "oti_otniel97@yahoo.com",2));
 
     }
 
@@ -157,9 +177,9 @@ public class Seed {
         Cont cont1 = repoConturi.cautare("roots");
         Cont cont2 = repoConturi.cautare("test");
         Cont cont3 = repoConturi.cautare("root");
-        Medic medic1 = new Medic("Chise", "Bogdan", cont1,"297072508", "oti_otniel97@yahoo.com");
-        Medic medic2 = new Medic("Boros", "Otniel", cont2,"18507255038", "oti_otniel97@yahoo.com");
-        Medic medic3 = new Medic("Cezar", "Ouatu", cont3,"18607255038", "oti_otniel97@yahoo.com");
+        Medic medic1 = new Medic(1, "Chise", "Bogdan", cont1,"297072508", "oti_otniel97@yahoo.com", 1);
+        Medic medic2 = new Medic(2, "Boros", "Otniel", cont2,"18507255038", "oti_otniel97@yahoo.com", 2);
+        Medic medic3 = new Medic(3, "Cezar", "Ouatu", cont3,"18607255038", "oti_otniel97@yahoo.com", 3);
 
         //adaugare medici
         repoMedici.adaugare(medic1);
