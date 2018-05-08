@@ -49,6 +49,8 @@ public class ServerImpl implements IServices {
     //For remoting
     private Map<String, IObserver> loggedClients;
 
+
+
     private class MyRunnable implements Runnable{
         private String emailDonator;
         private String continut;
@@ -121,15 +123,15 @@ public class ServerImpl implements IServices {
                 throw new RuntimeException(msg);
             }
         }
-
-
         @Override
         public void run() {
             sendEmail();
         }
     }
+//    public ServerImpl(RepositoryAnalize repositoryAnalize, RepositoryCereri repositoryCereri, RepositoryDonatori repositoryDonatori, RepositoryGlobuleRosii repositoryGlobuleRosii, RepositoryMedici repositoryMedici, RepositoryPersonalTransfuzii repositoryPersonalTransfuzii, RepositoryPlasma repositoryPlasma, RepositorySangeNefiltrat repositorySangeNefiltrat, RepositoryTrombocite repositoryTrombocite, RepositoryConturi repositoryConturi, RepositoryPreparateSanguine repositoryPreparateSanguine, RepositoryCentruTransfuzii repositoryCentruTransfuzii, RepositorySpitale repositorySpitale) {
+//    }
 
-    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi,IRepositoryPreparateSanguine repositoryPreparateSanguine){
+    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi,IRepositoryPreparateSanguine repositoryPreparateSanguine, RepositoryCentruTransfuzii repositoryCentruTransfuzii, RepositorySpitale repositorySpitale){
         this.repositoryAnalize=repositoryAnalize;
         this.repositoryCereri=repositoryCereri;
         this.repositoryDonatori=repositoryDonatori;
@@ -213,6 +215,22 @@ public class ServerImpl implements IServices {
         }
     }
 
+    class GMailAuthenticator extends javax.mail.Authenticator {
+        String issEmail;
+        String issPasword;
+        public GMailAuthenticator (String username, String password)
+        {
+            super();
+            this.issEmail = username;
+            this.issPasword = password;
+        }
+        public javax.mail.PasswordAuthentication getPasswordAuthentication()
+        {
+            return new javax.mail.PasswordAuthentication(issEmail, issPasword);
+        }
+    }
+
+
     public void sendRecoverPasswordEmail(String emailDonator, String generatedPassword){
         final String mail="issmailalexertion@gmail.com";
         final String mailPassword="alexertion";
@@ -244,8 +262,19 @@ public class ServerImpl implements IServices {
             throw new RuntimeException(msg);
         }
     }
-    public void xcvfavsqw(){
-        ///asd
+
+    private Properties getPropertiesConfigEmail(String mail) {
+        Properties props=new Properties();
+        props.put("mail.smtp.user", mail);
+        props.put("mail.smtp.starttls.enable","true");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.smtp.debug", "true");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.socketFactory.fallback", "false");
+        return props;
     }
 
     @Override
