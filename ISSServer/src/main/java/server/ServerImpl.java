@@ -40,6 +40,7 @@ public class ServerImpl implements IServices {
     private IRepositoryPreparateSanguine repositoryPreparateSanguine;
     private IRepositoryCentruTransfuzii repositoryCentruTransfuzii;
     private IRepositorySpitale repositorySpitale;
+    private IRepositoryPacienti repositoryPacienti;
 
     //For remoting
     private Map<String, IObserver> loggedClients;
@@ -56,7 +57,8 @@ public class ServerImpl implements IServices {
                       IRepositoryConturi repositoryConturi,
                       IRepositoryPreparateSanguine repositoryPreparateSanguine,
                       IRepositoryCentruTransfuzii repositoryCentruTransfuzii,
-                      IRepositorySpitale repositorySpitale) {
+                      IRepositorySpitale repositorySpitale,
+                      IRepositoryPacienti repositoryPacienti) {
         this.repositoryAnalize = repositoryAnalize;
         this.repositoryCereri = repositoryCereri;
         this.repositoryDonatori = repositoryDonatori;
@@ -70,6 +72,7 @@ public class ServerImpl implements IServices {
         this.repositoryPreparateSanguine = repositoryPreparateSanguine;
         this.repositoryCentruTransfuzii = repositoryCentruTransfuzii;
         this.repositorySpitale = repositorySpitale;
+        this.repositoryPacienti = repositoryPacienti;
         loggedClients = new ConcurrentHashMap<>();
     }
 
@@ -373,5 +376,10 @@ public class ServerImpl implements IServices {
             if (Objects.equals(m.getCont().getUsername(), cont.getUsername()))
                 return m.getNume() + " " + m.getPrenume();
         return "-";
+    }
+
+    @Override
+    public List<Pacient> getPacienti() {
+        return repositoryPacienti.getAll();
     }
 }

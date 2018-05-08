@@ -104,10 +104,18 @@
                         <Label text="Nume pacient:" GridPane.rowIndex="7" />
                      </children>
                   </GridPane>
-                  <TableView layoutX="420.0" layoutY="57.0" prefHeight="214.0" prefWidth="359.0">
+                  <TableView fx:id="pacientiTableView" layoutX="420.0" layoutY="57.0" prefHeight="214.0" prefWidth="359.0">
                     <columns>
-                      <TableColumn prefWidth="141.0" text="CNP" />
-                      <TableColumn prefWidth="215.0" text="Nume" />
+                      <TableColumn prefWidth="141.0" text="CNP">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="cnp"/>
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn prefWidth="215.0" text="Nume">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="numePrenume"/>
+                          </cellValueFactory>
+                      </TableColumn>
                     </columns>
                   </TableView>
                   <Label layoutX="420.0" layoutY="24.0" text="Lista tuturor pacienților înregistrați:" />

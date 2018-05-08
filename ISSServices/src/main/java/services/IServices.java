@@ -40,4 +40,6 @@ public interface IServices {
     void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception;
 
     String getNumeMedic(Cont cont);
+
+    List<Pacient> getPacienti();
 }

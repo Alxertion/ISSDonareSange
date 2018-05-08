@@ -16,6 +16,7 @@
     <bean id="repositoryPreparateSanguine" class="persistence.repository.RepositoryPreparateSanguine"/>
     <bean id="repositoryCentruTransfuzii" class="persistence.repository.RepositoryCentruTransfuzii"/>
     <bean id="repositorySpitale" class="persistence.repository.RepositorySpitale"/>
+    <bean id="repositoryPacienti" class="persistence.repository.RepositoryPacienti"/>
 
     <bean id="services" class="server.ServerImpl">
         <constructor-arg ref="repositoryAnalize"/>
@@ -31,6 +32,7 @@
         <constructor-arg ref="repositoryPreparateSanguine"/>
         <constructor-arg ref="repositoryCentruTransfuzii"/>
         <constructor-arg ref="repositorySpitale"/>
+        <constructor-arg ref="repositoryPacienti"/>
     </bean>
 
     <bean class="org.springframework.remoting.rmi.RmiServiceExporter">

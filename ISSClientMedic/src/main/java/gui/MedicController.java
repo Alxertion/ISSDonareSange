@@ -5,6 +5,7 @@ import JavaResources.Service.Service;
 import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
 import JavaResources.View.StageManager;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import javafx.scene.control.*;
 import model.Cerere;
 import model.Cont;
 import model.Medic;
+import model.Pacient;
 import services.IObserver;
 import services.IServices;
 
@@ -32,6 +34,7 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
     private Loader loader;
     private Cont user;
     private ObservableList<Cerere> modelCereri;
+    private ObservableList<Pacient> modelPacienti;
     @FXML
     private TextField medicTextField;
     @FXML
@@ -58,6 +61,8 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
     private PasswordField parolaNoua2TextField;
     @FXML
     private TableView<Cerere> cereriTableView;
+    @FXML
+    private TableView<Pacient> pacientiTableView;
 
     public MedicController() throws RemoteException {
     }
@@ -70,6 +75,9 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
 
         modelCereri = FXCollections.observableArrayList(service.getCereri());
         cereriTableView.setItems(modelCereri);
+
+        modelPacienti = FXCollections.observableArrayList(service.getPacienti());
+        pacientiTableView.setItems(modelPacienti);
 
         rhComboBox.getItems().clear();
         rhComboBox.getItems().add("Pozitiv");
@@ -91,6 +99,16 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
 
         LocalDate localDate = LocalDate.now();
         dataTextField.setValue(localDate);
+
+        pacientiTableView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                Platform.runLater(() -> {
+                    Pacient pacient = pacientiTableView.getSelectionModel().getSelectedItem();
+                    cnpPacientTextField.setText(pacient.getCnp());
+                    numePacientTextField.setText(pacient.getNume());
+                });
+            }
+        });
     }
 
     @Override

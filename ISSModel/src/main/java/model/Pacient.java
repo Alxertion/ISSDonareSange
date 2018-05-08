@@ -53,6 +53,10 @@ public class Pacient implements Serializable{
         this.prenume = prenume;
     }
 
+    public String getNumePrenume() {
+        return getNume() + " " + getPrenume();
+    }
+
     public int getIdPacient() {
         return idPacient;
     }
