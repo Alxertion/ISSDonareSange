@@ -172,4 +172,30 @@ public class RepositoryDonatori implements IRepositoryDonatori {
 
         return donator;
     }
+
+    @Override
+    public Donator findDonatorByEmail(String semail) {
+        Transaction tx = null;
+        Session session = null;
+        Donator donator = null;
+
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            Query query =  session.createQuery("From Donator WHERE email = :email");
+            query.setParameter("email", semail);
+            donator = (Donator) query.list().get(0);
+
+            tx.commit();
+        } catch(IndexOutOfBoundsException e){
+            // no problem
+        }catch (HibernateException e){
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+
+        return donator;
+    }
 }

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -11,7 +14,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaResources.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaResources.LoginController">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -44,12 +47,14 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="172.0" prefWidth="214.0">
                      <children>
-                        <GridPane layoutX="132.0" layoutY="68.0" prefHeight="226.0" prefWidth="337.0">
+                        <GridPane layoutX="132.0" layoutY="28.0" prefHeight="266.0" prefWidth="337.0">
                           <columnConstraints>
                             <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="94.0" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="0.0" prefWidth="243.0" />
                           </columnConstraints>
                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
@@ -58,17 +63,21 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="Utilizator:" />
-                              <Label text="Parolă:" GridPane.rowIndex="1" />
-                              <Label text="CNP:" GridPane.rowIndex="2" />
-                              <Label text="Email:" GridPane.rowIndex="3" />
-                              <Label text="Telefon  :" GridPane.rowIndex="4" />
-                              <TextField GridPane.columnIndex="1" />
-                              <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Button mnemonicParsing="false" text="Înregistrare cont" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                              <Label text="Utilizator:" GridPane.rowIndex="2" />
+                              <Label text="Parolă:" GridPane.rowIndex="3" />
+                              <Label text="CNP:" GridPane.rowIndex="4" />
+                              <Label text="Email:" GridPane.rowIndex="5" />
+                              <Label text="Telefon  :" GridPane.rowIndex="6" />
+                              <TextField fx:id="registerUserField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <PasswordField fx:id="registerPassField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="registerCNPField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="registerEmailField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="registerPhoneField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" onAction="#registerAccount" text="Înregistrare cont" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+                              <Label text="Nume:" />
+                              <Label text="Prenume:" GridPane.rowIndex="1" />
+                              <TextField fx:id="registerLastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="registerNameField" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -90,8 +99,8 @@
                           </rowConstraints>
                            <children>
                               <Label text="Email/utilizator " />
-                              <TextField GridPane.columnIndex="1" />
-                              <Button mnemonicParsing="false" text="Recuperează" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <TextField fx:id="recoverEmailField" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#recoverPassword" text="Recuperează" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
