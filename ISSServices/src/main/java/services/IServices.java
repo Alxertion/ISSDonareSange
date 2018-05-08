@@ -10,8 +10,8 @@ import java.util.List;
 public interface IServices {
     void login(Cont user, IObserver client) throws ServiceException;
     void logout(Cont user);
-    void registerAccount(Donator donator) throws ServiceException;
     void recoverPassword(String string) throws ServiceException;
+    void registerAccount(Donator donator) throws ServiceException;
     List<Medic> getMedici();
     List<PersonalTransfuzii> getPersonalTransfuzii();
     List<Donator> getDonatori();

@@ -176,7 +176,9 @@ public class ServerImpl implements IServices {
             throw new RuntimeException(msg);
         }
     }
-
+    public void xcvfavsqw(){
+        ///asd
+    }
 
     @Override
     public synchronized List<Medic> getMedici(){
