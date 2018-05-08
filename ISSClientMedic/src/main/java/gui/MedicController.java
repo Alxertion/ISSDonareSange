@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class MedicController extends UnicastRemoteObject implements Controller, IObserver,Serializable {
@@ -47,13 +49,13 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
     @FXML
     private TextField numePacientTextField;
     @FXML
-    private TextField parolaCurentaTextField;
+    private PasswordField parolaCurentaTextField;
     @FXML
-    private TextField parolaCurenta2TextField;
+    private PasswordField parolaCurenta2TextField;
     @FXML
-    private TextField parolaNouaTextField;
+    private PasswordField parolaNouaTextField;
     @FXML
-    private TextField parolaNoua2TextField;
+    private PasswordField parolaNoua2TextField;
     @FXML
     private TableView<Cerere> cereriTableView;
 
@@ -69,21 +71,26 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
         modelCereri = FXCollections.observableArrayList(service.getCereri());
         cereriTableView.setItems(modelCereri);
 
-        String numeMedic = "";
-
-        medicTextField.setText(numeMedic);
-
+        rhComboBox.getItems().clear();
         rhComboBox.getItems().add("Pozitiv");
         rhComboBox.getItems().add("Negativ");
+        rhComboBox.getSelectionModel().selectFirst();
 
+        grupaComboBox.getItems().clear();
         grupaComboBox.getItems().add("O (I)");
         grupaComboBox.getItems().add("A (II)");
         grupaComboBox.getItems().add("B (III)");
         grupaComboBox.getItems().add("AB (IV)");
+        grupaComboBox.getSelectionModel().selectFirst();
 
+        prioritateComboBox.getItems().clear();
         prioritateComboBox.getItems().add("Mica");
         prioritateComboBox.getItems().add("Medie");
         prioritateComboBox.getItems().add("Mare");
+        prioritateComboBox.getSelectionModel().selectFirst();
+
+        LocalDate localDate = LocalDate.now();
+        dataTextField.setValue(localDate);
     }
 
     @Override
@@ -94,6 +101,10 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
     @Override
     public void setUser(Cont user) {
         this.user=user;
+
+        String numeMedic = "";
+        numeMedic = service.getNumeMedic(user);
+        medicTextField.setText(numeMedic);
     }
 
     @Override
@@ -157,6 +168,7 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
                 !Objects.equals(parolaNouaTextField.getText(), parolaNoua2TextField.getText()))
                 throw new Exception("Parolele nu se potrivesc!");
             service.schimbaParolaMedic(user.getUsername(),parolaCurentaTextField.getText(),parolaNouaTextField.getText());
+            showMessage(Alert.AlertType.CONFIRMATION, "Schimbare parola", "Parola schimbata cu succes!");
         }
         catch (Exception e) {
             showErrorMessage(e.getMessage());

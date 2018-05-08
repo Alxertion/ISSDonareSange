@@ -38,4 +38,6 @@ public interface IServices {
     void stergeCerere(Cerere cerere);
 
     void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception;
+
+    String getNumeMedic(Cont cont);
 }

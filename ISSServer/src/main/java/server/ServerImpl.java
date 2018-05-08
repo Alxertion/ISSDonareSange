@@ -351,12 +351,12 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public void stergeCerere(Cerere cerere) {
+    public synchronized void stergeCerere(Cerere cerere) {
         repositoryCereri.stergere(cerere.getIdCerere());
     }
 
     @Override
-    public void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception {
+    public synchronized void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception {
         Cont contCurent = repositoryConturi.cautare(username);
         if (Objects.equals(contCurent.getPassword(), parolaCurenta)) {
             contCurent.setPassword(parolaNoua);
@@ -365,5 +365,13 @@ public class ServerImpl implements IServices {
         else {
             throw new Exception("Parola curenta e gresita!");
         }
+    }
+
+    @Override
+    public synchronized String getNumeMedic(Cont cont) {
+        for (Medic m : repositoryMedici.getAll())
+            if (Objects.equals(m.getCont().getUsername(), cont.getUsername()))
+                return m.getNume() + " " + m.getPrenume();
+        return "-";
     }
 }
