@@ -1,6 +1,7 @@
 package server;
 
 import model.*;
+import org.apache.commons.lang3.RandomStringUtils;
 import persistence.repository.*;
 import services.IObserver;
 import services.IServices;
@@ -321,7 +322,7 @@ public class ServerImpl implements IServices {
 
    @Override
     public synchronized Analiza cautaUltimaAnalizaDupaDonator(int idDonator) {
-        PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(idDonator);
+        PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonator(idDonator);
         if(preparatSanguin!=null){
             int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
             Analiza analiza= repositoryAnalize.cautare(idAnaliza);
