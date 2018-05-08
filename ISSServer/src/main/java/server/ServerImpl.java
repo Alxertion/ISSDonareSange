@@ -344,4 +344,26 @@ public class ServerImpl implements IServices {
     public synchronized void stergePersonalTransfuzii(int id) {
         repositoryPersonalTransfuzii.stergere(id);
     }
+
+    @Override
+    public synchronized List<Cerere> getCereri() {
+        return repositoryCereri.getAll();
+    }
+
+    @Override
+    public void stergeCerere(Cerere cerere) {
+        repositoryCereri.stergere(cerere.getIdCerere());
+    }
+
+    @Override
+    public void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception {
+        Cont contCurent = repositoryConturi.cautare(username);
+        if (Objects.equals(contCurent.getPassword(), parolaCurenta)) {
+            contCurent.setPassword(parolaNoua);
+            repositoryConturi.modificare(contCurent);
+        }
+        else {
+            throw new Exception("Parola curenta e gresita!");
+        }
+    }
 }

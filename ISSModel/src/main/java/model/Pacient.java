@@ -46,7 +46,8 @@ public class Pacient implements Serializable{
      * @param nume
      */
 
-    public Pacient(String cnp, String nume, String prenume) {
+    public Pacient(int idPacient, String cnp, String nume, String prenume) {
+        this.idPacient = idPacient;
         this.cnp = cnp;
         this.nume = nume;
         this.prenume = prenume;

@@ -5,11 +5,16 @@ import JavaResources.Service.Service;
 import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
 import JavaResources.View.StageManager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.*;
+import model.Cerere;
 import model.Cont;
+import model.Medic;
 import services.IObserver;
 import services.IServices;
 
@@ -17,12 +22,40 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Objects;
 
 public class MedicController extends UnicastRemoteObject implements Controller, IObserver,Serializable {
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
     private Cont user;
+    private ObservableList<Cerere> modelCereri;
+    @FXML
+    private TextField medicTextField;
+    @FXML
+    private ComboBox<String> prioritateComboBox;
+    @FXML
+    private ComboBox<String> grupaComboBox;
+    @FXML
+    private TextField cantitateTextField;
+    @FXML
+    private ComboBox<String> rhComboBox;
+    @FXML
+    private DatePicker dataTextField;
+    @FXML
+    private TextField cnpPacientTextField;
+    @FXML
+    private TextField numePacientTextField;
+    @FXML
+    private TextField parolaCurentaTextField;
+    @FXML
+    private TextField parolaCurenta2TextField;
+    @FXML
+    private TextField parolaNouaTextField;
+    @FXML
+    private TextField parolaNoua2TextField;
+    @FXML
+    private TableView<Cerere> cereriTableView;
 
     public MedicController() throws RemoteException {
     }
@@ -32,6 +65,25 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
         this.stageManager=stageManager;
         this.loader=loader;
         this.service=service;
+
+        modelCereri = FXCollections.observableArrayList(service.getCereri());
+        cereriTableView.setItems(modelCereri);
+
+        String numeMedic = "";
+
+        medicTextField.setText(numeMedic);
+
+        rhComboBox.getItems().add("Pozitiv");
+        rhComboBox.getItems().add("Negativ");
+
+        grupaComboBox.getItems().add("O (I)");
+        grupaComboBox.getItems().add("A (II)");
+        grupaComboBox.getItems().add("B (III)");
+        grupaComboBox.getItems().add("AB (IV)");
+
+        prioritateComboBox.getItems().add("Mica");
+        prioritateComboBox.getItems().add("Medie");
+        prioritateComboBox.getItems().add("Mare");
     }
 
     @Override
@@ -60,6 +112,54 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
         } catch (IOException e) {
             System.err.println(e.getMessage());
             System.exit(1);
+        }
+    }
+
+    private void showMessage(Alert.AlertType type, String header, String text) {
+        Alert message = new Alert(type);
+        message.setHeaderText(header);
+        message.setContentText(text);
+        message.showAndWait();
+    }
+
+    private void showErrorMessage(String text) {
+        showMessage(Alert.AlertType.WARNING, "Warning!", text);
+    }
+
+    @FXML
+    public void anulareCerere(ActionEvent actionEvent) {
+        try {
+            service.stergeCerere(cereriTableView.getSelectionModel().getSelectedItem());
+        }
+        catch (Exception e) {
+            showErrorMessage("Operatia nu a putut fi finalizata!");
+        }
+    }
+
+    public void golireCampuri(ActionEvent actionEvent) {
+        cantitateTextField.setText("");
+        cnpPacientTextField.setText("");
+        numePacientTextField.setText("");
+        prioritateComboBox.getSelectionModel().selectFirst();
+        grupaComboBox.getSelectionModel().selectFirst();
+        rhComboBox.getSelectionModel().selectFirst();
+        dataTextField.getEditor().clear();
+        dataTextField.setValue(null);
+    }
+
+    public void efectuareCerere(ActionEvent actionEvent) {
+
+    }
+
+    public void schimbaParola(ActionEvent actionEvent) {
+        try {
+            if (!Objects.equals(parolaCurentaTextField.getText(), parolaCurenta2TextField.getText()) ||
+                !Objects.equals(parolaNouaTextField.getText(), parolaNoua2TextField.getText()))
+                throw new Exception("Parolele nu se potrivesc!");
+            service.schimbaParolaMedic(user.getUsername(),parolaCurentaTextField.getText(),parolaNouaTextField.getText());
+        }
+        catch (Exception e) {
+            showErrorMessage(e.getMessage());
         }
     }
 }

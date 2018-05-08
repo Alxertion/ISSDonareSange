@@ -1,10 +1,6 @@
 package persistence.repository;
 
-import model.Cerere;
-import model.Cont;
-import model.Medic;
-
-import java.util.List;
+import model.Pacient;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,7 +11,7 @@ import java.util.List;
 /**
  * 
  */
-public class RepositoryMedici implements IRepositoryMedici {
+public class RepositoryPacienti implements IRepositoryPacienti {
 
     /**
      * Default constructor
@@ -23,7 +19,7 @@ public class RepositoryMedici implements IRepositoryMedici {
 
     private SessionFactory factory = null;
 
-    public RepositoryMedici() {
+    public RepositoryPacienti() {
 
         try {
             factory = HibernateFactory.getInstance();
@@ -38,15 +34,13 @@ public class RepositoryMedici implements IRepositoryMedici {
     /**
      * @param
      */
-    @Override
-    public void adaugare(Medic medic) {
-
+    public void adaugare(Pacient element) {
         Transaction tx = null;
         Session session = null;
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-            session.save(medic);
+            session.save(element);
             tx.commit();
 
         }catch (HibernateException e){
@@ -56,22 +50,19 @@ public class RepositoryMedici implements IRepositoryMedici {
         } finally {
             session.close();
         }
-
     }
 
     /**
      * @param
      */
-    @Override
-    public void modificare( Medic medic) {
-
+    public void modificare(Pacient element) {
         Transaction tx = null;
         Session session = null;
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            session.update(medic);
+            session.update(element);
             tx.commit();
 
         }catch (HibernateException e){
@@ -81,73 +72,72 @@ public class RepositoryMedici implements IRepositoryMedici {
         } finally {
             session.close();
         }
-
-    }
-
-    @Override
-    public Medic stergere(Integer id) {
-
-        Transaction tx = null;
-        Session session = null;
-        Medic medic = null;
-        try{
-            session = factory.openSession();
-            tx = session.beginTransaction();
-
-            medic = cautare(id);
-            session.delete(medic);
-            tx.commit();
-
-        }catch (HibernateException e){
-            if (tx!=null)
-                tx.rollback();
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-
-        return medic;
-
-    }
-
-    @Override
-    public Medic cautare(Integer id) {
-        Transaction tx = null;
-        Session session = null;
-        Medic medic = null;
-
-        try{
-            session = factory.openSession();
-            tx = session.beginTransaction();
-            medic = (Medic) session.get(Medic.class, id);
-            tx.commit();
-        }catch (HibernateException e){
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-
-        return medic;
-
     }
 
     /**
-     * @return
+     * @param
      */
-    public List<Medic> getAll() {
-
+    public Pacient stergere(Integer id) {
         Transaction tx = null;
-        List<Medic> listOfAllMedici = null;
+        Session session = null;
+        Pacient element = null;
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            element = cautare(id);
+            session.delete(element);
+            tx.commit();
+
+        }catch (HibernateException e){
+            if (tx!=null)
+                tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return element;
+    }
+
+    /**
+     * @param
+     */
+    public Pacient cautare(Integer id) {
+        Transaction tx = null;
+        Session session = null;
+        Pacient pacient = null;
+
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+            pacient = (Pacient) session.get(Pacient.class, id);
+            tx.commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return pacient;
+    }
+
+    /**
+     *
+     */
+    public List<Pacient> getAll() {
+        Transaction tx = null;
+        List<Pacient> listOfAll = null;
 
         try (Session session = factory.openSession()) {
             tx = session.beginTransaction();
-            listOfAllMedici = session.createQuery("from Medic ").list();
+            listOfAll = session.createQuery("from Pacient ").list();
             tx.commit();
         } catch (HibernateException e) {
             e.printStackTrace();
         }
 
-        return listOfAllMedici;
+        return listOfAll;
     }
 
 }

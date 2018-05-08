@@ -32,4 +32,10 @@ public interface IServices {
     void stergeMedic(int id);
     void adaugaPersonalTransfuzii(PersonalTransfuzii personalTransfuzii);
     void stergePersonalTransfuzii(int id);
+
+    List<Cerere> getCereri();
+
+    void stergeCerere(Cerere cerere);
+
+    void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception;
 }

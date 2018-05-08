@@ -12,13 +12,12 @@
         <id name="idCerere" column="idCerere" type="int">
         </id>
 
-        <property name="prioritate" column="prioritate" type="int"/>
+        <property name="prioritateNr" column="prioritate" type="int"/>
         <property name="grupa" column="grupa" type="string"/>
         <property name="RH" column="rh" type="boolean"/>
         <property name="cantitateCeruta" column="cantitateCeruta" type="double"/>
         <property name="cantitateActuala" column="cantitateActuala" type="double"/>
-        <property name="dataEfectuare" column="dataEfectuare" type="calendar_date"/>
-
+        <property name="dataEfectuare" column="dataEfectuare" type="date"/>
 
     </class>
 </hibernate-mapping>
