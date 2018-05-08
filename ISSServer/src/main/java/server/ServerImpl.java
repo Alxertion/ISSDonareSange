@@ -14,9 +14,11 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import javax.persistence.PersistenceException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
 import java.sql.Date;
@@ -25,6 +27,8 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ServerImpl implements IServices {
@@ -42,34 +46,105 @@ public class ServerImpl implements IServices {
     private IRepositoryPacient repositoryPacient;
     private IRepositoryCentruTransfuzii repositoryCentruTransfuzii;
     private IRepositorySpitale repositorySpitale;
+    Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
 
     //For remoting
     private Map<String, IObserver> loggedClients;
 
-    public ServerImpl(IRepositoryAnalize repositoryAnalize,
-                      IRepositoryCereri repositoryCereri,
-                      IRepositoryDonatori repositoryDonatori,
-                      IRepositoryGlobuleRosii repositoryGlobuleRosii,
-                      IRepositoryMedici repositoryMedici,
-                      IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,
-                      IRepositoryPlasma repositoryPlasma,
-                      IRepositorySangeNefiltrat repositorySangeNefiltrat,
-                      IRepositoryTrombocite repositoryTrombocite,
-                      IRepositoryConturi repositoryConturi,
-                      IRepositoryPreparateSanguine repositoryPreparateSanguine,
-                      IRepositoryCentruTransfuzii repositoryCentruTransfuzii,
-                      IRepositorySpitale repositorySpitale) {
-        this.repositoryAnalize = repositoryAnalize;
-        this.repositoryCereri = repositoryCereri;
-        this.repositoryDonatori = repositoryDonatori;
-        this.repositoryGlobuleRosii = repositoryGlobuleRosii;
-        this.repositoryMedici = repositoryMedici;
-        this.repositoryPersonalTransfuzii = repositoryPersonalTransfuzii;
-        this.repositoryPlasma = repositoryPlasma;
-        this.repositorySangeNefiltrat = repositorySangeNefiltrat;
-        this.repositoryTrombocite = repositoryTrombocite;
-        this.repositoryConturi = repositoryConturi;
-        this.repositoryPreparateSanguine = repositoryPreparateSanguine;
+
+
+    private class MyRunnable implements Runnable{
+        private String emailDonator;
+        private String continut;
+        public MyRunnable(String emailDonator,String continut){
+            this.continut=continut;
+            this.emailDonator=emailDonator;
+        }
+
+
+        public void sendEmail(){
+            class GMailAuthenticator extends javax.mail.Authenticator {
+                String issEmail;
+                String issPasword;
+                public GMailAuthenticator (String username, String password)
+                {
+                    super();
+                    this.issEmail = username;
+                    this.issPasword = password;
+                }
+                public javax.mail.PasswordAuthentication getPasswordAuthentication()
+                {
+                    return new javax.mail.PasswordAuthentication(issEmail, issPasword);
+                }
+            }
+
+            final String mail="issmailalexertion@gmail.com";
+            final String mailPassword="alexertion";
+            Properties props=new Properties();
+            props.put("mail.smtp.user", mail);
+            props.put("mail.smtp.starttls.enable","true");
+            props.put("mail.smtp.port", "465");
+            props.put("mail.smtp.debug", "true");
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.socketFactory.port", "465");
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+            props.put("mail.smtp.socketFactory.fallback", "false");
+            javax.mail.Session sessionGmail;
+            sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
+            //session.setDebug(true);
+            try{
+                MimeMessage message=new MimeMessage(sessionGmail);
+                message.setFrom(new InternetAddress(mail));
+                message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("oti_otniel97@yahoo.com"));
+                message.setSubject("Rezultate analiza - Centru de transfuzii");
+
+
+                BodyPart messageBodyPart = new MimeBodyPart();
+                messageBodyPart.setText("Buna ziua,\nAveti atasat acestui mail un fisier cu rezultatele" +
+                        " analizelor dumneavoastra.\n\nVa dorim o zi placuta!");
+
+                Multipart multipart = new MimeMultipart();
+                multipart.addBodyPart(messageBodyPart);
+
+                MimeBodyPart attachementBodyPart = new MimeBodyPart();
+                DataSource dataSource=new FileDataSource("analiza.txt");
+                createResultAnaliza(continut);
+                attachementBodyPart.setDataHandler(new DataHandler(dataSource));
+                attachementBodyPart.setFileName("analiza.txt");
+                multipart.addBodyPart(attachementBodyPart);
+
+                message.setContent(multipart);
+
+                Transport transport = sessionGmail.getTransport("smtps");
+                transport.connect("smtp.gmail.com", 465, mail, mailPassword);
+                transport.sendMessage(message, message.getAllRecipients());
+                transport.close();
+
+            }catch (MessagingException msg){
+                throw new RuntimeException(msg);
+            }
+        }
+        @Override
+        public void run() {
+            sendEmail();
+        }
+    }
+//    public ServerImpl(RepositoryAnalize repositoryAnalize, RepositoryCereri repositoryCereri, RepositoryDonatori repositoryDonatori, RepositoryGlobuleRosii repositoryGlobuleRosii, RepositoryMedici repositoryMedici, RepositoryPersonalTransfuzii repositoryPersonalTransfuzii, RepositoryPlasma repositoryPlasma, RepositorySangeNefiltrat repositorySangeNefiltrat, RepositoryTrombocite repositoryTrombocite, RepositoryConturi repositoryConturi, RepositoryPreparateSanguine repositoryPreparateSanguine, RepositoryCentruTransfuzii repositoryCentruTransfuzii, RepositorySpitale repositorySpitale) {
+//    }
+
+    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi,IRepositoryPreparateSanguine repositoryPreparateSanguine, RepositoryCentruTransfuzii repositoryCentruTransfuzii, RepositorySpitale repositorySpitale){
+        this.repositoryAnalize=repositoryAnalize;
+        this.repositoryCereri=repositoryCereri;
+        this.repositoryDonatori=repositoryDonatori;
+        this.repositoryGlobuleRosii=repositoryGlobuleRosii;
+        this.repositoryMedici=repositoryMedici;
+        this.repositoryPersonalTransfuzii=repositoryPersonalTransfuzii;
+        this.repositoryPlasma=repositoryPlasma;
+        this.repositorySangeNefiltrat=repositorySangeNefiltrat;
+        this.repositoryTrombocite=repositoryTrombocite;
+        this.repositoryConturi=repositoryConturi;
+        this.repositoryPreparateSanguine=repositoryPreparateSanguine;
         this.repositoryCentruTransfuzii = repositoryCentruTransfuzii;
         this.repositorySpitale = repositorySpitale;
         this.repositoryPacient = repositoryPacient;
@@ -108,6 +183,104 @@ public class ServerImpl implements IServices {
     }
 
     @Override
+    public synchronized void registerAccount(Donator donator) throws ServiceException{
+        try {
+            repositoryConturi.adaugare(donator.getCont());
+            repositoryDonatori.adaugare(donator);
+        }catch (PersistenceException e){
+            throw new ServiceException("Este deja un cont cu acest nume de utilizator");
+        }
+
+    }
+
+    @Override
+    public synchronized void recoverPassword(String emailOrUsername) throws ServiceException{
+        Matcher mat = pattern.matcher(emailOrUsername);
+        Donator don;
+        if(mat.matches()){
+            // todo de cautat dupa mail
+            don=repositoryDonatori.findDonatorByEmail(emailOrUsername);
+        }else{
+            // caut emailul utilizatorului
+            don=repositoryDonatori.findDonatorByUsername(emailOrUsername);
+        }
+        if(don!=null){
+            try {
+                String generatedPassword = RandomStringUtils.random(20,true,true);
+                don.getCont().setPassword(generatedPassword);
+                repositoryConturi.modificare(don.getCont());
+                sendRecoverPasswordEmail(don.getEmail(),generatedPassword);
+            }catch (IndexOutOfBoundsException|PersistenceException e){
+                throw new ServiceException("Va rugam sa verificati emailul/ numele emailului");
+            }
+        }else{
+            throw new ServiceException("Nu am gasit utilizatorul cu acest nume/email");
+        }
+    }
+
+    class GMailAuthenticator extends javax.mail.Authenticator {
+        String issEmail;
+        String issPasword;
+        public GMailAuthenticator (String username, String password)
+        {
+            super();
+            this.issEmail = username;
+            this.issPasword = password;
+        }
+        public javax.mail.PasswordAuthentication getPasswordAuthentication()
+        {
+            return new javax.mail.PasswordAuthentication(issEmail, issPasword);
+        }
+    }
+
+
+    public void sendRecoverPasswordEmail(String emailDonator, String generatedPassword){
+        final String mail="issmailalexertion@gmail.com";
+        final String mailPassword="alexertion";
+        Properties props=getPropertiesConfigEmail(mail);
+        javax.mail.Session sessionGmail;
+        sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
+        //session.setDebug(true);
+        try{
+            MimeMessage message=new MimeMessage(sessionGmail);
+            message.setFrom(new InternetAddress(mail));
+            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailDonator));
+            message.setSubject("Resetare parola");
+
+            BodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText("Buna,\n\nNoua dumneavoastra parola pentru aplicatia de donare sange este: " +generatedPassword+
+                    " .\n Daca nu ati fost dumneavoastra cel care ati cerut resetarea parolei, va rugam sa contactati personalul celui mai apropait centru de transfuzii." +
+                    "\n\n O zi frumoasa!");
+
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(messageBodyPart);
+
+            message.setContent(multipart);
+
+            Transport transport = sessionGmail.getTransport("smtps");
+            transport.connect("smtp.gmail.com", 465, mail, mailPassword);
+            transport.sendMessage(message, message.getAllRecipients());
+            transport.close();
+        }catch (MessagingException msg){
+            throw new RuntimeException(msg);
+        }
+    }
+
+    private Properties getPropertiesConfigEmail(String mail) {
+        Properties props=new Properties();
+        props.put("mail.smtp.user", mail);
+        props.put("mail.smtp.starttls.enable","true");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.smtp.debug", "true");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.socketFactory.fallback", "false");
+        return props;
+    }
+
+    @Override
     public synchronized List<Medic> getMedici(){
         return repositoryMedici.getAll();
     }
@@ -134,67 +307,9 @@ public class ServerImpl implements IServices {
 
     @Override
     public synchronized void sendEmail(String emailDonator,String continut){
-        class GMailAuthenticator extends javax.mail.Authenticator {
-            String issEmail;
-            String issPasword;
-            public GMailAuthenticator (String username, String password)
-            {
-                super();
-                this.issEmail = username;
-                this.issPasword = password;
-            }
-            public javax.mail.PasswordAuthentication getPasswordAuthentication()
-            {
-                return new javax.mail.PasswordAuthentication(issEmail, issPasword);
-            }
-        }
-
-        final String mail="issmailalexertion@gmail.com";
-        final String mailPassword="alexertion";
-        Properties props=new Properties();
-        props.put("mail.smtp.user", mail);
-        props.put("mail.smtp.starttls.enable","true");
-        props.put("mail.smtp.port", "465");
-        props.put("mail.smtp.debug", "true");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.socketFactory.port", "465");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.socketFactory.fallback", "false");
-        javax.mail.Session sessionGmail;
-        sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
-        //session.setDebug(true);
-        try{
-            MimeMessage message=new MimeMessage(sessionGmail);
-            message.setFrom(new InternetAddress(mail));
-            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailDonator));
-            message.setSubject("Rezultate analiza - Centru de transfuzii");
-
-
-            BodyPart messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setText("Buna ziua,\nAveti atasat acestui mail un fisier cu rezultatele" +
-                    " analizelor dumneavoastra.\n\nVa dorim o zi placuta!");
-
-            Multipart multipart = new MimeMultipart();
-            multipart.addBodyPart(messageBodyPart);
-
-            MimeBodyPart attachementBodyPart = new MimeBodyPart();
-            DataSource dataSource=new FileDataSource("analiza.txt");
-            createResultAnaliza(continut);
-            attachementBodyPart.setDataHandler(new DataHandler(dataSource));
-            attachementBodyPart.setFileName("analiza.txt");
-            multipart.addBodyPart(attachementBodyPart);
-
-            message.setContent(multipart);
-
-            Transport transport = sessionGmail.getTransport("smtps");
-            transport.connect("smtp.gmail.com", 465, mail, mailPassword);
-            transport.sendMessage(message, message.getAllRecipients());
-            transport.close();
-
-        }catch (MessagingException msg){
-            throw new RuntimeException(msg);
-        }
+       MyRunnable myRunnableInstance=new MyRunnable(emailDonator,continut);
+       Thread t=new Thread(myRunnableInstance);
+       t.start();
     }
 
     @Override
@@ -209,7 +324,8 @@ public class ServerImpl implements IServices {
         PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(idDonator);
         if(preparatSanguin!=null){
             int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
-            return repositoryAnalize.cautare(idAnaliza);
+            Analiza analiza= repositoryAnalize.cautare(idAnaliza);
+            return analiza;
         }
         return null;
     }
@@ -231,7 +347,7 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public synchronized PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(int idDonator){
+    public synchronized PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonator(int idDonator){
         List<PreparatSanguin> listOfAllPreparateSanguine = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.SANGE_NEFILTRAT.name());
         return listOfAllPreparateSanguine.get(0);
 
@@ -305,7 +421,7 @@ public class ServerImpl implements IServices {
         return listOfPreparate;
     }
 
-    private void stergePreparateDonator(int idDonator){
+    private void stergePreparateVechiDonator(int idDonator){
         List<PreparatSanguin> preparatSanguinList=cautaPreparateDupaDonatorSiTip(idDonator,TipPreparatSanguin.SANGE_NEFILTRAT.name());
         if(preparatSanguinList.size()==3) {
             repositoryPreparateSanguine.stergere(preparatSanguinList.get(2).getIdPreparatSanguin());
@@ -320,18 +436,21 @@ public class ServerImpl implements IServices {
         }
     }
 
+    private Analiza cautaUltimaAnalizaAdaugata(){
+        List<Analiza> toateAnalizele=repositoryAnalize.getAll();
+        return toateAnalizele.get(toateAnalizele.size()-1);
+    }
+
     @Override
     public synchronized void adaugaAnalizaLaDonator(int idDonator, Analiza analiza) throws ServiceException{
-        PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonar(idDonator);
-        if(repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin())==-1)
+        PreparatSanguin preparatSanguin=cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonator(idDonator);
+        if(repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin())!=-1)
             throw new ServiceException("Nu exista sange apartinand acestui donator pentru a i se atribui analiza");
-        stergePreparateDonator(idDonator);
-        analiza.getPreparateSanguine().add(preparatSanguin);
-        for (PreparatSanguin preparatSanguin1:cautaPreparateleSanguineCeleMaiRecenteAleUnuiDonator(idDonator)){
-            analiza.getPreparateSanguine().add(preparatSanguin1);
-        }
-        System.out.println("");
+        stergePreparateVechiDonator(idDonator);
         repositoryAnalize.adaugare(analiza);
+        Analiza analiza1=cautaUltimaAnalizaAdaugata();
+        analiza1.getPreparateSanguine().add(preparatSanguin);
+        repositoryAnalize.modificare(analiza1);
     }
 
     private synchronized List<PreparatSanguin> cautaPreparateDupaDonatorSiTip(int idDonator, String tipPreparatSanguin) {
