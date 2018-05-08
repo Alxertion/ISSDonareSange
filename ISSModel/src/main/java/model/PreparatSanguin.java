@@ -1,12 +1,14 @@
 package model;
 
 import java.io.Serializable;
-import java.util.*;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 /**
  *
  */
-public class PreparatSanguin implements Serializable {
+public class PreparatSanguin implements Serializable, Comparable<PreparatSanguin> {
 
     /**
      * Default constructor
@@ -73,6 +75,7 @@ public class PreparatSanguin implements Serializable {
     }
 
     public void setDataPrelevare(Date dataPrelevare) {
+
         this.dataPrelevare = dataPrelevare;
     }
 
@@ -114,5 +117,24 @@ public class PreparatSanguin implements Serializable {
 
     public void setTip(String tip) {
         this.tip = tip;
+    }
+
+    public int compare(PreparatSanguin prep1, PreparatSanguin prep2){
+
+        LocalDate datePrep1 = prep1.getDataPrelevare().toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
+        LocalDate datePrep2 = prep2.getDataPrelevare().toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
+
+        if(datePrep1.isBefore(datePrep2)) return 1;
+        else if(datePrep1.isEqual(datePrep2)) return 0;
+        return -1;
+
+    }
+
+    public int compareTo(PreparatSanguin preparatSanguin){
+        return preparatSanguin.getDataPrelevare().compareTo(this.getDataPrelevare());
     }
 }

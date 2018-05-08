@@ -1,6 +1,5 @@
 package JavaResources;
 
-import JavaResources.Service.Service;
 import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
 import JavaResources.View.StageManager;
@@ -19,11 +18,13 @@ import model.Pacient;
 import services.FrontException;
 import services.IServices;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 
 public class FormularDonator extends UnicastRemoteObject implements Controller,Serializable {
@@ -86,11 +87,22 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
         this.loader = loader;
 
         setImagesForButtons();
-        setDontor();
+        setDonator();
+        completeazaCuDateleAnterioare();
     }
 
-    private void setDontor() {
+    private void completeazaCuDateleAnterioare() {
 
+        numeTextField.setText(donator.getNume());
+        prenumeTextField.setText(donator.getPrenume());
+        dataNasteriiDatePicker.setValue(donator.getDataNasterii());
+        cnpTextField.setText(donator.getCNP());
+        emailTextField.setText(donator.getEmail());
+        telefonTextField.setText(donator.getTelefon());
+
+    }
+
+    private void setDonator() {
         donator = service.findDonatorByUsername(user.getUsername());
     }
 
@@ -102,7 +114,6 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
     @Override
     public void setUser(Cont user) {
         this.user = user;
-        setDontor();
     }
 
     private void setImagesForButtons() {
@@ -131,6 +142,8 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
     private void forwardButtonPressed(ActionEvent event){
 
         try{
+            Pacient pacient = null;
+
             String numeDonator = numeTextField.getText();
             String prenumeDonator = prenumeTextField.getText();
             String CNP = cnpTextField.getText();
@@ -147,10 +160,12 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
             }
 
             String cnpPacient = cnpPacientTextField.getText();
-            Pacient pacient = service.cautaPacientDupaCNP(cnpPacient);
+
+            if(cnpPacient.length() >0){
+                pacient = service.cautaPacientDupaCNP(cnpPacient);
+            }
 
             service.updateDonator(donator, numeDonator, prenumeDonator, telefon);
-
             //va trebui sa ne gandim cum cautam cel mai apropiat centru de transfuzii
             CentruTransfuzii centruTransfuzii =  service.cautaCelMaiApropiatCentruDeTransfuzii();
 

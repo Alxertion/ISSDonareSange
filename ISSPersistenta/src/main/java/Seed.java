@@ -4,7 +4,7 @@ import persistence.repository.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
+
 
 public class Seed {
 
@@ -31,7 +31,6 @@ public class Seed {
     }
 
     public void seed() {
-        /*
         adaugaPersonalTransfuzii();
         adaugaSpitale();
         adaugaCentreTransfuzii();
@@ -45,8 +44,13 @@ public class Seed {
         adaugaPreparateSanguine();
         addPreparatSanguinLaDonator();
         addPreparatLaAnaliza();
+        adaugaPacienti();
         check();
-        */
+    }
+
+    private void adaugaPacienti() {
+
+
     }
 
     private void adaugaCentreTransfuzii() {
@@ -70,17 +74,17 @@ public class Seed {
 
     private void addPreparatLaAnaliza(){
         PreparatSanguin preparatSanguin=repoPreparateSanguine.cautare(1);
-        Analiza analiza=repoAnalize.cautare(7);
+        Analiza analiza=repoAnalize.cautare(1);
         analiza.getPreparateSanguine().add(preparatSanguin);
         repoAnalize.modificare(analiza);
 
         PreparatSanguin preparatSanguin2=repoPreparateSanguine.cautare(5);
-        Analiza analiza2=repoAnalize.cautare(8);
+        Analiza analiza2=repoAnalize.cautare(2);
         analiza2.getPreparateSanguine().add(preparatSanguin2);
         repoAnalize.modificare(analiza2);
 
         PreparatSanguin preparatSanguin3=repoPreparateSanguine.cautare(9);
-        Analiza analiza3=repoAnalize.cautare(9);
+        Analiza analiza3=repoAnalize.cautare(3);
         analiza3.getPreparateSanguine().add(preparatSanguin3);
         repoAnalize.modificare(analiza3);
 
@@ -88,12 +92,12 @@ public class Seed {
 
     private void adaugaPreparateSanguine() {
 
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            Date dataRecoltarii1 = sdf.parse("21/05/2018");
-            Date dataRecoltarii2 = sdf.parse("26/01/2018");
-            Date dataRecoltarii3 = sdf.parse("16/02/2015");
-            Date dataRecoltarii4 = sdf.parse("28/01/2007");
+        try{
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            Date dataRecoltarii1 = formatter.parse("21/05/2018");
+            Date dataRecoltarii2 = formatter.parse("26/01/2018");
+            Date dataRecoltarii3 = formatter.parse("16/02/2015");
+            Date dataRecoltarii4 = formatter.parse("28/01/2007");
 
             repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
             repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
@@ -121,9 +125,11 @@ public class Seed {
 
     }
 
+
+
     private void adaugaBoliLaAnaliza() {
 
-        Analiza analiza = repoAnalize.cautare(7);
+        Analiza analiza = repoAnalize.cautare(1);
         Boala boala = repositoryBoli.cautareDupaNume(BoalaEnum.MALARIE.name());
         analiza.getBoli().add(boala);
         repoAnalize.modificare(analiza);

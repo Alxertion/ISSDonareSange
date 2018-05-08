@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
@@ -243,9 +245,37 @@ public class ServerImpl implements IServices {
     @Override
     public synchronized void inregistreazaDonator(CentruTransfuzii centruTransfuzii, Donator donator, Pacient pacient) {
 
+        centruTransfuzii.getDonatori().add(donator);
+        repositoryCentruTransfuzii.modificare(centruTransfuzii);
 
+        adaugaSangeNou();
 
+        List<PreparatSanguin> listCelorMaiRecentePreparateSanguine = repositoryPreparateSanguine.cautareUltimeleNPreparateSanguine(4);
+        adaugareSangeNouLaDontor(donator, listCelorMaiRecentePreparateSanguine);
 
+        if(pacient!=null) {
+            selecteazaPacientulDorit(pacient, listCelorMaiRecentePreparateSanguine);
+        }
+    }
+
+    private synchronized void selecteazaPacientulDorit(Pacient pacient, List<PreparatSanguin> listCelorMaiRecentePreparateSanguine) {
+        pacient.getPreparateSanguine().addAll(listCelorMaiRecentePreparateSanguine);
+        repositoryPacient.modificare(pacient);
+    }
+
+    private synchronized void adaugareSangeNouLaDontor(Donator donator, List<PreparatSanguin> listCelorMaiRecentePreparateSanguine) {
+        donator.getPreparateSanguine().addAll(listCelorMaiRecentePreparateSanguine);
+        repositoryDonatori.modificare(donator);
+    }
+
+    private synchronized void adaugaSangeNou() {
+
+        LocalDate dataRecoltarii1 = LocalDate.now();
+        Date dataRecoltarii = Date.valueOf(dataRecoltarii1);
+        repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
+        repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
+        repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
+        repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
     }
 
     @Override
@@ -262,7 +292,7 @@ public class ServerImpl implements IServices {
     @Override
     public CentruTransfuzii cautaCelMaiApropiatCentruDeTransfuzii() {
 
-        CentruTransfuzii centruTransfuzii = null;
+        CentruTransfuzii centruTransfuzii = repositoryCentruTransfuzii.cautare(1);
 
         return centruTransfuzii;
     }
@@ -311,7 +341,8 @@ public class ServerImpl implements IServices {
         if(listOfAllPreparateSanguine.size() >0){
             listOfAllPreparateSanguine=listOfAllPreparateSanguine.stream().filter(x->{
                 return x.getTip().equals(tipPreparatSanguin);
-            }).sorted(Comparator.comparing(PreparatSanguin::getDataPrelevare).reversed()).collect(Collectors.toList());
+            }).sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+
         }
 
         return listOfAllPreparateSanguine;

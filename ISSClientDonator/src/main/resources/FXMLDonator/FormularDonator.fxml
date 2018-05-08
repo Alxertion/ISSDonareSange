@@ -60,7 +60,7 @@
             <Label text="Telefon:" GridPane.columnIndex="2" GridPane.rowIndex="7" />
             <TextField fx:id="telefonTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
             <Label text="Persoana pentru care doresc să donzez:" GridPane.columnSpan="2" GridPane.rowIndex="8" />
-            <Label text="CNP" GridPane.rowIndex="9" />
+            <Label text="CNP:" GridPane.rowIndex="9" />
             <TextField fx:id="cnpPacientTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
          </children>
       </GridPane>

@@ -112,6 +112,29 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
     }
 
 
+    public List<PreparatSanguin> cautareUltimeleNPreparateSanguine(int n){
+
+        Transaction tx = null;
+        Session session = null;
+        List<PreparatSanguin> preparateSanguine = null;
+
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            preparateSanguine =  session.createQuery("FROM PreparatSanguin ORDER BY idPreparatSanguin ASC").setMaxResults(n).list();
+
+            tx.commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return preparateSanguine;
+
+    }
+
 
     @Override
     public int cautareAnalizaDupaPreparat(int idPreparatSanguin) {
