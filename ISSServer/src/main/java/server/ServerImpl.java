@@ -1,6 +1,7 @@
 package server;
 
 import model.*;
+import org.apache.commons.lang3.RandomStringUtils;
 import persistence.repository.*;
 import services.IObserver;
 import services.IServices;
@@ -14,6 +15,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import javax.persistence.PersistenceException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,6 +26,8 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ServerImpl implements IServices {
@@ -40,6 +44,7 @@ public class ServerImpl implements IServices {
     private IRepositoryPreparateSanguine repositoryPreparateSanguine;
     private IRepositoryCentruTransfuzii repositoryCentruTransfuzii;
     private IRepositorySpitale repositorySpitale;
+    Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
 
     //For remoting
     private Map<String, IObserver> loggedClients;
@@ -105,6 +110,75 @@ public class ServerImpl implements IServices {
     }
 
     @Override
+    public synchronized void registerAccount(Donator donator) throws ServiceException{
+        try {
+            repositoryConturi.adaugare(donator.getCont());
+            repositoryDonatori.adaugare(donator);
+        }catch (PersistenceException e){
+            throw new ServiceException("Este deja un cont cu acest nume de utilizator");
+        }
+
+    }
+
+    @Override
+    public synchronized void recoverPassword(String emailOrUsername) throws ServiceException{
+        Matcher mat = pattern.matcher(emailOrUsername);
+        Donator don;
+        if(mat.matches()){
+            // todo de cautat dupa mail
+            don=repositoryDonatori.findDonatorByEmail(emailOrUsername);
+        }else{
+            // caut emailul utilizatorului
+            don=repositoryDonatori.findDonatorByUsername(emailOrUsername);
+        }
+        if(don!=null){
+            try {
+                String generatedPassword = RandomStringUtils.random(20,true,true);
+                don.getCont().setPassword(generatedPassword);
+                repositoryConturi.modificare(don.getCont());
+                sendRecoverPasswordEmail(don.getEmail(),generatedPassword);
+            }catch (IndexOutOfBoundsException|PersistenceException e){
+                throw new ServiceException("Va rugam sa verificati emailul/ numele emailului");
+            }
+        }else{
+            throw new ServiceException("Nu am gasit utilizatorul cu acest nume/email");
+        }
+    }
+
+    public void sendRecoverPasswordEmail(String emailDonator, String generatedPassword){
+        final String mail="issmailalexertion@gmail.com";
+        final String mailPassword="alexertion";
+        Properties props=getPropertiesConfigEmail(mail);
+        javax.mail.Session sessionGmail;
+        sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
+        //session.setDebug(true);
+        try{
+            MimeMessage message=new MimeMessage(sessionGmail);
+            message.setFrom(new InternetAddress(mail));
+            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailDonator));
+            message.setSubject("Resetare parola");
+
+            BodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText("Buna,\n\nNoua dumneavoastra parola pentru aplicatia de donare sange este: " +generatedPassword+
+                    " .\n Daca nu ati fost dumneavoastra cel care ati cerut resetarea parolei, va rugam sa contactati personalul celui mai apropait centru de transfuzii." +
+                    "\n\n O zi frumoasa!");
+
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(messageBodyPart);
+
+            message.setContent(multipart);
+
+            Transport transport = sessionGmail.getTransport("smtps");
+            transport.connect("smtp.gmail.com", 465, mail, mailPassword);
+            transport.sendMessage(message, message.getAllRecipients());
+            transport.close();
+        }catch (MessagingException msg){
+            throw new RuntimeException(msg);
+        }
+    }
+
+
+    @Override
     public synchronized List<Medic> getMedici(){
         return repositoryMedici.getAll();
     }
@@ -129,25 +203,22 @@ public class ServerImpl implements IServices {
         }
     }
 
-    @Override
-    public synchronized void sendEmail(String emailDonator,String continut){
-        class GMailAuthenticator extends javax.mail.Authenticator {
-            String issEmail;
-            String issPasword;
-            public GMailAuthenticator (String username, String password)
-            {
-                super();
-                this.issEmail = username;
-                this.issPasword = password;
-            }
-            public javax.mail.PasswordAuthentication getPasswordAuthentication()
-            {
-                return new javax.mail.PasswordAuthentication(issEmail, issPasword);
-            }
+    class GMailAuthenticator extends javax.mail.Authenticator {
+        String issEmail;
+        String issPasword;
+        public GMailAuthenticator (String username, String password)
+        {
+            super();
+            this.issEmail = username;
+            this.issPasword = password;
         }
+        public javax.mail.PasswordAuthentication getPasswordAuthentication()
+        {
+            return new javax.mail.PasswordAuthentication(issEmail, issPasword);
+        }
+    }
 
-        final String mail="issmailalexertion@gmail.com";
-        final String mailPassword="alexertion";
+    public Properties getPropertiesConfigEmail(String mail){
         Properties props=new Properties();
         props.put("mail.smtp.user", mail);
         props.put("mail.smtp.starttls.enable","true");
@@ -158,6 +229,24 @@ public class ServerImpl implements IServices {
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.socketFactory.fallback", "false");
+        return props;
+    }
+
+    @Override
+    public synchronized void sendEmail(String emailDonator,String continut){
+        final String mail="issmailalexertion@gmail.com";
+        final String mailPassword="alexertion";
+        Properties props=getPropertiesConfigEmail(mail);
+//        Properties props=new Properties();
+//        props.put("mail.smtp.user", mail);
+//        props.put("mail.smtp.starttls.enable","true");
+//        props.put("mail.smtp.port", "465");
+//        props.put("mail.smtp.debug", "true");
+//        props.put("mail.smtp.auth", "true");
+//        props.put("mail.smtp.socketFactory.port", "465");
+//        props.put("mail.smtp.host", "smtp.gmail.com");
+//        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+//        props.put("mail.smtp.socketFactory.fallback", "false");
         javax.mail.Session sessionGmail;
         sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
         //session.setDebug(true);

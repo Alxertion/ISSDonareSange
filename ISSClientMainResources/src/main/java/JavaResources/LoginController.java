@@ -12,6 +12,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import model.Cont;
+import model.Donator;
 import services.IObserver;
 import services.IServices;
 import services.ServiceException;
@@ -28,9 +29,9 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
     private Controller ctrl;
 
     @FXML
-    private TextField userField;
+    private TextField userField, registerUserField, registerEmailField, registerCNPField, registerPhoneField, recoverEmailField,registerLastNameField,registerNameField;
     @FXML
-    private PasswordField passField;
+    private PasswordField passField,registerPassField;
 
     public LoginController() throws RemoteException {
     }
@@ -109,6 +110,32 @@ public class LoginController extends UnicastRemoteObject implements Controller,S
             message.setContentText(se.getMessage());
             message.showAndWait();
         }
+    }
 
+    @FXML
+    public void registerAccount(){
+            Cont cont=new Cont(registerUserField.getText(),registerPassField.getText());
+            Donator donator=new Donator(registerNameField.getText(),registerLastNameField.getText(),cont,registerCNPField.getText(), registerEmailField.getText());
+        try {
+            service.registerAccount(donator);
+        } catch (ServiceException se) {
+            Alert message = new Alert(Alert.AlertType.ERROR);
+            message.setTitle("Mesaj eroare");
+            message.setContentText(se.getMessage());
+            message.showAndWait();
+        }
+
+    }
+
+    @FXML
+    public void recoverPassword(){
+        try {
+            service.recoverPassword(recoverEmailField.getText());
+        } catch (ServiceException se) {
+            Alert message = new Alert(Alert.AlertType.ERROR);
+            message.setTitle("Mesaj eroare");
+            message.setContentText(se.getMessage());
+            message.showAndWait();
+        }
     }
 }

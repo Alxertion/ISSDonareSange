@@ -20,4 +20,6 @@ dependencies {
     compile 'org.hibernate:hibernate-core:5.2.10.Final'
     compile group: 'org.springframework', name: 'spring-context', version:'5.0.4.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+
 }
