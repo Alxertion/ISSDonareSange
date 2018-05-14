@@ -12,6 +12,8 @@
       <module name="ISSClientMedic_test" target="1.8" />
       <module name="ISSClientPersonalTransfuzii_main" target="1.8" />
       <module name="ISSClientPersonalTransfuzii_test" target="1.8" />
+      <module name="ISSDonareSange-ISSModel_main" target="1.8" />
+      <module name="ISSDonareSange-ISSModel_test" target="1.8" />
       <module name="ISSDonareSange_main" target="1.8" />
       <module name="ISSDonareSange_test" target="1.8" />
       <module name="ISSModel_main" target="1.8" />

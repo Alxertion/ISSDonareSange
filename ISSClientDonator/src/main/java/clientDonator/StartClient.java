@@ -22,7 +22,6 @@ public class StartClient extends Application{
     protected ApplicationContext factoryWindow = null;
     protected Loader loader = null;
     public static void main(String[] args) {
-
         Application.launch(args);
     }
 

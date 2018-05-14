@@ -4,7 +4,7 @@ import persistence.repository.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import java.util.List;
 
 public class Seed {
 
@@ -17,8 +17,10 @@ public class Seed {
     private IRepositoryPreparateSanguine repoPreparateSanguine;
     private IRepositorySpitale repoSpitale;
     private IRepositoryCentruTransfuzii repoCentreTransfuzii;
+    private IRepositoryCereri repoCereri;
+    private IRepositoryPacienti repoPacienti;
 
-    public Seed(){
+    public Seed() {
         repoConturi = new RepositoryConturi();
         repoMedici = new RepositoryMedici();
         repoDonatori = new RepositoryDonatori();
@@ -28,9 +30,16 @@ public class Seed {
         repoPreparateSanguine = new RepositoryPreparateSanguine();
         repoSpitale = new RepositorySpitale();
         repoCentreTransfuzii = new RepositoryCentruTransfuzii();
+        repoCereri = new RepositoryCereri();
+        repoPacienti = new RepositoryPacienti();
     }
 
     public void seed() {
+        /*
+        adaugaCereriSiPacienti();
+        adaugaPersonalTransfuzii();
+        adaugaSpitale();
+        adaugaCentreTransfuzii();
         adaugaPersonalTransfuzii();
         adaugaSpitale();
         adaugaCentreTransfuzii();
@@ -45,12 +54,52 @@ public class Seed {
         addPreparatSanguinLaDonator();
         addPreparatLaAnaliza();
         adaugaPacienti();
-        check();
+        check();*/
     }
 
     private void adaugaPacienti() {
 
 
+    }
+
+    private void adaugaCereriSiPacienti() {
+        /*
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Date d1 = sdf.parse("21/05/2018");
+            Date d2 = sdf.parse("26/01/2018");
+            Date d3 = sdf.parse("16/02/2015");
+            Cerere c1 = new Cerere(Prioritate.MARE, "A", true, 300d, 200d, d1);
+            Cerere c2 = new Cerere(Prioritate.MARE, "B", false, 200d, 100d, d2);
+            Cerere c3 = new Cerere(Prioritate.MICA, "B", false, 200d, 0d, d3);
+            Pacient p1 = new Pacient(1, "1134223426", "Nume1", "Prenume1");
+            Pacient p2 = new Pacient(2, "11342234245", "Nume2", "Prenume2");
+            //repoPacienti.adaugare(p1);
+            //repoPacienti.adaugare(p2);
+
+            p1 = repoPacienti.cautare(1);
+            p2 = repoPacienti.cautare(2);
+            p1.getCereri().add(c1);
+            p1.getCereri().add(c2);
+            p2.getCereri().add(c3);
+
+            Medic m1 = repoMedici.cautare(4);
+            m1.getCereri().add(c1);
+            Medic m2 = repoMedici.cautare(5);
+            m2.getCereri().add(c2);
+            Medic m3 = repoMedici.cautare(6);
+            m3.getCereri().add(c3);
+
+            repoMedici.modificare(m1);
+            repoMedici.modificare(m2);
+            repoMedici.modificare(m3);
+
+            repoPacienti.modificare(p1);
+            repoPacienti.modificare(p2);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        */
     }
 
     private void adaugaCentreTransfuzii() {
