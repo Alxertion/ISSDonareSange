@@ -2,7 +2,11 @@
 <module external.linked.project.id=":ISSClientMainResources:main" external.linked.project.path="$MODULE_DIR$/../../../ISSClientMainResources" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ISSDonareSange" external.system.module.type="sourceSet" external.system.module.version="1.0" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Client Spring" removed="false">
+          <file>file://$MODULE_DIR$/../../../ISSClientMainResources/src/main/resources/client-spring.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">

@@ -1,7 +1,5 @@
 package persistence.repository;
 
-import model.Boala;
-import model.Medic;
 import model.Pacient;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -11,11 +9,11 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class RepositoryPacient implements IRepositoryPacient {
+public class RepositoryPacienti implements IRepositoryPacienti {
 
     private SessionFactory factory = null;
 
-    public RepositoryPacient(){
+    public RepositoryPacienti(){
 
         try {
             factory = HibernateFactory.getInstance();
@@ -68,7 +66,6 @@ public class RepositoryPacient implements IRepositoryPacient {
         } finally {
             session.close();
         }
-
     }
 
     public Pacient cautaPacientDupaCNP(String CNP){

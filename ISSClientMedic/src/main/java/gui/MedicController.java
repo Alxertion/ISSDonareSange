@@ -161,6 +161,7 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
     public void anulareCerere(ActionEvent actionEvent) {
         try {
             service.stergeCerere(cereriTableView.getSelectionModel().getSelectedItem());
+            showMessage(Alert.AlertType.CONFIRMATION, "Cerere eliminată", "Cerere eliminată cu succes!");
         }
         catch (Exception e) {
             showErrorMessage("Operația nu a putut fi finalizată!");
@@ -195,7 +196,7 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
             showMessage(Alert.AlertType.CONFIRMATION, "Cerere efectuată", "Cerere efectuată cu succes!");
         }
         catch (Exception e) {
-            showErrorMessage("Operația nu a putut fi finalizată! ");
+            showErrorMessage("Operația nu a putut fi finalizată! " + e.getMessage());
         }
     }
 

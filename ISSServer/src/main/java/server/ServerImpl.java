@@ -44,7 +44,7 @@ public class ServerImpl implements IServices {
     private IRepositoryTrombocite repositoryTrombocite;
     private IRepositoryConturi repositoryConturi;
     private IRepositoryPreparateSanguine repositoryPreparateSanguine;
-    private IRepositoryPacient repositoryPacient;
+    private IRepositoryPacienti repositoryPacienti;
     private IRepositoryCentruTransfuzii repositoryCentruTransfuzii;
     private IRepositorySpitale repositorySpitale;
     Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
@@ -134,7 +134,20 @@ public class ServerImpl implements IServices {
 //    public ServerImpl(RepositoryAnalize repositoryAnalize, RepositoryCereri repositoryCereri, RepositoryDonatori repositoryDonatori, RepositoryGlobuleRosii repositoryGlobuleRosii, RepositoryMedici repositoryMedici, RepositoryPersonalTransfuzii repositoryPersonalTransfuzii, RepositoryPlasma repositoryPlasma, RepositorySangeNefiltrat repositorySangeNefiltrat, RepositoryTrombocite repositoryTrombocite, RepositoryConturi repositoryConturi, RepositoryPreparateSanguine repositoryPreparateSanguine, RepositoryCentruTransfuzii repositoryCentruTransfuzii, RepositorySpitale repositorySpitale) {
 //    }
 
-    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi,IRepositoryPreparateSanguine repositoryPreparateSanguine, RepositoryCentruTransfuzii repositoryCentruTransfuzii, RepositorySpitale repositorySpitale){
+    public ServerImpl(IRepositoryAnalize repositoryAnalize,
+                      IRepositoryCereri repositoryCereri,
+                      IRepositoryDonatori repositoryDonatori,
+                      IRepositoryGlobuleRosii repositoryGlobuleRosii,
+                      IRepositoryMedici repositoryMedici,
+                      IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,
+                      IRepositoryPlasma repositoryPlasma,
+                      IRepositorySangeNefiltrat repositorySangeNefiltrat,
+                      IRepositoryTrombocite repositoryTrombocite,
+                      IRepositoryConturi repositoryConturi,
+                      IRepositoryPreparateSanguine repositoryPreparateSanguine,
+                      IRepositoryCentruTransfuzii repositoryCentruTransfuzii,
+                      IRepositorySpitale repositorySpitale,
+                      IRepositoryPacienti repositoryPacienti) {
         this.repositoryAnalize=repositoryAnalize;
         this.repositoryCereri=repositoryCereri;
         this.repositoryDonatori=repositoryDonatori;
@@ -148,7 +161,6 @@ public class ServerImpl implements IServices {
         this.repositoryPreparateSanguine=repositoryPreparateSanguine;
         this.repositoryCentruTransfuzii = repositoryCentruTransfuzii;
         this.repositorySpitale = repositorySpitale;
-        this.repositoryPacient = repositoryPacient;
         this.repositoryPacienti = repositoryPacienti;
         loggedClients = new ConcurrentHashMap<>();
     }
@@ -357,7 +369,7 @@ public class ServerImpl implements IServices {
 
     @Override
     public Pacient cautaPacientDupaCNP(String CNP) {
-        return repositoryPacient.cautaPacientDupaCNP(CNP);
+        return repositoryPacienti.cautaPacientDupaCNP(CNP);
     }
 
     @Override
@@ -378,7 +390,7 @@ public class ServerImpl implements IServices {
 
     private synchronized void selecteazaPacientulDorit(Pacient pacient, List<PreparatSanguin> listCelorMaiRecentePreparateSanguine) {
         pacient.getPreparateSanguine().addAll(listCelorMaiRecentePreparateSanguine);
-        repositoryPacient.modificare(pacient);
+        repositoryPacienti.modificare(pacient);
     }
 
     private synchronized void adaugareSangeNouLaDontor(Donator donator, List<PreparatSanguin> listCelorMaiRecentePreparateSanguine) {
@@ -565,7 +577,7 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare) {
+    public void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, java.util.Date dataEfectuare) {
         // cream cererea
         Cerere cerere = new Cerere(prioritate, grupa, RH, cantitateCeruta, cantitateActuala, dataEfectuare);
         int maxIdCerere = 0;
