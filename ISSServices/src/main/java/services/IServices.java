@@ -4,6 +4,7 @@ import model.*;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.Date;
 import java.util.List;
 
 
@@ -42,4 +43,6 @@ public interface IServices {
     String getNumeMedic(Cont cont);
 
     List<Pacient> getPacienti();
+
+    void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare);
 }

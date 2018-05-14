@@ -382,4 +382,48 @@ public class ServerImpl implements IServices {
     public List<Pacient> getPacienti() {
         return repositoryPacienti.getAll();
     }
+
+    @Override
+    public void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare) {
+        // cream cererea
+        Cerere cerere = new Cerere(prioritate, grupa, RH, cantitateCeruta, cantitateActuala, dataEfectuare);
+        int maxIdCerere = 0;
+        for (Cerere c : repositoryCereri.getAll()) {
+            if (c.getIdCerere() > maxIdCerere)
+                maxIdCerere = c.getIdCerere();
+        }
+        maxIdCerere++;
+        cerere.setIdCerere(maxIdCerere);
+
+        // cautam pacientul
+        int maxIdPacient = 0;
+        Pacient pacient = null;
+        for (Pacient p : repositoryPacienti.getAll()) {
+            if (Objects.equals(p.getCnp(), cnpPacient))
+                pacient = p;
+            if (p.getIdPacient() > maxIdPacient)
+                maxIdPacient = p.getIdPacient();
+        }
+        maxIdPacient++;
+
+        // daca nu gasim pacientul, il cream
+        if (pacient == null) {
+            pacient = new Pacient(maxIdPacient, cnpPacient, numePacient, prenumePacient);
+            repositoryPacienti.adaugare(pacient);
+            pacient = repositoryPacienti.cautare(maxIdPacient);
+        }
+
+        // cautam medicul
+        Medic medic = null;
+        for (Medic m : repositoryMedici.getAll()) {
+            if (Objects.equals(m.getUsername(), usernameMedic)) {
+                medic = m;
+            }
+        }
+
+        medic.getCereri().add(cerere);
+        pacient.getCereri().add(cerere);
+        repositoryMedici.modificare(medic);
+        repositoryPacienti.modificare(pacient);
+    }
 }
