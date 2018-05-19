@@ -10,13 +10,13 @@
 
     <class name="model.Medic" table="medic">
         <id name="idMedic" column="idMedic" type="int">
+            <generator class="native"/>
         </id>
 
         <property name = "nume" column = "nume" type = "string"/>
         <property name = "prenume" column = "prenume" type = "string"/>
         <property name = "email" column = "email" type = "string"/>
         <property name = "CNP" column = "cnp" type = "string"/>
-        <property name = "idSpital" column = "idSpital" type = "int"/>
 
         <many-to-one name = "cont" column = "username" unique="true"
                      class="model.Cont"/>

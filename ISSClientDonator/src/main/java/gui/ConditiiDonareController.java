@@ -90,6 +90,7 @@ public class ConditiiDonareController extends UnicastRemoteObject implements Con
             Parent rootNode = loaderFXML.load();
             Controller controller = loaderFXML.getController();
             controller.setUser(user);
+            controller.initialize(stageManager, service, loader);
             stageManager.switchScene(FXMLEnum.MainWindowDonator, rootNode, loaderFXML.getController(), loader);
         }catch (IOException e){
             e.printStackTrace();
@@ -105,6 +106,7 @@ public class ConditiiDonareController extends UnicastRemoteObject implements Con
             Parent rootNode = loaderFXML.load();
             Controller controller = loaderFXML.getController();
             controller.setUser(user);
+            controller.initialize(stageManager, service, loader);
             stageManager.switchScene(FXMLEnum.FormularDonator, rootNode, loaderFXML.getController(), loader);
 
         }catch (IOException e){

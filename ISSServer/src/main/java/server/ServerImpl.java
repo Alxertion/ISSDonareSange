@@ -574,7 +574,7 @@ public class ServerImpl implements IServices {
 
         // daca nu gasim pacientul, il cream
         if (pacient == null) {
-            pacient = new Pacient(maxIdPacient, cnpPacient, numePacient, prenumePacient);
+            pacient = new Pacient(cnpPacient, numePacient, prenumePacient);
             repositoryPacienti.adaugare(pacient);
             pacient = repositoryPacienti.cautare(maxIdPacient);
         }

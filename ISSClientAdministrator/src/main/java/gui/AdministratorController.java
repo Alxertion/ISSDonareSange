@@ -322,7 +322,7 @@ public class AdministratorController extends UnicastRemoteObject implements Cont
                     max = medic.getIdMedic();
             }
             max++;
-            Medic medic = new Medic(max, numeMedicTextField.getText(),
+            Medic medic = new Medic(numeMedicTextField.getText(),
                     prenumeMedicTextField.getText(),
                     new Cont(utilizatorMedicTextField.getText(), parolaMedicTextField.getText()),
                     cnpMedicTextField.getText(),
