@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public interface IServices {
-    void login(Cont user, IObserver client) throws ServiceException;
+    void login(Cont user, IObserver client,UtilizatorEnum tipUtilizator) throws ServiceException;
     void logout(Cont user);
     void recoverPassword(String string) throws ServiceException;
     void registerAccount(Donator donator) throws ServiceException;

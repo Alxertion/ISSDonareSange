@@ -187,9 +187,21 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public synchronized void login(Cont user,IObserver client) throws ServiceException{
+    public synchronized void login(Cont user,IObserver client,UtilizatorEnum tipUtilizator) throws ServiceException{
         Cont loginOk=repositoryConturi.cautare(user.getUsername());
+        //to do
+        //in functie de tipul utilizatorului cauti in repositoryul aferent
+        //pentru a vedea daca exista un personaj din tipul respectiv cu userul user.getUsername();
         if (loginOk!=null){
+            if(tipUtilizator == UtilizatorEnum.ADMINISTRATOR){
+
+            }else if(tipUtilizator == UtilizatorEnum.MEDIC){
+
+            }else if(tipUtilizator == UtilizatorEnum.DONATOR){
+
+            }else if(tipUtilizator == UtilizatorEnum.PERSONAL_TRANSFUZII){
+
+            }
             if(loggedClients.get(user.getUsername())!=null)
                 throw new ServiceException("Acest user este deja logat.");
             loggedClients.put(user.getUsername(), client);
