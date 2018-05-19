@@ -52,7 +52,36 @@ public class ServerImpl implements IServices {
     //For remoting
     private Map<String, IObserver> loggedClients;
 
-
+    public ServerImpl(IRepositoryAnalize repositoryAnalize,
+                      IRepositoryCereri repositoryCereri,
+                      IRepositoryDonatori repositoryDonatori,
+                      IRepositoryGlobuleRosii repositoryGlobuleRosii,
+                      IRepositoryMedici repositoryMedici,
+                      IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,
+                      IRepositoryPlasma repositoryPlasma,
+                      IRepositorySangeNefiltrat repositorySangeNefiltrat,
+                      IRepositoryTrombocite repositoryTrombocite,
+                      IRepositoryConturi repositoryConturi,
+                      IRepositoryPreparateSanguine repositoryPreparateSanguine,
+                      IRepositoryCentruTransfuzii repositoryCentruTransfuzii,
+                      IRepositorySpitale repositorySpitale,
+                      IRepositoryPacienti repositoryPacienti) {
+        this.repositoryAnalize=repositoryAnalize;
+        this.repositoryCereri=repositoryCereri;
+        this.repositoryDonatori=repositoryDonatori;
+        this.repositoryGlobuleRosii=repositoryGlobuleRosii;
+        this.repositoryMedici=repositoryMedici;
+        this.repositoryPersonalTransfuzii=repositoryPersonalTransfuzii;
+        this.repositoryPlasma=repositoryPlasma;
+        this.repositorySangeNefiltrat=repositorySangeNefiltrat;
+        this.repositoryTrombocite=repositoryTrombocite;
+        this.repositoryConturi=repositoryConturi;
+        this.repositoryPreparateSanguine=repositoryPreparateSanguine;
+        this.repositoryCentruTransfuzii = repositoryCentruTransfuzii;
+        this.repositorySpitale = repositorySpitale;
+        this.repositoryPacienti = repositoryPacienti;
+        loggedClients = new ConcurrentHashMap<>();
+    }
 
     private class MyRunnable implements Runnable{
         private String emailDonator;
@@ -62,35 +91,10 @@ public class ServerImpl implements IServices {
             this.emailDonator=emailDonator;
         }
 
-
         public void sendEmail(){
-            class GMailAuthenticator extends javax.mail.Authenticator {
-                String issEmail;
-                String issPasword;
-                public GMailAuthenticator (String username, String password)
-                {
-                    super();
-                    this.issEmail = username;
-                    this.issPasword = password;
-                }
-                public javax.mail.PasswordAuthentication getPasswordAuthentication()
-                {
-                    return new javax.mail.PasswordAuthentication(issEmail, issPasword);
-                }
-            }
-
             final String mail="issmailalexertion@gmail.com";
             final String mailPassword="alexertion";
-            Properties props=new Properties();
-            props.put("mail.smtp.user", mail);
-            props.put("mail.smtp.starttls.enable","true");
-            props.put("mail.smtp.port", "465");
-            props.put("mail.smtp.debug", "true");
-            props.put("mail.smtp.auth", "true");
-            props.put("mail.smtp.socketFactory.port", "465");
-            props.put("mail.smtp.host", "smtp.gmail.com");
-            props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-            props.put("mail.smtp.socketFactory.fallback", "false");
+            Properties props=getPropertiesConfigEmail(mail);
             javax.mail.Session sessionGmail;
             sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
             //session.setDebug(true);
@@ -126,43 +130,12 @@ public class ServerImpl implements IServices {
                 throw new RuntimeException(msg);
             }
         }
+
+
         @Override
         public void run() {
             sendEmail();
         }
-    }
-//    public ServerImpl(RepositoryAnalize repositoryAnalize, RepositoryCereri repositoryCereri, RepositoryDonatori repositoryDonatori, RepositoryGlobuleRosii repositoryGlobuleRosii, RepositoryMedici repositoryMedici, RepositoryPersonalTransfuzii repositoryPersonalTransfuzii, RepositoryPlasma repositoryPlasma, RepositorySangeNefiltrat repositorySangeNefiltrat, RepositoryTrombocite repositoryTrombocite, RepositoryConturi repositoryConturi, RepositoryPreparateSanguine repositoryPreparateSanguine, RepositoryCentruTransfuzii repositoryCentruTransfuzii, RepositorySpitale repositorySpitale) {
-//    }
-
-    public ServerImpl(IRepositoryAnalize repositoryAnalize,
-                      IRepositoryCereri repositoryCereri,
-                      IRepositoryDonatori repositoryDonatori,
-                      IRepositoryGlobuleRosii repositoryGlobuleRosii,
-                      IRepositoryMedici repositoryMedici,
-                      IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,
-                      IRepositoryPlasma repositoryPlasma,
-                      IRepositorySangeNefiltrat repositorySangeNefiltrat,
-                      IRepositoryTrombocite repositoryTrombocite,
-                      IRepositoryConturi repositoryConturi,
-                      IRepositoryPreparateSanguine repositoryPreparateSanguine,
-                      IRepositoryCentruTransfuzii repositoryCentruTransfuzii,
-                      IRepositorySpitale repositorySpitale,
-                      IRepositoryPacienti repositoryPacienti) {
-        this.repositoryAnalize=repositoryAnalize;
-        this.repositoryCereri=repositoryCereri;
-        this.repositoryDonatori=repositoryDonatori;
-        this.repositoryGlobuleRosii=repositoryGlobuleRosii;
-        this.repositoryMedici=repositoryMedici;
-        this.repositoryPersonalTransfuzii=repositoryPersonalTransfuzii;
-        this.repositoryPlasma=repositoryPlasma;
-        this.repositorySangeNefiltrat=repositorySangeNefiltrat;
-        this.repositoryTrombocite=repositoryTrombocite;
-        this.repositoryConturi=repositoryConturi;
-        this.repositoryPreparateSanguine=repositoryPreparateSanguine;
-        this.repositoryCentruTransfuzii = repositoryCentruTransfuzii;
-        this.repositorySpitale = repositorySpitale;
-        this.repositoryPacienti = repositoryPacienti;
-        loggedClients = new ConcurrentHashMap<>();
     }
 
     private void notifyMyClients(){
