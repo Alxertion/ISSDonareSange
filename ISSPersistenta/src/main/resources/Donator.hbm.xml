@@ -19,7 +19,7 @@
         <property name = "email" column = "email" type = "string"/>
         <property name = "CNP" column = "cnp" type = "string"/>
         <property name="sex" column="sex" type="boolean"></property>
-        <property name="dataNasterii" column="dataNasterii" type="calendar_date"></property>
+        <property name="dataNasterii" column="dataNasterii" type="date"></property>
         <property name="greutate" column="greutate" type="double"></property>
         <property name="puls" column="puls" type="int"></property>
         <property name="tensiuneArterialaSistolica" column="tensiuneArterialaSistolica" type="int"></property>

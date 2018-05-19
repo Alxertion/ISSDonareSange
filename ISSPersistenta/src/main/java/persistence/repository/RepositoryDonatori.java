@@ -161,8 +161,11 @@ public class RepositoryDonatori implements IRepositoryDonatori {
 
             Query query =  session.createQuery("From Donator WHERE cont.username = :numeuser");
             query.setParameter("numeuser", username);
-            donator = (Donator) query.list().get(0);
+            List list =  query.list();
 
+            if(list.size()>0){
+                donator = (Donator) list.get(0);
+            }
             tx.commit();
         }catch (HibernateException e){
             e.printStackTrace();

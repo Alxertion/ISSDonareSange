@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -13,7 +14,7 @@
 
 <AnchorPane maxHeight="500.0" maxWidth="680.0" minHeight="500.0" minWidth="680.0" prefHeight="500.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaResources.FormularDonator">
    <children>
-      <GridPane layoutX="29.0" layoutY="19.0" prefHeight="414.0" prefWidth="590.0">
+      <GridPane fx:id="panou" layoutX="29.0" layoutY="19.0" prefHeight="414.0" prefWidth="590.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="175.0" />
@@ -34,10 +35,13 @@
          </rowConstraints>
          <children>
             <Label layoutX="310.0" layoutY="45.0" text="Prenume:" GridPane.columnIndex="2" />
-            <DatePicker fx:id="dataNasteriiDatePicker" layoutX="110.0" layoutY="90.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <DatePicker fx:id="dataNasteriiDatePicker" layoutX="110.0" layoutY="90.0" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor></DatePicker>
             <Label layoutX="310.0" layoutY="145.0" text="Localitate:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label layoutX="45.0" layoutY="145.0" text="Domiciliu:" GridPane.rowIndex="2" />
-            <TextField fx:id="domiciliuCITextField" layoutX="110.0" layoutY="140.0" maxHeight="25.0" maxWidth="170.0" minHeight="4.0" minWidth="170.0" prefHeight="4.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="domiciliuCITextField" layoutX="110.0" layoutY="140.0" maxHeight="25.0" maxWidth="170.0" minHeight="25.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="numeTextField" layoutX="110.0" layoutY="40.0" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" />
             <Label layoutX="330.0" layoutY="95.0" text="CNP:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label layoutX="65.0" layoutY="45.0" text="Nume:" />

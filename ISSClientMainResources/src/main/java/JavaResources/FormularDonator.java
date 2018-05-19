@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import model.CentruTransfuzii;
 import model.Cont;
@@ -68,6 +69,9 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
     @FXML
     private Button forwardButton;
 
+    @FXML
+    private GridPane panou;
+
     private Donator donator;
 
     private Cont user;
@@ -88,14 +92,20 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
 
         setImagesForButtons();
         setDonator();
-        completeazaCuDateleAnterioare();
     }
 
     private void completeazaCuDateleAnterioare() {
 
+        LocalDate localDate = LocalDate.now();
+
+        if(donator.getDataNasterii()!=null){
+            java.sql.Date dateConvert =  (java.sql.Date)donator.getDataNasterii();
+            localDate = dateConvert.toLocalDate();
+        }
+
         numeTextField.setText(donator.getNume());
         prenumeTextField.setText(donator.getPrenume());
-        dataNasteriiDatePicker.setValue(donator.getDataNasterii());
+        dataNasteriiDatePicker.setValue(localDate);
         cnpTextField.setText(donator.getCNP());
         emailTextField.setText(donator.getEmail());
         telefonTextField.setText(donator.getTelefon());
@@ -109,6 +119,8 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
     @Override
     public void prepareWindow() {
 
+        dataNasteriiDatePicker.setFocusTraversable(false);
+        completeazaCuDateleAnterioare();
     }
 
     @Override
@@ -138,6 +150,18 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
         backButton.setShape(new Circle());
     }
 
+    private void validareCampuriInainteDeDonare(String CNP, String CNPIntrodus, String email, String emailIntrodus) throws FrontException{
+
+        if(!CNPIntrodus.equals(CNP) || CNPIntrodus.length()==0){
+            throw new FrontException("CNP-ul este diferit fata de cel de la logare!");
+        }
+
+        if(!email.equals(emailIntrodus)){
+            System.out.println("Email diferit fata de cel de la logare");
+        }
+
+    }
+
     @FXML
     private void forwardButtonPressed(ActionEvent event){
 
@@ -147,25 +171,19 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
             String numeDonator = numeTextField.getText();
             String prenumeDonator = prenumeTextField.getText();
             String CNP = cnpTextField.getText();
-
-            if(!CNP.equals(donator.getCNP())){
-                throw new FrontException("CNP-ul este diferit fata de cel de la logare!");
-            }
-
             String email = emailTextField.getText();
             String telefon = telefonTextField.getText();
-
-            if(!email.equals(donator.getEmail())){
-                System.out.println("Email diferit fata de cel de la logare");
-            }
-
             String cnpPacient = cnpPacientTextField.getText();
+            LocalDate dataNasterii = dataNasteriiDatePicker.getValue();
+            Date dateDataNasterii = Date.from(dataNasterii.atStartOfDay(ZoneId.systemDefault()).toInstant());
+
+            validareCampuriInainteDeDonare(donator.getCNP(), CNP, donator.getEmail(), email);
 
             if(cnpPacient.length() >0){
                 pacient = service.cautaPacientDupaCNP(cnpPacient);
             }
 
-            service.updateDonator(donator, numeDonator, prenumeDonator, telefon);
+            updateDonator(donator, numeDonator, prenumeDonator, telefon, dateDataNasterii);
             //va trebui sa ne gandim cum cautam cel mai apropiat centru de transfuzii
             CentruTransfuzii centruTransfuzii =  service.cautaCelMaiApropiatCentruDeTransfuzii();
 
@@ -181,12 +199,22 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
 
     }
 
+    private void updateDonator(Donator donator, String numeDonator, String prenumeDonator, String telefon, java.util.Date dataNasterii) {
+
+        donator.setNume(numeDonator);
+        donator.setPrenume(prenumeDonator);
+        donator.setTelefon(telefon);
+        donator.setDataNasterii(dataNasterii);
+    }
+
     @FXML
     private void backButtonPressed(ActionEvent event) {
         try {
             FXMLLoader loaderFXML = new FXMLLoader();
             loaderFXML.setLocation(getClass().getResource(FXMLEnum.ConditiiDonare.getFxmlFile()));
             Parent rootNode = loaderFXML.load();
+            Controller controller = loaderFXML.getController();
+            controller.setUser(user);
             stageManager.switchScene(FXMLEnum.ConditiiDonare, rootNode, loaderFXML.getController(), loader);
         }catch (IOException e){
             e.printStackTrace();

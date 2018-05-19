@@ -2,8 +2,6 @@ package services;
 
 import model.*;
 
-import java.rmi.Remote;
-import java.rmi.RemoteException;
 import java.util.Date;
 import java.util.List;
 
@@ -36,7 +34,6 @@ public interface IServices {
     void stergePersonalTransfuzii(int id);
     Pacient cautaPacientDupaCNP(String CNP);
     void inregistreazaDonator(CentruTransfuzii centruTransfuzii, Donator donator, Pacient pacient);
-    void updateDonator(Donator donator, String numeDonator, String prenumeDonator, String telefon);
     CentruTransfuzii cautaCelMaiApropiatCentruDeTransfuzii();
     List<Cerere> getCereri();
     void stergeCerere(Cerere cerere);

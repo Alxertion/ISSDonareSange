@@ -45,6 +45,7 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
     public MainWindowDonatorController() throws RemoteException {
     }
 
+
     @Override
     public void initialize(StageManager stageManager, IServices service, Loader loader) {
         this.stageManager = stageManager;
@@ -52,25 +53,24 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
         this.loader = loader;
 
         setImagesForButtons();
+        setDonator();
+        setAccordionAnalize();
     }
 
     @Override
     public void prepareWindow() {
 
-        setDonator();
-        setAccordionAnalize();
+
+
     }
 
     private void setAccordionAnalize() {
 
         List<Analiza> listOfAllAnalizeOfDonator = service.cautaAnalizeleUnuiDonator(donator.getIdDonator());
-        if(listOfAllAnalizeOfDonator.size() == 0){
-            analizeAccordion.getPanes().remove(0,3);
+        if(listOfAllAnalizeOfDonator.size() < 3){
+            analizeAccordion.getPanes().remove(listOfAllAnalizeOfDonator.size(),3);
         }
-        else{
-            analizeAccordion.getPanes().remove(3-listOfAllAnalizeOfDonator.size()+1,3);
-            setTitluriSiContinutPanes(listOfAllAnalizeOfDonator);
-        }
+        setTitluriSiContinutPanes(listOfAllAnalizeOfDonator);
 
     }
 
@@ -79,8 +79,8 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
         List<TitledPane> panes = analizeAccordion.getPanes();
 
         for(int i=0; i<listOfAllAnalizeOfDonator.size(); i++){
-            Analiza analiza = listOfAllAnalizeOfDonator.get(i+1);
-            TitledPane actualPane =  panes.get(i+1);
+            Analiza analiza = listOfAllAnalizeOfDonator.get(i);
+            TitledPane actualPane =  panes.get(i);
             actualPane.setText(analiza.toString());
             actualPane.setContent(new Label(analiza.toString()));
 

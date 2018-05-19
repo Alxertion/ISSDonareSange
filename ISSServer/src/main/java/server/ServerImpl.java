@@ -19,10 +19,8 @@ import javax.persistence.PersistenceException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Serializable;
-import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
-import java.sql.Date;
+import java.util.Date;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -321,14 +319,16 @@ public class ServerImpl implements IServices {
     @Override
     public synchronized List<Analiza> cautaAnalizeleUnuiDonator(int idDonator) {
         List<Analiza> listOfAllAnalize = new ArrayList<>();
-        List<Integer> listOfallIds = new ArrayList<>();
 
         List<PreparatSanguin> listOFAllPreparateSanguine = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.SANGE_NEFILTRAT.name());
-        listOFAllPreparateSanguine.forEach(preparatSanguin -> listOfallIds.add(
-                repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin())
-        ));
 
-        listOfallIds.forEach(idAnaliza -> listOfAllAnalize.add(repositoryAnalize.cautare(idAnaliza)));
+        for (PreparatSanguin preparatSanguin: listOFAllPreparateSanguine){
+
+            int idAnaliza = repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
+            Analiza analiza = repositoryAnalize.cautare(idAnaliza);
+            if(analiza!=null)
+                listOfAllAnalize.add(analiza);
+        }
 
         return listOfAllAnalize;
     }
@@ -374,22 +374,11 @@ public class ServerImpl implements IServices {
     private synchronized void adaugaSangeNou() {
 
         LocalDate dataRecoltarii1 = LocalDate.now();
-        Date dataRecoltarii = Date.valueOf(dataRecoltarii1);
+        Date dataRecoltarii = java.sql.Date.valueOf(dataRecoltarii1);
         repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
         repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
         repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
         repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
-    }
-
-    @Override
-    public synchronized void updateDonator(Donator donator, String numeDonator, String prenumeDonator, String telefon) {
-
-        donator.setNume(numeDonator);
-        donator.setPrenume(prenumeDonator);
-        donator.setTelefon(telefon);
-        repositoryDonatori.modificare(donator);
-
-
     }
 
     @Override

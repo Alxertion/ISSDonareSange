@@ -94,7 +94,6 @@ public class Seed {
             Cerere c2 = new Cerere(Prioritate.MARE, "B", false, 200d, 100d, d2);
             Cerere c3 = new Cerere(Prioritate.MICA, "B", false, 200d, 0d, d3);
 
-
             repoCereri.adaugare(c1);
             repoCereri.adaugare(c2);
             repoCereri.adaugare(c3);
@@ -107,10 +106,9 @@ public class Seed {
 
     private void adaugaCerereLaMedici() {
 
-
             Cerere c1 = repoCereri.cautare(1);
-        Cerere c2 = repoCereri.cautare(2);
-        Cerere c3 = repoCereri.cautare(3);
+            Cerere c2 = repoCereri.cautare(2);
+            Cerere c3 = repoCereri.cautare(3);
 
             Medic m1 = repoMedici.cautare(1);
             m1.getCereri().add(c1);
@@ -306,8 +304,8 @@ public class Seed {
     private void adaugaDonatori(){
         Cont cont2 = repoConturi.cautare("chise_bogdan");
         Cont cont3 = repoConturi.cautare("chise_boby");
-        repoDonatori.adaugare(new Donator("Boros","Otniel", cont2, "1770725055098", "chise_b@yahoo.com"));
-        repoDonatori.adaugare(new Donator("Chise","Bogdan", cont3,"1270725055088", "chise_bogdan@yahoo.com"));
+        repoDonatori.adaugare(new Donator("Boros","Otniel", cont2, "177072055098", "chise_b@yahoo.com"));
+        repoDonatori.adaugare(new Donator("Chise","Bogdan", cont3,"127025055088", "chise_bogdan@yahoo.com"));
 
     }
 
