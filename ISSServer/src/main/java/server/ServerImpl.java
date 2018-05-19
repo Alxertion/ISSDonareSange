@@ -85,19 +85,24 @@ public class ServerImpl implements IServices {
 
     private class MyRunnable implements Runnable{
         private String emailDonator;
-        private String continut;
-        public MyRunnable(String emailDonator,String continut){
+        private String continut,mainEmailContinut;
+        final String mail="issmailalexertion@gmail.com";
+        final String mailPassword="alexertion";
+        private Properties props;
+        private javax.mail.Session sessionGmail;
+        private MailEnum mailEnum;
+
+        public MyRunnable(String emailDonator,String continut,String mainEmailContinut,MailEnum mailEnum){
             this.continut=continut;
             this.emailDonator=emailDonator;
+            this.mainEmailContinut=mainEmailContinut;
+            this.mailEnum=mailEnum;
+
+            props=getPropertiesConfigEmail(mail);
+            sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
         }
 
         public void sendEmail(){
-            final String mail="issmailalexertion@gmail.com";
-            final String mailPassword="alexertion";
-            Properties props=getPropertiesConfigEmail(mail);
-            javax.mail.Session sessionGmail;
-            sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
-            //session.setDebug(true);
             try{
                 MimeMessage message=new MimeMessage(sessionGmail);
                 message.setFrom(new InternetAddress(mail));
@@ -106,8 +111,7 @@ public class ServerImpl implements IServices {
 
 
                 BodyPart messageBodyPart = new MimeBodyPart();
-                messageBodyPart.setText("Buna ziua,\nAveti atasat acestui mail un fisier cu rezultatele" +
-                        " analizelor dumneavoastra.\n\nVa dorim o zi placuta!");
+                messageBodyPart.setText(mainEmailContinut);
 
                 Multipart multipart = new MimeMultipart();
                 multipart.addBodyPart(messageBodyPart);
@@ -131,10 +135,39 @@ public class ServerImpl implements IServices {
             }
         }
 
+        public void anuntaDonator(){
+            try{
+                MimeMessage message=new MimeMessage(sessionGmail);
+                message.setFrom(new InternetAddress(mail));
+                message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailDonator));
+                message.setSubject("Nevoie de sange");
+
+                BodyPart messageBodyPart = new MimeBodyPart();
+                messageBodyPart.setText(mainEmailContinut);
+
+                Multipart multipart = new MimeMultipart();
+                multipart.addBodyPart(messageBodyPart);
+
+                message.setContent(multipart);
+
+                Transport transport = sessionGmail.getTransport("smtps");
+                transport.connect("smtp.gmail.com", 465, mail, mailPassword);
+                transport.sendMessage(message, message.getAllRecipients());
+                transport.close();
+
+            }catch (MessagingException msg){
+                throw new RuntimeException(msg);
+            }
+        }
+
 
         @Override
         public void run() {
-            sendEmail();
+            if(mailEnum==MailEnum.TRIMITERE_ANALIZA) {
+                sendEmail();
+            }else if(mailEnum==MailEnum.NOTIFICARE_DONATOR){
+                anuntaDonator();
+            }
         }
     }
 
@@ -293,8 +326,8 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public synchronized void sendEmail(String emailDonator,String continut){
-       MyRunnable myRunnableInstance=new MyRunnable(emailDonator,continut);
+    public synchronized void sendEmail(String emailDonator,String continut,String mainEmailContinut,MailEnum mailEnum){
+       MyRunnable myRunnableInstance=new MyRunnable(emailDonator,continut,mainEmailContinut,mailEnum);
        Thread t=new Thread(myRunnableInstance);
        t.start();
     }

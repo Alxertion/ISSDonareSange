@@ -16,7 +16,7 @@ public interface IServices {
     List<Medic> getMedici();
     List<PersonalTransfuzii> getPersonalTransfuzii();
     List<Donator> getDonatori();
-    void sendEmail(String emailDonatosr,String continut);
+    void sendEmail(String emailDonatosr,String continut,String mainEmailContinut,MailEnum mailEnum);
     Donator findDonatorByUsername(String username);
     Analiza cautaUltimaAnalizaDupaDonator(int idDonator);
     List<Analiza> cautaAnalizeleUnuiDonator(int idDonator);

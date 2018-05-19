@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="225.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientPersonalTransfuzii.gui.PersonalTransfuziiController">
+<AnchorPane prefHeight="225.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientPersonalTransfuzii.gui.MesajController">
    <children>
       <GridPane layoutX="32.0" layoutY="154.0" prefHeight="53.0" prefWidth="267.0">
          <columnConstraints>
@@ -18,12 +20,12 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <RadioButton layoutX="176.0" layoutY="163.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="138.0" text="Mesaj electronic" GridPane.columnIndex="1" />
-            <RadioButton layoutX="40.0" layoutY="163.0" mnemonicParsing="false" text="Mesaj telefonic" />
-            <Button layoutX="162.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Notificare donatori" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button layoutX="18.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="124.0" text="Notificare donator" GridPane.rowIndex="1" />
+            <RadioButton fx:id="mesajEmailRadio" layoutX="176.0" layoutY="163.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="138.0" text="Mesaj electronic" GridPane.columnIndex="1" />
+            <RadioButton fx:id="mesajTelefonicRadio" layoutX="40.0" layoutY="163.0" mnemonicParsing="false" text="Mesaj telefonic" />
+            <Button layoutX="162.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Notificare donatori" onAction="#notificareDonatori" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="notificareDonator" layoutX="18.0" layoutY="187.0" mnemonicParsing="false" onAction="#notificareDonatorEmail" prefHeight="25.0" prefWidth="124.0" text="Notificare donator" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <TextArea layoutX="19.0" layoutY="14.0" prefHeight="140.0" prefWidth="267.0" promptText="Introduceti mesajul..." />
+      <TextArea fx:id="continutNotificare" layoutX="19.0" layoutY="14.0" prefHeight="140.0" prefWidth="267.0" promptText="Introduceti mesajul..." />
    </children>
 </AnchorPane>

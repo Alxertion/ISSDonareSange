@@ -5,6 +5,9 @@ import JavaResources.Service.Service;
 import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
 import JavaResources.View.StageManager;
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,10 +21,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.Analiza;
-import model.Boala;
-import model.Cont;
-import model.Donator;
+import model.*;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import services.FrontException;
@@ -39,29 +39,39 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
 
+import static com.sun.javafx.scene.control.skin.Utils.getResource;
+
 public class PersonalTransfuziiController extends UnicastRemoteObject implements  Controller, IObserver,Serializable {
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
     private Cont user;
-    private ObservableList<Donator> observableListDonatori;
+    private ObservableList<Donator> observableListDonatori,observableListDeNotificat;
+    private ObservableList<Cerere> observableListCereri;
     private String[] rh={"+","-"};
     private String[] grupe={"01","A2","B3","AB4"};
     private String[] toatebolile={"HEPATITA","DIABET_ZAHARAT","TBC","SIFILIS","MALARIE","EPILEPSIE","BOLI_PSIHICE","VITILIGO","BRUCELOZA","BOLI_DE_INIMA","ULCER","MIOPIE_FORTE","PSORIAZIS","CANCER"};
     private List<Boala> boli;
     List<CheckMenuItem> allCheckMenuItems;
     @FXML
+    ListView<Cerere> listaCereriDeSange;
+    @FXML
+    Slider distanceSlider;
+    @FXML
     TabPane tabPanePersonal;
     @FXML
-    ListView<Donator> listaDonatori;
+    ListView<Donator> listaDonatori,listaDonatoriDeNotificat;
     @FXML
     TextArea analiza;
     @FXML
     ComboBox comboGrupa,comboRh;
     @FXML
     MenuButton boliMenu;
+
     public PersonalTransfuziiController() throws RemoteException {
     }
+    @FXML
+    TextField rhText,grupaDeSangeText;
 
     @FXML
     public void notifyButtonPressed(ActionEvent actionEvent){
@@ -69,6 +79,9 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             FXMLLoader loaderFXML = new FXMLLoader();
             loaderFXML.setLocation(getClass().getResource(FXMLEnum.TrimiteMesaj.getFxmlFile()));
             AnchorPane mailView = loaderFXML.load();
+            MesajController controllerMesaj=loaderFXML.getController();
+            controllerMesaj.initialize(stageManager,service,loader);
+            controllerMesaj.setObservableDonator(observableListDeNotificat);
             Scene scene=new Scene(mailView);
             Stage stage=new Stage();
             stage.setScene(scene);
@@ -151,6 +164,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         });
     }
 
+
     @FXML
     public void sendAnaliza(ActionEvent actionEvent){
         try{
@@ -159,7 +173,8 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             String email=listaDonatori.getSelectionModel().getSelectedItem().getEmail();
             if(email==null)
                 throw new FrontException("Acest donator nu a comunicat nicio adresa de email");
-            service.sendEmail(email,analiza.getPromptText());
+            service.sendEmail(email,analiza.getPromptText(),"Buna ziua,\nAveti atasat acestui mail un fisier cu rezultatele" +
+                    " analizelor dumneavoastra.\n\nVa dorim o zi placuta!",MailEnum.TRIMITERE_ANALIZA);
             analiza.setPromptText("Analize...");
             Alert message = new Alert(Alert.AlertType.INFORMATION);
             message.setTitle("Mesaj de informare");
@@ -212,9 +227,17 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         }
     }
 
+    private void forDistanceSlider(ObservableValue arg1, Object arg2, Object arg3) {
+        int nr = (int) distanceSlider.getValue();
+        System.out.println(nr);
+    }
+
     public void prepareWindow(){
         allCheckMenuItems=new ArrayList<>();
         loadListDonatori();
+        loadListaCereriDeSange();
+        loadListaDonatoriDeNotificat();
+        initSlider();
         listOnClick();
         comboRh.setItems(FXCollections.observableArrayList(rh));
         comboGrupa.setItems(FXCollections.observableArrayList(grupe));
@@ -232,12 +255,43 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
                 }
             });
         });
+
+        listaCereriDeSange.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                Cerere cerere = listaCereriDeSange.getSelectionModel().getSelectedItem();
+                if(cerere!=null) {
+                    grupaDeSangeText.setText(cerere.getGrupa());
+                    rhText.setText(cerere.getRhString());
+                }
+            }
+        });
+
     }
 
-    public void loadListDonatori(){
+    private void initSlider(){
+        distanceSlider.valueProperty().addListener((ChangeListener)this::forDistanceSlider);
+    }
+
+    private void loadListDonatori(){
         List<Donator> donatori=service.getDonatori();
         observableListDonatori= FXCollections.observableArrayList(donatori);
         listaDonatori.setItems(observableListDonatori);
         boli=new ArrayList<>();
+    }
+
+    private void loadListaCereriDeSange(){
+        List<Cerere> cereri=service.getCereri();
+        cereri.stream().sorted((x1,x2)->{
+            return x1.getPrioritate().compareTo(x2.getPrioritate());
+        });
+        observableListCereri=FXCollections.observableArrayList(cereri);
+        listaCereriDeSange.setItems(observableListCereri);
+    }
+
+    private void loadListaDonatoriDeNotificat(){
+        List<Donator> donators=service.getDonatori();
+        observableListDeNotificat=FXCollections.observableArrayList(donators);
+        listaDonatoriDeNotificat.setItems(observableListDeNotificat);
     }
 }

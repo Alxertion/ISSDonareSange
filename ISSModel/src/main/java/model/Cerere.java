@@ -165,4 +165,8 @@ public class Cerere implements Serializable {
     public void setIdCerere(int idCerere) {
         this.idCerere = idCerere;
     }
+
+    public String toString(){
+        return "Prioritate: "+prioritate+ " Cantitate ceruta:" + cantitateCeruta+ " Cantitate actuala: "+cantitateActuala;
+    }
 }

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: br.com.progolden:sms-gateway:1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/br.com.progolden/sms-gateway/1.0/33675d41730114bc5cda3359fb8a96c48a8f7f9f/sms-gateway-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/br.com.progolden/sms-gateway/1.0/624d305c229ac54803855f84f89764a113a02e39/sms-gateway-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
