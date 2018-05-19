@@ -1,6 +1,7 @@
 package server;
 
 import model.*;
+import org.apache.commons.lang3.RandomStringUtils;
 import persistence.repository.*;
 import services.IObserver;
 import services.IServices;
@@ -14,16 +15,21 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import javax.persistence.PersistenceException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ServerImpl implements IServices {
@@ -38,11 +44,44 @@ public class ServerImpl implements IServices {
     private IRepositoryTrombocite repositoryTrombocite;
     private IRepositoryConturi repositoryConturi;
     private IRepositoryPreparateSanguine repositoryPreparateSanguine;
+    private IRepositoryPacienti repositoryPacienti;
     private IRepositoryCentruTransfuzii repositoryCentruTransfuzii;
     private IRepositorySpitale repositorySpitale;
+    Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
 
     //For remoting
     private Map<String, IObserver> loggedClients;
+
+    public ServerImpl(IRepositoryAnalize repositoryAnalize,
+                      IRepositoryCereri repositoryCereri,
+                      IRepositoryDonatori repositoryDonatori,
+                      IRepositoryGlobuleRosii repositoryGlobuleRosii,
+                      IRepositoryMedici repositoryMedici,
+                      IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,
+                      IRepositoryPlasma repositoryPlasma,
+                      IRepositorySangeNefiltrat repositorySangeNefiltrat,
+                      IRepositoryTrombocite repositoryTrombocite,
+                      IRepositoryConturi repositoryConturi,
+                      IRepositoryPreparateSanguine repositoryPreparateSanguine,
+                      IRepositoryCentruTransfuzii repositoryCentruTransfuzii,
+                      IRepositorySpitale repositorySpitale,
+                      IRepositoryPacienti repositoryPacienti) {
+        this.repositoryAnalize=repositoryAnalize;
+        this.repositoryCereri=repositoryCereri;
+        this.repositoryDonatori=repositoryDonatori;
+        this.repositoryGlobuleRosii=repositoryGlobuleRosii;
+        this.repositoryMedici=repositoryMedici;
+        this.repositoryPersonalTransfuzii=repositoryPersonalTransfuzii;
+        this.repositoryPlasma=repositoryPlasma;
+        this.repositorySangeNefiltrat=repositorySangeNefiltrat;
+        this.repositoryTrombocite=repositoryTrombocite;
+        this.repositoryConturi=repositoryConturi;
+        this.repositoryPreparateSanguine=repositoryPreparateSanguine;
+        this.repositoryCentruTransfuzii = repositoryCentruTransfuzii;
+        this.repositorySpitale = repositorySpitale;
+        this.repositoryPacienti = repositoryPacienti;
+        loggedClients = new ConcurrentHashMap<>();
+    }
 
     private class MyRunnable implements Runnable{
         private String emailDonator;
@@ -52,35 +91,10 @@ public class ServerImpl implements IServices {
             this.emailDonator=emailDonator;
         }
 
-
         public void sendEmail(){
-            class GMailAuthenticator extends javax.mail.Authenticator {
-                String issEmail;
-                String issPasword;
-                public GMailAuthenticator (String username, String password)
-                {
-                    super();
-                    this.issEmail = username;
-                    this.issPasword = password;
-                }
-                public javax.mail.PasswordAuthentication getPasswordAuthentication()
-                {
-                    return new javax.mail.PasswordAuthentication(issEmail, issPasword);
-                }
-            }
-
             final String mail="issmailalexertion@gmail.com";
             final String mailPassword="alexertion";
-            Properties props=new Properties();
-            props.put("mail.smtp.user", mail);
-            props.put("mail.smtp.starttls.enable","true");
-            props.put("mail.smtp.port", "465");
-            props.put("mail.smtp.debug", "true");
-            props.put("mail.smtp.auth", "true");
-            props.put("mail.smtp.socketFactory.port", "465");
-            props.put("mail.smtp.host", "smtp.gmail.com");
-            props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-            props.put("mail.smtp.socketFactory.fallback", "false");
+            Properties props=getPropertiesConfigEmail(mail);
             javax.mail.Session sessionGmail;
             sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
             //session.setDebug(true);
@@ -124,23 +138,6 @@ public class ServerImpl implements IServices {
         }
     }
 
-    public ServerImpl(IRepositoryAnalize repositoryAnalize, IRepositoryCereri repositoryCereri, IRepositoryDonatori repositoryDonatori, IRepositoryGlobuleRosii repositoryGlobuleRosii, IRepositoryMedici repositoryMedici,IRepositoryPersonalTransfuzii repositoryPersonalTransfuzii,IRepositoryPlasma repositoryPlasma,IRepositorySangeNefiltrat repositorySangeNefiltrat,IRepositoryTrombocite repositoryTrombocite,IRepositoryConturi repositoryConturi,IRepositoryPreparateSanguine repositoryPreparateSanguine){
-        this.repositoryAnalize=repositoryAnalize;
-        this.repositoryCereri=repositoryCereri;
-        this.repositoryDonatori=repositoryDonatori;
-        this.repositoryGlobuleRosii=repositoryGlobuleRosii;
-        this.repositoryMedici=repositoryMedici;
-        this.repositoryPersonalTransfuzii=repositoryPersonalTransfuzii;
-        this.repositoryPlasma=repositoryPlasma;
-        this.repositorySangeNefiltrat=repositorySangeNefiltrat;
-        this.repositoryTrombocite=repositoryTrombocite;
-        this.repositoryConturi=repositoryConturi;
-        this.repositoryPreparateSanguine=repositoryPreparateSanguine;
-        this.repositoryCentruTransfuzii = repositoryCentruTransfuzii;
-        this.repositorySpitale = repositorySpitale;
-        loggedClients=new ConcurrentHashMap<>();
-    }
-
     private void notifyMyClients(){
         ExecutorService executor= Executors.newFixedThreadPool(loggedClients.size());
         for(IObserver client:loggedClients.values()){
@@ -170,6 +167,104 @@ public class ServerImpl implements IServices {
     @Override
     public synchronized void logout(Cont user){
         loggedClients.remove(user.getUsername());
+    }
+
+    @Override
+    public synchronized void registerAccount(Donator donator) throws ServiceException{
+        try {
+            repositoryConturi.adaugare(donator.getCont());
+            repositoryDonatori.adaugare(donator);
+        }catch (PersistenceException e){
+            throw new ServiceException("Este deja un cont cu acest nume de utilizator");
+        }
+
+    }
+
+    @Override
+    public synchronized void recoverPassword(String emailOrUsername) throws ServiceException{
+        Matcher mat = pattern.matcher(emailOrUsername);
+        Donator don;
+        if(mat.matches()){
+            // todo de cautat dupa mail
+            don=repositoryDonatori.findDonatorByEmail(emailOrUsername);
+        }else{
+            // caut emailul utilizatorului
+            don=repositoryDonatori.findDonatorByUsername(emailOrUsername);
+        }
+        if(don!=null){
+            try {
+                String generatedPassword = RandomStringUtils.random(20,true,true);
+                don.getCont().setPassword(generatedPassword);
+                repositoryConturi.modificare(don.getCont());
+                sendRecoverPasswordEmail(don.getEmail(),generatedPassword);
+            }catch (IndexOutOfBoundsException|PersistenceException e){
+                throw new ServiceException("Va rugam sa verificati emailul/ numele emailului");
+            }
+        }else{
+            throw new ServiceException("Nu am gasit utilizatorul cu acest nume/email");
+        }
+    }
+
+    class GMailAuthenticator extends javax.mail.Authenticator {
+        String issEmail;
+        String issPasword;
+        public GMailAuthenticator (String username, String password)
+        {
+            super();
+            this.issEmail = username;
+            this.issPasword = password;
+        }
+        public javax.mail.PasswordAuthentication getPasswordAuthentication()
+        {
+            return new javax.mail.PasswordAuthentication(issEmail, issPasword);
+        }
+    }
+
+
+    public void sendRecoverPasswordEmail(String emailDonator, String generatedPassword){
+        final String mail="issmailalexertion@gmail.com";
+        final String mailPassword="alexertion";
+        Properties props=getPropertiesConfigEmail(mail);
+        javax.mail.Session sessionGmail;
+        sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
+        //session.setDebug(true);
+        try{
+            MimeMessage message=new MimeMessage(sessionGmail);
+            message.setFrom(new InternetAddress(mail));
+            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailDonator));
+            message.setSubject("Resetare parola");
+
+            BodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText("Buna,\n\nNoua dumneavoastra parola pentru aplicatia de donare sange este: " +generatedPassword+
+                    " .\n Daca nu ati fost dumneavoastra cel care ati cerut resetarea parolei, va rugam sa contactati personalul celui mai apropait centru de transfuzii." +
+                    "\n\n O zi frumoasa!");
+
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(messageBodyPart);
+
+            message.setContent(multipart);
+
+            Transport transport = sessionGmail.getTransport("smtps");
+            transport.connect("smtp.gmail.com", 465, mail, mailPassword);
+            transport.sendMessage(message, message.getAllRecipients());
+            transport.close();
+        }catch (MessagingException msg){
+            throw new RuntimeException(msg);
+        }
+    }
+
+    private Properties getPropertiesConfigEmail(String mail) {
+        Properties props=new Properties();
+        props.put("mail.smtp.user", mail);
+        props.put("mail.smtp.starttls.enable","true");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.smtp.debug", "true");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.socketFactory.fallback", "false");
+        return props;
     }
 
     @Override
@@ -245,6 +340,66 @@ public class ServerImpl implements IServices {
 
     }
 
+    @Override
+    public Pacient cautaPacientDupaCNP(String CNP) {
+        return repositoryPacienti.cautaPacientDupaCNP(CNP);
+    }
+
+    @Override
+    public synchronized void inregistreazaDonator(CentruTransfuzii centruTransfuzii, Donator donator, Pacient pacient) {
+
+        centruTransfuzii.getDonatori().add(donator);
+        repositoryCentruTransfuzii.modificare(centruTransfuzii);
+
+        adaugaSangeNou();
+
+        List<PreparatSanguin> listCelorMaiRecentePreparateSanguine = repositoryPreparateSanguine.cautareUltimeleNPreparateSanguine(4);
+        adaugareSangeNouLaDontor(donator, listCelorMaiRecentePreparateSanguine);
+
+        if(pacient!=null) {
+            selecteazaPacientulDorit(pacient, listCelorMaiRecentePreparateSanguine);
+        }
+    }
+
+    private synchronized void selecteazaPacientulDorit(Pacient pacient, List<PreparatSanguin> listCelorMaiRecentePreparateSanguine) {
+        pacient.getPreparateSanguine().addAll(listCelorMaiRecentePreparateSanguine);
+        repositoryPacienti.modificare(pacient);
+    }
+
+    private synchronized void adaugareSangeNouLaDontor(Donator donator, List<PreparatSanguin> listCelorMaiRecentePreparateSanguine) {
+        donator.getPreparateSanguine().addAll(listCelorMaiRecentePreparateSanguine);
+        repositoryDonatori.modificare(donator);
+    }
+
+    private synchronized void adaugaSangeNou() {
+
+        LocalDate dataRecoltarii1 = LocalDate.now();
+        Date dataRecoltarii = Date.valueOf(dataRecoltarii1);
+        repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
+        repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
+        repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
+        repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
+    }
+
+    @Override
+    public synchronized void updateDonator(Donator donator, String numeDonator, String prenumeDonator, String telefon) {
+
+        donator.setNume(numeDonator);
+        donator.setPrenume(prenumeDonator);
+        donator.setTelefon(telefon);
+        repositoryDonatori.modificare(donator);
+
+
+    }
+
+    @Override
+    public CentruTransfuzii cautaCelMaiApropiatCentruDeTransfuzii() {
+
+        CentruTransfuzii centruTransfuzii = repositoryCentruTransfuzii.cautare(1);
+
+        return centruTransfuzii;
+    }
+
     private List<PreparatSanguin> cautaPreparateleSanguineCeleMaiRecenteAleUnuiDonator(int idDonator){
         List<PreparatSanguin> listOfPreparate=new ArrayList<>();
         listOfPreparate.add((PreparatSanguin) cautaPreparateDupaDonatorSiTip(idDonator,TipPreparatSanguin.GLOBULE_ROSII.name()).get(0));
@@ -292,7 +447,8 @@ public class ServerImpl implements IServices {
         if(listOfAllPreparateSanguine.size() >0){
             listOfAllPreparateSanguine=listOfAllPreparateSanguine.stream().filter(x->{
                 return x.getTip().equals(tipPreparatSanguin);
-            }).sorted(Comparator.comparing(PreparatSanguin::getDataPrelevare)).collect(Collectors.toList());
+            }).sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+
         }
 
         return listOfAllPreparateSanguine;
@@ -356,5 +512,84 @@ public class ServerImpl implements IServices {
     @Override
     public synchronized void stergePersonalTransfuzii(int id) {
         repositoryPersonalTransfuzii.stergere(id);
+    }
+
+    @Override
+    public synchronized List<Cerere> getCereri() {
+        return repositoryCereri.getAll();
+    }
+
+    @Override
+    public synchronized void stergeCerere(Cerere cerere) {
+        repositoryCereri.stergere(cerere.getIdCerere());
+    }
+
+    @Override
+    public synchronized void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception {
+        Cont contCurent = repositoryConturi.cautare(username);
+        if (Objects.equals(contCurent.getPassword(), parolaCurenta)) {
+            contCurent.setPassword(parolaNoua);
+            repositoryConturi.modificare(contCurent);
+        }
+        else {
+            throw new Exception("Parola curenta e gresita!");
+        }
+    }
+
+    @Override
+    public synchronized String getNumeMedic(Cont cont) {
+        for (Medic m : repositoryMedici.getAll())
+            if (Objects.equals(m.getCont().getUsername(), cont.getUsername()))
+                return m.getNume() + " " + m.getPrenume();
+        return "-";
+    }
+
+    @Override
+    public List<Pacient> getPacienti() {
+        return repositoryPacienti.getAll();
+    }
+
+    @Override
+    public void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, java.util.Date dataEfectuare) {
+        // cream cererea
+        Cerere cerere = new Cerere(prioritate, grupa, RH, cantitateCeruta, cantitateActuala, dataEfectuare);
+        int maxIdCerere = 0;
+        for (Cerere c : repositoryCereri.getAll()) {
+            if (c.getIdCerere() > maxIdCerere)
+                maxIdCerere = c.getIdCerere();
+        }
+        maxIdCerere++;
+        cerere.setIdCerere(maxIdCerere);
+
+        // cautam pacientul
+        int maxIdPacient = 0;
+        Pacient pacient = null;
+        for (Pacient p : repositoryPacienti.getAll()) {
+            if (Objects.equals(p.getCnp(), cnpPacient))
+                pacient = p;
+            if (p.getIdPacient() > maxIdPacient)
+                maxIdPacient = p.getIdPacient();
+        }
+        maxIdPacient++;
+
+        // daca nu gasim pacientul, il cream
+        if (pacient == null) {
+            pacient = new Pacient(maxIdPacient, cnpPacient, numePacient, prenumePacient);
+            repositoryPacienti.adaugare(pacient);
+            pacient = repositoryPacienti.cautare(maxIdPacient);
+        }
+
+        // cautam medicul
+        Medic medic = null;
+        for (Medic m : repositoryMedici.getAll()) {
+            if (Objects.equals(m.getUsername(), usernameMedic)) {
+                medic = m;
+            }
+        }
+
+        medic.getCereri().add(cerere);
+        pacient.getCereri().add(cerere);
+        repositoryMedici.modificare(medic);
+        repositoryPacienti.modificare(pacient);
     }
 }

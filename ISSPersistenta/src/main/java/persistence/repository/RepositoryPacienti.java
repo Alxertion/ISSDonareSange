@@ -1,17 +1,19 @@
 package persistence.repository;
 
-import model.Cont;
-import model.PreparatSanguin;
-import model.TipPreparatSanguin;
-import org.hibernate.*;
+import model.Pacient;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine {
+public class RepositoryPacienti implements IRepositoryPacienti {
 
     private SessionFactory factory = null;
 
-    public RepositoryPreparateSanguine(){
+    public RepositoryPacienti(){
 
         try {
             factory = HibernateFactory.getInstance();
@@ -20,40 +22,19 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
             System.err.println("Failed to create sessionFactory object." + ex);
             throw new ExceptionInInitializerError(ex);
         }
+
     }
 
+
     @Override
-    public void adaugare(PreparatSanguin preparatSanguin) {
+    public void adaugare(Pacient pacient) {
 
         Transaction tx = null;
         Session session = null;
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-            session.save(preparatSanguin);
-            tx.commit();
-
-        }catch (HibernateException e){
-            if (tx!=null)
-                tx.rollback();
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-
-
-    }
-
-    @Override
-    public void modificare(PreparatSanguin preparatSanguin) {
-
-        Transaction tx = null;
-        Session session = null;
-        try{
-            session = factory.openSession();
-            tx = session.beginTransaction();
-
-            session.update(preparatSanguin);
+            session.save(pacient);
             tx.commit();
 
         }catch (HibernateException e){
@@ -67,16 +48,39 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
     }
 
     @Override
-    public PreparatSanguin stergere(Integer id) {
+    public void modificare(Pacient pacient) {
+
         Transaction tx = null;
         Session session = null;
-        PreparatSanguin preparatSanguin = null;
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            preparatSanguin = cautare(id);
-            session.delete(preparatSanguin);
+            session.update(pacient);
+            tx.commit();
+
+        }catch (HibernateException e){
+            if (tx!=null)
+                tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
+    public Pacient cautaPacientDupaCNP(String CNP){
+
+        Transaction tx = null;
+        Session session = null;
+        Pacient pacient = null;
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            Query query =  session.createQuery("From Pacient WHERE cnp = :cnpParam");
+            query.setParameter("cnpParam", CNP);
+            pacient = (Pacient) query.list().get(0);
+
             tx.commit();
 
         }catch (HibernateException e){
@@ -87,94 +91,46 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
             session.close();
         }
 
-        return preparatSanguin;
+        return pacient;
     }
 
     @Override
-    public PreparatSanguin cautare(Integer id) {
+    public Pacient stergere(Integer id) {
 
         Transaction tx = null;
         Session session = null;
-        PreparatSanguin preparatSanguin = null;
-
+        Pacient pacient = null;
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-            preparatSanguin = (PreparatSanguin) session.get(PreparatSanguin.class, id);
+
+            pacient = cautare(id);
+            session.delete(pacient);
             tx.commit();
+
         }catch (HibernateException e){
+            if (tx!=null)
+                tx.rollback();
             e.printStackTrace();
         } finally {
             session.close();
         }
 
-        return preparatSanguin;
-    }
+        return pacient;
 
-
-    public List<PreparatSanguin> cautareUltimeleNPreparateSanguine(int n){
-
-        Transaction tx = null;
-        Session session = null;
-        List<PreparatSanguin> preparateSanguine = null;
-
-        try{
-            session = factory.openSession();
-            tx = session.beginTransaction();
-
-            preparateSanguine =  session.createQuery("FROM PreparatSanguin ORDER BY idPreparatSanguin ASC").setMaxResults(n).list();
-
-            tx.commit();
-        }catch (HibernateException e){
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-
-        return preparateSanguine;
-
-    }
-
-
-    @Override
-    public int cautareAnalizaDupaPreparat(int idPreparatSanguin) {
-        Transaction tx = null;
-        Session session = null;
-        int idAnaliza=-1;
-
-        try{
-            session = factory.openSession();
-            tx = session.beginTransaction();
-
-            Query query = session.createSQLQuery("SELECT PS.idAnaliza FROM preparatsanguin PS WHERE PS.idPreparatSanguin = ?");
-            // nu este o eroare ci este doar obsolete (nu am gasit o alta metoda de a interoga baza de date)
-            List idAnalizaList = query.setInteger(0, idPreparatSanguin).list();
-
-            if(!idAnalizaList.contains(null)){
-                idAnaliza = (int)idAnalizaList.get(0);
-            }
-
-            tx.commit();
-        }catch (HibernateException e){
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-
-        return idAnaliza;
     }
 
     @Override
-    public List<PreparatSanguin> getAll() {
+    public Pacient cautare(Integer id) {
 
         Transaction tx = null;
         Session session = null;
-        List<PreparatSanguin> listOfAllPreparateSanguine = null;
+        Pacient pacient = null;
 
         try{
             session = factory.openSession();
             tx = session.beginTransaction();
-            listOfAllPreparateSanguine = session.createQuery("from PreparatSanguin ").list();
+            pacient = (Pacient) session.get(Pacient.class, id);
             tx.commit();
         }catch (HibernateException e){
             e.printStackTrace();
@@ -182,7 +138,28 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
             session.close();
         }
 
-        return listOfAllPreparateSanguine;
+        return pacient;
     }
 
+    @Override
+    public List<Pacient> getAll() {
+
+        Transaction tx = null;
+        Session session = null;
+        List<Pacient> listOfAllPacienti = null;
+
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+            listOfAllPacienti = session.createQuery("from Pacient ").list();
+            tx.commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return listOfAllPacienti;
+
+    }
 }

@@ -1,6 +1,5 @@
 package JavaResources;
 
-import JavaResources.Service.Service;
 import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
 import JavaResources.View.StageManager;
@@ -9,19 +8,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import model.CentruTransfuzii;
 import model.Cont;
+import model.Donator;
+import model.Pacient;
+import services.FrontException;
 import services.IServices;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 
 public class FormularDonator extends UnicastRemoteObject implements Controller,Serializable {
@@ -57,16 +60,17 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
     private TextField telefonTextField;
 
     @FXML
-    private TextField numePacientTextField;
-
-    @FXML
-    private TextField prenumePacientTextField;
+    private TextField cnpPacientTextField;
 
     @FXML
     private Button backButton;
 
     @FXML
     private Button forwardButton;
+
+    private Donator donator;
+
+    private Cont user;
 
     private StageManager stageManager;
     private IServices service;
@@ -83,6 +87,23 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
         this.loader = loader;
 
         setImagesForButtons();
+        setDonator();
+        completeazaCuDateleAnterioare();
+    }
+
+    private void completeazaCuDateleAnterioare() {
+
+        numeTextField.setText(donator.getNume());
+        prenumeTextField.setText(donator.getPrenume());
+        dataNasteriiDatePicker.setValue(donator.getDataNasterii());
+        cnpTextField.setText(donator.getCNP());
+        emailTextField.setText(donator.getEmail());
+        telefonTextField.setText(donator.getTelefon());
+
+    }
+
+    private void setDonator() {
+        donator = service.findDonatorByUsername(user.getUsername());
     }
 
     @Override
@@ -92,7 +113,7 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
 
     @Override
     public void setUser(Cont user) {
-
+        this.user = user;
     }
 
     private void setImagesForButtons() {
@@ -115,6 +136,49 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
                 .otherwise(new ImageView(loader.back_button_untouched())));
 
         backButton.setShape(new Circle());
+    }
+
+    @FXML
+    private void forwardButtonPressed(ActionEvent event){
+
+        try{
+            Pacient pacient = null;
+
+            String numeDonator = numeTextField.getText();
+            String prenumeDonator = prenumeTextField.getText();
+            String CNP = cnpTextField.getText();
+
+            if(!CNP.equals(donator.getCNP())){
+                throw new FrontException("CNP-ul este diferit fata de cel de la logare!");
+            }
+
+            String email = emailTextField.getText();
+            String telefon = telefonTextField.getText();
+
+            if(!email.equals(donator.getEmail())){
+                System.out.println("Email diferit fata de cel de la logare");
+            }
+
+            String cnpPacient = cnpPacientTextField.getText();
+
+            if(cnpPacient.length() >0){
+                pacient = service.cautaPacientDupaCNP(cnpPacient);
+            }
+
+            service.updateDonator(donator, numeDonator, prenumeDonator, telefon);
+            //va trebui sa ne gandim cum cautam cel mai apropiat centru de transfuzii
+            CentruTransfuzii centruTransfuzii =  service.cautaCelMaiApropiatCentruDeTransfuzii();
+
+            service.inregistreazaDonator(centruTransfuzii,donator, pacient);
+
+        }catch (FrontException e){
+            Alert message = new Alert(Alert.AlertType.ERROR);
+            message.setTitle("Mesaj eroare");
+            message.setContentText(e.getMessage());
+            message.showAndWait();
+        }
+
+
     }
 
     @FXML

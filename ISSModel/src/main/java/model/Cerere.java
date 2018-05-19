@@ -22,7 +22,7 @@ public class Cerere implements Serializable {
     /**
      *
      */
-    private String RH;
+    private Boolean RH;
 
     /**
      *
@@ -53,7 +53,7 @@ public class Cerere implements Serializable {
      * @param cantitateCeruta
      * @param dataEfectuare
      */
-    public Cerere(Prioritate prioritate, String grupa, String RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare) {
+    public Cerere(Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare) {
         this.prioritate = prioritate;
         this.grupa = grupa;
         this.RH = RH;
@@ -79,6 +79,45 @@ public class Cerere implements Serializable {
         this.prioritate = prioritate;
     }
 
+    public String getStatus() {
+        if (cantitateActuala >= cantitateCeruta)
+            return "Gata";
+        return "Nefinalizată";
+    }
+
+    public String getPrioritateString() {
+        return prioritate.toString();
+    }
+
+    public String getRhString() {
+        if (RH)
+            return "+";
+        return "-";
+    }
+
+    public String getCantitateActualaCerutaString() {
+        return "" + cantitateActuala + "ml" + "/" + cantitateCeruta + "ml";
+    }
+
+    public Integer getPrioritateNr() {
+        if (prioritate == Prioritate.MARE)
+            return 3;
+        if (prioritate == Prioritate.MEDIE)
+            return 2;
+        if (prioritate == Prioritate.MICA)
+            return 1;
+        return 0;
+    }
+
+    public void setPrioritateNr(Integer prioritate) {
+        if (prioritate == 3)
+            this.prioritate = Prioritate.MARE;
+        if (prioritate == 2)
+            this.prioritate = Prioritate.MEDIE;
+        if (prioritate == 1)
+            this.prioritate = Prioritate.MICA;
+    }
+
     public String getGrupa() {
         return grupa;
     }
@@ -87,11 +126,11 @@ public class Cerere implements Serializable {
         this.grupa = grupa;
     }
 
-    public String getRH() {
+    public Boolean getRH() {
         return RH;
     }
 
-    public void setRH(String RH) {
+    public void setRH(Boolean RH) {
         this.RH = RH;
     }
 
@@ -126,5 +165,4 @@ public class Cerere implements Serializable {
     public void setIdCerere(int idCerere) {
         this.idCerere = idCerere;
     }
-
 }

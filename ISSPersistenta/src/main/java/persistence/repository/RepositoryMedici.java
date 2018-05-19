@@ -112,7 +112,6 @@ public class RepositoryMedici implements IRepositoryMedici {
 
     @Override
     public Medic cautare(Integer id) {
-
         Transaction tx = null;
         Session session = null;
         Medic medic = null;
@@ -138,18 +137,14 @@ public class RepositoryMedici implements IRepositoryMedici {
     public List<Medic> getAll() {
 
         Transaction tx = null;
-        Session session = null;
         List<Medic> listOfAllMedici = null;
 
-        try{
-            session = factory.openSession();
+        try (Session session = factory.openSession()) {
             tx = session.beginTransaction();
             listOfAllMedici = session.createQuery("from Medic ").list();
             tx.commit();
-        }catch (HibernateException e){
+        } catch (HibernateException e) {
             e.printStackTrace();
-        } finally {
-            session.close();
         }
 
         return listOfAllMedici;

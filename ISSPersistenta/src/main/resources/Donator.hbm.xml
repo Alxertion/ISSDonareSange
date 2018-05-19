@@ -30,6 +30,7 @@
         <property name="consumGrasimi48h" column="consumGrasimi48h" type="byte"></property>
         <property name="consumBauturiAlcoolice48h" column="consumBauturiAlcoolice48h" type="byte"></property>
         <property name="subTratament" column="subTratament" type="byte"></property>
+        <property name="telefon" column="telefon" type="string"></property>
 
 
         
