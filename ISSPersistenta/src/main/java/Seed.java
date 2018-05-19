@@ -51,6 +51,7 @@ public class Seed {
         addPreparatLaAnaliza();
         adaugaPacienti();
         adaugaCereriSiPacienti();
+
         check();
     }
 
