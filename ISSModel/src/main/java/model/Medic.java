@@ -9,7 +9,6 @@ import java.util.*;
 public class Medic extends Persoana implements Serializable{
 
     private int idMedic;
-    private int idSpital;
     private List<Cerere> cereri;
 
     /**
@@ -27,10 +26,8 @@ public class Medic extends Persoana implements Serializable{
      * @param nume 
      * @param prenume
      */
-    public Medic(int idMedic, String nume, String prenume, Cont cont, String CNP, String email, int idSpital) {
+    public Medic(String nume, String prenume, Cont cont, String CNP, String email) {
         super(nume, prenume, cont, CNP, email);
-        this.idSpital = idSpital;
-        this.idMedic = idMedic;
     }
 
     public String getUsername() {
@@ -51,13 +48,5 @@ public class Medic extends Persoana implements Serializable{
 
     public void setCereri(List<Cerere> cereri) {
         this.cereri = cereri;
-    }
-
-    public int getIdSpital() {
-        return idSpital;
-    }
-
-    public void setIdSpital(int idSpital) {
-        this.idSpital = idSpital;
     }
 }

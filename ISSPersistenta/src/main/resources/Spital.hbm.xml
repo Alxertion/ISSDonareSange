@@ -11,6 +11,7 @@
         </meta>
 
         <id name = "idSpital" type = "int" column = "idSpital">
+            <generator class="native"/>
         </id>
 
         <property name = "nume" column = "nume" type = "string"/>

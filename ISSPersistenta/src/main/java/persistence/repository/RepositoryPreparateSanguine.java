@@ -122,7 +122,7 @@ public class RepositoryPreparateSanguine implements IRepositoryPreparateSanguine
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            preparateSanguine =  session.createQuery("FROM PreparatSanguin ORDER BY idPreparatSanguin ASC").setMaxResults(n).list();
+            preparateSanguine =  session.createQuery("FROM PreparatSanguin ORDER BY idPreparatSanguin DESC").setMaxResults(n).list();
 
             tx.commit();
         }catch (HibernateException e){

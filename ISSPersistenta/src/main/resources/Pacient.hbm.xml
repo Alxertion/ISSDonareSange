@@ -10,6 +10,7 @@
 
     <class name="model.Pacient" table="pacient">
         <id name="idPacient" column="idPacient" type="int">
+            <generator class="native"/>
         </id>
 
         <property name = "cnp" column = "cnp" type = "string"/>

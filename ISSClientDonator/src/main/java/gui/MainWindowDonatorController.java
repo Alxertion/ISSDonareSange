@@ -52,7 +52,6 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
         this.loader = loader;
 
         setImagesForButtons();
-
     }
 
     @Override
@@ -60,7 +59,6 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
 
         setDonator();
         setAccordionAnalize();
-
     }
 
     private void setAccordionAnalize() {
@@ -81,8 +79,8 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
         List<TitledPane> panes = analizeAccordion.getPanes();
 
         for(int i=0; i<listOfAllAnalizeOfDonator.size(); i++){
-            Analiza analiza = listOfAllAnalizeOfDonator.get(i);
-            TitledPane actualPane =  panes.get(i);
+            Analiza analiza = listOfAllAnalizeOfDonator.get(i+1);
+            TitledPane actualPane =  panes.get(i+1);
             actualPane.setText(analiza.toString());
             actualPane.setContent(new Label(analiza.toString()));
 
@@ -129,6 +127,7 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
             Parent rootNode = loaderFXML.load();
             Controller controller = loaderFXML.getController();
             controller.setUser(user);;
+            controller.initialize(stageManager, service, loader);
             stageManager.switchScene(FXMLEnum.ConditiiDonare, rootNode, loaderFXML.getController(), loader);
         }catch (IOException e){
             e.printStackTrace();

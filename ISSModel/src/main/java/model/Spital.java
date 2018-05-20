@@ -41,13 +41,11 @@ public class Spital implements Serializable {
     }
 
     /**
-     * @param idSpital
      * @param nume 
      * @param longitudine 
      * @param latitudine
      */
-    public Spital(Integer idSpital, String nume, double longitudine, double latitudine) {
-        this.idSpital = idSpital;
+    public Spital(String nume, double longitudine, double latitudine) {
         this.nume = nume;
         this.longitudine = longitudine;
         this.latitudine = latitudine;

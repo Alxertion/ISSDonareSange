@@ -10,6 +10,7 @@
 
     <class name="model.CentruTransfuzii" table="centrutransfuzii">
         <id name="idCentruTransfuzii" column="idCentruTransfuzii" type="int">
+            <generator class="native"/>
         </id>
 
         <property name="nume" column="nume" type="string"/>

@@ -4,7 +4,7 @@ import persistence.repository.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
+
 
 public class Seed {
 
@@ -35,36 +35,57 @@ public class Seed {
     }
 
     public void seed() {
-        /*
-        adaugaCereriSiPacienti();
-        adaugaPersonalTransfuzii();
-        adaugaSpitale();
-        adaugaCentreTransfuzii();
-        adaugaPersonalTransfuzii();
-        adaugaSpitale();
-        adaugaCentreTransfuzii();
+
         adaugaConturi();
-        adaugaMedici();
+        adaugaCentreTransfuzii();
         adaugaPersonalTransfuzii();
+        adaugaSpitale();
+        adaugaMedici();
+        adaugaPreparateSanguine();
+        adaugaDonatori();
+        addPreparatSanguinLaDonator();
+        addAltiDonatoriSiPreparateSanguine();
         adaugaBoli();
         adaugaAnaliza();
         adaugaBoliLaAnaliza();
-        adaugaDonatori();
-        adaugaPreparateSanguine();
-        addPreparatSanguinLaDonator();
         addPreparatLaAnaliza();
-        adaugaPacienti();
-        check();*/
+        adaugaCerere();
+        adaugarePacienti();
+        adaugaCerereLaMedici();
+        adaugaCerereLaPacienti();
     }
 
-    private void adaugaPacienti() {
+    private void adaugarePacienti() {
 
-
+        Pacient p1 = new Pacient( "1134223426", "Nume1", "Prenume1");
+        Pacient p2 = new Pacient( "11342234245", "Nume2", "Prenume2");
+        repoPacienti.adaugare(p1);
+        repoPacienti.adaugare(p2);
     }
 
-    private void adaugaCereriSiPacienti() {
-        /*
-        try {
+    private void adaugaCerereLaPacienti() {
+
+        Cerere c1 = repoCereri.cautare(1);
+        Cerere c2 = repoCereri.cautare(2);
+        Cerere c3 = repoCereri.cautare(3);
+
+        Pacient p1 = repoPacienti.cautare(1);
+        Pacient  p2 = repoPacienti.cautare(2);
+        p1.getCereri().add(c1);
+        repoPacienti.modificare(p1);
+
+        p1=repoPacienti.cautare(1);
+        p1.getCereri().add(c2);
+        repoPacienti.modificare(p1);
+
+        p2.getCereri().add(c3);
+        repoPacienti.modificare(p2);
+    }
+
+    private void adaugaCerere() {
+
+        try{
+
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date d1 = sdf.parse("21/05/2018");
             Date d2 = sdf.parse("26/01/2018");
@@ -72,34 +93,35 @@ public class Seed {
             Cerere c1 = new Cerere(Prioritate.MARE, "A", true, 300d, 200d, d1);
             Cerere c2 = new Cerere(Prioritate.MARE, "B", false, 200d, 100d, d2);
             Cerere c3 = new Cerere(Prioritate.MICA, "B", false, 200d, 0d, d3);
-            Pacient p1 = new Pacient(1, "1134223426", "Nume1", "Prenume1");
-            Pacient p2 = new Pacient(2, "11342234245", "Nume2", "Prenume2");
-            //repoPacienti.adaugare(p1);
-            //repoPacienti.adaugare(p2);
 
-            p1 = repoPacienti.cautare(1);
-            p2 = repoPacienti.cautare(2);
-            p1.getCereri().add(c1);
-            p1.getCereri().add(c2);
-            p2.getCereri().add(c3);
 
-            Medic m1 = repoMedici.cautare(4);
+            repoCereri.adaugare(c1);
+            repoCereri.adaugare(c2);
+            repoCereri.adaugare(c3);
+
+        }catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void adaugaCerereLaMedici() {
+
+
+            Cerere c1 = repoCereri.cautare(1);
+        Cerere c2 = repoCereri.cautare(2);
+        Cerere c3 = repoCereri.cautare(3);
+
+            Medic m1 = repoMedici.cautare(1);
             m1.getCereri().add(c1);
-            Medic m2 = repoMedici.cautare(5);
+            Medic m2 = repoMedici.cautare(2);
             m2.getCereri().add(c2);
-            Medic m3 = repoMedici.cautare(6);
+            Medic m3 = repoMedici.cautare(3);
             m3.getCereri().add(c3);
 
             repoMedici.modificare(m1);
             repoMedici.modificare(m2);
             repoMedici.modificare(m3);
-
-            repoPacienti.modificare(p1);
-            repoPacienti.modificare(p2);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        */
     }
 
     private void adaugaCentreTransfuzii() {
@@ -109,29 +131,21 @@ public class Seed {
     }
 
     private void adaugaSpitale() {
-        repoSpitale.adaugare(new Spital(1, "Spital Unu", 2.76531, 3.22));
-        repoSpitale.adaugare(new Spital(2, "Spital Doi", 19.711, 4.2123));
-        repoSpitale.adaugare(new Spital(3, "Spital Trei", 17.73121, 21.215));
-        repoSpitale.adaugare(new Spital(4, "Spital Patru", 14.2721, 21.215));
-        addAltiDonatoriSiPreparateSanguine();
-//        check();
-    }
-
-    private void check(){
-
-
-
+        repoSpitale.adaugare(new Spital("Spital Unu", 2.76531, 3.22));
+        repoSpitale.adaugare(new Spital("Spital Doi", 19.711, 4.2123));
+        repoSpitale.adaugare(new Spital("Spital Trei", 17.73121, 21.215));
+        repoSpitale.adaugare(new Spital("Spital Patru", 14.2721, 21.215));
     }
 
     private void addAltiDonatoriSiPreparateSanguine() {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date dataRecoltarii1 = sdf.parse("26/01/2018");
-//
-//            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
-//            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
-//            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
-//            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
+
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
+            repoPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii1, dataRecoltarii1, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
 
             PreparatSanguin preparatSanguinSangeNefiltrat3 = repoPreparateSanguine.cautare(13);
             PreparatSanguin preparatSanguinTrombocite3 = repoPreparateSanguine.cautare(14);
@@ -255,8 +269,8 @@ public class Seed {
         Cont cont1 = repoConturi.cautare("personal1");
         Cont cont2 = repoConturi.cautare("personal12");
 
-        repositoryPersonalTransfuzii.adaugare(new PersonalTransfuzii(1, "Cezara", "Grigoreta", cont1, "1970725055038", "oti_otniel97@yahoo.com",1));
-        repositoryPersonalTransfuzii.adaugare(new PersonalTransfuzii(2, "Nicolae", "Ceausescu", cont2,"1970725055000", "oti_otniel97@yahoo.com",2));
+        repositoryPersonalTransfuzii.adaugare(new PersonalTransfuzii("Cezara", "Grigoreta", cont1, "1970725055038", "oti_otniel97@yahoo.com"));
+        repositoryPersonalTransfuzii.adaugare(new PersonalTransfuzii( "Nicolae", "Ceausescu", cont2,"1970725055000", "oti_otniel97@yahoo.com"));
 
     }
 
@@ -266,9 +280,9 @@ public class Seed {
         Cont cont1 = repoConturi.cautare("roots");
         Cont cont2 = repoConturi.cautare("test");
         Cont cont3 = repoConturi.cautare("root");
-        Medic medic1 = new Medic(1, "Chise", "Bogdan", cont1,"297072508", "oti_otniel97@yahoo.com", 1);
-        Medic medic2 = new Medic(2, "Boros", "Otniel", cont2,"18507255038", "oti_otniel97@yahoo.com", 2);
-        Medic medic3 = new Medic(3, "Cezar", "Ouatu", cont3,"18607255038", "oti_otniel97@yahoo.com", 3);
+        Medic medic1 = new Medic( "Chise", "Bogdan", cont1,"297072508", "oti_otniel97@yahoo.com");
+        Medic medic2 = new Medic( "Boros", "Otniel", cont2,"18507255038", "oti_otniel97@yahoo.com");
+        Medic medic3 = new Medic( "Cezar", "Ouatu", cont3,"18607255038", "oti_otniel97@yahoo.com");
 
         //adaugare medici
         repoMedici.adaugare(medic1);
