@@ -341,13 +341,106 @@ public class ServerImpl implements IServices {
     }
 
     @Override
+    public synchronized void stergePreparatSanguinDTO(int idPreparat) {
+        repositoryPreparateSanguine.stergere(idPreparat);
+        notifyMyClients();
+    }
+
+    @Override
+    public synchronized void adaugarePreparatSanguinDTO(PreparatSanguinDTO preparatSanguinDTO) {
+        PreparatSanguin newPreparatSanguin=new PreparatSanguin(
+                preparatSanguinDTO.getDataPrelevare(),
+                preparatSanguinDTO.getDataExpirare(),
+                preparatSanguinDTO.getCantitate(),
+                preparatSanguinDTO.getTip(),
+                preparatSanguinDTO.getStagiu()
+        );
+        repositoryPreparateSanguine.adaugare(newPreparatSanguin);
+        //Pacient
+        if(preparatSanguinDTO.getIDPacient()!=-1){
+            Pacient pacient=repositoryPacienti.cautare(preparatSanguinDTO.getIDPacient());
+            pacient.getPreparateSanguine().add(newPreparatSanguin);
+            repositoryPacienti.modificare(pacient);
+        }
+        //Donator
+        if(preparatSanguinDTO.getIDDonator()!=-1){
+            Donator donator=repositoryDonatori.cautare(preparatSanguinDTO.getIDDonator());
+            donator.getPreparateSanguine().add(newPreparatSanguin);
+            repositoryDonatori.modificare(donator);
+        }
+        //Analiza
+        if(preparatSanguinDTO.getIDAnaliza()!=-1){
+            Analiza analiza=repositoryAnalize.cautare(preparatSanguinDTO.getIDAnaliza());
+            analiza.getPreparateSanguine().add(newPreparatSanguin);
+            repositoryAnalize.modificare(analiza);
+        }
+        notifyMyClients();
+    }
+
+    @Override
+    public void modificaPreparatSanguinDTO( PreparatSanguinDTO preparatSanguinDTO) {
+        PreparatSanguin preparatSanguinCurent=repositoryPreparateSanguine.cautare(preparatSanguinDTO.getID());
+        PreparatSanguin newPreparatSanguin=new PreparatSanguin(
+                preparatSanguinDTO.getDataPrelevare(),
+                preparatSanguinDTO.getDataExpirare(),
+                preparatSanguinDTO.getCantitate(),
+                preparatSanguinDTO.getTip(),
+                preparatSanguinDTO.getStagiu()
+        );
+        newPreparatSanguin.setIdPreparatSanguin(preparatSanguinDTO.getID());
+        repositoryPreparateSanguine.modificare(newPreparatSanguin);
+        //Pacient
+        if(preparatSanguinDTO.getIDPacient()!=-1){
+            Pacient pacient=repositoryPacienti.cautare(preparatSanguinDTO.getIDPacient());
+            pacient.getPreparateSanguine().add(newPreparatSanguin);
+            repositoryPacienti.modificare(pacient);
+        }
+        //Donator
+        if(preparatSanguinDTO.getIDDonator()!=-1){
+            Donator donator=repositoryDonatori.cautare(preparatSanguinDTO.getIDDonator());
+            donator.getPreparateSanguine().add(newPreparatSanguin);
+            repositoryDonatori.modificare(donator);
+        }
+        //Analiza
+        if(preparatSanguinDTO.getIDAnaliza()!=-1){
+            Analiza analiza=repositoryAnalize.cautare(preparatSanguinDTO.getIDAnaliza());
+            analiza.getPreparateSanguine().add(newPreparatSanguin);
+            repositoryAnalize.modificare(analiza);
+        }
+        notifyMyClients();
+    }
+
+    @Override
+    public List<PreparatSanguinDTO> getAllPreparatSanguinDTO() {
+        List<PreparatSanguin> preparate=repositoryPreparateSanguine.getAll();
+        List<PreparatSanguinDTO> list=new ArrayList<>();
+        for (PreparatSanguin prep: preparate) {
+            int idAnaliza=repositoryPreparateSanguine.cautareAnalizaDupaPreparat(prep.getIdPreparatSanguin());
+            int idPacient=repositoryPreparateSanguine.cautarePacientDupaPreparat(prep.getIdPreparatSanguin());
+            int idDonator=repositoryPreparateSanguine.findIdDonatorForPreparatSanguin(prep.getIdPreparatSanguin());
+            PreparatSanguinDTO newPrepDTO=new PreparatSanguinDTO(
+                prep.getIdPreparatSanguin(),
+                prep.getTip(),
+                prep.getDataPrelevare(),
+                prep.getDataExpirare(),
+                idDonator,
+                idAnaliza,
+                prep.getCantitate(),
+                idPacient,
+                prep.getStagiu()
+            );
+            list.add(newPrepDTO);
+        }
+        return list;
+    }
+
+    @Override
     public Pacient cautaPacientDupaCNP(String CNP) {
         return repositoryPacienti.cautaPacientDupaCNP(CNP);
     }
 
     @Override
     public synchronized void inregistreazaDonator(CentruTransfuzii centruTransfuzii, Donator donator, Pacient pacient) {
-
         centruTransfuzii.getDonatori().add(donator);
         repositoryCentruTransfuzii.modificare(centruTransfuzii);
 
@@ -372,7 +465,6 @@ public class ServerImpl implements IServices {
     }
 
     private synchronized void adaugaSangeNou() {
-
         LocalDate dataRecoltarii1 = LocalDate.now();
         Date dataRecoltarii = Date.valueOf(dataRecoltarii1);
         repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
