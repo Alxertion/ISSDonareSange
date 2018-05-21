@@ -21,6 +21,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSDonareSange-ISSModel.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSDonareSange-ISSModel.iml" group="ISSModel" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_main.iml" group="ISSDonareSange" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSDonareSange_test.iml" group="ISSDonareSange" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSMaps/ISSMaps.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSMaps/ISSMaps.iml" group="ISSMaps" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModel/ISSModel.iml" group="ISSModel" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModelAdministrare/ISSModelAdministrare.iml" group="ISSModelAdministrare" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ISSModelDonator/ISSModelDonator.iml" filepath="$PROJECT_DIR$/.idea/modules/ISSModelDonator/ISSModelDonator.iml" group="ISSModelDonator" />

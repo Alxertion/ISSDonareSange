@@ -9,11 +9,11 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
-import model.*;
 import services.IObserver;
 import services.IServices;
 
@@ -64,6 +64,8 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
     private TableView<Cerere> cereriTableView;
     @FXML
     private TableView<Pacient> pacientiTableView;
+    @FXML
+    private ComboBox<String> tipSangeComboBox;
 
     public MedicController() throws RemoteException {
     }
@@ -91,6 +93,12 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
         grupaComboBox.getItems().add("B (III)");
         grupaComboBox.getItems().add("AB (IV)");
         grupaComboBox.getSelectionModel().selectFirst();
+
+        tipSangeComboBox.getItems().clear();
+        tipSangeComboBox.getItems().add("trombocite");
+        tipSangeComboBox.getItems().add("globule rosii");
+        tipSangeComboBox.getItems().add("plasma");
+        tipSangeComboBox.getSelectionModel().selectFirst();
 
         prioritateComboBox.getItems().clear();
         prioritateComboBox.getItems().add(Prioritate.MICA);
@@ -190,7 +198,8 @@ public class MedicController extends UnicastRemoteObject implements Controller, 
                     Objects.equals(rhComboBox.getValue(), "Pozitiv"),
                     Double.parseDouble(cantitateTextField.getText()),
                     0.0,
-                    Date.from(dataTextField.getValue().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+                    Date.from(dataTextField.getValue().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()),
+                    tipSangeComboBox.getValue());
             modelCereri.setAll(FXCollections.observableArrayList(service.getCereri()));
             modelPacienti.setAll(FXCollections.observableArrayList(service.getPacienti()));
             showMessage(Alert.AlertType.CONFIRMATION, "Cerere efectuată", "Cerere efectuată cu succes!");

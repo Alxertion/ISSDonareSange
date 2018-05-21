@@ -37,12 +37,12 @@
         <many-to-one name = "cont" column = "username" unique="true"
                      class="model.Cont"/>
 
-        <bag name = "boliAnterioare" cascade="all" table="bolidonator">
+        <bag name = "boliAnterioare" cascade="all" table="bolidonator" fetch="select" lazy="false">
             <key column="idDonator"></key>
             <many-to-many column="idBoala" class="model.Boala"></many-to-many>
         </bag>
 
-        <bag name = "preparateSanguine" cascade="all" >
+        <bag name = "preparateSanguine" cascade="all" fetch="select" lazy="false" >
             <key column = "idDonator"/>
             <one-to-many class="model.PreparatSanguin"/>
         </bag>

@@ -15,6 +15,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ISSClientAdministrator_main" />
+    <orderEntry type="module" module-name="ISSModel_main" />
     <orderEntry type="module" module-name="ISSServices_main" />
     <orderEntry type="module" module-name="ISSClientMainResources_main" />
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.2.10.Final" level="project" />

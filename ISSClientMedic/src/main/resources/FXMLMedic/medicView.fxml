@@ -44,14 +44,19 @@
                                 <PropertyValueFactory property="rhString" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="202.0" text="Cantitate Actuală/Cerută">
+                        <TableColumn prefWidth="189.0" text="Cantitate Actuală/Cerută">
                             <cellValueFactory>
                                 <PropertyValueFactory property="cantitateActualaCerutaString" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="229.0" text="Dată Efectuare">
+                        <TableColumn prefWidth="114.0" text="Dată Efectuare">
                             <cellValueFactory>
                                 <PropertyValueFactory property="dataEfectuare" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="124.0" text="Tip Sânge">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="tipSange" />
                             </cellValueFactory>
                         </TableColumn>
                     </columns>
@@ -83,6 +88,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Medic:" />
@@ -99,12 +105,14 @@
                         <DatePicker fx:id="dataTextField" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label text="CNP pacient:" GridPane.rowIndex="6" />
                         <TextField fx:id="cnpPacientTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <Button mnemonicParsing="false" onAction="#efectuareCerere" prefHeight="31.0" prefWidth="196.0" text="Efectuează cererea" GridPane.rowIndex="9" />
-                        <Button mnemonicParsing="false" onAction="#golireCampuri" prefHeight="31.0" prefWidth="199.0" text="Golește câmpuri" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Button mnemonicParsing="false" onAction="#efectuareCerere" prefHeight="31.0" prefWidth="196.0" text="Efectuează cererea" GridPane.rowIndex="10" />
+                        <Button mnemonicParsing="false" onAction="#golireCampuri" prefHeight="31.0" prefWidth="199.0" text="Golește câmpuri" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                         <TextField fx:id="numePacientTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                         <Label text="Nume pacient:" GridPane.rowIndex="7" />
                         <Label text="Prenume pacient:" GridPane.rowIndex="8" />
                         <TextField fx:id="prenumePacientTextField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label text="Tip sânge:" GridPane.rowIndex="9" />
+                        <ComboBox fx:id="tipSangeComboBox" prefHeight="31.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                      </children>
                   </GridPane>
                   <TableView fx:id="pacientiTableView" layoutX="420.0" layoutY="57.0" prefHeight="214.0" prefWidth="359.0">

@@ -30,9 +30,9 @@ public interface IServices {
     void modificaCentruTransfuzii(CentruTransfuzii centruTransfuzii);
     void stergeSpital(int id);
     void stergeCentruTransfuzii(int id);
-    void adaugaMedic(Medic medic);
+    void adaugaMedic(Medic medic, int idSpital);
     void stergeMedic(int id);
-    void adaugaPersonalTransfuzii(PersonalTransfuzii personalTransfuzii);
+    void adaugaPersonalTransfuzii(PersonalTransfuzii personalTransfuzii, int idCentruTransfuzii);
     void stergePersonalTransfuzii(int id);
     Pacient cautaPacientDupaCNP(String CNP);
     void inregistreazaDonator(CentruTransfuzii centruTransfuzii, Donator donator, Pacient pacient);
@@ -43,5 +43,13 @@ public interface IServices {
     void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception;
     String getNumeMedic(Cont cont);
     List<Pacient> getPacienti();
-    void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare);
+    void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare, String tipSange);
+
+    int getIdSpital(Medic medic);
+    int getIdCentruTransfuzii(PersonalTransfuzii personalTransfuzii);
+    List<PreparatSanguin> getPreparateSanguine();
+    List<Analiza> getAnalize();
+    void updatePreparatSanguin(PreparatSanguin p);
+    void updatePacient(Pacient p);
+    void updateCerere(Cerere c);
 }

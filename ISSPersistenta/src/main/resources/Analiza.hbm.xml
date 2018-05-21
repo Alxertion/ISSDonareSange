@@ -16,12 +16,12 @@
         <property name="grupa" column="grupa" type="string"/>
         <property name="RH" column="rh" type="boolean"/>
 
-        <bag fetch="join" name = "boli" cascade="all" table="BoliAnaliza">
+        <bag name = "boli" cascade="all" table="BoliAnaliza" fetch="select" lazy="false">
             <key column = "idAnaliza"/>
             <many-to-many column = "idBoala" class="model.Boala"/>
         </bag>
 
-        <bag name = "preparateSanguine" cascade="all" >
+        <bag name = "preparateSanguine" cascade="all" fetch="select" lazy="false" >
             <key column = "idAnaliza"/>
             <one-to-many class="model.PreparatSanguin"/>
         </bag>

@@ -90,10 +90,9 @@ public class Seed {
             Date d1 = sdf.parse("21/05/2018");
             Date d2 = sdf.parse("26/01/2018");
             Date d3 = sdf.parse("16/02/2015");
-            Cerere c1 = new Cerere(Prioritate.MARE, "A", true, 300d, 200d, d1);
-            Cerere c2 = new Cerere(Prioritate.MARE, "B", false, 200d, 100d, d2);
-            Cerere c3 = new Cerere(Prioritate.MICA, "B", false, 200d, 0d, d3);
-
+            Cerere c1 = new Cerere(Prioritate.MARE, "A", true, 300d, 200d, d1, "trombocite");
+            Cerere c2 = new Cerere(Prioritate.MARE, "B", false, 200d, 100d, d2, "trombocite");
+            Cerere c3 = new Cerere(Prioritate.MICA, "B", false, 200d, 0d, d3, "globule rosii");
 
             repoCereri.adaugare(c1);
             repoCereri.adaugare(c2);

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  *
@@ -61,13 +62,14 @@ public class PreparatSanguin implements Serializable, Comparable<PreparatSanguin
         this.tip = tip;
     }
 
-
-    /**
-     * @return
-     */
     public Boolean isExpirat() {
-        // TODO implement here
-        return null;
+        return !(new Date()).before(this.dataExpirare);
+    }
+
+    public String getValid() {
+        if (isExpirat())
+            return "Nu";
+        return "Da";
     }
 
     public Date getDataPrelevare() {
@@ -95,6 +97,10 @@ public class PreparatSanguin implements Serializable, Comparable<PreparatSanguin
         this.cantitate = cantitate;
     }
 
+    public String getCantitateString() {
+        return "" + cantitate + "ml";
+    }
+
     public String getStagiu() {
         return stagiu;
     }
@@ -119,8 +125,7 @@ public class PreparatSanguin implements Serializable, Comparable<PreparatSanguin
         this.tip = tip;
     }
 
-    public int compare(PreparatSanguin prep1, PreparatSanguin prep2){
-
+    public int compare(PreparatSanguin prep1, PreparatSanguin prep2) {
         LocalDate datePrep1 = prep1.getDataPrelevare().toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate();
@@ -131,7 +136,6 @@ public class PreparatSanguin implements Serializable, Comparable<PreparatSanguin
         if(datePrep1.isBefore(datePrep2)) return 1;
         else if(datePrep1.isEqual(datePrep2)) return 0;
         return -1;
-
     }
 
     public int compareTo(PreparatSanguin preparatSanguin){

@@ -19,7 +19,7 @@
         <property name="cantitateCeruta" column="cantitateCeruta" type="double"/>
         <property name="cantitateActuala" column="cantitateActuala" type="double"/>
         <property name="dataEfectuare" column="dataEfectuare" type="date"/>
-
+        <property name="tipSange" column="tipSange" type="string"/>
 
     </class>
 </hibernate-mapping>

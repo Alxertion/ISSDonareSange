@@ -17,12 +17,12 @@
         <property name = "nume" column = "nume" type = "string"/>
         <property name = "prenume" column = "prenume" type = "string"/>
 
-        <bag name = "cereri" cascade="all" >
+        <bag name = "cereri" cascade="all" fetch="select" lazy="false" >
             <key column = "idPacient"/>
             <one-to-many class="model.Cerere"/>
         </bag>
 
-        <bag name = "preparateSanguine" cascade="all" >
+        <bag name = "preparateSanguine" cascade="all" fetch="select" lazy="false" >
             <key column = "idPacient"/>
             <one-to-many class="model.PreparatSanguin"/>
         </bag>
