@@ -61,6 +61,7 @@ public class Seed {
         Pacient p2 = new Pacient( "11342234245", "Nume2", "Prenume2");
         repoPacienti.adaugare(p1);
         repoPacienti.adaugare(p2);
+
     }
 
     private void adaugaCerereLaPacienti() {
