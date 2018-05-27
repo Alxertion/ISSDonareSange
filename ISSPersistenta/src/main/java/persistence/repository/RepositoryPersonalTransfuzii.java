@@ -152,4 +152,30 @@ public class RepositoryPersonalTransfuzii implements IRepositoryPersonalTransfuz
 
     }
 
+    @Override
+    public boolean verificaUsername(String username) {
+        Transaction tx = null;
+        Session session = null;
+        List rez=null;
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            org.hibernate.Query query = session.createSQLQuery("SELECT COUNT(*) FROM personaltransfuzii pt WHERE pt.username = ?");
+            // nu este o eroare ci este doar obsolete (nu am gasit o alta metoda de a interoga baza de date)
+            rez = query.setString(0, username).list();
+            tx.commit();
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        if(rez!=null) {
+            if (!(rez.contains(null))) {
+                if( Integer.parseInt(rez.get(0).toString()) > 0)
+                    return true;
+            }
+        }
+        return false;
+    }
 }

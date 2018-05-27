@@ -23,7 +23,7 @@
             <RadioButton fx:id="mesajEmailRadio" layoutX="176.0" layoutY="163.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="138.0" text="Mesaj electronic" GridPane.columnIndex="1" />
             <RadioButton fx:id="mesajTelefonicRadio" layoutX="40.0" layoutY="163.0" mnemonicParsing="false" text="Mesaj telefonic" />
             <Button layoutX="162.0" layoutY="187.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="Notificare donatori" onAction="#notificareDonatori" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="notificareDonator" layoutX="18.0" layoutY="187.0" mnemonicParsing="false" onAction="#notificareDonatorEmail" prefHeight="25.0" prefWidth="124.0" text="Notificare donator" GridPane.rowIndex="1" />
+            <Button fx:id="notificareDonator" layoutX="18.0" layoutY="187.0" mnemonicParsing="false" onAction="#notificareDonator" prefHeight="25.0" prefWidth="124.0" text="Notificare donator" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <TextArea fx:id="continutNotificare" layoutX="19.0" layoutY="14.0" prefHeight="140.0" prefWidth="267.0" promptText="Introduceti mesajul..." />

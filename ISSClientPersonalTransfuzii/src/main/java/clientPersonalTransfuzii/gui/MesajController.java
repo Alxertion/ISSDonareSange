@@ -18,6 +18,7 @@ import services.IServices;
 
 import javax.swing.*;
 import java.io.Serializable;
+import java.net.URI;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -33,17 +34,22 @@ public class MesajController extends UnicastRemoteObject implements Controller,S
 
     }
     @FXML
-    public void notificareDonatorEmail(ActionEvent actionEvent){
+    public void notificareDonator(ActionEvent actionEvent){
         try{
             String continut=continutNotificare.getText();
             if(continut.equals(""))
                 throw new FrontException("Nu ati introdus nicio informatie");
             if(observableDonator.size()==0)
                 throw new FrontException("Nu avem donatori de notificat.");
-            service.sendEmail("oti_otniel97@yahoo.com","",continut, MailEnum.NOTIFICARE_DONATOR);
+            if(mesajTelefonicRadio.isSelected()) {
+                service.sendSMS("0773302809",continut);
+            }
+            else{
+                service.sendEmail("oti_otniel97@yahoo.com", "", continut, MailEnum.NOTIFICARE_DONATOR);
+            }
             Alert message = new Alert(Alert.AlertType.INFORMATION);
             message.setTitle("Mesaj de informare");
-            message.setContentText("Emailul a fost transmis.");
+            message.setContentText("Notificarea a fost transmisa.");
             message.showAndWait();
         }catch (FrontException e){
             Alert message = new Alert(Alert.AlertType.ERROR);

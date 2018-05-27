@@ -18,7 +18,7 @@
         <property name = "longitudine" column = "longitudine" type = "double"/>
         <property name = "latitudine" column = "latitudine" type = "double"/>
 
-        <bag name = "medici" cascade="all" >
+        <bag name = "medici" cascade="all" fetch="select" lazy="false">
             <key column = "idSpital"/>
             <one-to-many class="model.Medic"/>
         </bag>

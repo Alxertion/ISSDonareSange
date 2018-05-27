@@ -1,5 +1,8 @@
 package server;
-
+import com.twilio.Twilio;
+import com.twilio.converter.Promoter;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
 import model.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import persistence.repository.*;
@@ -106,7 +109,7 @@ public class ServerImpl implements IServices {
             try{
                 MimeMessage message=new MimeMessage(sessionGmail);
                 message.setFrom(new InternetAddress(mail));
-                message.addRecipients(Message.RecipientType.TO,InternetAddress.parse("oti_otniel97@yahoo.com"));
+                message.addRecipients(javax.mail.Message.RecipientType.TO,InternetAddress.parse("oti_otniel97@yahoo.com"));
                 message.setSubject("Rezultate analiza - Centru de transfuzii");
 
 
@@ -137,9 +140,9 @@ public class ServerImpl implements IServices {
 
         public void anuntaDonator(){
             try{
-                MimeMessage message=new MimeMessage(sessionGmail);
+                javax.mail.internet.MimeMessage message=new MimeMessage(sessionGmail);
                 message.setFrom(new InternetAddress(mail));
-                message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailDonator));
+                message.addRecipients(javax.mail.Message.RecipientType.TO,InternetAddress.parse(emailDonator));
                 message.setSubject("Nevoie de sange");
 
                 BodyPart messageBodyPart = new MimeBodyPart();
@@ -196,14 +199,15 @@ public class ServerImpl implements IServices {
         //pentru a vedea daca exista un personaj din tipul respectiv cu userul user.getUsername();
 
         if (loginOk!=null){
-            if(tipUtilizator == UtilizatorEnum.ADMINISTRATOR){
-
-            }else if(tipUtilizator == UtilizatorEnum.MEDIC){
-
+            if(tipUtilizator == UtilizatorEnum.MEDIC){
+                if(!repositoryMedici.verificaUsername(user.getUsername()))
+                    throw new ServiceException("Autentificare esuata");
             }else if(tipUtilizator == UtilizatorEnum.DONATOR){
-
+                if(!repositoryDonatori.verificaUsername(user.getUsername()))
+                    throw new ServiceException("Autentificare esuata");
             }else if(tipUtilizator == UtilizatorEnum.PERSONAL_TRANSFUZII){
-
+                if(!repositoryPersonalTransfuzii.verificaUsername(user.getUsername()))
+                    throw new ServiceException("Autentificare esuata");
             }
             loggedClients.put(user.getUsername(), client);
         }else
@@ -275,9 +279,9 @@ public class ServerImpl implements IServices {
         sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
         //session.setDebug(true);
         try{
-            MimeMessage message=new MimeMessage(sessionGmail);
+            javax.mail.internet.MimeMessage message=new MimeMessage(sessionGmail);
             message.setFrom(new InternetAddress(mail));
-            message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(emailDonator));
+            message.addRecipients(javax.mail.Message.RecipientType.TO,InternetAddress.parse(emailDonator));
             message.setSubject("Resetare parola");
 
             BodyPart messageBodyPart = new MimeBodyPart();
@@ -343,6 +347,22 @@ public class ServerImpl implements IServices {
        MyRunnable myRunnableInstance=new MyRunnable(emailDonator,continut,mainEmailContinut,mailEnum);
        Thread t=new Thread(myRunnableInstance);
        t.start();
+    }
+
+    @Override
+    public void sendSMS(String numarTelefon,String continut) {
+        final String ACCOUNT_SID = "ACbf88b891daf48016d21f861edea07d13";
+        final String AUTH_TOKEN = "fc328a1711a9f8ed56133b25d1ae0812";
+
+
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        Message message = Message.creator(
+                new PhoneNumber("+4"+numarTelefon),
+                new PhoneNumber("+13142073815"),
+                continut)
+                .create();
+
+        System.out.println(message.getSid());
     }
 
     @Override
@@ -637,5 +657,55 @@ public class ServerImpl implements IServices {
         pacient.getCereri().add(cerere);
         repositoryMedici.modificare(medic);
         repositoryPacienti.modificare(pacient);
+    }
+
+    private boolean verificaDonatorByCerere(String grupa,String rh,Analiza analiza){
+        boolean RH= rh.equals("-") ? false : true;
+        if(grupa.equals("A") && RH==false){
+            if((analiza.getGrupa().equals("A") || analiza.getGrupa().equals("0")) && analiza.getRH()==false){
+                return true;
+            }
+        }else if(grupa.equals("A") && RH==true){
+            if((analiza.getGrupa().equals("A") || analiza.getGrupa().equals("0"))){
+                return true;
+            }
+        }else if(grupa.equals("B") && RH==false){
+            if((analiza.getGrupa().equals("B") || analiza.getGrupa().equals("0")) && analiza.getRH()==false){
+                return true;
+            }
+        }else if(grupa.equals("A") && RH==true){
+            if((analiza.getGrupa().equals("B") || analiza.getGrupa().equals("0"))){
+                return true;
+            }
+        }else if(grupa.equals("AB") && RH==true){
+            return true;
+        }else if(grupa.equals("AB") && RH==false){
+            if(analiza.getRH()==false)
+                return true;
+        }else if(grupa.equals("0") && RH==true){
+            if(analiza.getGrupa().equals("0"))
+                return true;
+        }else if(grupa.equals("0") && RH==false){
+            if(analiza.getGrupa().equals("0") && analiza.getRH()==false){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public List<Donator> cautaDonatoriCompatibili(String grupa, String rh) {
+        List<Donator> totiDonatorii=repositoryDonatori.getAll();
+        List<Donator> ceiCompatibili=new ArrayList<>();
+        for(Donator donator:totiDonatorii){
+            Analiza analizaDonator=cautaUltimaAnalizaDupaDonator(donator.getIdDonator());
+            if(analizaDonator!=null) {
+                if (analizaDonator.getBoli().size() == 0) {
+                    if(verificaDonatorByCerere(grupa,rh,analizaDonator))
+                        ceiCompatibili.add(donator);
+                }
+            }
+        }
+        return ceiCompatibili;
     }
 }

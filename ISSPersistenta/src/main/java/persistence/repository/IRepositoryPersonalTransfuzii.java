@@ -8,5 +8,5 @@ import java.util.*;
  * 
  */
 public interface IRepositoryPersonalTransfuzii extends CRUDRepository<Integer, PersonalTransfuzii> {
-
+    boolean verificaUsername(String username);
 }
