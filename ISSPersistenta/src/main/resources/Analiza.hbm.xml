@@ -16,7 +16,7 @@
         <property name="grupa" column="grupa" type="string"/>
         <property name="RH" column="rh" type="boolean"/>
 
-        <bag fetch="join" name = "boli" cascade="all" table="BoliAnaliza">
+        <bag fetch="select" lazy="false" name = "boli" cascade="all" table="BoliAnaliza">
             <key column = "idAnaliza"/>
             <many-to-many column = "idBoala" class="model.Boala"/>
         </bag>

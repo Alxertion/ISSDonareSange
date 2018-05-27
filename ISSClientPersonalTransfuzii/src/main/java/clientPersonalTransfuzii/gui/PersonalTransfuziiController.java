@@ -263,6 +263,16 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
                 if(cerere!=null) {
                     grupaDeSangeText.setText(cerere.getGrupa());
                     rhText.setText(cerere.getRhString());
+                    List<Donator> donatoriCompatibili=service.cautaDonatoriCompatibili(cerere.getGrupa(),cerere.getRhString());
+                    if(donatoriCompatibili!=null) {
+                        observableListDeNotificat = FXCollections.observableArrayList(donatoriCompatibili);
+                    }else{
+                        observableListDeNotificat=null;
+
+                    }
+
+                    listaDonatoriDeNotificat.setItems(observableListDeNotificat);
+
                 }
             }
         });
