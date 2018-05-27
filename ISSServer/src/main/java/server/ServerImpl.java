@@ -351,18 +351,25 @@ public class ServerImpl implements IServices {
 
     @Override
     public void sendSMS(String numarTelefon,String continut) {
-        final String ACCOUNT_SID = "ACbf88b891daf48016d21f861edea07d13";
-        final String AUTH_TOKEN = "fc328a1711a9f8ed56133b25d1ae0812";
+
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final String ACCOUNT_SID = "ACbf88b891daf48016d21f861edea07d13";
+                final String AUTH_TOKEN = "fc328a1711a9f8ed56133b25d1ae0812";
 
 
-        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
-        Message message = Message.creator(
-                new PhoneNumber("+4"+numarTelefon),
-                new PhoneNumber("+13142073815"),
-                continut)
-                .create();
+                Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+                Message message = Message.creator(
+                        new PhoneNumber("+4"+numarTelefon),
+                        new PhoneNumber("+13142073815"),
+                        continut)
+                        .create();
 
-        System.out.println(message.getSid());
+                System.out.println(message.getSid());
+            }
+        });
+        t.start();
     }
 
     @Override

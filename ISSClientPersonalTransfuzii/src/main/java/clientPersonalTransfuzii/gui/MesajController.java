@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
 import model.Cont;
 import model.Donator;
 import model.MailEnum;
@@ -28,6 +29,7 @@ public class MesajController extends UnicastRemoteObject implements Controller,S
     TextArea continutNotificare;
     @FXML
     RadioButton mesajTelefonicRadio,mesajEmailRadio;
+    private ToggleGroup group;
 
     ObservableList<Donator> observableDonator;
     public MesajController() throws RemoteException {
@@ -89,6 +91,9 @@ public class MesajController extends UnicastRemoteObject implements Controller,S
     public void initialize(StageManager stageManager, IServices services, Loader loader) {
         this.service=services;
         mesajEmailRadio.setSelected(true);
+        group=new ToggleGroup();
+        mesajTelefonicRadio.setToggleGroup(group);
+        mesajEmailRadio.setToggleGroup(group);
     }
 
     public void setObservableDonator(ObservableList donatori){
