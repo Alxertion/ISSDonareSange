@@ -292,7 +292,10 @@ public class Seed {
     }
 
     private void adaugaConturi() {
-
+        repoConturi.adaugare(new Cont("user", "user"));
+        repoConturi.adaugare(new Cont("user1", "user1"));
+        repoConturi.adaugare(new Cont("user2", "user2"));
+        repoConturi.adaugare(new Cont("admin", "admin"));
         repoConturi.adaugare(new Cont("roots", "roots"));
         repoConturi.adaugare(new Cont("root", "root"));
         repoConturi.adaugare(new Cont("test", "test"));

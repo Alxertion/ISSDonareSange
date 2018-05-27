@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -22,7 +28,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="tabPanePersonal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="799.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientPersonalTransfuzii.gui.PersonalTransfuziiController">
+<TabPane fx:id="tabPanePersonal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="1385.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientPersonalTransfuzii.gui.PersonalTransfuziiController">
   <tabs>
       <Tab text="Management donatori">
         <content>
@@ -138,7 +144,7 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="Cereri pachet">
+      <Tab text="Asignare pungi sange">
          <content>
             <AnchorPane prefHeight="445.0" prefWidth="835.0">
                <children>
@@ -209,7 +215,130 @@
                         <Insets right="2.0" />
                      </padding>
                   </GridPane>
-                  <Button layoutX="700.0" layoutY="380.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="60.0" text="Log out" />
+                  <Button layoutX="700.0" layoutY="380.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="87.0" text="Log out" />
+                  <Label layoutX="594.0" layoutY="539.0" text="To be deletedddddddddddddddddddddddd">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="594.0" layoutY="602.0" text="Daca iti trebuie alex, poti sa o pastrezi">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Management pungi sange">
+         <content>
+            <AnchorPane prefHeight="445.0" prefWidth="835.0">
+               <children>
+                  <TableView fx:id="ManagementPungiTableView" layoutX="14.0" layoutY="27.0" prefHeight="638.0" prefWidth="1004.0">
+                     <columns>
+                        <TableColumn fx:id="IDPungaColumn" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="TipPungaColumn" minWidth="3.0" prefWidth="195.0" text="Tip" />
+                        <TableColumn fx:id="DataPrePungaColumn" prefWidth="114.0" text="Data prelevare" />
+                        <TableColumn fx:id="DataExpPungaColumn" prefWidth="123.0" text="Data expirare" />
+                        <TableColumn fx:id="IDDonatorPungaColumn" prefWidth="91.0" text="ID Donator" />
+                        <TableColumn fx:id="IDAnalizaPungaColumn" minWidth="0.0" prefWidth="86.0" text="ID Analiza" />
+                        <TableColumn fx:id="CantitatePungaColumn" minWidth="3.0" prefWidth="83.0" text="Cantitate" />
+                        <TableColumn fx:id="IDPacientPungaColumn" minWidth="3.0" text="ID Pacient" />
+                        <TableColumn fx:id="StagiuPungaColumn" minWidth="3.0" prefWidth="148.0" text="Stagiu" />
+                     </columns>
+                  </TableView>
+                  <GridPane layoutX="1042.0" layoutY="27.0" prefHeight="319.0" prefWidth="292.0">
+                     <children>
+                        <TextField fx:id="IDPungaField" prefHeight="31.0" prefWidth="247.0" GridPane.columnIndex="1" />
+                        <Label text="ID">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="StagiuPungaComboBox" prefHeight="31.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label text="Data prelevare" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Data expirare" GridPane.rowIndex="3">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="ID Donator" GridPane.rowIndex="4">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="ID Analiza" GridPane.rowIndex="5">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Cantitate" GridPane.rowIndex="6">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="ID Pacient" GridPane.rowIndex="7">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Stagiu" GridPane.rowIndex="8">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="DataPrePungaField" prefHeight="31.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="DataExpPungaField" prefHeight="31.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="IDDonatorPungaField" prefHeight="31.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="IDAnalizaPungaField" prefHeight="31.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="CantitatePungaField" prefHeight="31.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="IDPacientPungaField" prefHeight="31.0" prefWidth="247.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label text="Tip" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="TipPungaComboBox" prefHeight="31.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="108.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="166.0" />
+                     </columnConstraints>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <Button layoutX="1255.0" layoutY="634.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="87.0" text="Log out" />
+                  <GridPane layoutX="1042.0" layoutY="419.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#adaugaPungaAction" prefHeight="31.0" prefWidth="88.0" text="Adauga" />
+                        <Button mnemonicParsing="false" onAction="#modificaPungaAction" prefHeight="31.0" prefWidth="89.0" text="Modifica" GridPane.columnIndex="1" />
+                        <Button mnemonicParsing="false" onAction="#stergePungaAction" prefHeight="31.0" prefWidth="89.0" text="Sterge" GridPane.columnIndex="2" />
+                     </children>
+                  </GridPane>
                </children>
             </AnchorPane>
          </content>

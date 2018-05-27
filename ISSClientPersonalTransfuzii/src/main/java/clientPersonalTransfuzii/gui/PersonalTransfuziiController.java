@@ -8,6 +8,8 @@ import JavaResources.View.StageManager;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
@@ -37,6 +40,9 @@ import java.io.Serializable;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static com.sun.javafx.scene.control.skin.Utils.getResource;
@@ -49,6 +55,8 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     private ObservableList<Donator> observableListDonatori,observableListDeNotificat;
     private ObservableList<Cerere> observableListCereri;
     private String[] rh={"+","-"};
+    private String[] tipStrings={"TROMBOCITE","GLOBULE_ROSII","PLASMA","SANGE_NEFILTRAT"};
+    private String[] stagiuStrings={"PRELEVARE","FILTRARE","ANALIZARE","ELIMINARE","DISTRIBUIRE","SOSIRE","ANULARE"};
     private String[] grupe={"01","A2","B3","AB4"};
     private String[] toatebolile={"HEPATITA","DIABET_ZAHARAT","TBC","SIFILIS","MALARIE","EPILEPSIE","BOLI_PSIHICE","VITILIGO","BRUCELOZA","BOLI_DE_INIMA","ULCER","MIOPIE_FORTE","PSORIAZIS","CANCER"};
     private List<Boala> boli;
@@ -68,10 +76,164 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     @FXML
     MenuButton boliMenu;
 
+    //for Management pungi sange
+    @FXML TableView<PreparatSanguinDTO> ManagementPungiTableView;
+    @FXML TableColumn<PreparatSanguinDTO, String> IDPungaColumn, TipPungaColumn, DataPrePungaColumn, DataExpPungaColumn, IDDonatorPungaColumn, IDPacientPungaColumn, IDAnalizaPungaColumn, CantitatePungaColumn, StagiuPungaColumn ;
+    @FXML ComboBox<String> TipPungaComboBox, StagiuPungaComboBox;
+    @FXML TextField IDPungaField, DataExpPungaField, DataPrePungaField, IDPacientPungaField, IDAnalizaPungaField, IDDonatorPungaField, CantitatePungaField;
+    private ObservableList<PreparatSanguinDTO> modelPreparatSanguinDTO;
+
+
     public PersonalTransfuziiController() throws RemoteException {
     }
     @FXML
     TextField rhText,grupaDeSangeText;
+
+    @Override
+    public void initialize(StageManager stageManager,IServices service, Loader loader) {
+        this.stageManager=stageManager;
+        this.loader=loader;
+        this.service=service;
+        IDPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iD"));
+        TipPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("tip"));
+        DataExpPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("dataExpirare"));
+        DataPrePungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("dataPrelevare"));
+        IDDonatorPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iDDonator"));
+        IDPacientPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iDPacient"));
+        IDAnalizaPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iDAnaliza"));
+        CantitatePungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("cantitate"));
+        StagiuPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("stagiu"));
+        ManagementPungiTableView.getSelectionModel().selectedItemProperty().
+                addListener(new ChangeListener<PreparatSanguinDTO>() {
+                    @Override
+                    public void changed(ObservableValue<? extends PreparatSanguinDTO> observable,
+                                        PreparatSanguinDTO oldValue, PreparatSanguinDTO newValue) {
+                        showPreparatSanguinDTODetails(newValue);
+                    }
+                });
+        modelPreparatSanguinDTO= FXCollections.observableArrayList(this.service.getAllPreparatSanguinDTO());
+        ManagementPungiTableView.setItems(modelPreparatSanguinDTO);
+
+        EnumSet<TipPreparatSanguin> allTip= EnumSet.allOf( TipPreparatSanguin.class );
+        List<TipPreparatSanguin> list = new ArrayList<>( allTip );
+        TipPungaComboBox.setItems(FXCollections.observableArrayList( tipStrings ));
+        StagiuPungaComboBox.setItems(FXCollections.observableArrayList(  stagiuStrings ));
+    }
+
+    private void showPreparatSanguinDTODetails(PreparatSanguinDTO newValue) {
+        if(newValue!=null){
+            IDPungaField.setText(""+newValue.getID());
+            IDAnalizaPungaField.setText(""+newValue.getIDAnaliza());
+            IDDonatorPungaField.setText(""+newValue.getIDDonator());
+            IDPacientPungaField.setText(""+newValue.getIDPacient());
+            DataExpPungaField.setText(""+newValue.getDataExpirare());
+            DataPrePungaField.setText(""+newValue.getDataPrelevare());
+            CantitatePungaField.setText(""+newValue.getCantitate());
+            StagiuPungaComboBox.getSelectionModel().select(""+newValue.getStagiu());
+            TipPungaComboBox.getSelectionModel().select(""+newValue.getTip());
+        }
+    }
+
+
+    @FXML
+    public void adaugaPungaAction(ActionEvent actionEvent){
+        Date dataPrelev, dataExp;
+        DateFormat df = new SimpleDateFormat(DATE_FORMAT);
+        df.setLenient(false);
+
+        if(!isDateValid(DataExpPungaField.getText()) || !isDateValid(DataPrePungaField.getText())) {
+            showError("Eroare", "Data introdusa incorect. (format yyyy-MM-dd)");
+        }else{
+            try {
+                dataPrelev=df.parse(DataPrePungaField.getText());
+                dataExp=df.parse(DataExpPungaField.getText());
+                PreparatSanguinDTO newPrepDTO=new PreparatSanguinDTO(
+                        Integer.parseInt(IDPungaField.getText()),
+                        TipPungaComboBox.getValue().toString(),
+                        dataPrelev,
+                        dataExp,
+                        Integer.parseInt(IDDonatorPungaField.getText()),
+                        Integer.parseInt(IDAnalizaPungaField.getText()),
+                        Double.parseDouble(CantitatePungaField.getText()),
+                        Integer.parseInt(IDPacientPungaField.getText()),
+                        StagiuPungaComboBox.getValue()
+                );
+                service.adaugarePreparatSanguinDTO(newPrepDTO);
+            } catch (ParseException e) {
+                showError("Eroare","Data introdusa incorect. (format yyyy-MM-dd)");
+            }catch (NumberFormatException err){
+                showError("Eroare", "ID-urile trebuie sa fie numere intregi. Cantitatea trebuie sa fie un numar real.");
+            }
+        }
+    }
+
+    @FXML
+    public void stergePungaAction(ActionEvent actionEvent){
+        if(IDPungaField.getText()!="")
+            try {
+                int id=Integer.parseInt(IDPungaField.getText());
+                service.stergePreparatSanguinDTO(id);
+            }catch (NumberFormatException err){
+                Alert message = new Alert(Alert.AlertType.ERROR);
+                message.setTitle("Mesaj eroare");
+                message.setContentText("ID-ul trebuie sa fie numar intreg");
+                message.showAndWait();
+            }
+    }
+
+    @FXML
+    public void modificaPungaAction(ActionEvent actionEvent){
+        Date dataPrelev, dataExp;
+        DateFormat df = new SimpleDateFormat(DATE_FORMAT);
+        df.setLenient(false);
+
+        if(!isDateValid(DataExpPungaField.getText()) || !isDateValid(DataPrePungaField.getText())) {
+            showError("Eroare", "Data introdusa incorect. (format yyyy-MM-dd)");
+        }else{
+            try {
+                dataPrelev=df.parse(DataPrePungaField.getText());
+                dataExp=df.parse(DataExpPungaField.getText());
+                PreparatSanguinDTO newPrepDTO=new PreparatSanguinDTO(
+                        Integer.parseInt(IDPungaField.getText()),
+                        TipPungaComboBox.getValue().toString(),
+                        dataPrelev,
+                        dataExp,
+                        Integer.parseInt(IDDonatorPungaField.getText()),
+                        Integer.parseInt(IDAnalizaPungaField.getText()),
+                        Double.parseDouble(CantitatePungaField.getText()),
+                        Integer.parseInt(IDPacientPungaField.getText()),
+                        StagiuPungaComboBox.getValue()
+                );
+                service.modificaPreparatSanguinDTO(newPrepDTO);
+            } catch (ParseException e) {
+                showError("Eroare","Data introdusa incorect. (format yyyy-MM-dd)");
+            }catch (NumberFormatException err){
+                showError("Eroare", "ID-urile trebuie sa fie numere intregi. Cantitatea trebuie sa fie un numar real.");
+            }
+        }
+    }
+
+    final static String DATE_FORMAT = "yyyy-MM-dd";
+
+    public boolean isDateValid(String date)
+    {
+        try {
+            DateFormat df = new SimpleDateFormat(DATE_FORMAT);
+            df.setLenient(false);
+            df.parse(date);
+            return true;
+        } catch (ParseException e) {
+            return false;
+        }
+    }
+
+
+    private void showError(String title, String context) {
+        Alert message = new Alert(Alert.AlertType.ERROR);
+        message.setTitle(title);
+        message.setContentText(context);
+        message.showAndWait();
+    }
 
     @FXML
     public void notifyButtonPressed(ActionEvent actionEvent){
@@ -107,12 +269,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
 
     }
 
-    @Override
-    public void initialize(StageManager stageManager,IServices service, Loader loader) {
-              this.stageManager=stageManager;
-              this.loader=loader;
-              this.service=service;
-    }
+
 
     @Override
     public void setUser(Cont user) {
@@ -121,7 +278,9 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
 
     @Override
     public void notifyClient() throws RemoteException {
-        System.out.println("Am fost notificat -> Personal");
+        //System.out.println("Am fost notificat -> Personal");
+        modelPreparatSanguinDTO= FXCollections.observableArrayList(this.service.getAllPreparatSanguinDTO());
+        ManagementPungiTableView.setItems(modelPreparatSanguinDTO);
     }
 
     @FXML

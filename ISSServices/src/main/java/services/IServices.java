@@ -22,6 +22,11 @@ public interface IServices {
     Analiza cautaUltimaAnalizaDupaDonator(int idDonator);
     List<Analiza> cautaAnalizeleUnuiDonator(int idDonator);
     PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonator(int idDonator);
+    void stergePreparatSanguinDTO(int idPreparat);
+    void adaugarePreparatSanguinDTO(PreparatSanguinDTO preparatSanguin);
+    void modificaPreparatSanguinDTO(PreparatSanguinDTO preparatSanguinNou);
+    List<PreparatSanguinDTO> getAllPreparatSanguinDTO();
+
     void adaugaAnalizaLaDonator(int idDonator,Analiza analiza) throws ServiceException;
     List<Spital> getSpitale();
     List<CentruTransfuzii> getCentreTransfuzii();
