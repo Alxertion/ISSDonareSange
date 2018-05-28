@@ -39,6 +39,10 @@ public class Cerere implements Serializable {
      */
     private Date dataEfectuare;
 
+    /**
+     *
+     */
+    private String tipSange;
 
     /**
      * Default constructor
@@ -53,13 +57,14 @@ public class Cerere implements Serializable {
      * @param cantitateCeruta
      * @param dataEfectuare
      */
-    public Cerere(Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare) {
+    public Cerere(Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare, String tipSange) {
         this.prioritate = prioritate;
         this.grupa = grupa;
         this.RH = RH;
         this.cantitateCeruta = cantitateCeruta;
         this.cantitateActuala = cantitateActuala;
         this.dataEfectuare = dataEfectuare;
+        this.tipSange = tipSange;
     }
 
 
@@ -67,8 +72,9 @@ public class Cerere implements Serializable {
      * @return
      */
     public Boolean isFinalizata() {
-        // TODO implement here
-        return null;
+        if (Objects.equals(getStatus(), "Gata"))
+            return true;
+        return false;
     }
 
     public Prioritate getPrioritate() {
@@ -164,6 +170,14 @@ public class Cerere implements Serializable {
 
     public void setIdCerere(int idCerere) {
         this.idCerere = idCerere;
+    }
+
+    public String getTipSange() {
+        return tipSange;
+    }
+
+    public void setTipSange(String tipSange) {
+        this.tipSange = tipSange;
     }
 
     public String toString(){

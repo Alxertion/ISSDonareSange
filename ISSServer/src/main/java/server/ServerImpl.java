@@ -660,8 +660,10 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public synchronized void adaugaMedic(Medic medic) {
-        repositoryMedici.adaugare(medic);
+    public synchronized void adaugaMedic(Medic medic, int idSpital) {
+        Spital s = repositorySpitale.cautare(idSpital);
+        s.getMedici().add(medic);
+        repositorySpitale.modificare(s);
     }
 
     @Override
@@ -670,8 +672,10 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public synchronized void adaugaPersonalTransfuzii(PersonalTransfuzii personalTransfuzii) {
-        repositoryPersonalTransfuzii.adaugare(personalTransfuzii);
+    public synchronized void adaugaPersonalTransfuzii(PersonalTransfuzii personalTransfuzii, int idCentruTransfuzii) {
+        CentruTransfuzii c = repositoryCentruTransfuzii.cautare(idCentruTransfuzii);
+        c.getPersonalTransfuzii().add(personalTransfuzii);
+        repositoryCentruTransfuzii.modificare(c);
     }
 
     @Override
@@ -710,14 +714,14 @@ public class ServerImpl implements IServices {
     }
 
     @Override
-    public List<Pacient> getPacienti() {
+    public synchronized List<Pacient> getPacienti() {
         return repositoryPacienti.getAll();
     }
 
     @Override
-    public void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, java.util.Date dataEfectuare) {
+    public synchronized void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, java.util.Date dataEfectuare, String tipSange) {
         // cream cererea
-        Cerere cerere = new Cerere(prioritate, grupa, RH, cantitateCeruta, cantitateActuala, dataEfectuare);
+        Cerere cerere = new Cerere(prioritate, grupa, RH, cantitateCeruta, cantitateActuala, dataEfectuare, tipSange);
         int maxIdCerere = 0;
         for (Cerere c : repositoryCereri.getAll()) {
             if (c.getIdCerere() > maxIdCerere)
@@ -756,6 +760,53 @@ public class ServerImpl implements IServices {
         pacient.getCereri().add(cerere);
         repositoryMedici.modificare(medic);
         repositoryPacienti.modificare(pacient);
+    }
+
+    @Override
+    public synchronized int getIdSpital(Medic medic) {
+        for (Spital s : repositorySpitale.getAll()) {
+            for (Medic m : s.getMedici()) {
+                if (m.getIdMedic() == medic.getIdMedic())
+                    return s.getIdSpital();
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    public synchronized int getIdCentruTransfuzii(PersonalTransfuzii personalTransfuzii) {
+        for (CentruTransfuzii c : repositoryCentruTransfuzii.getAll()) {
+            for (PersonalTransfuzii p : c.getPersonalTransfuzii()) {
+                if (p.getIdPersonalTransfuzii() == personalTransfuzii.getIdPersonalTransfuzii())
+                    return c.getIdCentruTransfuzii();
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    public synchronized List<PreparatSanguin> getPreparateSanguine() {
+        return repositoryPreparateSanguine.getAll();
+    }
+
+    @Override
+    public List<Analiza> getAnalize() {
+        return repositoryAnalize.getAll();
+    }
+
+    @Override
+    public void updatePreparatSanguin(PreparatSanguin p) {
+        repositoryPreparateSanguine.modificare(p);
+    }
+
+    @Override
+    public void updatePacient(Pacient p) {
+        repositoryPacienti.modificare(p);
+    }
+
+    @Override
+    public void updateCerere(Cerere c) {
+        repositoryCereri.modificare(c);
     }
 
     private boolean verificaDonatorByCerere(String grupa,String rh,Analiza analiza){

@@ -21,7 +21,7 @@
             <many-to-many column = "idBoala" class="model.Boala"/>
         </bag>
 
-        <bag name = "preparateSanguine" cascade="all" >
+        <bag name = "preparateSanguine" cascade="all" fetch="select" lazy="false" >
             <key column = "idAnaliza"/>
             <one-to-many class="model.PreparatSanguin"/>
         </bag>

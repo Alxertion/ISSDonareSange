@@ -18,12 +18,12 @@
         <property name="longitudine" column="longitudine" type="double"/>
 
 
-        <bag name = "personalTransfuzii" cascade="all" >
+        <bag name = "personalTransfuzii" cascade="all" fetch="select" lazy="false">
             <key column = "idCentruTransfuzii"/>
             <one-to-many class="model.PersonalTransfuzii"/>
         </bag>
 
-        <bag name = "donatori" cascade="all" table="centrutransfuziidonator">
+        <bag name = "donatori" cascade="all" table="centrutransfuziidonator" fetch="select" lazy="false">
             <key column="idCentruTransfuzii"></key>
             <many-to-many column="idDonator" class="model.Donator"></many-to-many>
         </bag>

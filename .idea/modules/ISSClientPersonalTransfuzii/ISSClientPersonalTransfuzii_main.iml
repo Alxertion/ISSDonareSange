@@ -20,6 +20,7 @@
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.2.10.Final" level="project" />
     <orderEntry type="library" name="Gradle: javax.mail:mail:1.4.7" level="project" />
+    <orderEntry type="library" name="Gradle: com.lynden:GMapsFX:2.10.0" level="project" />
     <orderEntry type="library" name="Gradle: br.com.progolden:sms-gateway:1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.0.4.RELEASE" level="project" />

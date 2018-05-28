@@ -124,7 +124,7 @@ public class AdministratorController extends UnicastRemoteObject implements Cont
                     cnpMedicTextField.setText(medic.getCNP());
                     emailMedicTextField.setText(medic.getEmail());
                     for (String valoare : spitalMedicComboBox.getItems()) {
-                        if (Integer.parseInt(valoare.split(",")[0]) == medic.getIdSpital()) {
+                        if (Integer.parseInt(valoare.split(",")[0]) == this.service.getIdSpital(medic)) {
                             spitalMedicComboBox.setValue(valoare);
                             break;
                         }
@@ -143,7 +143,7 @@ public class AdministratorController extends UnicastRemoteObject implements Cont
                     cnpPersonalTextField.setText(personalTransfuzii.getCNP());
                     emailPersonalTextField.setText(personalTransfuzii.getEmail());
                     for (String valoare : centruPersonalCombobox.getItems()) {
-                        if (Integer.parseInt(valoare.split(",")[0]) == personalTransfuzii.getIdCentruTransfuzii()) {
+                        if (Integer.parseInt(valoare.split(",")[0]) == this.service.getIdCentruTransfuzii(personalTransfuzii)) {
                             centruPersonalCombobox.setValue(valoare);
                             break;
                         }
@@ -234,8 +234,7 @@ public class AdministratorController extends UnicastRemoteObject implements Cont
 
     public void adaugareSpital(ActionEvent actionEvent) {
         try {
-            Spital spital = new Spital(Integer.parseInt(idSpitalTextField.getText()),
-                    numeSpitalTextField.getText(),
+            Spital spital = new Spital(numeSpitalTextField.getText(),
                     Double.parseDouble(longitudineSpitalTextField.getText()),
                     Double.parseDouble(latitudineSpitalTextField.getText()));
             service.adaugaSpital(spital);
@@ -249,8 +248,7 @@ public class AdministratorController extends UnicastRemoteObject implements Cont
 
     public void modificareSpital(ActionEvent actionEvent) {
         try {
-            Spital spital = new Spital(Integer.parseInt(idSpitalTextField.getText()),
-                    numeSpitalTextField.getText(),
+            Spital spital = new Spital(numeSpitalTextField.getText(),
                     Double.parseDouble(longitudineSpitalTextField.getText()),
                     Double.parseDouble(latitudineSpitalTextField.getText()));
             service.modificaSpital(spital);
@@ -316,19 +314,12 @@ public class AdministratorController extends UnicastRemoteObject implements Cont
 
     public void adaugareMedic(ActionEvent actionEvent) {
         try {
-            int max = 0;
-            for (Medic medic : modelMedici) {
-                if (medic.getIdMedic() > max)
-                    max = medic.getIdMedic();
-            }
-            max++;
             Medic medic = new Medic(numeMedicTextField.getText(),
                     prenumeMedicTextField.getText(),
                     new Cont(utilizatorMedicTextField.getText(), parolaMedicTextField.getText()),
                     cnpMedicTextField.getText(),
-                    emailMedicTextField.getText(),
-                    Integer.parseInt(spitalMedicComboBox.getValue().split(",")[0]));
-            service.adaugaMedic(medic);
+                    emailMedicTextField.getText());
+            service.adaugaMedic(medic, Integer.parseInt(spitalMedicComboBox.getValue().split(",")[0]));
             modelMedici.setAll(FXCollections.observableArrayList(service.getMedici()));
         }
         catch (Exception ignored) {
@@ -357,19 +348,12 @@ public class AdministratorController extends UnicastRemoteObject implements Cont
 
     public void adaugarePersonal(ActionEvent actionEvent) {
         try {
-            int max = 0;
-            for (PersonalTransfuzii personalTransfuzii : modelPersonal) {
-                if (personalTransfuzii.getIdPersonalTransfuzii() > max)
-                    max = personalTransfuzii.getIdPersonalTransfuzii();
-            }
-            max++;
-            PersonalTransfuzii personalTransfuzii = new PersonalTransfuzii(max, numePersonalTextField.getText(),
+            PersonalTransfuzii personalTransfuzii = new PersonalTransfuzii(numePersonalTextField.getText(),
                     prenumePersonalTextField.getText(),
                     new Cont(utilizatorPersonalTextField.getText(), parolaPersonalTextField.getText()),
                     cnpPersonalTextField.getText(),
-                    emailPersonalTextField.getText(),
-                    Integer.parseInt(centruPersonalCombobox.getValue().split(",")[0]));
-            service.adaugaPersonalTransfuzii(personalTransfuzii);
+                    emailPersonalTextField.getText());
+            service.adaugaPersonalTransfuzii(personalTransfuzii, Integer.parseInt(centruPersonalCombobox.getValue().split(",")[0]));
             modelPersonal.setAll(FXCollections.observableArrayList(service.getPersonalTransfuzii()));
         }
         catch (Exception ignored) {

@@ -10,6 +10,9 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import com.lynden.gmapsfx.GoogleMapView;
+import com.lynden.gmapsfx.javascript.event.UIEventType;
+import com.lynden.gmapsfx.javascript.object.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,6 +28,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.*;
+import model.*;
+import netscape.javascript.JSObject;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import services.FrontException;
@@ -47,7 +52,7 @@ import java.util.*;
 
 import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
-public class PersonalTransfuziiController extends UnicastRemoteObject implements  Controller, IObserver,Serializable {
+public class PersonalTransfuziiController extends UnicastRemoteObject implements Controller, IObserver, Serializable {
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
@@ -75,6 +80,18 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     ComboBox comboGrupa,comboRh;
     @FXML
     MenuButton boliMenu;
+    @FXML
+    Label cerereLabel;
+    @FXML
+    TableView<PreparatSanguin> pacheteTableView;
+    private ObservableList<PreparatSanguin> modelPachete;
+    Cerere cerereSelectata = null;
+
+    @FXML
+    GoogleMapView mapView;
+    private GoogleMap map = null;
+
+
 
     //for Management pungi sange
     @FXML TableView<PreparatSanguinDTO> ManagementPungiTableView;
@@ -265,11 +282,144 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         }catch (IOException e){
             e.printStackTrace();
         }
-
-
     }
 
+    @Override
+    public void initialize(StageManager stageManager,IServices service, Loader loader) {
+        this.stageManager=stageManager;
+        this.loader=loader;
+        this.service=service;
+        mapView.addMapInializedListener(this::configureMap);
 
+        modelPachete = FXCollections.observableArrayList(service.getPreparateSanguine());
+        pacheteTableView.setItems(modelPachete);
+    }
+
+    private void configureMap() {
+        // Setam optiunile hartii
+        MapOptions mapOptions = new MapOptions();
+        mapOptions.center(new LatLong(46.7667, 23.6))
+                .mapType(MapTypeIdEnum.ROADMAP)
+                .zoom(12);
+
+        // Cream harta
+        map = mapView.createMap(mapOptions, false);
+
+        // Punem cererile pe harta
+        for (Spital s : service.getSpitale()) {
+            for (Medic m : s.getMedici()) {
+                for (Cerere c : m.getCereri()) {
+                    // verific ca cererea sa nu fie completata; daca e gata, nu o afisez
+                    if (c.isFinalizata())
+                        continue;
+
+                    // pun markerul pe harta
+                    MarkerOptions markerOptions = new MarkerOptions();
+                    markerOptions.position(new LatLong(s.getLongitudine(), s.getLatitudine()))
+                            .visible(Boolean.TRUE)
+                            .label(c.getTipSange() + ", Pr. " + c.getPrioritateString() + ", " + c.getCantitateActualaCerutaString())
+                            .title(c.getIdCerere() + ", " + c.getTipSange() + ", Pr. " + c.getPrioritateString() + ", " + c.getCantitateActualaCerutaString() + ", Gr. " + c.getGrupa() + c.getRH());
+                    Marker marker = new Marker(markerOptions);
+                    map.addMarker(marker);
+                    map.addUIEventHandler(marker, UIEventType.click, (JSObject obj) -> {
+                        cerereLabel.setText("Cerere: " + marker.getTitle());
+                        cerereSelectata = c;
+                        modelPachete.removeAll();
+
+                        List<PreparatSanguin> listaPachete = new ArrayList<>();
+                        for (PreparatSanguin p : service.getPreparateSanguine()) {
+                            // Caut analiza preparatului sanguin
+                            Analiza a = null;
+                            for (Analiza a2 : service.getAnalize()) {
+                                for (PreparatSanguin p2 : a2.getPreparateSanguine()) {
+                                    if (p.getIdPreparatSanguin() == p2.getIdPreparatSanguin()) {
+                                        a = a2;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            /*
+                            Print de test, afiseaza conditiile verificate in if-urile de mai jos
+                            if (a != null) {
+                                System.out.println(p.isExpirat() + "=false, " + p.getTip() + "=" + c.getTipSange() + ", " + c.getGrupa() + "=" + a.getGrupa() + ", " + c.getRH() + "=" + a.getRH());
+                            }
+                            */
+
+                            // verific ca preparatul sanguin sa fie in stadiul de:
+                            // PRELEVARE, FILTRARE sau ANALIZARE
+                            if (!Objects.equals(p.getStagiu(), "PRELEVARE") &&
+                                    !Objects.equals(p.getStagiu(), "FILTRARE") &&
+                                    !Objects.equals(p.getStagiu(), "ANALIZARE"))
+                                continue;
+
+                            // verific ca cererea sa nu fie completata; daca e gata, nu o afisez
+                            if (c.isFinalizata())
+                                continue;
+
+                            // verific daca preparatul sanguin se potriveste cu cererea
+                            if (!p.isExpirat() && a != null &&
+                                    Objects.equals(p.getTip(), c.getTipSange()) &&
+                                    Objects.equals(c.getGrupa(), a.getGrupa()) &&
+                                    (c.getRH() && a.getRH() || !c.getRH() && !a.getRH())) {
+                                listaPachete.add(p);
+                            }
+                        }
+                        modelPachete.setAll(listaPachete);
+                    });
+                }
+            }
+        }
+    }
+
+    public void asociazaPachet(ActionEvent actionEvent) {
+        PreparatSanguin preparatSelectat = pacheteTableView.getSelectionModel().getSelectedItem();
+        if (preparatSelectat != null && cerereSelectata != null) {
+            for (Pacient p : service.getPacienti()) {
+                for (Cerere c : p.getCereri()) {
+                    if (c.getIdCerere() == cerereSelectata.getIdCerere()) {
+                        // adaugam preparatul la pacient
+                        p.getPreparateSanguine().add(preparatSelectat);
+
+                        // crestem cantitatea actuala a cererii, pachetul fiind pus pe drum
+                        c.setCantitateActuala(c.getCantitateActuala() + preparatSelectat.getCantitate());
+
+                        // schimbam statutul pachetului la DISTRIBUIRE
+                        preparatSelectat.setStagiu("DISTRIBUIRE");
+
+                        // updatam toate obiectele modificate in baza de date
+                        service.updatePreparatSanguin(preparatSelectat);
+                        service.updatePacient(p);
+                        service.updateCerere(c);
+
+                        // golim pachetele, si cererea selectata
+                        configureMap();
+                        cerereSelectata = null;
+                        cerereLabel.setText("Cerere: -");
+                        modelPachete.removeAll();
+                        pacheteTableView.getItems().removeAll();
+                        pacheteTableView.setItems(modelPachete);
+                        showMessage(Alert.AlertType.CONFIRMATION, "Finalizare", "Operația a fost realizată cu succes!");
+                        return;
+                    }
+                }
+            }
+        }
+        else {
+            showErrorMessage("Vă rugăm selectați o cerere și un preparat!");
+        }
+    }
+
+    private void showMessage(Alert.AlertType type, String header, String text) {
+        Alert message = new Alert(type);
+        message.setHeaderText(header);
+        message.setContentText(text);
+        message.showAndWait();
+    }
+
+    private void showErrorMessage(String text) {
+        showMessage(Alert.AlertType.WARNING, "Warning!", text);
+    }
 
     @Override
     public void setUser(Cont user) {

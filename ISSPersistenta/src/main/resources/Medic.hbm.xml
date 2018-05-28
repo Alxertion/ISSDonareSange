@@ -21,7 +21,7 @@
         <many-to-one name = "cont" column = "username" unique="true"
                      class="model.Cont"/>
 
-        <bag name = "cereri" cascade="all" >
+        <bag name = "cereri" cascade="all" fetch="select" lazy="false" >
             <key column = "idMedic"/>
             <one-to-many class="model.Cerere"/>
         </bag>
