@@ -135,6 +135,9 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         List<TipPreparatSanguin> list = new ArrayList<>( allTip );
         TipPungaComboBox.setItems(FXCollections.observableArrayList( tipStrings ));
         StagiuPungaComboBox.setItems(FXCollections.observableArrayList(  stagiuStrings ));
+
+        modelPachete = FXCollections.observableArrayList(service.getPreparateSanguine());
+        pacheteTableView.setItems(modelPachete);
     }
 
     private void showPreparatSanguinDTODetails(PreparatSanguinDTO newValue) {
@@ -282,17 +285,6 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         }catch (IOException e){
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void initialize(StageManager stageManager,IServices service, Loader loader) {
-        this.stageManager=stageManager;
-        this.loader=loader;
-        this.service=service;
-        mapView.addMapInializedListener(this::configureMap);
-
-        modelPachete = FXCollections.observableArrayList(service.getPreparateSanguine());
-        pacheteTableView.setItems(modelPachete);
     }
 
     private void configureMap() {
