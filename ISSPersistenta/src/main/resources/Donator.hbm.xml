@@ -31,6 +31,8 @@
         <property name="consumBauturiAlcoolice48h" column="consumBauturiAlcoolice48h" type="byte"></property>
         <property name="subTratament" column="subTratament" type="byte"></property>
         <property name="telefon" column="telefon" type="string"></property>
+        <property name="latitudine" column="latitudine" type="double"/>
+        <property name="longitudine" column="longitudine" type="double"/>
 
 
         

@@ -589,6 +589,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         observableListDonatori= FXCollections.observableArrayList(donatori);
         listaDonatori.setItems(observableListDonatori);
         boli=new ArrayList<>();
+
     }
 
     private void loadListaCereriDeSange(){

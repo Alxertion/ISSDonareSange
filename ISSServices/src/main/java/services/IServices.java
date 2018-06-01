@@ -49,7 +49,7 @@ public interface IServices {
     void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception;
     String getNumeMedic(Cont cont);
     List<Pacient> getPacienti();
-    void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare);
+    //void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare);
     List<Donator> cautaDonatoriCompatibili(String grupa,String rh);
     void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare, String tipSange);
 
