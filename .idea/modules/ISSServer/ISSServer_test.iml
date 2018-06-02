@@ -23,6 +23,7 @@
     <orderEntry type="library" name="Gradle: com.twilio.sdk:twilio:7.17.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.1" level="project" />
+    <orderEntry type="library" name="Gradle: joda-time:joda-time:2.3" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.37" level="project" />
     <orderEntry type="library" name="Gradle: javax.activation:activation:1.1" level="project" />

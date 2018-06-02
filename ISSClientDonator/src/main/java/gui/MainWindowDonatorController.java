@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import model.Analiza;
 import model.Boala;
 import model.Cont;
@@ -24,14 +25,21 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Base64;
 import java.util.List;
 
-public class MainWindowDonatorController extends UnicastRemoteObject implements Controller, IObserver,Serializable {
+public class MainWindowDonatorController extends UnicastRemoteObject implements Controller, IObserver, Serializable {
     private Cont user;
     private StageManager stageManager;
     private IServices service;
     private Loader loader;
     private Donator donator;
+
+    @FXML
+    private Text textFaraAnalize;
+
+    @FXML
+    private ProgressIndicator indicatorDonare;
 
     @FXML
     private Accordion analizeAccordion;
@@ -45,32 +53,55 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
     public MainWindowDonatorController() throws RemoteException {
     }
 
+
     @Override
     public void initialize(StageManager stageManager, IServices service, Loader loader) {
         this.stageManager = stageManager;
         this.service = service;
         this.loader = loader;
-
-        setImagesForButtons();
     }
 
     @Override
     public void prepareWindow() {
 
+        textFaraAnalize.setVisible(false);
+        setImagesForButtons();
         setDonator();
         setAccordionAnalize();
+        setProgressIndicator();
+
+
+    }
+
+    private void setProgressIndicator() {
+
+        int days = service.daysBeforeAnotherDonation(donator.getIdDonator());
+
+        if(days >= 180){
+            indicatorDonare.setVisible(false);
+            vreaSaDonezButton.setVisible(true);
+        }
+        else{
+            double procent = 5*days/9;
+            indicatorDonare.setProgress(procent/100);
+            vreaSaDonezButton.setVisible(false);
+            indicatorDonare.setVisible(true);
+        }
+
     }
 
     private void setAccordionAnalize() {
 
         List<Analiza> listOfAllAnalizeOfDonator = service.cautaAnalizeleUnuiDonator(donator.getIdDonator());
-        if(listOfAllAnalizeOfDonator.size() == 0){
-            analizeAccordion.getPanes().remove(0,3);
+
+        if(listOfAllAnalizeOfDonator.size()==0){
+            textFaraAnalize.setVisible(true);
         }
-        else{
-            analizeAccordion.getPanes().remove(3-listOfAllAnalizeOfDonator.size()+1,3);
-            setTitluriSiContinutPanes(listOfAllAnalizeOfDonator);
+
+        if(listOfAllAnalizeOfDonator.size() < 3){
+            analizeAccordion.getPanes().remove(listOfAllAnalizeOfDonator.size(),3);
         }
+        setTitluriSiContinutPanes(listOfAllAnalizeOfDonator);
 
     }
 
@@ -79,12 +110,31 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
         List<TitledPane> panes = analizeAccordion.getPanes();
 
         for(int i=0; i<listOfAllAnalizeOfDonator.size(); i++){
-            Analiza analiza = listOfAllAnalizeOfDonator.get(i+1);
-            TitledPane actualPane =  panes.get(i+1);
+            Analiza analiza = listOfAllAnalizeOfDonator.get(i);
+            TitledPane actualPane =  panes.get(i);
             actualPane.setText(analiza.toString());
-            actualPane.setContent(new Label(analiza.toString()));
+            actualPane.setContent(new Text(formAnalizaContent(analiza.getBoli())));
 
         }
+    }
+
+    private String formAnalizaContent(List<Boala> boli) {
+
+        String contentAnaliza = "";
+
+        if(boli.size()==0){
+            contentAnaliza = contentAnaliza + "Sunteti apt pentru donare.";
+        }
+        else{
+            contentAnaliza = contentAnaliza + "Ne pare rau dar nu sunteti apt pentru donare. Analizele au iesti positiv pentru: \n ";
+
+            for (Boala b: boli){
+                contentAnaliza = contentAnaliza + " - " + b.getNume() + "\n";
+            }
+        }
+
+        return contentAnaliza;
+
     }
 
     private void setDonator() {
@@ -111,11 +161,11 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
 
     private void setImageToBack() {
 
-        backButton.graphicProperty().bind(Bindings.when(backButton.hoverProperty())
-                .then(new ImageView(loader.back_button_touched()))
-                .otherwise(new ImageView(loader.back_button_untouched())));
-
-        backButton.setShape(new Circle());
+//        backButton.graphicProperty().bind(Bindings.when(backButton.hoverProperty())
+//                .then(new ImageView(loader.back_button_touched()))
+//                .otherwise(new ImageView(loader.back_button_untouched())));
+//
+//        backButton.setShape(new Circle());
     }
 
     @FXML
@@ -127,7 +177,6 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
             Parent rootNode = loaderFXML.load();
             Controller controller = loaderFXML.getController();
             controller.setUser(user);;
-            controller.initialize(stageManager, service, loader);
             stageManager.switchScene(FXMLEnum.ConditiiDonare, rootNode, loaderFXML.getController(), loader);
         }catch (IOException e){
             e.printStackTrace();

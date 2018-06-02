@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class Donator extends Persoana implements Serializable{
     /**
      * 
      */
-    private LocalDate dataNasterii;
+    private Date dataNasterii;
 
     /**
      * 
@@ -134,11 +133,11 @@ public class Donator extends Persoana implements Serializable{
         this.sex = sex;
     }
 
-    public LocalDate getDataNasterii() {
+    public Date getDataNasterii() {
         return dataNasterii;
     }
 
-    public void setDataNasterii(LocalDate dataNasterii) {
+    public void setDataNasterii(Date dataNasterii) {
         this.dataNasterii = dataNasterii;
     }
 
@@ -237,11 +236,6 @@ public class Donator extends Persoana implements Serializable{
 
     public void setPreparateSanguine(List<PreparatSanguin> preparateSanguine) {
         this.preparateSanguine = preparateSanguine;
-    }
-
-    public void setAllFields(Donator donator) {
-        this.setNume(donator.getNume());
-        this.setPrenume(donator.getPrenume());
     }
 
     public String toString(){

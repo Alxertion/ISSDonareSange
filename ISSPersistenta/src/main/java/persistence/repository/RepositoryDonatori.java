@@ -161,8 +161,11 @@ public class RepositoryDonatori implements IRepositoryDonatori {
 
             Query query =  session.createQuery("From Donator WHERE cont.username = :numeuser");
             query.setParameter("numeuser", username);
-            donator = (Donator) query.list().get(0);
+            List list =  query.list();
 
+            if(list.size()>0){
+                donator = (Donator) list.get(0);
+            }
             tx.commit();
         }catch (HibernateException e){
             e.printStackTrace();
@@ -186,6 +189,36 @@ public class RepositoryDonatori implements IRepositoryDonatori {
             Query query =  session.createQuery("From Donator WHERE email = :email");
             query.setParameter("email", semail);
             donator = (Donator) query.list().get(0);
+
+            tx.commit();
+        } catch(IndexOutOfBoundsException e){
+            // no problem
+        }catch (HibernateException e){
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+
+        return donator;
+    }
+
+    @Override
+    public Donator findDonatorByCNP(String CNP) {
+        Transaction tx = null;
+        Session session = null;
+        Donator donator = null;
+
+        try{
+            session = factory.openSession();
+            tx = session.beginTransaction();
+
+            Query query =  session.createQuery("From Donator WHERE CNP = :CNP");
+            query.setParameter("CNP", CNP);
+            List list =  query.list();
+
+            if(list.size()>0){
+                donator = (Donator) list.get(0);
+            }
 
             tx.commit();
         } catch(IndexOutOfBoundsException e){

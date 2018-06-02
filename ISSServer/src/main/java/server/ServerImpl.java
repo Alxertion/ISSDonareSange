@@ -5,6 +5,9 @@ import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 import model.*;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.joda.time.DateTime;
+import org.joda.time.Days;
+import org.joda.time.Period;
 import persistence.repository.*;
 import services.IObserver;
 import services.IServices;
@@ -25,7 +28,7 @@ import java.io.PrintWriter;
 import java.io.Serializable;
 import java.net.PasswordAuthentication;
 import java.rmi.RemoteException;
-import java.sql.Date;
+import java.util.Date;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -106,6 +109,12 @@ public class ServerImpl implements IServices {
         }
 
         public void sendEmail(){
+            final String mail="issmailalexertion@gmail.com";
+            final String mailPassword="alexertion";
+            Properties props=getPropertiesConfigEmail(mail);
+            javax.mail.Session sessionGmail;
+            sessionGmail=javax.mail.Session.getInstance(props,new GMailAuthenticator(mail,mailPassword));
+            //session.setDebug(true);
             try{
                 MimeMessage message=new MimeMessage(sessionGmail);
                 message.setFrom(new InternetAddress(mail));
@@ -187,6 +196,11 @@ public class ServerImpl implements IServices {
                 });
         }
         executor.shutdown();
+    }
+
+    @Override
+    public Donator findDonatorByCNP(String CNP) {
+        return repositoryDonatori.findDonatorByCNP(CNP);
     }
 
     @Override
@@ -394,21 +408,42 @@ public class ServerImpl implements IServices {
     @Override
     public synchronized List<Analiza> cautaAnalizeleUnuiDonator(int idDonator) {
         List<Analiza> listOfAllAnalize = new ArrayList<>();
-        List<Integer> listOfallIds = new ArrayList<>();
 
         List<PreparatSanguin> listOFAllPreparateSanguine = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.SANGE_NEFILTRAT.name());
-        listOFAllPreparateSanguine.forEach(preparatSanguin -> listOfallIds.add(
-                repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin())
-        ));
 
-        listOfallIds.forEach(idAnaliza -> listOfAllAnalize.add(repositoryAnalize.cautare(idAnaliza)));
+        for (PreparatSanguin preparatSanguin: listOFAllPreparateSanguine){
+
+            int idAnaliza = repositoryPreparateSanguine.cautareAnalizaDupaPreparat(preparatSanguin.getIdPreparatSanguin());
+            Analiza analiza = repositoryAnalize.cautare(idAnaliza);
+            if(analiza!=null)
+                listOfAllAnalize.add(analiza);
+        }
 
         return listOfAllAnalize;
     }
 
     @Override
+    public int daysBeforeAnotherDonation(int idDonator){
+
+        PreparatSanguin preparatSanguin = cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonator(idDonator);
+        int diff = 180;
+
+        if(preparatSanguin != null){
+            org.joda.time.LocalDate now = org.joda.time.LocalDate.now();
+            org.joda.time.LocalDate dataPrelevareConvertedToLocalDate = new org.joda.time.LocalDate(preparatSanguin.getDataPrelevare());
+            Period period = new Period(dataPrelevareConvertedToLocalDate,now);
+
+           diff = Days.daysBetween(dataPrelevareConvertedToLocalDate, now).getDays();
+        }
+
+        return diff;
+    }
+
+    @Override
     public synchronized PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonator(int idDonator){
         List<PreparatSanguin> listOfAllPreparateSanguine = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.SANGE_NEFILTRAT.name());
+        if(listOfAllPreparateSanguine.size() ==0)
+            return null;
         return listOfAllPreparateSanguine.get(0);
 
     }
@@ -514,6 +549,7 @@ public class ServerImpl implements IServices {
 
     @Override
     public synchronized void inregistreazaDonator(CentruTransfuzii centruTransfuzii, Donator donator, Pacient pacient) {
+
         centruTransfuzii.getDonatori().add(donator);
         repositoryCentruTransfuzii.modificare(centruTransfuzii);
 
@@ -538,23 +574,13 @@ public class ServerImpl implements IServices {
     }
 
     private synchronized void adaugaSangeNou() {
+
         LocalDate dataRecoltarii1 = LocalDate.now();
-        Date dataRecoltarii = Date.valueOf(dataRecoltarii1);
+        Date dataRecoltarii = java.sql.Date.valueOf(dataRecoltarii1);
         repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 400.0, TipPreparatSanguin.SANGE_NEFILTRAT.name(), Stagiu.PRELEVARE.name()));
         repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 100.0, TipPreparatSanguin.TROMBOCITE.name(), Stagiu.PRELEVARE.name()));
         repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 100.0, TipPreparatSanguin.GLOBULE_ROSII.name(), Stagiu.PRELEVARE.name()));
         repositoryPreparateSanguine.adaugare(new PreparatSanguin(dataRecoltarii, null, 200.0, TipPreparatSanguin.PLASMA.name(), Stagiu.PRELEVARE.name()));
-    }
-
-    @Override
-    public synchronized void updateDonator(Donator donator, String numeDonator, String prenumeDonator, String telefon) {
-
-        donator.setNume(numeDonator);
-        donator.setPrenume(prenumeDonator);
-        donator.setTelefon(telefon);
-        repositoryDonatori.modificare(donator);
-
-
     }
 
     @Override
