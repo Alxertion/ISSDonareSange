@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_main.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_main.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_test.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -98,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
-              <caret line="612" column="5" lean-forward="false" selection-start-line="612" selection-start-column="5" selection-end-line="612" selection-end-column="5" />
+              <caret line="615" column="5" lean-forward="false" selection-start-line="615" selection-start-column="5" selection-end-line="615" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -108,16 +112,17 @@
         <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3184">
-              <caret line="260" column="5" lean-forward="false" selection-start-line="260" selection-start-column="5" selection-end-line="260" selection-end-column="5" />
+              <caret line="254" column="5" lean-forward="false" selection-start-line="254" selection-start-column="5" selection-end-line="254" selection-end-column="5" />
               <folding>
-                <element signature="e#5024#5025#0" expanded="true" />
-                <element signature="e#5057#5058#0" expanded="true" />
-                <element signature="e#5108#5109#0" expanded="true" />
-                <element signature="e#5150#5151#0" expanded="true" />
-                <element signature="e#5187#5188#0" expanded="true" />
-                <element signature="e#5221#5222#0" expanded="true" />
-                <element signature="e#5274#5275#0" expanded="true" />
-                <element signature="e#5318#5319#0" expanded="true" />
+                <element signature="e#4838#4839#0" expanded="true" />
+                <element signature="e#4871#4872#0" expanded="true" />
+                <element signature="e#4922#4923#0" expanded="true" />
+                <element signature="e#4964#4965#0" expanded="true" />
+                <element signature="e#5001#5002#0" expanded="true" />
+                <element signature="e#5035#5036#0" expanded="true" />
+                <element signature="e#5088#5089#0" expanded="true" />
+                <element signature="e#5132#5133#0" expanded="true" />
+                <marker date="1527968090398" expanded="true" signature="4559:4566" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -177,9 +182,32 @@
         <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="10496">
-              <caret line="721" column="39" lean-forward="false" selection-start-line="721" selection-start-column="29" selection-end-line="721" selection-end-column="39" />
+              <caret line="747" column="39" lean-forward="false" selection-start-line="747" selection-start-column="29" selection-end-line="747" selection-end-column="39" />
               <folding>
-                <marker date="1527950926355" expanded="true" signature="37494:37605" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="24914:24920" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="25004:25129" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="25232:25737" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="25798:26963" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="27013:27145" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="27268:27879" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="28001:28496" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="28293:28370" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="28983:29053" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="29286:29358" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="29687:29825" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="30069:30270" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="30796:31136" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="31207:31422" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="31828:33267" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="33336:33586" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="33691:34034" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="34709:35049" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="35138:35348" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="35464:36298" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="36432:37140" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="37225:38621" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="38510:38621" ph="{...}" />
+                <marker date="1527968090429" expanded="true" signature="38712:39272" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -188,8 +216,8 @@
       <file leaf-file-name="IServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSServices/src/main/java/services/IServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+            <state relative-caret-position="752">
+              <caret line="52" column="6" lean-forward="false" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -2018,7 +2046,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="18304963813875" />
+        <entry key="$PROJECT_DIR$" value="18308720438791" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" value="1403882160" />
         <entry key="$PROJECT_DIR$/ISSClientDonator/build.gradle" value="2787182684" />
@@ -2029,7 +2057,7 @@
         <entry key="$PROJECT_DIR$/ISSModelAdministrare/build.gradle" value="2769567328" />
         <entry key="$PROJECT_DIR$/ISSModelDonator/build.gradle" value="2736203291" />
         <entry key="$PROJECT_DIR$/ISSPersistenta/build.gradle" value="472152976" />
-        <entry key="$PROJECT_DIR$/ISSServer/build.gradle" value="2619703979" />
+        <entry key="$PROJECT_DIR$/ISSServer/build.gradle" value="3322602972" />
         <entry key="$PROJECT_DIR$/ISSServices/build.gradle" value="644607621" />
         <entry key="$PROJECT_DIR$/build.gradle" value="705226387" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1061797022" />
@@ -3056,11 +3084,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527950953998</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Script">
+      <created>1527968054480</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1527968054480</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136658000" />
+    <option name="totallyTimeSpent" value="136799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -3070,6 +3105,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831737" sideWeight="0.49739584" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -3100,7 +3136,6 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831737" sideWeight="0.49739584" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -3134,7 +3169,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Resursele" />
     <MESSAGE value="FXML - ce am facut cand ne-am intalnit" />
     <MESSAGE value="Donator - partial work" />
     <MESSAGE value="Donator - changes" />
@@ -3159,7 +3193,8 @@
     <MESSAGE value="Sms" />
     <MESSAGE value="TestCase - OTi" />
     <MESSAGE value="Latitudine+ Longitudine la Donator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Latitudine+ Longitudine la Donator" />
+    <MESSAGE value="Script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3208,7 +3243,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java</url>
-          <line>464</line>
+          <line>467</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
@@ -3220,19 +3255,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java</url>
-          <line>124</line>
+          <line>123</line>
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>168</line>
+          <line>177</line>
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>346</line>
+          <line>360</line>
           <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
@@ -3244,37 +3279,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java</url>
-          <line>580</line>
+          <line>583</line>
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java</url>
-          <line>584</line>
+          <line>587</line>
           <properties />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>830</line>
+          <line>856</line>
           <properties />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java</url>
-          <line>579</line>
+          <line>582</line>
           <properties />
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>871</line>
+          <line>897</line>
           <properties />
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>911</line>
+          <line>937</line>
           <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
@@ -3288,7 +3323,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>140</line>
+          <line>149</line>
           <properties class="server.ServerImpl.MyRunnable" method="anuntaDonator">
             <option name="EMULATED" value="true" />
           </properties>
@@ -3627,9 +3662,32 @@
     <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10496">
-          <caret line="721" column="39" lean-forward="false" selection-start-line="721" selection-start-column="29" selection-end-line="721" selection-end-column="39" />
+          <caret line="747" column="39" lean-forward="false" selection-start-line="747" selection-start-column="29" selection-end-line="747" selection-end-column="39" />
           <folding>
-            <marker date="1527950926355" expanded="true" signature="37494:37605" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="24914:24920" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="25004:25129" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="25232:25737" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="25798:26963" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="27013:27145" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="27268:27879" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="28001:28496" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="28293:28370" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="28983:29053" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="29286:29358" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="29687:29825" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="30069:30270" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="30796:31136" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="31207:31422" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="31828:33267" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="33336:33586" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="33691:34034" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="34709:35049" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="35138:35348" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="35464:36298" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="36432:37140" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="37225:38621" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="38510:38621" ph="{...}" />
+            <marker date="1527968090429" expanded="true" signature="38712:39272" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -3645,7 +3703,7 @@
     <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
-          <caret line="612" column="5" lean-forward="false" selection-start-line="612" selection-start-column="5" selection-end-line="612" selection-end-column="5" />
+          <caret line="615" column="5" lean-forward="false" selection-start-line="615" selection-start-column="5" selection-end-line="615" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -3660,8 +3718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSServices/src/main/java/services/IServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+        <state relative-caret-position="752">
+          <caret line="52" column="6" lean-forward="false" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -3671,10 +3729,10 @@
         <state relative-caret-position="528">
           <caret line="55" column="50" lean-forward="false" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
           <folding>
-            <element signature="e#4274#4275#0" expanded="true" />
-            <element signature="e#4316#4317#0" expanded="true" />
-            <element signature="e#4424#4425#0" expanded="true" />
-            <element signature="e#4454#4455#0" expanded="true" />
+            <element signature="e#4274#4275#0" expanded="false" />
+            <element signature="e#4316#4317#0" expanded="false" />
+            <element signature="e#4424#4425#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3682,16 +3740,17 @@
     <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3184">
-          <caret line="260" column="5" lean-forward="false" selection-start-line="260" selection-start-column="5" selection-end-line="260" selection-end-column="5" />
+          <caret line="254" column="5" lean-forward="false" selection-start-line="254" selection-start-column="5" selection-end-line="254" selection-end-column="5" />
           <folding>
-            <element signature="e#5024#5025#0" expanded="true" />
-            <element signature="e#5057#5058#0" expanded="true" />
-            <element signature="e#5108#5109#0" expanded="true" />
-            <element signature="e#5150#5151#0" expanded="true" />
-            <element signature="e#5187#5188#0" expanded="true" />
-            <element signature="e#5221#5222#0" expanded="true" />
-            <element signature="e#5274#5275#0" expanded="true" />
-            <element signature="e#5318#5319#0" expanded="true" />
+            <element signature="e#4838#4839#0" expanded="true" />
+            <element signature="e#4871#4872#0" expanded="true" />
+            <element signature="e#4922#4923#0" expanded="true" />
+            <element signature="e#4964#4965#0" expanded="true" />
+            <element signature="e#5001#5002#0" expanded="true" />
+            <element signature="e#5035#5036#0" expanded="true" />
+            <element signature="e#5088#5089#0" expanded="true" />
+            <element signature="e#5132#5133#0" expanded="true" />
+            <marker date="1527968090398" expanded="true" signature="4559:4566" ph="{...}" />
           </folding>
         </state>
       </provider>
