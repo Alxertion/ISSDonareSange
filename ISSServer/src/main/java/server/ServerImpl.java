@@ -835,34 +835,92 @@ public class ServerImpl implements IServices {
         repositoryCereri.modificare(c);
     }
 
+    @Override
+    public PersonalTransfuzii getPersonalTransfuzieDupaCont(Cont user) {
+        List<PersonalTransfuzii> personalTransfuziiList=getPersonalTransfuzii();
+        for(PersonalTransfuzii personalTransfuzii : personalTransfuziiList){
+            if(personalTransfuzii.getCont().getUsername().equals(user.getUsername())){
+                return personalTransfuzii;
+            }
+        }
+        return null;
+    }
+
+    private Double determinaDistanta(CentruTransfuzii centruTransfuzii,Donator donator){
+        double sumOfDiff=Math.pow(centruTransfuzii.getLongitudine()-donator.getLongitudine(),2)+Math.pow(centruTransfuzii.getLatitudine()-donator.getLatitudine(),2);
+        return Math.sqrt(sumOfDiff);
+    }
+
+    @Override
+    public Donator getCelMaiApropiatDonator(Integer idCentruTransfuzii,List<Donator> totiDonatorii) {
+        CentruTransfuzii centruTransfuzii=repositoryCentruTransfuzii.cautare(idCentruTransfuzii);
+        Donator celMaiApropiat=null;
+        Double distanta=-1.0;
+        for(Donator donator:totiDonatorii) {
+            if (donator.getLatitudine() != null && donator.getLongitudine() != null) {
+                if (distanta == -1.0) {
+                    distanta = determinaDistanta(centruTransfuzii, donator);
+                    celMaiApropiat = donator;
+                } else {
+                    double distantaCurenta = determinaDistanta(centruTransfuzii, donator);
+                    if (distanta < distantaCurenta) {
+                        distanta = distantaCurenta;
+                        celMaiApropiat = donator;
+                    }
+                }
+            }
+        }
+        return celMaiApropiat;
+    }
+
+    @Override
+    public List<Donator> cautaDonatoriDupaDistanta(Double distanta,String grupa,String rh,Integer idCentruTransfuzie) {
+        List<Donator> donatorList;
+        List<Donator> result=new ArrayList<>();
+        if(!grupa.equals("")){
+            donatorList=cautaDonatoriCompatibili(grupa,rh);
+        }else{
+            donatorList=repositoryDonatori.getAll();
+        }
+        CentruTransfuzii centruTransfuzii=repositoryCentruTransfuzii.cautare(idCentruTransfuzie);
+        for(Donator donator:donatorList) {
+            if (donator.getLatitudine() != null && donator.getLongitudine() != null) {
+                double distantaCurenta = determinaDistanta(centruTransfuzii, donator);
+                if(distantaCurenta<=distanta)
+                    result.add(donator);
+            }
+        }
+        return result;
+    }
+
     private boolean verificaDonatorByCerere(String grupa,String rh,Analiza analiza){
         boolean RH= rh.equals("-") ? false : true;
-        if(grupa.equals("A") && RH==false){
-            if((analiza.getGrupa().equals("A") || analiza.getGrupa().equals("0")) && analiza.getRH()==false){
+        if(grupa.equals("A(II)") && RH==false){
+            if((analiza.getGrupa().equals("A(II)") || analiza.getGrupa().equals("O(I)")) && analiza.getRH()==false){
                 return true;
             }
-        }else if(grupa.equals("A") && RH==true){
-            if((analiza.getGrupa().equals("A") || analiza.getGrupa().equals("0"))){
+        }else if(grupa.equals("A(II)") && RH==true){
+            if((analiza.getGrupa().equals("A(II)") || analiza.getGrupa().equals("O(I)"))){
                 return true;
             }
-        }else if(grupa.equals("B") && RH==false){
-            if((analiza.getGrupa().equals("B") || analiza.getGrupa().equals("0")) && analiza.getRH()==false){
+        }else if(grupa.equals("B(III)") && RH==false){
+            if((analiza.getGrupa().equals("B(III)") || analiza.getGrupa().equals("O(I)")) && analiza.getRH()==false){
                 return true;
             }
-        }else if(grupa.equals("A") && RH==true){
-            if((analiza.getGrupa().equals("B") || analiza.getGrupa().equals("0"))){
+        }else if(grupa.equals("B(III)") && RH==true){
+            if((analiza.getGrupa().equals("B(III)") || analiza.getGrupa().equals("O(I)"))){
                 return true;
             }
-        }else if(grupa.equals("AB") && RH==true){
+        }else if(grupa.equals("AB(IV)") && RH==true){
             return true;
-        }else if(grupa.equals("AB") && RH==false){
+        }else if(grupa.equals("AB(IV)") && RH==false){
             if(analiza.getRH()==false)
                 return true;
-        }else if(grupa.equals("0") && RH==true){
-            if(analiza.getGrupa().equals("0"))
+        }else if(grupa.equals("O(I)") && RH==true){
+            if(analiza.getGrupa().equals("O(I)"))
                 return true;
-        }else if(grupa.equals("0") && RH==false){
-            if(analiza.getGrupa().equals("0") && analiza.getRH()==false){
+        }else if(grupa.equals("O(I)") && RH==false){
+            if(analiza.getGrupa().equals("O(I)") && analiza.getRH()==false){
                 return true;
             }
         }

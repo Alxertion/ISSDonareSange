@@ -90,7 +90,15 @@ public class Donator extends Persoana implements Serializable{
 
     private List<PreparatSanguin> preparateSanguine;
 
+    /**
+     *
+     */
+    private Double latitudine;
 
+    /**
+     *
+     */
+    private Double longitudine;
 
     /**
      * @param nume 
@@ -241,4 +249,21 @@ public class Donator extends Persoana implements Serializable{
     public void setTelefon(String telefon) {
         this.telefon = telefon;
     }
+
+    public Double getLatitudine(){
+        return latitudine;
+    }
+
+    public void setLatitudine(Double latitudine){
+        this.latitudine=latitudine;
+    }
+
+    public Double getLongitudine(){
+        return longitudine;
+    }
+
+    public void setLongitudine(Double longitudine){
+        this.longitudine=longitudine;
+    }
+
 }

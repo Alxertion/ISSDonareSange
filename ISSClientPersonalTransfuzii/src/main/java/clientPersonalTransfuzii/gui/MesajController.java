@@ -14,6 +14,7 @@ import javafx.scene.control.ToggleGroup;
 import model.Cont;
 import model.Donator;
 import model.MailEnum;
+import model.PersonalTransfuzii;
 import services.FrontException;
 import services.IServices;
 
@@ -32,12 +33,21 @@ public class MesajController extends UnicastRemoteObject implements Controller,S
     private ToggleGroup group;
 
     ObservableList<Donator> observableDonator;
+    Cont user;
     public MesajController() throws RemoteException {
 
     }
     @FXML
     public void notificareDonator(ActionEvent actionEvent){
         try{
+            PersonalTransfuzii personalTransfuziiCurent=service.getPersonalTransfuzieDupaCont(user);
+            if(personalTransfuziiCurent==null)
+                throw new FrontException("Nu exista personal cu acest cont.");
+            Integer idCentruTransfuzie=service.getIdCentruTransfuzii(personalTransfuziiCurent);
+            if(idCentruTransfuzie==-1)
+                throw new FrontException("Acest personal nu este inregistrat la niciun centru.");
+            Donator donator=service.getCelMaiApropiatDonator(idCentruTransfuzie,observableDonator);
+
             String continut=continutNotificare.getText();
             if(continut.equals(""))
                 throw new FrontException("Nu ati introdus nicio informatie");
@@ -107,6 +117,6 @@ public class MesajController extends UnicastRemoteObject implements Controller,S
 
     @Override
     public void setUser(Cont user) {
-
+        this.user=user;
     }
 }
