@@ -60,4 +60,7 @@ public interface IServices {
     void updatePreparatSanguin(PreparatSanguin p);
     void updatePacient(Pacient p);
     void updateCerere(Cerere c);
+    PersonalTransfuzii getPersonalTransfuzieDupaCont(Cont user);
+    Donator getCelMaiApropiatDonator(Integer idCentruTransfuzii,List<Donator> totiDonatorii);
+    List<Donator> cautaDonatoriDupaDistanta(Double distanta,String grupa,String rh,Integer idCentruTransfuzie);
 }

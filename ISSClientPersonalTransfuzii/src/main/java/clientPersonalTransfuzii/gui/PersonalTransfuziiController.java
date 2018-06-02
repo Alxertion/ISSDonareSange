@@ -264,6 +264,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             MesajController controllerMesaj=loaderFXML.getController();
             controllerMesaj.initialize(stageManager,service,loader);
             controllerMesaj.setObservableDonator(observableListDeNotificat);
+            controllerMesaj.setUser(user);
             Scene scene=new Scene(mailView);
             Stage stage=new Stage();
             stage.setScene(scene);
@@ -529,8 +530,27 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     }
 
     private void forDistanceSlider(ObservableValue arg1, Object arg2, Object arg3) {
-        int nr = (int) distanceSlider.getValue();
-        System.out.println(nr);
+        try {
+            int nr = (int) distanceSlider.getValue();
+            PersonalTransfuzii personalTransfuziiCurent = service.getPersonalTransfuzieDupaCont(user);
+            if (personalTransfuziiCurent == null)
+                throw new FrontException("Nu exista personal cu acest cont.");
+            Integer idCentruTransfuzie = service.getIdCentruTransfuzii(personalTransfuziiCurent);
+            if (idCentruTransfuzie == -1)
+                throw new FrontException("Acest personal nu este inregistrat la niciun centru.");
+
+            if (grupaDeSangeText.getText() != null) {
+                observableListDeNotificat = FXCollections.observableArrayList(service.cautaDonatoriDupaDistanta(Double.parseDouble(Integer.toString(nr)), grupaDeSangeText.getText(), rhText.getText(),idCentruTransfuzie));
+            } else {
+                observableListDeNotificat = FXCollections.observableArrayList(service.cautaDonatoriDupaDistanta(Double.parseDouble(Integer.toString(nr)), null, null,idCentruTransfuzie));
+            }
+            listaDonatoriDeNotificat.setItems(observableListDeNotificat);
+        }catch (FrontException fe){
+            Alert message = new Alert(Alert.AlertType.ERROR);
+            message.setTitle("Mesaj eroare");
+            message.setContentText(fe.getMessage());
+            message.showAndWait();
+        }
     }
 
     public void prepareWindow(){
