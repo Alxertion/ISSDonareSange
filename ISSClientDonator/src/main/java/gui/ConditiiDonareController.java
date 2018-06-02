@@ -6,11 +6,14 @@ import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
 import JavaResources.View.StageManager;
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
@@ -29,6 +32,9 @@ public class ConditiiDonareController extends UnicastRemoteObject implements Con
     private Loader loader;
 
     @FXML
+    private CheckBox acordCheckBox;
+
+    @FXML
     private Button forwardButton;
 
     @FXML
@@ -45,13 +51,30 @@ public class ConditiiDonareController extends UnicastRemoteObject implements Con
         this.stageManager = stageManager;
         this.service = service;
         this.loader = loader;
-
-        setImagesForButtons();
     }
 
     @Override
     public void prepareWindow() {
 
+        setImagesForButtons();
+        addListenerToAcordCheckBox();
+        forwardButton.setVisible(false);
+    }
+
+    private void addListenerToAcordCheckBox(){
+        acordCheckBox.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+
+                if(acordCheckBox.isSelected()){
+                    forwardButton.setVisible(true);
+                }
+                else{
+                    forwardButton.setVisible(false);
+                }
+
+            }
+        });
     }
 
     @Override

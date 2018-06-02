@@ -83,8 +83,10 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     public void checkConditions(ActionEvent actionEvent){
         try {
             FXMLLoader loaderFXML = new FXMLLoader();
-            loaderFXML.setLocation(getClass().getResource(FXMLEnum.FormularDonator2.getFxmlFile()));
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.FormularDonator.getFxmlFile()));
             Parent rootNode = loaderFXML.load();
+            Controller controller = loaderFXML.getController();
+            controller.setUser(user);;
             tabPanePersonal.getSelectionModel().getSelectedItem().setContent(rootNode);
 
         }catch (IOException e){

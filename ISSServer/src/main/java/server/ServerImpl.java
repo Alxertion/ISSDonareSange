@@ -2,6 +2,9 @@ package server;
 
 import model.*;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.joda.time.DateTime;
+import org.joda.time.Days;
+import org.joda.time.Period;
 import persistence.repository.*;
 import services.IObserver;
 import services.IServices;
@@ -334,8 +337,27 @@ public class ServerImpl implements IServices {
     }
 
     @Override
+    public int daysBeforeAnotherDonation(int idDonator){
+
+        PreparatSanguin preparatSanguin = cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonator(idDonator);
+        int diff = 180;
+
+        if(preparatSanguin != null){
+            org.joda.time.LocalDate now = org.joda.time.LocalDate.now();
+            org.joda.time.LocalDate dataPrelevareConvertedToLocalDate = new org.joda.time.LocalDate(preparatSanguin.getDataPrelevare());
+            Period period = new Period(dataPrelevareConvertedToLocalDate,now);
+
+           diff = Days.daysBetween(dataPrelevareConvertedToLocalDate, now).getDays();
+        }
+
+        return diff;
+    }
+
+    @Override
     public synchronized PreparatSanguin cautaPreparatulSanguinDeTipSangeNefiltratCelMaiRecentAlUnuiDonator(int idDonator){
         List<PreparatSanguin> listOfAllPreparateSanguine = cautaPreparateDupaDonatorSiTip(idDonator, TipPreparatSanguin.SANGE_NEFILTRAT.name());
+        if(listOfAllPreparateSanguine.size() ==0)
+            return null;
         return listOfAllPreparateSanguine.get(0);
 
     }

@@ -49,12 +49,6 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
     private ComboBox localitateCIComboBox;
 
     @FXML
-    private TextField resedintaTextField;
-
-    @FXML
-    private ComboBox localitateResedintaTextField;
-
-    @FXML
     private TextField emailTextField;
 
     @FXML
@@ -92,6 +86,18 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
 
         setImagesForButtons();
         setDonator();
+        setContentLocalitateComboBox();
+    }
+
+    private void setContentLocalitateComboBox() {
+
+        localitateCIComboBox.getItems().addAll(
+                "Jucu",
+                "Cluj-Napoca",
+                "Feleac"
+        );
+
+        localitateCIComboBox.setValue("Cluj-Napoca");
     }
 
     private void completeazaCuDateleAnterioare() {
@@ -188,6 +194,7 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
             CentruTransfuzii centruTransfuzii =  service.cautaCelMaiApropiatCentruDeTransfuzii();
 
             service.inregistreazaDonator(centruTransfuzii,donator, pacient);
+            successfulMessage();
 
         }catch (FrontException e){
             Alert message = new Alert(Alert.AlertType.ERROR);
@@ -197,6 +204,32 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
         }
 
 
+    }
+
+    private void successfulMessage() {
+
+        Alert message = new Alert(Alert.AlertType.CONFIRMATION);
+        message.setTitle("Inregistrare Donare");
+        message.setContentText(
+                "Inregistrare donare efectuata cu succes"
+        );
+        message.showAndWait();
+        changeToMainWindow();
+
+    }
+
+    private void changeToMainWindow() {
+
+        try {
+            FXMLLoader loaderFXML = new FXMLLoader();
+            loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainWindowDonator.getFxmlFile()));
+            Parent rootNode = loaderFXML.load();
+            Controller controller = loaderFXML.getController();
+            controller.setUser(user);
+            stageManager.switchScene(FXMLEnum.MainWindowDonator, rootNode, loaderFXML.getController(), loader);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     private void updateDonator(Donator donator, String numeDonator, String prenumeDonator, String telefon, java.util.Date dataNasterii) {
