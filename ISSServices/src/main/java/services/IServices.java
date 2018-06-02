@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface IServices {
     void login(Cont user, IObserver client,UtilizatorEnum tipUtilizator) throws ServiceException;
+    Donator findDonatorByCNP(String CNP);
     void logout(Cont user);
     void recoverPassword(String string) throws ServiceException;
     void registerAccount(Donator donator) throws ServiceException;
@@ -50,6 +51,7 @@ public interface IServices {
     String getNumeMedic(Cont cont);
     List<Pacient> getPacienti();
     void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare);
+    int daysBeforeAnotherDonation(int idDonator);
     List<Donator> cautaDonatoriCompatibili(String grupa,String rh);
     void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare, String tipSange);
 

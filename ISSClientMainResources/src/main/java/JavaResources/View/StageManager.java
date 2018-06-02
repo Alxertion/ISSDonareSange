@@ -25,6 +25,7 @@ public class StageManager {
 
     public void switchScene(final FXMLEnum view, Parent rootNode, JavaResources.Controller controller, Loader loader) {
         controller.initialize(this, service, loader);
+        controller.prepareWindow();
         title=view.getTitle();
         Parent viewRootNodeHierarchy = rootNode;
         show(viewRootNodeHierarchy, view.getTitle());
