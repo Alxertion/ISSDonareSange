@@ -7,6 +7,7 @@ import java.util.List;
 
 
 public interface IServices {
+    Donator findDonatorByCNP(String CNP);
     void login(Cont user, IObserver client) throws ServiceException;
     void logout(Cont user);
     void recoverPassword(String string) throws ServiceException;

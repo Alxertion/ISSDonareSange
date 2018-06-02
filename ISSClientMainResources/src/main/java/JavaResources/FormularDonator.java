@@ -17,6 +17,7 @@ import model.Cont;
 import model.Donator;
 import model.Pacient;
 import services.FrontException;
+import services.IObserver;
 import services.IServices;
 
 import java.io.IOException;
@@ -69,6 +70,8 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
     private Donator donator;
 
     private Cont user;
+
+    private String provenienta = "PersonalTransfuzii";
 
     private StageManager stageManager;
     private IServices service;
@@ -127,6 +130,7 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
 
         dataNasteriiDatePicker.setFocusTraversable(false);
         completeazaCuDateleAnterioare();
+        provenienta = "Donator";
     }
 
     @Override
@@ -183,6 +187,7 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
             LocalDate dataNasterii = dataNasteriiDatePicker.getValue();
             Date dateDataNasterii = Date.from(dataNasterii.atStartOfDay(ZoneId.systemDefault()).toInstant());
 
+            donator = service.findDonatorByCNP(CNP);
             validareCampuriInainteDeDonare(donator.getCNP(), CNP, donator.getEmail(), email);
 
             if(cnpPacient.length() >0){
@@ -201,12 +206,14 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
             message.setTitle("Mesaj eroare");
             message.setContentText(e.getMessage());
             message.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
 
     }
 
-    private void successfulMessage() {
+    private void successfulMessage() throws IOException {
 
         Alert message = new Alert(Alert.AlertType.CONFIRMATION);
         message.setTitle("Inregistrare Donare");
@@ -214,8 +221,24 @@ public class FormularDonator extends UnicastRemoteObject implements Controller,S
                 "Inregistrare donare efectuata cu succes"
         );
         message.showAndWait();
-        changeToMainWindow();
 
+        if(provenienta == "Donator"){
+            changeToMainWindow();
+        }
+        else{
+            changeToMainWindowPersonalTransfuzii();
+        }
+
+
+    }
+
+    private void changeToMainWindowPersonalTransfuzii() throws IOException {
+
+        FXMLLoader loaderFXML = new FXMLLoader();
+        loaderFXML.setLocation(getClass().getResource(FXMLEnum.MainViewPersonalTransfuzii.getFxmlFile()));
+        Parent rootNode = loaderFXML.load();
+        Controller ctrl = loaderFXML.getController();
+        stageManager.switchScene(FXMLEnum.MainViewPersonalTransfuzii, rootNode, ctrl, loader);
     }
 
     private void changeToMainWindow() {

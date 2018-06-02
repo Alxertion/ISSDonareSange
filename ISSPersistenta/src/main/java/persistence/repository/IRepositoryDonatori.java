@@ -13,5 +13,6 @@ public interface IRepositoryDonatori extends CRUDRepository<Integer, Donator> {
 
     Donator findDonatorByUsername(String username);
     Donator findDonatorByEmail(String email);
+    Donator findDonatorByCNP(String CNP);
 
 }

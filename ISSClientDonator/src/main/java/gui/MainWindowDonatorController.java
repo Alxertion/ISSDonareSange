@@ -70,6 +70,7 @@ public class MainWindowDonatorController extends UnicastRemoteObject implements 
         setAccordionAnalize();
         setProgressIndicator();
 
+
     }
 
     private void setProgressIndicator() {

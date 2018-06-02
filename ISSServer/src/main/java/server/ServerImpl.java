@@ -155,6 +155,11 @@ public class ServerImpl implements IServices {
     }
 
     @Override
+    public Donator findDonatorByCNP(String CNP) {
+        return repositoryDonatori.findDonatorByCNP(CNP);
+    }
+
+    @Override
     public synchronized void login(Cont user,IObserver client) throws ServiceException{
         Cont loginOk=repositoryConturi.cautare(user.getUsername());
         if (loginOk!=null){

@@ -107,6 +107,17 @@ public enum FXMLEnum {
             return "TrimitereMesaj";
         }
     },
+    FormularDonatorFromPersonalTransfuzii{
+        @Override
+        public String getFxmlFile() {
+            return "/FXMLPersonalTransfuzii/FormularDonator.fxml";
+        }
+
+        @Override
+        public String getTitle() {
+            return "FormularDonator";
+        }
+    },
     FormularDonator{
         @Override
         public String getFxmlFile() {

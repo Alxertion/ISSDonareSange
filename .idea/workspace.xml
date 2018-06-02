@@ -2,40 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__joda_time_joda_time_2_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientAdministrator/ISSClientAdministrator_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientAdministrator/ISSClientAdministrator_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientAdministrator/ISSClientAdministrator_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientAdministrator/ISSClientAdministrator_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientDonator/ISSClientDonator_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientDonator/ISSClientDonator_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientDonator/ISSClientDonator_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientDonator/ISSClientDonator_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientMainResources/ISSClientMainResources_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientMainResources/ISSClientMainResources_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientMainResources/ISSClientMainResources_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientMainResources/ISSClientMainResources_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientMedic/ISSClientMedic_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientMedic/ISSClientMedic_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientMedic/ISSClientMedic_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientMedic/ISSClientMedic_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSClientPersonalTransfuzii/ISSClientPersonalTransfuzii_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSPersistenta/ISSPersistenta_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSServer/ISSServer_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServices/ISSServices_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSServices/ISSServices_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/ISSServices/ISSServices_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/ISSServices/ISSServices_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/ConditiiDonareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/ConditiiDonareController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/FXMLEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/FXMLEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/FormularDonator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/FormularDonator.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSServer/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ISSServer/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryDonatori.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryDonatori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ISSServices/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ISSServices/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ISSServices/src/main/java/services/IServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/ISSServices/src/main/java/services/IServices.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -76,6 +52,7 @@
     <ignored path="$PROJECT_DIR$/ISSModel/out/" />
     <ignored path="$PROJECT_DIR$/ISSMaps/.gradle/" />
     <ignored path="$PROJECT_DIR$/ISSMaps/build/" />
+    <ignored path="$PROJECT_DIR$/ISSMaps/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +61,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ISSDonareSange$StartServer.ic" NAME="StartServer Coverage Results" MODIFIED="1525774868542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ISSDonareSange$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1525547076452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExternalProjectsData">
@@ -110,21 +86,30 @@
         <task path="$PROJECT_DIR$/ISSClientPersonalTransfuzii">
           <activation />
         </task>
-        <task path="$PROJECT_DIR$/ISSPersistenta">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$/ISSModelAdministrare">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$/ISSClientMedic">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="ISSDonareSange" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ISSDonareSange" type="f1a62948:ProjectNode" />
+                <item name=":ISSClientDonator" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ISSDonareSange" type="f1a62948:ProjectNode" />
+                <item name=":ISSClientDonator" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ISSDonareSange" type="f1a62948:ProjectNode" />
+                <item name=":ISSClientDonator" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -174,8 +159,17 @@
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-181">
-              <caret line="102" column="34" lean-forward="true" selection-start-line="99" selection-start-column="12" selection-end-line="102" selection-end-column="34" />
+            <state relative-caret-position="-323">
+              <caret line="28" column="22" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RepositoryDonatori.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-164">
+              <caret line="151" column="19" selection-start-line="151" selection-start-column="19" selection-end-line="151" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -183,8 +177,8 @@
       <file leaf-file-name="ConditiiDonareController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/ConditiiDonareController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+            <state relative-caret-position="332">
+              <caret line="129" column="37" lean-forward="true" selection-start-line="126" selection-start-column="10" selection-end-line="129" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -192,23 +186,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormularDonator.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+      <file leaf-file-name="FormularDonator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+            <state relative-caret-position="98">
+              <caret line="228" selection-start-line="228" selection-end-line="228" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2982#2983#0" expanded="true" />
+                <element signature="e#3057#3058#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormularDonator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java">
+      <file leaf-file-name="IServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISSServices/src/main/java/services/IServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="125" column="23" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="23" />
+            <state relative-caret-position="102">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="158" column="51" selection-start-line="158" selection-start-column="51" selection-end-line="158" selection-end-column="51" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#6733#6734#0" expanded="true" />
+                <element signature="e#6760#6761#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -217,27 +225,8 @@
       <file leaf-file-name="StageManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/StageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="27" column="35" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="27" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormularDonator.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/FormularDonator.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="14" column="238" selection-start-line="14" selection-start-column="238" selection-end-line="14" selection-end-column="238" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonalTransfuziiController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+            <state relative-caret-position="193">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -245,27 +234,33 @@
       <file leaf-file-name="MainWindowDonatorController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="177" column="38" lean-forward="true" selection-start-line="176" selection-start-column="12" selection-end-line="177" selection-end-column="38" />
+            <state relative-caret-position="125">
+              <caret line="140" column="68" selection-start-line="140" selection-start-column="68" selection-end-line="140" selection-end-column="68" />
+              <folding>
+                <element signature="e#3813#3814#0" expanded="true" />
+                <element signature="e#3888#3889#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FXMLEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/FXMLEnum.java">
+      <file leaf-file-name="PersonalTransfuziiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="90" column="6" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+            <state relative-caret-position="238">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonalTransfuzii.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/PersonalTransfuzii.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="112" column="110" selection-start-line="112" selection-start-column="95" selection-end-line="112" selection-end-column="110" />
+            <state relative-caret-position="68">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -277,49 +272,26 @@
       <list>
         <option value="CSS File" />
         <option value="FxmlFile" />
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>repoPrepara</find>
-      <find>cautaUltimaAnalizaDupaDonator</find>
-      <find>setDa</find>
-      <find>cautare</find>
-      <find>ServerImpl</find>
-      <find>repoPaci</find>
-      <find>repositoryPacient</find>
+      <find>nume</find>
+      <find>get</find>
+      <find>RemoteException</find>
+      <find>create</find>
+      <find>anal</find>
       <find>sendEmail</find>
-      <find>setDon</find>
-      <find>setUser</find>
-      <find>Donator</find>
-      <find>cont</find>
-      <find>Medic</find>
-      <find>GridP</find>
-      <find>dataNas</find>
-      <find>LocalDate</find>
-      <find>findDonatorByUsername</find>
-      <find>backB</find>
-      <find>Date</find>
-      <find>tele</find>
-      <find>Pro</find>
-      <find>backButton</find>
-      <find>setAc</find>
-      <find>Combo</find>
-      <find>Dona</find>
-      <find>FormularDonator</find>
-      <find>forwar</find>
-      <find>prepare</find>
-      <find>checkConditions</find>
+      <find>ServerImpl</find>
       <find>controller</find>
+      <find>CNP</find>
+      <find>provenienta</find>
+      <find>prove</find>
     </findStrings>
-    <replaceStrings>
-      <replace>repositoryPacienti</replace>
-      <replace>Date</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -1357,6 +1329,62 @@
             </list>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/ISSMaps">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by project ':ISSMaps'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of project ':ISSMaps'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in project ':ISSMaps'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in project ':ISSMaps'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in project ':ISSMaps'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in project ':ISSMaps'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of project ':ISSMaps'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of project ':ISSMaps'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from project ':ISSMaps'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/ISSMaps" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/ISSModel">
           <value>
             <list>
@@ -2027,19 +2055,20 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="19831950012856" />
+        <entry key="$PROJECT_DIR$" value="19832473845818" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" value="1403882160" />
         <entry key="$PROJECT_DIR$/ISSClientDonator/build.gradle" value="2787182684" />
         <entry key="$PROJECT_DIR$/ISSClientMainResources/build.gradle" value="3562884198" />
         <entry key="$PROJECT_DIR$/ISSClientMedic/build.gradle" value="1554887865" />
-        <entry key="$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle" value="510318327" />
+        <entry key="$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle" value="846963820" />
+        <entry key="$PROJECT_DIR$/ISSMaps/build.gradle" value="826125519" />
         <entry key="$PROJECT_DIR$/ISSModel/build.gradle" value="4018069885" />
         <entry key="$PROJECT_DIR$/ISSModelAdministrare/build.gradle" value="2769567328" />
         <entry key="$PROJECT_DIR$/ISSModelDonator/build.gradle" value="2736203291" />
         <entry key="$PROJECT_DIR$/ISSPersistenta/build.gradle" value="472152976" />
-        <entry key="$PROJECT_DIR$/ISSServer/build.gradle" value="1819683775" />
-        <entry key="$PROJECT_DIR$/ISSServices/build.gradle" value="541446059" />
+        <entry key="$PROJECT_DIR$/ISSServer/build.gradle" value="2619703979" />
+        <entry key="$PROJECT_DIR$/ISSServices/build.gradle" value="644607621" />
         <entry key="$PROJECT_DIR$/build.gradle" value="705226387" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1061797022" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="1357918527" />
@@ -2236,57 +2265,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" />
-        <option value="$PROJECT_DIR$/ISSServices/src/main/java/services/FrontException.java" />
-        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Persoana.java" />
-        <option value="$PROJECT_DIR$/ISSServer/src/main/resources/analiza.txt" />
-        <option value="$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryDonatori.java" />
-        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/TipPreparatSanguin.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryAnalize.java" />
-        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Analiza.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryAnalize.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Analiza.hbm.xml" />
-        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/FormularDonatorController.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPacient.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryPacient.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryPreparateSanguine.java" />
-        <option value="$PROJECT_DIR$/ISS-Resurse/MySQL/finalscript2.sql" />
-        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/PreparatSanguin.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Pacient.hbm.xml" />
-        <option value="$PROJECT_DIR$/ISSServer/src/main/resources/server-spring.xml" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java" />
-        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Spital.java" />
-        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Pacient.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Spital.hbm.xml" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/PreparatSanguin.hbm.xml" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Cerere.hbm.xml" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/CentruTransfuzii.hbm.xml" />
-        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Medic.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Medic.hbm.xml" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositorySangeNefiltrat.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryMedici.java" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Boala.java" />
         <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/PersonalTransfuzii.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/PersonalTransfuzii.hbm.xml" />
-        <option value="$PROJECT_DIR$/ISSClientAdministrator/src/main/java/gui/AdministratorController.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java" />
-        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml" />
-        <option value="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/StageManager.java" />
         <option value="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/LoginController.java" />
-        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Donator.hbm.xml" />
-        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java" />
-        <option value="$PROJECT_DIR$/ISSServices/src/main/java/services/IServices.java" />
+        <option value="$PROJECT_DIR$/ISSClientMedic/build.gradle" />
+        <option value="$PROJECT_DIR$/ISSClientDonator/build.gradle" />
+        <option value="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" />
         <option value="$PROJECT_DIR$/ISSServer/build.gradle" />
-        <option value="$PROJECT_DIR$/ISSServices/build.gradle" />
-        <option value="$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java" />
-        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml" />
-        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/ConditiiDonareController.java" />
-        <option value="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java" />
-        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml" />
-        <option value="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/FormularDonator.fxml" />
+        <option value="$PROJECT_DIR$/ISSServices/src/main/java/services/FrontException.java" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Persoana.java" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Pacient.java" />
+        <option value="$PROJECT_DIR$/ISSServer/src/main/resources/analiza.txt" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/TipPreparatSanguin.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryAnalize.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryAnalize.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryPreparateSanguine.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Analiza.java" />
+        <option value="$PROJECT_DIR$/ISSClientMedic/src/main/java/clientMedic/StartClient.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/ISSClientAdministrator/src/main/java/gui/AdministratorController.java" />
+        <option value="$PROJECT_DIR$/ISSMaps/build.gradle" />
+        <option value="$PROJECT_DIR$/ISSMaps/src/main/java/com/lynden/gmapsfx/service/directions/DirectionsRenderer.java" />
+        <option value="$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle" />
+        <option value="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/StartClient.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Cerere.hbm.xml" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java" />
+        <option value="$PROJECT_DIR$/ISSClientMedic/src/main/resources/FXMLMedic/medicView.fxml" />
+        <option value="$PROJECT_DIR$/ISSClientMedic/src/main/java/gui/MedicController.java" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Medic.java" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Spital.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Medic.hbm.xml" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Spital.hbm.xml" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/CentruTransfuzii.hbm.xml" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Analiza.hbm.xml" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Donator.hbm.xml" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/resources/Pacient.hbm.xml" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/PreparatSanguin.java" />
+        <option value="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/PersonalTransfuzii.fxml" />
+        <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Cerere.java" />
         <option value="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/FXMLEnum.java" />
-        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java" />
         <option value="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryDonatori.java" />
+        <option value="$PROJECT_DIR$/ISSServices/src/main/java/services/IServices.java" />
+        <option value="$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java" />
+        <option value="$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java" />
+        <option value="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/Controller.java" />
+        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java" />
+        <option value="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java" />
       </list>
     </option>
   </component>
@@ -2297,19 +2326,18 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="310" />
-    <option name="y" value="20" />
-    <option name="width" value="1080" />
-    <option name="height" value="555" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="698" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2447,50 +2475,6 @@
             <path>
               <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ISSClientMainResources" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ISSClientMainResources" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="CSS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ISSClientMainResources" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FXMLCont" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ISSClientMainResources" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FXMLHelp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ISSClientMainResources" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="imagesDonator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="ISSClientPersonalTransfuzii" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -2549,6 +2533,41 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="FXMLPersonalTransfuzii" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSModel" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSModel" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSModel" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSModel" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSModel" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
@@ -2643,34 +2662,33 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="directory&#10;module" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/ChatSpringRemoting" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\MPP\ISS\ISSDonareSange\src\main\resources\FXMLPersonalTransfuzii" />
-      <recent name="G:\Faculta\Projects\ISSDonareSange\src\main\resources\images" />
-      <recent name="D:\Alex\Facultate\Semestrul 4\ISS\GitKrakenISS\ISSDonareSange\ISS-Resurse\ScenariiDeUtilizare" />
-      <recent name="D:\Alex\Facultate\Semestrul 4\ISS\GitKrakenISS\ISSDonareSange\src\main\resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Faculta\Projects\ISSDonareSange\ISSPersistenta\src\main\resources" />
       <recent name="D:\MPP\ISS\ISSDonareSange\src\main\resources\FXMLPersonalTransfuzii" />
       <recent name="G:\Faculta\Projects\ISSDonareSange\src\main\resources\FXMLCont" />
       <recent name="G:\Faculta\Projects\ISSDonareSange\src\main\resources\images" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\ISS\ISSDonareSange\ISSMaps\src\main\java" />
+      <recent name="C:\Users\Alex\Desktop\ISS\ISSDonareSange\ISSMaps\src\main\resources" />
+      <recent name="C:\Users\Alex\Desktop\ISS\ISSDonareSange\ISSMaps\src\main" />
+      <recent name="C:\Users\Alex\Desktop\ISS\ISSDonareSange\ISSMaps\src" />
+      <recent name="D:\MPP\ISS\ISSDonareSange\src\main\resources\FXMLPersonalTransfuzii" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2685,16 +2703,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StartClient (1)">
+  <component name="RunManager" selected="Gradle.ISSDonareSange:ISSClientDonator [run]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HEIGHT" value="0" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="WIDTH" value="0" />
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="ISSPersistenta_main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration name="StartClient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="clientPersonalTransfuzii.StartClient" />
@@ -2707,17 +2720,6 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="StartClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="clientDonator.StartClient" />
-      <module name="ISSClientDonator_main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="clientDonator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="StartServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StartServer" />
       <module name="ISSServer_main" />
@@ -2726,10 +2728,44 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
+    <configuration name="ISSDonareSange:ISSClientDonator [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ISSClientDonator" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+    </configuration>
     <configuration name="ISSDonareSange:ISSClientPersonalTransfuzii [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/ISSClientPersonalTransfuzii" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+    </configuration>
+    <configuration name="ISSDonareSange:ISSServer [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ISSServer" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -2795,19 +2831,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list>
-      <item itemvalue="Application.StartClient" />
       <item itemvalue="Application.StartServer" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Gradle.ISSDonareSange:ISSClientPersonalTransfuzii [run]" />
       <item itemvalue="Application.StartClient (1)" />
+      <item itemvalue="Gradle.ISSDonareSange:ISSClientDonator [run]" />
+      <item itemvalue="Gradle.ISSDonareSange:ISSClientPersonalTransfuzii [run]" />
+      <item itemvalue="Gradle.ISSDonareSange:ISSServer [run]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.StartClient (1)" />
+        <item itemvalue="Gradle.ISSDonareSange:ISSServer [run]" />
         <item itemvalue="Gradle.ISSDonareSange:ISSClientPersonalTransfuzii [run]" />
-        <item itemvalue="Application.StartClient" />
+        <item itemvalue="Gradle.ISSDonareSange:ISSClientDonator [run]" />
         <item itemvalue="Application.StartServer" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -2850,18 +2886,19 @@
       <workItem from="1525546431418" duration="1176000" />
       <workItem from="1525603395877" duration="4361000" />
       <workItem from="1525614751226" duration="7000" />
-      <workItem from="1525615275091" duration="6800000" />
-      <workItem from="1525709470596" duration="11578000" />
-      <workItem from="1525765708919" duration="13023000" />
-      <workItem from="1526055764224" duration="116000" />
-      <workItem from="1526730042456" duration="7966000" />
-      <workItem from="1526747002436" duration="6534000" />
-      <workItem from="1526753981666" duration="2714000" />
-      <workItem from="1526756773001" duration="164000" />
-      <workItem from="1526994262392" duration="1735000" />
-      <workItem from="1527017932361" duration="634000" />
-      <workItem from="1527708057163" duration="1388000" />
-      <workItem from="1527951884333" duration="9407000" />
+      <workItem from="1525721177325" duration="100000" />
+      <workItem from="1525756847094" duration="1163000" />
+      <workItem from="1525847738114" duration="29000" />
+      <workItem from="1526228218596" duration="843000" />
+      <workItem from="1526415779776" duration="202000" />
+      <workItem from="1526803832505" duration="1472000" />
+      <workItem from="1526823193563" duration="85000" />
+      <workItem from="1526823717157" duration="10565000" />
+      <workItem from="1526836109195" duration="1360000" />
+      <workItem from="1526884762468" duration="4641000" />
+      <workItem from="1526890926905" duration="7169000" />
+      <workItem from="1526906497171" duration="3496000" />
+      <workItem from="1527962807742" duration="3757000" />
     </task>
     <task id="LOCAL-00001" summary="Base Project">
       <created>1522323596276</created>
@@ -3073,107 +3110,64 @@
       <option name="project" value="LOCAL" />
       <updated>1525606973045</updated>
     </task>
-    <task id="LOCAL-00031" summary="Cauta analiza dupa donator si cauta preparat sanguin dupa donator">
-      <created>1525615481573</created>
+    <task id="LOCAL-00031" summary="Merge branch 'PAUL_branch'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.5-rc-2/taskHistory/taskHistory.lock&#10;#&#9;.idea/workspace.xml&#10;#&#9;ISSServer/src/main/java/server/ServerImpl.java">
+      <created>1525756886688</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1525615481573</updated>
+      <updated>1525756886688</updated>
     </task>
-    <task id="LOCAL-00032" summary="syncronized">
-      <created>1525615545712</created>
+    <task id="LOCAL-00032" summary="Merge branch 'PAUL_branch'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.5-rc-2/taskHistory/taskHistory.lock&#10;#&#9;.idea/workspace.xml&#10;#&#9;ISSServer/src/main/java/server/ServerImpl.java">
+      <created>1525757880874</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1525615545712</updated>
+      <updated>1525757880874</updated>
     </task>
-    <task id="LOCAL-00033" summary="adauga donator in centru de transfuzie">
-      <created>1525716300617</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1525716300617</updated>
-    </task>
-    <task id="LOCAL-00034" summary="adauga donator in centru de transfuzie v2.0">
-      <created>1525771947058</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1525771947058</updated>
-    </task>
-    <task id="LOCAL-00035" summary="adauga donator in centru de transfuzie v2.001">
-      <created>1525772378277</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1525772378277</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Final version of ORM + changes needed">
-      <created>1526734397018</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1526734397018</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Documentatie ORM + Imagine UseCaseDiagram">
-      <created>1526738526644</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1526738526644</updated>
-    </task>
-    <task id="LOCAL-00038" summary="AutoComplete + BackAndForth">
-      <created>1526756681446</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1526756681446</updated>
-    </task>
-    <option name="localTasksCounter" value="39" />
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152560000" />
+    <option name="totallyTimeSpent" value="125817000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="12" />
-      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.5494792" side_tool="true" weight="0.3255814" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.5072917" side_tool="true" weight="0.30043858" />
       <window_info anchor="right" id="Maven Projects" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="18" show_stripe_button="false" />
       <window_info id="Capture Tool" order="10" />
       <window_info id="Designer" order="11" />
-      <window_info anchor="bottom" id="Build" order="23" sideWeight="0.49544272" weight="0.32831737" />
+      <window_info anchor="bottom" id="Build" order="23" sideWeight="0.49739584" weight="0.32831737" />
       <window_info anchor="right" id="Database" order="14" />
       <window_info id="Structure" order="9" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="12" />
-      <window_info anchor="bottom" x="415" y="458" width="729" height="252" id="Debug" order="5" sideWeight="0.4596354" visible="true" weight="0.34473324" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49804688" weight="0.3474692" />
       <window_info anchor="bottom" id="TODO" order="14" />
-      <window_info anchor="bottom" id="Messages" order="19" sideWeight="0.49283853" weight="0.3255814" />
+      <window_info anchor="bottom" id="Messages" order="19" weight="0.1627907" />
       <window_info anchor="right" id="Palette&#9;" order="15" />
       <window_info id="Image Layers" order="13" />
       <window_info anchor="bottom" id="Java Enterprise" order="24" />
       <window_info anchor="right" id="Capture Analysis" order="16" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.45052084" weight="0.3255814" />
       <window_info anchor="bottom" id="Version Control" order="20" weight="0.32646593" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49270833" visible="true" weight="0.2995896" />
       <window_info anchor="bottom" id="Spring" order="21" />
       <window_info anchor="bottom" id="Terminal" order="22" />
       <window_info id="Persistence" order="14" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.20572917" />
-      <window_info anchor="right" id="Gradle" order="17" sideWeight="0.4888438" visible="true" weight="0.2076823" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.203125" />
+      <window_info anchor="right" id="Gradle" order="17" sideWeight="0.4917647" visible="true" weight="0.20247395" />
       <window_info anchor="right" id="SciView" order="19" />
       <window_info anchor="right" id="Theme Preview" order="18" />
       <window_info id="Favorites" order="15" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Coverage" order="17" sideWeight="0.5111562" side_tool="true" weight="0.2076823" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4986979" weight="0.32968536" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4986979" weight="0.32894737" />
+      <window_info anchor="right" id="Coverage" order="17" sideWeight="0.5082353" side_tool="true" weight="0.14494875" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -3183,6 +3177,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Base Project" />
+    <MESSAGE value="build.gradle update" />
+    <MESSAGE value="-" />
     <MESSAGE value="Resursele" />
     <MESSAGE value="FXML - ce am facut cand ne-am intalnit" />
     <MESSAGE value="Donator - partial work" />
@@ -3200,15 +3197,8 @@
     <MESSAGE value="Merge branch 'master' into Otniel&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.5-rc-2/taskHistory/taskHistory.lock&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge cu Otniel -&gt;Analiza dupa Donator" />
     <MESSAGE value="Adaugare preparate sanguine si analize corespunsazatoare.&#10;=&gt; Avem analize pentru cativa donatori." />
-    <MESSAGE value="Cauta analiza dupa donator si cauta preparat sanguin dupa donator" />
-    <MESSAGE value="syncronized" />
-    <MESSAGE value="adauga donator in centru de transfuzie" />
-    <MESSAGE value="adauga donator in centru de transfuzie v2.0" />
-    <MESSAGE value="adauga donator in centru de transfuzie v2.001" />
-    <MESSAGE value="Final version of ORM + changes needed" />
-    <MESSAGE value="Documentatie ORM + Imagine UseCaseDiagram" />
-    <MESSAGE value="AutoComplete + BackAndForth" />
-    <option name="LAST_COMMIT_MESSAGE" value="AutoComplete + BackAndForth" />
+    <MESSAGE value="Merge branch 'PAUL_branch'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.5-rc-2/taskHistory/taskHistory.lock&#10;#&#9;.idea/workspace.xml&#10;#&#9;ISSServer/src/main/java/server/ServerImpl.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'PAUL_branch'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/3.5-rc-2/taskHistory/taskHistory.lock&#10;#&#9;.idea/workspace.xml&#10;#&#9;ISSServer/src/main/java/server/ServerImpl.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3269,7 +3259,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>466</line>
+          <line>471</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
@@ -3311,73 +3301,73 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>357</line>
+          <line>362</line>
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>381</line>
+          <line>386</line>
           <properties />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>380</line>
+          <line>385</line>
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>386</line>
+          <line>391</line>
           <properties />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>387</line>
+          <line>392</line>
           <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
-          <line>195</line>
+          <line>200</line>
           <properties />
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
-          <line>188</line>
+          <line>193</line>
           <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>373</line>
+          <line>378</line>
           <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>377</line>
+          <line>382</line>
           <properties />
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>378</line>
+          <line>383</line>
           <properties />
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>375</line>
+          <line>380</line>
           <properties />
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>388</line>
+          <line>393</line>
           <properties />
           <option name="timeStamp" value="76" />
         </line-breakpoint>
@@ -3401,7 +3391,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
-          <line>191</line>
+          <line>196</line>
           <properties />
           <option name="timeStamp" value="116" />
         </line-breakpoint>
@@ -3419,110 +3409,182 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
-          <line>107</line>
+          <line>110</line>
           <properties />
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
-          <line>108</line>
+          <line>111</line>
           <properties />
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java</url>
-          <line>76</line>
+          <line>77</line>
           <properties />
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java</url>
-          <line>89</line>
+          <line>90</line>
           <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>341</line>
+          <line>346</line>
           <properties />
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>352</line>
+          <line>357</line>
           <properties />
           <option name="timeStamp" value="134" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java</url>
-          <line>134</line>
+          <line>135</line>
           <properties />
           <option name="timeStamp" value="136" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>342</line>
+          <line>347</line>
           <properties />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java</url>
-          <line>78</line>
+          <line>79</line>
           <properties />
           <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java</url>
-          <line>79</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java</url>
-          <line>80</line>
+          <line>81</line>
           <properties />
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java</url>
-          <line>360</line>
+          <line>365</line>
           <properties />
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java</url>
-          <line>95</line>
+          <line>96</line>
           <properties />
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java</url>
-          <line>96</line>
+          <line>97</line>
           <properties />
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
-          <line>137</line>
+          <line>141</line>
           <properties />
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
-          <line>138</line>
+          <line>142</line>
           <properties />
           <option name="timeStamp" value="146" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>85</line>
+          <properties />
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>86</line>
+          <properties />
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>91</line>
+          <properties />
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>189</line>
+          <properties />
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>190</line>
+          <properties />
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>201</line>
+          <properties />
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>224</line>
+          <properties />
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>227</line>
+          <properties />
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
+          <line>228</line>
+          <properties />
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java</url>
-          <line>136</line>
+          <line>140</line>
           <properties class="JavaResources.FormularDonator" method="setImagesForButtons">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="147" />
+      <option name="time" value="161" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -3532,465 +3594,345 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryMedici.java">
+    <entry file="file://$PROJECT_DIR$/ISSMaps/src/main/java/com/lynden/gmapsfx/util/MarkerImageFactory.java" />
+    <entry file="file://$PROJECT_DIR$/ISSMaps/src/main/java/com/lynden/gmapsfx/GoogleMapView.java" />
+    <entry file="file://$PROJECT_DIR$/ISSMaps/src/main/java/com/lynden/gmapsfx/service/directions/DirectionsRenderer.java" />
+    <entry file="file://$PROJECT_DIR$/ISSMaps/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Medic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Spital.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Stagiu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryConturi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPacient.java" />
-    <entry file="file://$PROJECT_DIR$/ISSServer/src/main/resources/server-spring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryPreparateSanguine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryDonatori.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/java/clientDonator/StartClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="1773" selection-start-line="1773" selection-end-line="1773" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Cont.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="414">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.4.RELEASE/2194663096078c5a46bace998ec2d2a6f9fe4857/spring-aop-5.0.4.RELEASE-sources.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        <state relative-caret-position="209">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.2.10.Final/6a853e528cfaa39342f408619b404fda6a9af228/hibernate-core-5.2.10.Final-sources.jar!/org/hibernate/internal/SessionFactoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="440" selection-start-line="440" selection-end-line="440" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Persoana.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/javafx-src.zip!/javafx/collections/ObservableList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/PreparatSanguin.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Analiza.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/CRUDRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientAdministrator/src/main/java/gui/AdministratorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5015">
-          <caret line="324" column="36" selection-start-line="324" selection-start-column="36" selection-end-line="324" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Spital.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_151/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_151/javafx-src.zip!/com/sun/glass/ui/InvokeLaterDispatcher.java" />
     <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/Seed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="46" column="45" selection-start-line="38" selection-start-column="7" selection-end-line="46" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1959">
+          <caret line="100" column="33" lean-forward="true" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/ISSClientMedic/src/main/resources/FXMLMedic/medicView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="138">
+          <caret line="114" column="48" selection-start-line="114" selection-start-column="48" selection-end-line="114" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/PersonalTransfuzii.java">
+    <entry file="file://$PROJECT_DIR$/ISSClientMedic/src/main/java/clientMedic/StartClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/PersonalTransfuzii.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Medic.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/StartServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="115">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java">
+    <entry file="file://$PROJECT_DIR$/ISSClientMedic/src/main/java/gui/MedicController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="131" column="16" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
+        <state relative-caret-position="-1219">
+          <caret line="79" column="46" lean-forward="true" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/StartClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1818#1819#0" expanded="true" />
-            <element signature="e#1853#1854#0" expanded="true" />
-            <element signature="e#1907#1908#0" expanded="true" />
-            <element signature="e#1955#1956#0" expanded="true" />
+            <element signature="e#945#946#0" />
+            <element signature="e#985#986#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Donator.hbm.xml">
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositorySpitale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="28" />
+        <state relative-caret-position="207">
+          <caret line="116" column="13" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/Service/Service.java">
+    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Spital.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="-1058">
+          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Medic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-172" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSServices/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state relative-caret-position="-182">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSServer/build.gradle">
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Analiza.hbm.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="65" />
+        <state relative-caret-position="283">
+          <caret line="23" column="81" selection-start-line="23" selection-start-column="81" selection-end-line="23" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Boala.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/CentruTransfuzii.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Cerere.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Cont.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Medic.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Pacient.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="24" column="81" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/PersonalTransfuzii.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/PreparatSanguin.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Spital.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryMedici.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientAdministrator/src/main/resources/FXMLAdministrator/administratorView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="29" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientAdministrator/src/main/java/gui/AdministratorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="197" column="4" lean-forward="true" selection-start-line="197" selection-start-column="4" selection-end-line="206" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Analiza.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-529">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/PersonalTransfuzii.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="2261">
+          <caret line="133" column="30" selection-start-line="133" selection-start-column="30" selection-end-line="133" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/PreparatSanguin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="1836">
+          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSServices/src/main/java/services/IServices.java">
+    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Cerere.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        <state relative-caret-position="1190">
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/FXMLEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="109" column="41" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2795#2796#0" expanded="true" />
+            <element signature="e#2861#2862#0" expanded="true" />
+            <element signature="e#2915#2916#0" expanded="true" />
+            <element signature="e#2963#2964#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="359" column="12" selection-start-line="359" selection-start-column="12" selection-end-line="359" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/Loader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-          <folding>
-            <element signature="e#1716#1717#0" expanded="true" />
-            <element signature="e#1764#1765#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+        <state relative-caret-position="-789" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/resources/Donator.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/PersonalTransfuzii.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Donator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="112" column="110" selection-start-line="112" selection-start-column="95" selection-end-line="112" selection-end-column="110" />
+        <state relative-caret-position="244">
+          <caret line="233" column="48" selection-start-line="233" selection-start-column="45" selection-end-line="233" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/FXMLEnum.java">
+    <entry file="file://$PROJECT_DIR$/ISSModel/src/main/java/model/Persoana.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="90" column="6" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+        <state relative-caret-position="-85">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/FormularDonator.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/IRepositoryDonatori.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="14" column="238" selection-start-line="14" selection-start-column="238" selection-end-line="14" selection-end-column="238" />
+        <state relative-caret-position="119">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/ISSServices/src/main/java/services/IServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-181">
-          <caret line="102" column="34" lean-forward="true" selection-start-line="99" selection-start-column="12" selection-end-line="102" selection-end-column="34" />
+        <state relative-caret-position="102">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java">
+    <entry file="file://$PROJECT_DIR$/ISSPersistenta/src/main/java/persistence/repository/RepositoryDonatori.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="125" column="23" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="23" />
+        <state relative-caret-position="-164">
+          <caret line="151" column="19" selection-start-line="151" selection-start-column="19" selection-end-line="151" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSServer/src/main/java/server/ServerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="158" column="51" selection-start-line="158" selection-start-column="51" selection-end-line="158" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#6733#6734#0" expanded="true" />
+            <element signature="e#6760#6761#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/ConditiiDonareController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="177" column="38" lean-forward="true" selection-start-line="176" selection-start-column="12" selection-end-line="177" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/StageManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="27" column="35" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="27" selection-end-column="35" />
+        <state relative-caret-position="193">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/ConditiiDonareController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="129" column="37" lean-forward="true" selection-start-line="126" selection-start-column="10" selection-end-line="129" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/java/gui/MainWindowDonatorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="140" column="68" selection-start-line="140" selection-start-column="68" selection-end-line="140" selection-end-column="68" />
+          <folding>
+            <element signature="e#3813#3814#0" expanded="true" />
+            <element signature="e#3888#3889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+        <state relative-caret-position="238">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Hibernate</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Python 3.6 (1) interpreter library</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>ISSModel_main|ISSModel</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Gradle: antlr:antlr:2.7.7</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/FormularDonator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="228" selection-start-line="228" selection-end-line="228" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2982#2983#0" expanded="true" />
+            <element signature="e#3057#3058#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
