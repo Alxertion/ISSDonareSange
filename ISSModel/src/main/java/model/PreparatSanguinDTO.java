@@ -21,6 +21,28 @@ public class PreparatSanguinDTO implements Serializable {
         this.IDPacient=IDPacient;
     }
 
+    //constructor id N/A special
+    public PreparatSanguinDTO(int ID,String tip, Date dataPrelevare, Date dataExpirare, Double cantitate, String stagiu) {
+        this.dataPrelevare = dataPrelevare;
+        this.dataExpirare = dataExpirare;
+        this.cantitate = cantitate;
+        this.stagiu = stagiu;
+        this.tip = tip;
+        this.ID=ID;
+    }
+
+    public PreparatSanguinDTO(int ID,String tip, Date dataPrelevare, Date dataExpirare, String IDDonator, String IDAnaliza, Double cantitate,String IDPacient , String stagiu) {
+        this.dataPrelevare = dataPrelevare;
+        this.dataExpirare = dataExpirare;
+        this.cantitate = cantitate;
+        this.stagiu = stagiu;
+        this.tip = tip;
+        this.ID=ID;
+        setIDAnalizaNA(IDAnaliza);
+        setIDDonatorNA(IDDonator);
+        setIDPacientNA(IDPacient);
+    }
+
     public Date getDataPrelevare() {
         return dataPrelevare;
     }
@@ -73,23 +95,79 @@ public class PreparatSanguinDTO implements Serializable {
         return IDAnaliza;
     }
 
+    public String getIDAnalizaNA() {
+        if(IDAnaliza==-1){
+            return "N/A";
+        }
+        return ""+IDAnaliza;
+    }
+
     public void setIDAnaliza(int IDAnaliza) {
         this.IDAnaliza = IDAnaliza;
     }
 
+    public void setIDAnalizaNA(String IDAnaliza) {
+        if(IDAnaliza.equals("N/A")){
+            this.IDAnaliza = -1;
+        }
+        try {
+            this.IDAnaliza =Integer.parseInt(IDAnaliza);
+        }catch (NumberFormatException err){
+            this.IDAnaliza = -1;
+        }
+    }
+
+
     public int getIDPacient() {
         return IDPacient;
+    }
+
+
+    public String getIDPacientNA() {
+        if(IDPacient==-1){
+            return "N/A";
+        }
+        return ""+IDPacient;
     }
 
     public void setIDPacient(int IDPacient) {
         this.IDPacient = IDPacient;
     }
 
+    public void setIDPacientNA(String IDPacient) {
+        if(IDPacient.equals("N/A")){
+            this.IDPacient = -1;
+        }
+        try {
+            this.IDPacient =Integer.parseInt(IDPacient);
+        }catch (NumberFormatException err){
+            this.IDPacient = -1;
+        }
+    }
+
     public int getIDDonator() {
         return IDDonator;
     }
 
+    public String getIDDonatorNA() {
+        if(IDDonator==-1){
+            return "N/A";
+        }
+        return ""+IDDonator;
+    }
+
     public void setIDDonator(int IDDonator) {
         this.IDDonator = IDDonator;
+    }
+
+    public void setIDDonatorNA(String IDDonator) {
+        if(IDDonator.equals("N/A")){
+            this.IDDonator = -1;
+        }
+        try {
+            this.IDDonator =Integer.parseInt(IDDonator);
+        }catch (NumberFormatException err){
+            this.IDDonator = -1;
+        }
     }
 }

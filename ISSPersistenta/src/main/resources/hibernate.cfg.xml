@@ -19,12 +19,11 @@
         </property>
 
         <property name = "hibernate.connection.password">
-            root
+            Hero
         </property>
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-
 
 
         <mapping resource="Donator.hbm.xml"/>

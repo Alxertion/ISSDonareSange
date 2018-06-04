@@ -43,14 +43,12 @@ public interface IServices {
     void stergePersonalTransfuzii(int id);
     Pacient cautaPacientDupaCNP(String CNP);
     void inregistreazaDonator(CentruTransfuzii centruTransfuzii, Donator donator, Pacient pacient);
-    void updateDonator(Donator donator, String numeDonator, String prenumeDonator, String telefon);
     CentruTransfuzii cautaCelMaiApropiatCentruDeTransfuzii();
     List<Cerere> getCereri();
     void stergeCerere(Cerere cerere);
     void schimbaParolaMedic(String username, String parolaCurenta, String parolaNoua) throws Exception;
     String getNumeMedic(Cont cont);
     List<Pacient> getPacienti();
-    void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare);
     int daysBeforeAnotherDonation(int idDonator);
     List<Donator> cautaDonatoriCompatibili(String grupa,String rh);
     void adaugaCerere(String usernameMedic, String cnpPacient, String numePacient, String prenumePacient, Prioritate prioritate, String grupa, Boolean RH, Double cantitateCeruta, Double cantitateActuala, Date dataEfectuare, String tipSange);

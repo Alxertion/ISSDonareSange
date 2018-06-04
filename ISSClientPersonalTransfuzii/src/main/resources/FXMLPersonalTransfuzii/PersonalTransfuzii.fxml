@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import com.lynden.gmapsfx.GoogleMapView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -30,7 +24,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="tabPanePersonal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="1385.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientPersonalTransfuzii.gui.PersonalTransfuziiController">
+<TabPane fx:id="tabPanePersonal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="729.0" prefWidth="1385.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientPersonalTransfuzii.gui.PersonalTransfuziiController">
   <tabs>
       <Tab text="Management donatori">
         <content>
@@ -165,107 +159,21 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="Asignare pungi sange">
-         <content>
-            <AnchorPane prefHeight="445.0" prefWidth="835.0">
-               <children>
-                  <TableView layoutX="14.0" layoutY="27.0" prefHeight="372.0" prefWidth="481.0">
-                     <columns>
-                        <TableColumn prefWidth="75.0" text="Cod" />
-                        <TableColumn prefWidth="75.0" text="Tip" />
-                        <TableColumn prefWidth="129.0" text="Grupa sanguină" />
-                        <TableColumn prefWidth="53.0" text="RH" />
-                        <TableColumn prefWidth="74.0" text="Urgență" />
-                        <TableColumn prefWidth="74.0" text="Pacient" />
-                     </columns>
-                  </TableView>
-                  <GridPane layoutX="495.0" layoutY="81.0" prefHeight="286.0" prefWidth="292.0">
-                    <columnConstraints>
-                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="108.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="166.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <TextField prefHeight="31.0" prefWidth="247.0" GridPane.columnIndex="1" />
-                        <Label text="Cod:">
-                           <padding>
-                              <Insets right="5.0" />
-                           </padding>
-                        </Label>
-                        <ComboBox prefHeight="31.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="Tip:" GridPane.rowIndex="1">
-                           <padding>
-                              <Insets right="5.0" />
-                           </padding>
-                        </Label>
-                        <ComboBox prefHeight="31.0" prefWidth="199.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Grupa sanguină:" GridPane.rowIndex="2">
-                           <padding>
-                              <Insets right="5.0" />
-                           </padding>
-                        </Label>
-                        <ComboBox prefHeight="31.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="RH:" GridPane.rowIndex="3">
-                           <padding>
-                              <Insets right="5.0" />
-                           </padding>
-                        </Label>
-                        <ComboBox prefHeight="31.0" prefWidth="183.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="Urgență:" GridPane.rowIndex="4">
-                           <padding>
-                              <Insets right="5.0" />
-                           </padding>
-                        </Label>
-                        <Label text="Cod pacient" GridPane.rowIndex="5">
-                           <padding>
-                              <Insets right="5.0" />
-                           </padding>
-                        </Label>
-                        <TextField prefHeight="31.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Button mnemonicParsing="false" text="Adăugare" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
-                     </children>
-                     <padding>
-                        <Insets right="2.0" />
-                     </padding>
-                  </GridPane>
-                  <Button layoutX="700.0" layoutY="380.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="87.0" text="Log out" />
-                  <Label layoutX="594.0" layoutY="539.0" text="To be deletedddddddddddddddddddddddd">
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
-                  </Label>
-                  <Label layoutX="594.0" layoutY="602.0" text="Daca iti trebuie alex, poti sa o pastrezi">
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </content>
-      </Tab>
       <Tab text="Management pungi sange">
          <content>
             <AnchorPane prefHeight="445.0" prefWidth="835.0">
                <children>
-                  <TableView fx:id="ManagementPungiTableView" layoutX="14.0" layoutY="27.0" prefHeight="638.0" prefWidth="1004.0">
+                  <TableView fx:id="ManagementPungiTableView" layoutX="14.0" layoutY="27.0" prefHeight="638.0" prefWidth="976.0" tableMenuButtonVisible="true">
                      <columns>
                         <TableColumn fx:id="IDPungaColumn" prefWidth="75.0" text="ID" />
-                        <TableColumn fx:id="TipPungaColumn" minWidth="3.0" prefWidth="195.0" text="Tip" />
-                        <TableColumn fx:id="DataPrePungaColumn" prefWidth="114.0" text="Data prelevare" />
-                        <TableColumn fx:id="DataExpPungaColumn" prefWidth="123.0" text="Data expirare" />
-                        <TableColumn fx:id="IDDonatorPungaColumn" prefWidth="91.0" text="ID Donator" />
-                        <TableColumn fx:id="IDAnalizaPungaColumn" minWidth="0.0" prefWidth="86.0" text="ID Analiza" />
-                        <TableColumn fx:id="CantitatePungaColumn" minWidth="3.0" prefWidth="83.0" text="Cantitate" />
-                        <TableColumn fx:id="IDPacientPungaColumn" minWidth="3.0" text="ID Pacient" />
-                        <TableColumn fx:id="StagiuPungaColumn" minWidth="3.0" prefWidth="148.0" text="Stagiu" />
+                        <TableColumn fx:id="TipPungaColumn" minWidth="3.0" prefWidth="192.00003051757812" text="Tip" />
+                        <TableColumn fx:id="DataPrePungaColumn" prefWidth="150.0" text="Data prelevare" />
+                        <TableColumn fx:id="DataExpPungaColumn" prefWidth="153.0" text="Data expirare" />
+                        <TableColumn fx:id="CantitatePungaColumn" minWidth="3.0" prefWidth="123.0" text="Cantitate" />
+                        <TableColumn fx:id="StagiuPungaColumn" minWidth="3.0" prefWidth="245.0" text="Stagiu" />
+                        <TableColumn fx:id="IDPacientPungaColumn" minWidth="3.0" prefWidth="42.0" text="ID Pacient" visible="false" />
+                        <TableColumn fx:id="IDAnalizaPungaColumn" minWidth="0.0" prefWidth="86.0" text="ID Analiza" visible="false" />
+                        <TableColumn fx:id="IDDonatorPungaColumn" prefWidth="91.0" text="ID Donator" visible="false" />
                      </columns>
                   </TableView>
                   <GridPane layoutX="1042.0" layoutY="27.0" prefHeight="319.0" prefWidth="292.0">

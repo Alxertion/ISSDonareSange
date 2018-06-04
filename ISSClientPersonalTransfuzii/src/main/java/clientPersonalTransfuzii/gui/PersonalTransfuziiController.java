@@ -115,9 +115,9 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         TipPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("tip"));
         DataExpPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("dataExpirare"));
         DataPrePungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("dataPrelevare"));
-        IDDonatorPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iDDonator"));
-        IDPacientPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iDPacient"));
-        IDAnalizaPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iDAnaliza"));
+        IDDonatorPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iDDonatorNA"));
+        IDPacientPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iDPacientNA"));
+        IDAnalizaPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("iDAnalizaNA"));
         CantitatePungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("cantitate"));
         StagiuPungaColumn.setCellValueFactory(new PropertyValueFactory<PreparatSanguinDTO,String>("stagiu"));
         ManagementPungiTableView.getSelectionModel().selectedItemProperty().
@@ -143,9 +143,9 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     private void showPreparatSanguinDTODetails(PreparatSanguinDTO newValue) {
         if(newValue!=null){
             IDPungaField.setText(""+newValue.getID());
-            IDAnalizaPungaField.setText(""+newValue.getIDAnaliza());
-            IDDonatorPungaField.setText(""+newValue.getIDDonator());
-            IDPacientPungaField.setText(""+newValue.getIDPacient());
+            IDAnalizaPungaField.setText(""+newValue.getIDAnalizaNA());
+            IDDonatorPungaField.setText(""+newValue.getIDDonatorNA());
+            IDPacientPungaField.setText(""+newValue.getIDPacientNA());
             DataExpPungaField.setText(""+newValue.getDataExpirare());
             DataPrePungaField.setText(""+newValue.getDataPrelevare());
             CantitatePungaField.setText(""+newValue.getCantitate());
@@ -167,17 +167,34 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
             try {
                 dataPrelev=df.parse(DataPrePungaField.getText());
                 dataExp=df.parse(DataExpPungaField.getText());
+
+//                Integer.parseInt(IDDonatorPungaField.getText()),
+//                        Integer.parseInt(IDAnalizaPungaField.getText()),
+//                        Integer.parseInt(IDPacientPungaField.getText()),
+
                 PreparatSanguinDTO newPrepDTO=new PreparatSanguinDTO(
                         Integer.parseInt(IDPungaField.getText()),
                         TipPungaComboBox.getValue().toString(),
                         dataPrelev,
                         dataExp,
-                        Integer.parseInt(IDDonatorPungaField.getText()),
-                        Integer.parseInt(IDAnalizaPungaField.getText()),
+                        IDDonatorPungaField.getText(),
+                        IDAnalizaPungaField.getText(),
                         Double.parseDouble(CantitatePungaField.getText()),
-                        Integer.parseInt(IDPacientPungaField.getText()),
+                        IDPacientPungaField.getText(),
                         StagiuPungaComboBox.getValue()
                 );
+
+//                PreparatSanguinDTO newPrepDTO=new PreparatSanguinDTO(
+//                        Integer.parseInt(IDPungaField.getText()),
+//                        TipPungaComboBox.getValue().toString(),
+//                        dataPrelev,
+//                        dataExp,
+//                        Integer.parseInt(IDDonatorPungaField.getText()),
+//                        Integer.parseInt(IDAnalizaPungaField.getText()),
+//                        Double.parseDouble(CantitatePungaField.getText()),
+//                        Integer.parseInt(IDPacientPungaField.getText()),
+//                        StagiuPungaComboBox.getValue()
+//                );
                 service.adaugarePreparatSanguinDTO(newPrepDTO);
             } catch (ParseException e) {
                 showError("Eroare","Data introdusa incorect. (format yyyy-MM-dd)");
@@ -218,12 +235,23 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
                         TipPungaComboBox.getValue().toString(),
                         dataPrelev,
                         dataExp,
-                        Integer.parseInt(IDDonatorPungaField.getText()),
-                        Integer.parseInt(IDAnalizaPungaField.getText()),
+                        IDDonatorPungaField.getText(),
+                        IDAnalizaPungaField.getText(),
                         Double.parseDouble(CantitatePungaField.getText()),
-                        Integer.parseInt(IDPacientPungaField.getText()),
+                        IDPacientPungaField.getText(),
                         StagiuPungaComboBox.getValue()
                 );
+//                PreparatSanguinDTO newPrepDTO=new PreparatSanguinDTO(
+//                        Integer.parseInt(IDPungaField.getText()),
+//                        TipPungaComboBox.getValue().toString(),
+//                        dataPrelev,
+//                        dataExp,
+//                        Integer.parseInt(IDDonatorPungaField.getText()),
+//                        Integer.parseInt(IDAnalizaPungaField.getText()),
+//                        Double.parseDouble(CantitatePungaField.getText()),
+//                        Integer.parseInt(IDPacientPungaField.getText()),
+//                        StagiuPungaComboBox.getValue()
+//                );
                 service.modificaPreparatSanguinDTO(newPrepDTO);
             } catch (ParseException e) {
                 showError("Eroare","Data introdusa incorect. (format yyyy-MM-dd)");
