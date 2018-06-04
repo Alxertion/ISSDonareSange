@@ -19,3 +19,15 @@ dependencies {
     compile 'org.hibernate:hibernate-core:5.2.10.Final'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'ClientMedic',
+                'Implementation-Version': version,
+                'Main-Class': 'clientMedic.StartClient'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

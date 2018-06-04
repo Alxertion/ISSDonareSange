@@ -8,18 +8,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="500.0" maxWidth="680.0" minHeight="500.0" minWidth="680.0" prefHeight="500.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainWindowDonatorController">
+<AnchorPane maxHeight="500.0" maxWidth="680.0" minHeight="500.0" minWidth="680.0" prefHeight="500.0" prefWidth="680.0" stylesheets="CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainWindowDonatorController">
    <children>
-      <VBox layoutY="200.0" prefHeight="118.0" prefWidth="600.0">
+      <VBox layoutY="200.0" prefHeight="136.0" prefWidth="680.0">
          <children>
-            <Accordion fx:id="analizeAccordion" prefHeight="78.0" prefWidth="500.0">
+            <Accordion fx:id="analizeAccordion" prefHeight="136.0" prefWidth="801.0">
               <panes>
                 <TitledPane animated="false">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" prefHeight="0.0" prefWidth="600.0">
+                <TitledPane animated="false" prefHeight="46.0" prefWidth="625.0">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                   </content>

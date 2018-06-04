@@ -5,6 +5,7 @@ import JavaResources.Service.Service;
 import JavaResources.View.FXMLEnum;
 import JavaResources.View.Loader;
 import JavaResources.View.StageManager;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,6 +23,8 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+
+import static com.sun.javafx.application.PlatformImpl.tkExit;
 
 public class LoginController extends UnicastRemoteObject implements Controller,Serializable {
     private StageManager stageManager;

@@ -88,7 +88,7 @@ public class Cerere implements Serializable {
     public String getStatus() {
         if (cantitateActuala >= cantitateCeruta)
             return "Gata";
-        return "Nefinalizată";
+        return "Nefinalizata";
     }
 
     public String getPrioritateString() {

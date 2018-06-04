@@ -26,3 +26,15 @@ dependencies {
 
 
 }
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Server',
+                'Implementation-Version': version,
+                'Main-Class': 'StartServer'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

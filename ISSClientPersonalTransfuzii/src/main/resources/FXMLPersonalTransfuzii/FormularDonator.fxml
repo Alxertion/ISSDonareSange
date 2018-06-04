@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="500.0" maxWidth="680.0" minHeight="500.0" minWidth="680.0" prefHeight="500.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaResources.FormularDonator">
+<AnchorPane maxHeight="500.0" maxWidth="680.0" minHeight="500.0" minWidth="680.0" prefHeight="500.0" prefWidth="680.0" stylesheets="CSS/bootstrap3.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaResources.FormularDonator">
    <children>
       <GridPane fx:id="panou" layoutX="29.0" layoutY="19.0" prefHeight="400.0" prefWidth="600.0">
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.8000244140625" minWidth="10.0" prefWidth="217.00001220703126" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.1999847412109" minWidth="10.0" prefWidth="180.99998779296874" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="79.19998779296873" minWidth="10.0" prefWidth="79.19998779296873" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="142.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.8000244140625" minWidth="10.0" prefWidth="106.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="260.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="83.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="151.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -54,12 +54,12 @@
             <TextField fx:id="emailTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Telefon:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <TextField fx:id="telefonTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Label text="Persoana pentru care doresc să donzez:" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+            <Label text="Persoana pentru care doresc să donez (opțional):" GridPane.columnSpan="2" GridPane.rowIndex="5" />
             <Label text="CNP:" GridPane.rowIndex="6" />
             <TextField fx:id="cnpPacientTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
-      <Button fx:id="backButton" layoutX="69.0" layoutY="421.0" mnemonicParsing="false" onAction="#backButtonPressed" />
-      <Button fx:id="forwardButton" layoutX="596.0" layoutY="421.0" mnemonicParsing="false" onAction="#forwardButtonPressed" />
+      <Button fx:id="backButton" layoutX="29.0" layoutY="444.0" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="32.0" prefWidth="116.0" text="Înapoi" />
+      <Button fx:id="forwardButton" layoutX="533.0" layoutY="444.0" mnemonicParsing="false" onAction="#forwardButtonPressed" prefHeight="32.0" prefWidth="116.0" text="Înainte" />
    </children>
 </AnchorPane>

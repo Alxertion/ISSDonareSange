@@ -2,10 +2,13 @@ package JavaResources.View;
 
 import JavaResources.Controller;
 import JavaResources.Service.Service;
+import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import services.IServices;
+
+import static com.sun.javafx.application.PlatformImpl.tkExit;
 
 public class StageManager {
 
@@ -17,6 +20,10 @@ public class StageManager {
     public StageManager(Stage primaryStage, IServices service) {
         this.primaryStage = primaryStage;
         this.service = service;
+        primaryStage.setOnHiding(event -> Platform.runLater(() -> {
+            tkExit();
+            System.exit(0);
+        }));
     }
 
     public String getTitle(){

@@ -27,6 +27,18 @@ dependencies {
 
 }
 
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'ClientPersonalTransfuzii',
+                'Implementation-Version': version,
+                'Main-Class': 'clientPersonalTransfuzii.StartClient'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 
 
 

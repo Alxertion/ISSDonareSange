@@ -16,25 +16,25 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="615.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AdministratorController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="669.0" stylesheets="CSS/bootstrap3.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AdministratorController">
   <tabs>
     <Tab text="Medici">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="735.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="443.0" prefWidth="658.0">
                <children>
-                  <TableView fx:id="medicTableView" layoutX="23.0" layoutY="49.0" prefHeight="200.0" prefWidth="257.0">
+                  <TableView fx:id="medicTableView" layoutX="26.0" layoutY="20.0" prefHeight="272.0" prefWidth="321.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Cont">
+                      <TableColumn prefWidth="83.0" text="Cont">
                           <cellValueFactory>
                               <PropertyValueFactory property="username" />
                           </cellValueFactory>
                       </TableColumn>
-                      <TableColumn prefWidth="79.0" text="Nume">
+                      <TableColumn prefWidth="109.0" text="Nume">
                           <cellValueFactory>
                               <PropertyValueFactory property="nume" />
                           </cellValueFactory>
                       </TableColumn>
-                      <TableColumn prefWidth="100.0" text="Prenume">
+                      <TableColumn prefWidth="117.0" text="Prenume">
                           <cellValueFactory>
                               <PropertyValueFactory property="prenume" />
                           </cellValueFactory>
@@ -42,7 +42,7 @@
                       </TableColumn>
                     </columns>
                   </TableView>
-                  <GridPane layoutX="300.0" layoutY="49.0" prefHeight="187.0" prefWidth="278.0">
+                  <GridPane layoutX="363.0" layoutY="48.0" prefHeight="243.0" prefWidth="313.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="90.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="171.0" />
@@ -73,15 +73,15 @@
                         <TextField fx:id="emailMedicTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
-                  <Button fx:id="adaugareContMedicButton" layoutX="483.0" layoutY="249.0" mnemonicParsing="false" onAction="#adaugareMedic" text="Adăugare cont" />
-                  <Label layoutX="300.0" layoutY="20.0" text="Creare cont medic">
+                  <Button fx:id="adaugareContMedicButton" layoutX="528.0" layoutY="307.0" mnemonicParsing="false" onAction="#adaugareMedic" text="Adăugare cont" />
+                  <Label layoutX="363.0" layoutY="20.0" text="Creare cont medic">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label layoutX="26.0" layoutY="266.0" text="Ștergere cont selectat tabel" />
-                  <Label layoutX="26.0" layoutY="283.0" text="Această acțiune nu poate fi inversată. Să vă asigurați că într-adevăr asta e ceea ce doriți." />
-                  <Button fx:id="stergereContMedicButton" layoutX="23.0" layoutY="310.0" mnemonicParsing="false" onAction="#stergereMedic" text="Ștergere" />
-                  <Button fx:id="logOut1AdministratorButton" layoutX="516.0" layoutY="310.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="80.0" text="Log out" />
+                  <Label layoutX="26.0" layoutY="327.0" text="Ștergere cont selectat tabel" />
+                  <Label layoutX="26.0" layoutY="344.0" text="Această acțiune nu poate fi inversată. Să vă asigurați că într-adevăr asta e ceea ce doriți." />
+                  <Button fx:id="stergereContMedicButton" layoutX="26.0" layoutY="387.0" mnemonicParsing="false" onAction="#stergereMedic" text="Ștergere" />
+                  <Button fx:id="logOut1AdministratorButton" layoutX="565.0" layoutY="387.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="80.0" text="Log out" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -89,26 +89,26 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="735.0">
                <children>
-                  <TableView fx:id="personalTransfuziiTableView" layoutX="23.0" layoutY="49.0" prefHeight="200.0" prefWidth="257.0">
+                  <TableView fx:id="personalTransfuziiTableView" layoutX="26.0" layoutY="20.0" prefHeight="272.0" prefWidth="321.0">
                      <columns>
-                        <TableColumn prefWidth="75.0" text="Cont">
+                        <TableColumn prefWidth="83.0" text="Cont">
                             <cellValueFactory>
                                 <PropertyValueFactory property="username" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="79.0" text="Nume">
+                        <TableColumn prefWidth="109.0" text="Nume">
                             <cellValueFactory>
                                 <PropertyValueFactory property="nume" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="100.0" text="Prenume">
+                        <TableColumn prefWidth="117.0" text="Prenume">
                             <cellValueFactory>
                                 <PropertyValueFactory property="prenume" />
                             </cellValueFactory>
                         </TableColumn>
                      </columns>
                   </TableView>
-                  <GridPane layoutX="300.0" layoutY="49.0" prefHeight="187.0" prefWidth="278.0">
+                  <GridPane layoutX="363.0" layoutY="48.0" prefHeight="243.0" prefWidth="313.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="90.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="171.0" />
@@ -139,16 +139,16 @@
                         <Label text="Email:" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
-                  <Button fx:id="adaugareContPersonalButton" layoutX="483.0" layoutY="249.0" mnemonicParsing="false" onAction="#adaugarePersonal" text="Adăugare cont" />
-                  <Label layoutX="300.0" layoutY="20.0" prefHeight="20.0" prefWidth="255.0" text="Creare cont personal centru de transfuzii">
+                  <Button fx:id="adaugareContPersonalButton" layoutX="528.0" layoutY="307.0" mnemonicParsing="false" onAction="#adaugarePersonal" text="Adăugare cont" />
+                  <Label layoutX="363.0" layoutY="20.0" prefHeight="20.0" prefWidth="255.0" text="Creare cont personal centru de transfuzii">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="26.0" layoutY="266.0" text="Ștergere cont selectat tabel" />
-                  <Label layoutX="26.0" layoutY="283.0" text="Această acțiune nu poate fi inversată. Să vă asigurați că într-adevăr asta e ceea ce doriți." />
-                  <Button fx:id="stergereContPersonalButton" layoutX="23.0" layoutY="310.0" mnemonicParsing="false" onAction="#stergerePersonal" text="Ștergere" />
-                  <Button fx:id="logOut2AdministratorButton" layoutX="516.0" layoutY="310.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="80.0" text="Log out" />
+                  <Label layoutX="26.0" layoutY="327.0" text="Ștergere cont selectat tabel" />
+                  <Label layoutX="26.0" layoutY="344.0" text="Această acțiune nu poate fi inversată. Să vă asigurați că într-adevăr asta e ceea ce doriți." />
+                  <Button fx:id="stergereContPersonalButton" layoutX="26.0" layoutY="387.0" mnemonicParsing="false" onAction="#stergerePersonal" text="Ștergere" />
+                  <Button fx:id="logOut2AdministratorButton" layoutX="565.0" layoutY="387.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="80.0" text="Log out" />
                </children>
             </AnchorPane>
          </content>
@@ -157,40 +157,40 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="735.0">
                <children>
-                  <TableView fx:id="spitalTableView" layoutX="23.0" layoutY="49.0" prefHeight="200.0" prefWidth="351.0">
+                  <TableView fx:id="spitalTableView" layoutX="14.0" layoutY="20.0" prefHeight="291.0" prefWidth="351.0">
                      <columns>
-                         <TableColumn prefWidth="20.0" text="Id">
+                         <TableColumn prefWidth="24.0" text="Id">
                              <cellValueFactory>
                                  <PropertyValueFactory property="idSpital" />
                              </cellValueFactory>
                          </TableColumn>
-                        <TableColumn prefWidth="159.0" text="Spital">
+                        <TableColumn prefWidth="144.0" text="Spital">
                             <cellValueFactory>
                                 <PropertyValueFactory property="nume" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="87.0" text="Longitudine">
+                        <TableColumn prefWidth="95.0" text="Longitudine">
                             <cellValueFactory>
                                 <PropertyValueFactory property="longitudine" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn text="Latitudine">
+                        <TableColumn prefWidth="79.0" text="Latitudine">
                             <cellValueFactory>
                                 <PropertyValueFactory property="latitudine" />
                             </cellValueFactory>
                         </TableColumn>
                      </columns>
                   </TableView>
-                  <Label layoutX="26.0" layoutY="266.0" text="Ștergere spital selectat din tabel" />
-                  <Label layoutX="26.0" layoutY="283.0" text="Această acțiune nu poate fi inversată. Să vă asigurați că într-adevăr asta e ceea ce doriți." />
-                  <Button fx:id="stergereSpitalButton" layoutX="23.0" layoutY="310.0" mnemonicParsing="false" onAction="#stergereSpital" text="Ștergere spital" />
-                  <Button fx:id="logOut3AdministratorButton" layoutX="516.0" layoutY="310.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="80.0" text="Log out" />
-                  <Button fx:id="adaugareSpitalButton" layoutX="474.0" layoutY="186.0" mnemonicParsing="false" onAction="#adaugareSpital" prefHeight="25.0" prefWidth="128.0" text="Adăugare spital" />
-                  <Button fx:id="modificareSpitalButton" layoutX="474.0" layoutY="224.0" mnemonicParsing="false" onAction="#modificareSpital" prefHeight="25.0" prefWidth="128.0" text="Modificare spital" />
-                  <GridPane layoutX="377.0" layoutY="49.0" prefHeight="130.0" prefWidth="235.0">
+                  <Label layoutX="26.0" layoutY="327.0" text="Ștergere spital selectat din tabel" />
+                  <Label layoutX="26.0" layoutY="344.0" text="Această acțiune nu poate fi inversată. Să vă asigurați că într-adevăr asta e ceea ce doriți." />
+                  <Button fx:id="stergereSpitalButton" layoutX="26.0" layoutY="387.0" mnemonicParsing="false" onAction="#stergereSpital" text="Ștergere spital" />
+                  <Button fx:id="logOut3AdministratorButton" layoutX="565.0" layoutY="387.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="80.0" text="Log out" />
+                  <Button fx:id="adaugareSpitalButton" layoutX="497.0" layoutY="206.0" mnemonicParsing="false" onAction="#adaugareSpital" prefHeight="31.0" prefWidth="140.0" text="Adăugare spital" />
+                  <Button fx:id="modificareSpitalButton" layoutX="497.0" layoutY="251.0" mnemonicParsing="false" onAction="#modificareSpital" prefHeight="31.0" prefWidth="140.0" text="Modificare spital" />
+                  <GridPane layoutX="377.0" layoutY="49.0" prefHeight="148.0" prefWidth="267.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="62.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="166.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="84.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="151.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
@@ -209,7 +209,7 @@
                         <Label text="Id:" />
                      </children>
                   </GridPane>
-                  <Label layoutX="23.0" layoutY="14.0" text="Administrare spitale">
+                  <Label layoutX="374.0" layoutY="20.0" text="Administrare spitale">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -222,37 +222,37 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="735.0">
                <children>
-                  <TableView fx:id="centreTransfuziiTableView" layoutX="23.0" layoutY="49.0" prefHeight="200.0" prefWidth="351.0">
+                  <TableView fx:id="centreTransfuziiTableView" layoutX="14.0" layoutY="20.0" prefHeight="291.0" prefWidth="351.0">
                      <columns>
-                         <TableColumn prefWidth="20.0" text="Id">
+                         <TableColumn prefWidth="24.0" text="Id">
                              <cellValueFactory>
                                  <PropertyValueFactory property="idCentruTransfuzii" />
                              </cellValueFactory>
                          </TableColumn>
-                        <TableColumn prefWidth="164.0" text="Centru transfuzii">
+                        <TableColumn prefWidth="146.0" text="Centru transfuzii">
                             <cellValueFactory>
                                 <PropertyValueFactory property="nume" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="78.0" text="Longitudine">
+                        <TableColumn prefWidth="92.0" text="Longitudine">
                             <cellValueFactory>
                                 <PropertyValueFactory property="longitudine" />
                             </cellValueFactory>
                         </TableColumn>
-                        <TableColumn prefWidth="84.0" text="Latitudine">
+                        <TableColumn prefWidth="81.0" text="Latitudine">
                             <cellValueFactory>
                                 <PropertyValueFactory property="latitudine" />
                             </cellValueFactory>
                         </TableColumn>
                      </columns>
                   </TableView>
-                  <Label layoutX="26.0" layoutY="266.0" text="Ștergere centru de transfuzii selectat din tabel" />
-                  <Label layoutX="26.0" layoutY="283.0" text="Această acțiune nu poate fi inversată. Să vă asigurați că într-adevăr asta e ceea ce doriți." />
-                  <Button fx:id="stergereCentruButton" layoutX="23.0" layoutY="310.0" mnemonicParsing="false" onAction="#stergereCentru" text="Ștergere centru" />
-                  <Button fx:id="logOut4AdministratorButton" layoutX="516.0" layoutY="310.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="80.0" text="Log out" />
-                  <Button fx:id="adaugareCentruButton" layoutX="474.0" layoutY="186.0" mnemonicParsing="false" onAction="#adaugareCentru" prefHeight="25.0" prefWidth="128.0" text="Adăugare centru" />
-                  <Button fx:id="modificareCentruButton" layoutX="474.0" layoutY="224.0" mnemonicParsing="false" onAction="#modificareCentru" prefHeight="25.0" prefWidth="128.0" text="Modificare centru" />
-                   <GridPane layoutX="377.0" layoutY="49.0" prefHeight="130.0" prefWidth="235.0">
+                  <Label layoutX="26.0" layoutY="327.0" text="Ștergere centru de transfuzii selectat din tabel" />
+                  <Label layoutX="26.0" layoutY="344.0" text="Această acțiune nu poate fi inversată. Să vă asigurați că într-adevăr asta e ceea ce doriți." />
+                  <Button fx:id="stergereCentruButton" layoutX="26.0" layoutY="387.0" mnemonicParsing="false" onAction="#stergereCentru" text="Ștergere centru" />
+                  <Button fx:id="logOut4AdministratorButton" layoutX="565.0" layoutY="387.0" mnemonicParsing="false" onAction="#logOut" prefHeight="31.0" prefWidth="80.0" text="Log out" />
+                  <Button fx:id="adaugareCentruButton" layoutX="497.0" layoutY="206.0" mnemonicParsing="false" onAction="#adaugareCentru" prefHeight="31.0" prefWidth="140.0" text="Adăugare centru" />
+                  <Button fx:id="modificareCentruButton" layoutX="497.0" layoutY="251.0" mnemonicParsing="false" onAction="#modificareCentru" prefHeight="31.0" prefWidth="140.0" text="Modificare centru" />
+                   <GridPane layoutX="377.0" layoutY="49.0" prefHeight="148.0" prefWidth="267.0">
                        <columnConstraints>
                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="62.0" />
                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="166.0" />
@@ -274,7 +274,7 @@
                            <Label text="Id:" />
                        </children>
                    </GridPane>
-                  <Label layoutX="23.0" layoutY="14.0" text="Administrare centre transfuzii">
+                  <Label layoutX="374.0" layoutY="20.0" text="Administrare centre transfuzii">
                      <font>
                         <Font size="14.0" />
                      </font>

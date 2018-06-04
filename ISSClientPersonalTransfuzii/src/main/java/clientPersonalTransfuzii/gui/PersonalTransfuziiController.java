@@ -27,6 +27,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import model.*;
 import model.*;
 import netscape.javascript.JSObject;
@@ -50,6 +51,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static com.sun.javafx.application.PlatformImpl.tkExit;
 import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
 public class PersonalTransfuziiController extends UnicastRemoteObject implements Controller, IObserver, Serializable {
@@ -90,8 +92,6 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
     @FXML
     GoogleMapView mapView;
     private GoogleMap map = null;
-
-
 
     //for Management pungi sange
     @FXML TableView<PreparatSanguinDTO> ManagementPungiTableView;
@@ -138,6 +138,8 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
 
         modelPachete = FXCollections.observableArrayList(service.getPreparateSanguine());
         pacheteTableView.setItems(modelPachete);
+
+        mapView.addMapInializedListener(this::configureMap);
     }
 
     private void showPreparatSanguinDTODetails(PreparatSanguinDTO newValue) {
@@ -240,8 +242,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
 
     final static String DATE_FORMAT = "yyyy-MM-dd";
 
-    public boolean isDateValid(String date)
-    {
+    public boolean isDateValid(String date) {
         try {
             DateFormat df = new SimpleDateFormat(DATE_FORMAT);
             df.setLenient(false);
@@ -306,6 +307,7 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
         // Cream harta
         map = mapView.createMap(mapOptions, false);
 
+
         // Punem cererile pe harta
         for (Spital s : service.getSpitale()) {
             for (Medic m : s.getMedici()) {
@@ -339,14 +341,6 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
                                     }
                                 }
                             }
-
-                            /*
-                            Print de test, afiseaza conditiile verificate in if-urile de mai jos
-                            if (a != null) {
-                                System.out.println(p.isExpirat() + "=false, " + p.getTip() + "=" + c.getTipSange() + ", " + c.getGrupa() + "=" + a.getGrupa() + ", " + c.getRH() + "=" + a.getRH());
-                            }
-                            */
-
                             // verific ca preparatul sanguin sa fie in stadiul de:
                             // PRELEVARE, FILTRARE sau ANALIZARE
                             if (!Objects.equals(p.getStagiu(), "PRELEVARE") &&
@@ -400,14 +394,14 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
                         modelPachete.removeAll();
                         pacheteTableView.getItems().removeAll();
                         pacheteTableView.setItems(modelPachete);
-                        showMessage(Alert.AlertType.CONFIRMATION, "Finalizare", "Operația a fost realizată cu succes!");
+                        showMessage(Alert.AlertType.CONFIRMATION, "Finalizare", "Operatia a fost realizata cu succes!");
                         return;
                     }
                 }
             }
         }
         else {
-            showErrorMessage("Vă rugăm selectați o cerere și un preparat!");
+            showErrorMessage("Va rugam selectati o cerere si un preparat!");
         }
     }
 
