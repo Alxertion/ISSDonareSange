@@ -366,6 +366,7 @@ public class ServerImpl implements IServices {
     @Override
     public void sendSMS(String numarTelefon,String continut) {
 
+        System.out.println("Trimit SMS");
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {

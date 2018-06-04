@@ -23,6 +23,8 @@ import java.io.Serializable;
 import java.net.URI;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MesajController extends UnicastRemoteObject implements Controller,Serializable {
     IServices service;
@@ -46,23 +48,28 @@ public class MesajController extends UnicastRemoteObject implements Controller,S
             Integer idCentruTransfuzie=service.getIdCentruTransfuzii(personalTransfuziiCurent);
             if(idCentruTransfuzie==-1)
                 throw new FrontException("Acest personal nu este inregistrat la niciun centru.");
-            Donator donator=service.getCelMaiApropiatDonator(idCentruTransfuzie,observableDonator);
+            List<Donator> list=new ArrayList<>();
+            for(Donator d:observableDonator){
+                list.add(d);
+            }
+            Donator donator=service.getCelMaiApropiatDonator(idCentruTransfuzie,list);
 
-            String continut=continutNotificare.getText();
-            if(continut.equals(""))
-                throw new FrontException("Nu ati introdus nicio informatie");
-            if(observableDonator.size()==0)
-                throw new FrontException("Nu avem donatori de notificat.");
-            if(mesajTelefonicRadio.isSelected()) {
-                service.sendSMS("0773302809",continut);
+            if(donator!=null) {
+                String continut = continutNotificare.getText();
+                if (continut.equals(""))
+                    throw new FrontException("Nu ati introdus nicio informatie");
+                if (observableDonator.size() == 0)
+                    throw new FrontException("Nu avem donatori de notificat.");
+                if (mesajTelefonicRadio.isSelected()) {
+                    service.sendSMS("0773302809", continut);
+                } else {
+                    service.sendEmail("oti_otniel97@yahoo.com", "", continut, MailEnum.NOTIFICARE_DONATOR);
+                }
+                Alert message = new Alert(Alert.AlertType.INFORMATION);
+                message.setTitle("Mesaj de informare");
+                message.setContentText("Notificarea a fost transmisa.");
+                message.showAndWait();
             }
-            else{
-                service.sendEmail("oti_otniel97@yahoo.com", "", continut, MailEnum.NOTIFICARE_DONATOR);
-            }
-            Alert message = new Alert(Alert.AlertType.INFORMATION);
-            message.setTitle("Mesaj de informare");
-            message.setContentText("Notificarea a fost transmisa.");
-            message.showAndWait();
         }catch (FrontException e){
             Alert message = new Alert(Alert.AlertType.ERROR);
             message.setTitle("Mesaj eroare");
