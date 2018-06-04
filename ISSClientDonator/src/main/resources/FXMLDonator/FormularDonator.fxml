@@ -59,7 +59,7 @@
             <TextField fx:id="cnpPacientTextField" maxWidth="170.0" minWidth="170.0" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
-      <Button fx:id="backButton" layoutX="29.0" layoutY="444.0" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="32.0" prefWidth="116.0" text="Înapoi" />
-      <Button fx:id="forwardButton" layoutX="533.0" layoutY="444.0" mnemonicParsing="false" onAction="#forwardButtonPressed" prefHeight="32.0" prefWidth="116.0" text="Înainte" />
+      <Button fx:id="backButton" layoutX="30.0" layoutY="431.0" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="32.0" prefWidth="116.0" />
+      <Button fx:id="forwardButton" layoutX="534.0" layoutY="431.0" mnemonicParsing="false" onAction="#forwardButtonPressed" prefHeight="32.0" prefWidth="116.0" />
    </children>
 </AnchorPane>

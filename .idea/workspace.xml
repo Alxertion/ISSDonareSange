@@ -2,71 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3544039-3f55-456e-b2c5-15c0819caacb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DC1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DC2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaArhitectura.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaBazaDate.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaComunicareAdministrator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaComunicareDonator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaComunicareMedic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaComunicarePersonalTransfuzii.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaSecventaAdministrator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaSecventaDonator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaSecventaMedic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A3/DiagramaSecventaPersonalTransfuzii.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A4/DiagramaCazUtilizareAdministrator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A4/DiagramaCazUtilizareDonator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A4/DiagramaCazUtilizareMedic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/A4/DiagramaCazUtilizarePersonalTransfuzii.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/DiagramaClase.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DocumentatieISS.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/PrezentareISS.pptx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/splash.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Executables/ISSClientAdministrator-all-1.0.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Executables/ISSClientDonator-all-1.0.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Executables/ISSClientMedic-all-1.0.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Executables/ISSClientPersonalTransfuzii-all-1.0.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Executables/ISSServer-all-1.0.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Jars/ISSClientAdministrator-all-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Jars/ISSClientDonator-all-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Jars/ISSClientMedic-all-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Jars/ISSClientPersonalTransfuzii-all-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/Jars/ISSServer-all-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/DiagramaArhitectura.mdj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/DiagramaCazUtilizareAdministrator.mdj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/DiagramaCazUtilizareDonator.mdj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/DiagramaCazUtilizareMedic.mdj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/DiagramaCazUtilizarePersonalTransfuzii.mdj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISS-Resurse/0DOCUMENTATIE/DiagramePoze/DiagramaClase.mdj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISSClientMainResources/src/main/resources/CSS/DarkTheme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISSClientMainResources/src/main/resources/CSS/bootstrap3.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/bootstrap3.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/3.5-rc-2/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" afterPath="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientAdministrator/src/main/resources/FXMLAdministrator/administratorView.fxml" afterPath="$PROJECT_DIR$/ISSClientAdministrator/src/main/resources/FXMLAdministrator/administratorView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientDonator/build.gradle" afterPath="$PROJECT_DIR$/ISSClientDonator/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml" afterPath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml" afterPath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml" afterPath="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/LoginController.java" afterPath="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/StageManager.java" afterPath="$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/StageManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientMainResources/src/main/resources/FXMLCont/Login.fxml" afterPath="$PROJECT_DIR$/ISSClientMainResources/src/main/resources/FXMLCont/Login.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientMedic/build.gradle" afterPath="$PROJECT_DIR$/ISSClientMedic/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientMedic/src/main/resources/FXMLMedic/medicView.fxml" afterPath="$PROJECT_DIR$/ISSClientMedic/src/main/resources/FXMLMedic/medicView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle" afterPath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java" afterPath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/java/clientPersonalTransfuzii/gui/PersonalTransfuziiController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/FormularDonator.fxml" afterPath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/FormularDonator.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/Mesaj.fxml" afterPath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/Mesaj.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/PersonalTransfuzii.fxml" afterPath="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/PersonalTransfuzii.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSModel/src/main/java/model/Cerere.java" afterPath="$PROJECT_DIR$/ISSModel/src/main/java/model/Cerere.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSServer/build.gradle" afterPath="$PROJECT_DIR$/ISSServer/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ISSServer/src/main/java/StartServer.java" afterPath="$PROJECT_DIR$/ISSServer/src/main/java/StartServer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -193,14 +131,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StageManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StageManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/StageManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainWindowDonator.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConditiiDonare.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="132" lean-forward="false" selection-start-line="10" selection-start-column="132" selection-end-line="10" selection-end-column="132" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormularDonator.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="-512">
+              <caret line="14" column="132" lean-forward="false" selection-start-line="14" selection-start-column="132" selection-end-line="14" selection-end-column="132" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2299,8 +2276,6 @@
         <option value="$PROJECT_DIR$/ISSClientPersonalTransfuzii/src/main/resources/FXMLPersonalTransfuzii/FormularDonator.fxml" />
         <option value="$PROJECT_DIR$/ISSClientMedic/src/main/resources/FXMLMedic/medicView.fxml" />
         <option value="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml" />
-        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml" />
-        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml" />
         <option value="$PROJECT_DIR$/ISSClientAdministrator/src/main/resources/FXMLAdministrator/administratorView.fxml" />
         <option value="$PROJECT_DIR$/ISSModel/src/main/java/model/Cerere.java" />
         <option value="$PROJECT_DIR$/ISSClientPersonalTransfuzii/build.gradle" />
@@ -2310,6 +2285,8 @@
         <option value="$PROJECT_DIR$/ISSClientMedic/build.gradle" />
         <option value="$PROJECT_DIR$/ISSClientDonator/build.gradle" />
         <option value="$PROJECT_DIR$/ISSClientAdministrator/build.gradle" />
+        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml" />
+        <option value="$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml" />
       </list>
     </option>
   </component>
@@ -2347,8 +2324,9 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2361,11 +2339,45 @@
               <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="ISS-Resurse" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSClientDonator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSClientDonator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSClientDonator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSClientDonator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISSDonareSange" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISSDonareSange" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="ISSClientDonator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="FXMLDonator" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2645,7 +2657,8 @@
       <workItem from="1527054844820" duration="98000" />
       <workItem from="1528095340376" duration="6189000" />
       <workItem from="1528108138665" duration="13705000" />
-      <workItem from="1528128729194" duration="87000" />
+      <workItem from="1528128729194" duration="732000" />
+      <workItem from="1528130053203" duration="258000" />
     </task>
     <task id="LOCAL-00001" summary="Base Project">
       <created>1522323596276</created>
@@ -2892,14 +2905,22 @@
       <option name="project" value="LOCAL" />
       <updated>1528102226692</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Stilizare + Construire EXE/JAR-uri">
+      <created>1528128862838</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1528128862838</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143184000" />
+    <option name="totallyTimeSpent" value="144087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -2909,22 +2930,22 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2645382" sideWeight="0.50322235" order="15" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25510204" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2993421" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27850878" sideWeight="0.4924812" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2993421" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2265625" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2265625" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.203125" sideWeight="0.4917647" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.350057" sideWeight="0.49804688" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hibernate Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="26" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2996,7 +3017,8 @@
     <MESSAGE value="documentatie" />
     <MESSAGE value="functionalite personal transfuzii::: gestionare pachete sange" />
     <MESSAGE value="refactorizare tabel management pachete sange" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactorizare tabel management pachete sange" />
+    <MESSAGE value="Stilizare + Construire EXE/JAR-uri" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stilizare + Construire EXE/JAR-uri" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3238,7 +3260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3249,36 +3270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="132" lean-forward="false" selection-start-line="14" selection-start-column="132" selection-end-line="14" selection-end-column="132" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="132" lean-forward="false" selection-start-line="10" selection-start-column="132" selection-end-line="10" selection-end-column="132" />
         </state>
       </provider>
     </entry>
@@ -3413,7 +3404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3421,7 +3411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3429,7 +3418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3443,10 +3431,43 @@
     <entry file="file://$PROJECT_DIR$/ISSClientMainResources/src/main/java/JavaResources/View/StageManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/FormularDonator.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-512">
+          <caret line="14" column="132" lean-forward="false" selection-start-line="14" selection-start-column="132" selection-end-line="14" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/MainWindowDonator.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISSClientDonator/src/main/resources/FXMLDonator/ConditiiDonare.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="132" lean-forward="false" selection-start-line="10" selection-start-column="132" selection-end-line="10" selection-end-column="132" />
+          <folding />
         </state>
       </provider>
     </entry>

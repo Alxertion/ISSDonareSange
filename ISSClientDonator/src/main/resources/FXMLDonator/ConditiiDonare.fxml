@@ -18,13 +18,13 @@
             <InnerShadow />
          </effect>
       </TextArea>
-      <Button fx:id="backButton" layoutX="9.0" layoutY="433.0" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="32.0" prefWidth="103.0" text="Înapoi" />
+      <Button fx:id="backButton" layoutX="9.0" layoutY="431.0" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="32.0" prefWidth="103.0" />
       <CheckBox fx:id="acordCheckBox" layoutX="140.0" layoutY="429.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" />
       <Label layoutX="166.0" layoutY="412.0" prefHeight="74.0" prefWidth="364.0" text="Declar pe proprie răspundere că am citit și că îndeplinesc condițiile de mai sus" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="forwardButton" layoutX="568.0" layoutY="437.0" mnemonicParsing="false" onAction="#forwardButtonPressed" prefHeight="32.0" prefWidth="103.0" text="Înainte" />
+      <Button fx:id="forwardButton" layoutX="568.0" layoutY="435.0" mnemonicParsing="false" onAction="#forwardButtonPressed" prefHeight="32.0" prefWidth="103.0" />
    </children>
 </AnchorPane>
