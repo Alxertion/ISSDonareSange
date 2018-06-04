@@ -183,18 +183,6 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
                         IDPacientPungaField.getText(),
                         StagiuPungaComboBox.getValue()
                 );
-
-//                PreparatSanguinDTO newPrepDTO=new PreparatSanguinDTO(
-//                        Integer.parseInt(IDPungaField.getText()),
-//                        TipPungaComboBox.getValue().toString(),
-//                        dataPrelev,
-//                        dataExp,
-//                        Integer.parseInt(IDDonatorPungaField.getText()),
-//                        Integer.parseInt(IDAnalizaPungaField.getText()),
-//                        Double.parseDouble(CantitatePungaField.getText()),
-//                        Integer.parseInt(IDPacientPungaField.getText()),
-//                        StagiuPungaComboBox.getValue()
-//                );
                 service.adaugarePreparatSanguinDTO(newPrepDTO);
             } catch (ParseException e) {
                 showError("Eroare","Data introdusa incorect. (format yyyy-MM-dd)");
@@ -241,17 +229,6 @@ public class PersonalTransfuziiController extends UnicastRemoteObject implements
                         IDPacientPungaField.getText(),
                         StagiuPungaComboBox.getValue()
                 );
-//                PreparatSanguinDTO newPrepDTO=new PreparatSanguinDTO(
-//                        Integer.parseInt(IDPungaField.getText()),
-//                        TipPungaComboBox.getValue().toString(),
-//                        dataPrelev,
-//                        dataExp,
-//                        Integer.parseInt(IDDonatorPungaField.getText()),
-//                        Integer.parseInt(IDAnalizaPungaField.getText()),
-//                        Double.parseDouble(CantitatePungaField.getText()),
-//                        Integer.parseInt(IDPacientPungaField.getText()),
-//                        StagiuPungaComboBox.getValue()
-//                );
                 service.modificaPreparatSanguinDTO(newPrepDTO);
             } catch (ParseException e) {
                 showError("Eroare","Data introdusa incorect. (format yyyy-MM-dd)");

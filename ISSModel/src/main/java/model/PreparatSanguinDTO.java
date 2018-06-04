@@ -20,17 +20,6 @@ public class PreparatSanguinDTO implements Serializable {
         this.IDAnaliza=IDAnaliza;
         this.IDPacient=IDPacient;
     }
-
-    //constructor id N/A special
-    public PreparatSanguinDTO(int ID,String tip, Date dataPrelevare, Date dataExpirare, Double cantitate, String stagiu) {
-        this.dataPrelevare = dataPrelevare;
-        this.dataExpirare = dataExpirare;
-        this.cantitate = cantitate;
-        this.stagiu = stagiu;
-        this.tip = tip;
-        this.ID=ID;
-    }
-
     public PreparatSanguinDTO(int ID,String tip, Date dataPrelevare, Date dataExpirare, String IDDonator, String IDAnaliza, Double cantitate,String IDPacient , String stagiu) {
         this.dataPrelevare = dataPrelevare;
         this.dataExpirare = dataExpirare;
