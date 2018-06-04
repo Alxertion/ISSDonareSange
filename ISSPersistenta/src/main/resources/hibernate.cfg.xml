@@ -19,7 +19,7 @@
         </property>
 
         <property name = "hibernate.connection.password">
-            Hero
+            root
         </property>
 
         <!-- Echo all executed SQL to stdout -->
