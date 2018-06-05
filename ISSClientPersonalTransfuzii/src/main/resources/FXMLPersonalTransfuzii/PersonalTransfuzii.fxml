@@ -50,7 +50,7 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adaugare analiză" wrappingWidth="93.955078125" />
                         <ComboBox fx:id="comboRh" prefHeight="25.0" prefWidth="116.0" promptText="Rh" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <ComboBox fx:id="comboGrupa" prefHeight="25.0" prefWidth="98.0" promptText="Grupă" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Button fx:id="adaugaAnaliza" mnemonicParsing="false" onAction="#handleAdaugaAnaliza" prefHeight="32.0" prefWidth="117.0" text="Adaugă analiză" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button fx:id="adaugaAnaliza" mnemonicParsing="false" onAction="#handleAdaugaAnaliza" prefHeight="32.0" prefWidth="122.0" text="Adaugă analiză" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>
@@ -82,7 +82,7 @@
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Slider fx:id="distanceSlider" blockIncrement="20.0" layoutX="336.0" layoutY="65.0" max="200.0" prefHeight="40.0" prefWidth="218.0" showTickLabels="true" GridPane.columnIndex="1" />
+                        <Slider fx:id="distanceSlider" blockIncrement="20.0" layoutX="336.0" layoutY="65.0" majorTickUnit="1.0" max="20.0" prefHeight="40.0" prefWidth="218.0" showTickLabels="true" GridPane.columnIndex="1" />
                         <Text layoutX="242.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distanța(KM):" />
                      </children>
                   </GridPane>
